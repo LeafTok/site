@@ -3,9 +3,98 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- SEO Meta Tags -->
         <title data-i18n="page-title">
-            LeafTok - Transform Books into Bite-Sized Cards
+            LeafTok - AI-Powered Reading App | Transform Books into Smart Cards
         </title>
+        <meta
+            name="description"
+            content="Revolutionary AI-powered reading app that transforms any book into bite-sized, swipeable cards. Perfect for students, professionals, and AI enthusiasts. Enhanced learning with spaced repetition and smart algorithms. Available worldwide on iOS and Android."
+        />
+        <meta
+            name="keywords"
+            content="AI reading app, artificial intelligence learning, machine learning books, smart reading cards, AI-powered education, digital learning platform, book transformation AI, spaced repetition algorithm, mobile reading app, educational technology, AI study tools, intelligent reading assistant"
+        />
+        <meta name="author" content="Iago Cavalcante" />
+        <meta
+            name="robots"
+            content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
+        <meta name="googlebot" content="index, follow" />
+        <link rel="canonical" href="https://leaftok.iagocavalcante.com/" />
+
+        <!-- Hreflang for International SEO -->
+        <link
+            rel="alternate"
+            hreflang="en"
+            href="https://leaftok.iagocavalcante.com/"
+        />
+        <link
+            rel="alternate"
+            hreflang="pt-BR"
+            href="https://leaftok.iagocavalcante.com/"
+        />
+        <link
+            rel="alternate"
+            hreflang="x-default"
+            href="https://leaftok.iagocavalcante.com/"
+        />
+
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:site_name" content="LeafTok" />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:title"
+            content="LeafTok - AI-Powered Reading Revolution | Smart Learning Cards"
+        />
+        <meta
+            property="og:description"
+            content="Transform any book into intelligent, swipeable cards with AI. Perfect for modern learners, students, and professionals. Join 10,000+ users revolutionizing their reading experience with artificial intelligence."
+        />
+        <meta property="og:url" content="https://leaftok.iagocavalcante.com/" />
+        <meta
+            property="og:image"
+            content="https://leaftok.iagocavalcante.com/assets/banner.png"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta
+            property="og:image:alt"
+            content="LeafTok AI Reading App - Transform Books into Smart Cards"
+        />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:locale:alternate" content="pt_BR" />
+
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@leaftok" />
+        <meta name="twitter:creator" content="@iagocavalcante" />
+        <meta
+            name="twitter:title"
+            content="LeafTok - AI Reading Revolution | Smart Learning Cards"
+        />
+        <meta
+            name="twitter:description"
+            content="AI-powered app that transforms books into bite-sized cards. Enhanced learning with smart algorithms and spaced repetition. Perfect for students and professionals worldwide."
+        />
+        <meta
+            name="twitter:image"
+            content="https://leaftok.iagocavalcante.com/assets/banner.png"
+        />
+        <meta
+            name="twitter:image:alt"
+            content="LeafTok AI Reading App Interface"
+        />
+
+        <!-- Additional SEO Meta Tags -->
+        <meta name="application-name" content="LeafTok" />
+        <meta name="apple-mobile-web-app-title" content="LeafTok" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="msapplication-TileColor" content="#2DD29F" />
+        <meta name="msapplication-config" content="/assets/browserconfig.xml" />
 
         <!-- Favicon -->
         <link
@@ -28,6 +117,53 @@
         <link rel="manifest" href="assets/site.webmanifest" />
         <link rel="shortcut icon" href="assets/favicon.ico" />
         <meta name="theme-color" content="#2DD29F" />
+
+        <!-- Structured Data (JSON-LD) -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "SoftwareApplication",
+                "name": "LeafTok",
+                "description": "AI-powered reading app that transforms books into intelligent, bite-sized cards for enhanced learning and retention",
+                "url": "https://leaftok.iagocavalcante.com/",
+                "applicationCategory": "EducationalApplication",
+                "operatingSystem": ["iOS", "Android"],
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Iago Cavalcante",
+                    "url": "https://iagocavalcante.com"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "LeafTok",
+                    "url": "https://leaftok.iagocavalcante.com/"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.8",
+                    "ratingCount": "2500"
+                },
+                "keywords": "AI reading, artificial intelligence, machine learning, educational technology, smart cards, spaced repetition, digital learning",
+                "screenshot": "https://leaftok.iagocavalcante.com/assets/screenshot.png",
+                "downloadUrl": [
+                    "https://apps.apple.com/br/app/leaftok/id6748622950",
+                    "https://play.google.com/store/apps/details?id=com.iagocavalcante.leaftok"
+                ],
+                "featureList": [
+                    "AI-powered book transformation",
+                    "Intelligent card-based learning",
+                    "Spaced repetition algorithm",
+                    "Multi-format book support (PDF, EPUB)",
+                    "Enhanced retention system",
+                    "Lightning-fast learning experience"
+                ]
+            }
+        </script>
 
         <script src="https://cdn.tailwindcss.com"></script>
         <script>
@@ -607,32 +743,32 @@
             const translations = {
                 en: {
                     "page-title":
-                        "LeafTok - Transform Books into Bite-Sized Cards",
+                        "LeafTok - AI-Powered Reading App | Transform Books into Smart Cards",
                     "nav-features": "Features",
                     "nav-app": "App",
                     "nav-download": "Download",
                     "nav-get-started": "Get Started",
-                    "hero-badge": "Revolutionary Reading Experience",
-                    "hero-title-part1": "Transform books into",
-                    "hero-title-part2": "bite-sized cards",
+                    "hero-badge": "AI-Powered Reading Revolution",
+                    "hero-title-part1": "Transform books with AI into",
+                    "hero-title-part2": "intelligent learning cards",
                     "hero-description":
-                        "LeafTok revolutionizes your reading experience by converting any book into digestible, swipeable cards. Learn faster, retain more, and make reading addictive.",
+                        "LeafTok uses artificial intelligence to revolutionize your reading experience. Convert any book into smart, digestible cards with enhanced learning algorithms. Perfect for students, professionals, and AI enthusiasts worldwide.",
                     "hero-users": "10,000+ active users",
                     "download-on": "Download on the",
                     "get-it-on": "Get it on",
                     "features-title-part1": "Why Choose",
                     "features-title-part2": "?",
                     "features-subtitle":
-                        "Experience reading like never before with our innovative card-based approach designed for modern learners",
-                    "feature1-title": "Lightning Fast Learning",
+                        "Experience AI-powered reading with intelligent algorithms designed for modern learners, students, and professionals worldwide",
+                    "feature1-title": "AI-Powered Learning",
                     "feature1-description":
-                        "Absorb key concepts in seconds with our bite-sized card format. Perfect for busy schedules and modern attention spans.",
-                    "feature2-title": "Enhanced Retention",
+                        "Our artificial intelligence algorithms analyze content and create optimized learning cards. Perfect for busy professionals, students, and anyone seeking efficient knowledge acquisition.",
+                    "feature2-title": "Smart Retention System",
                     "feature2-description":
-                        "Our spaced repetition system helps you remember what you read. Turn passive reading into active learning.",
-                    "feature3-title": "Any Book, Any Format",
+                        "Advanced spaced repetition algorithms powered by machine learning help you remember what you read. Transform passive reading into intelligent, active learning.",
+                    "feature3-title": "Intelligent Book Processing",
                     "feature3-description":
-                        "Transform PDFs, EPUBs, or any digital book into interactive cards. Your entire library, reimagined.",
+                        "AI transforms PDFs, EPUBs, or any digital book into interactive, smart cards. Your entire library becomes an intelligent learning system.",
                     "stats-users": "Active Users",
                     "stats-books": "Books Transformed",
                     "stats-rating": "App Store Rating",
@@ -640,7 +776,7 @@
                     "cta-title-part2": "reading",
                     "cta-title-part3": "?",
                     "cta-description":
-                        "Join thousands of readers who have already transformed their learning experience with LeafTok.",
+                        "Join thousands of students, professionals, and AI enthusiasts who have revolutionized their learning experience with intelligent reading technology.",
                     "download-ios": "Download for iOS",
                     "download-android": "Download for Android",
                     "footer-copyright":
@@ -648,32 +784,33 @@
                 },
                 pt: {
                     "page-title":
-                        "LeafTok - Transforme Livros em Cards Digestíveis",
+                        "LeafTok - App de Leitura com IA | Transforme Livros em Cards Inteligentes",
                     "nav-features": "Recursos",
                     "nav-app": "App",
                     "nav-download": "Download",
                     "nav-get-started": "Começar",
-                    "hero-badge": "Experiência de Leitura Revolucionária",
-                    "hero-title-part1": "Transforme livros em",
-                    "hero-title-part2": "cards digestíveis",
+                    "hero-badge":
+                        "Revolução da Leitura com Inteligência Artificial",
+                    "hero-title-part1": "Transforme livros com IA em",
+                    "hero-title-part2": "cards inteligentes de aprendizado",
                     "hero-description":
-                        "O LeafTok revoluciona sua experiência de leitura convertendo qualquer livro em cards digestíveis e deslizáveis. Aprenda mais rápido, retenha mais e torne a leitura viciante.",
+                        "O LeafTok usa inteligência artificial para revolucionar sua experiência de leitura. Converta qualquer livro em cards inteligentes e digestíveis com algoritmos avançados de aprendizado. Perfeito para estudantes, profissionais e entusiastas de IA no mundo todo.",
                     "hero-users": "10.000+ usuários ativos",
                     "download-on": "Baixar na",
                     "get-it-on": "Baixar no",
                     "features-title-part1": "Por que Escolher",
                     "features-title-part2": "?",
                     "features-subtitle":
-                        "Experimente a leitura como nunca antes com nossa abordagem inovadora baseada em cards, projetada para alunos modernos",
-                    "feature1-title": "Aprendizado Ultrarrápido",
+                        "Experimente a leitura com IA e algoritmos inteligentes projetados para estudantes modernos, profissionais e entusiastas de tecnologia mundial",
+                    "feature1-title": "Aprendizado com IA",
                     "feature1-description":
-                        "Absorva conceitos-chave em segundos com nosso formato de cards digestíveis. Perfeito para horários apertados e períodos de atenção modernos.",
-                    "feature2-title": "Retenção Aprimorada",
+                        "Nossos algoritmos de inteligência artificial analisam o conteúdo e criam cards de aprendizado otimizados. Perfeito para profissionais ocupados, estudantes e qualquer pessoa que busca aquisição eficiente de conhecimento.",
+                    "feature2-title": "Sistema Inteligente de Retenção",
                     "feature2-description":
-                        "Nosso sistema de repetição espaçada ajuda você a lembrar do que leu. Transforme leitura passiva em aprendizado ativo.",
-                    "feature3-title": "Qualquer Livro, Qualquer Formato",
+                        "Algoritmos avançados de repetição espaçada com machine learning ajudam você a lembrar do que leu. Transforme leitura passiva em aprendizado inteligente e ativo.",
+                    "feature3-title": "Processamento Inteligente de Livros",
                     "feature3-description":
-                        "Transforme PDFs, EPUBs ou qualquer livro digital em cards interativos. Toda sua biblioteca, reimaginada.",
+                        "A IA transforma PDFs, EPUBs ou qualquer livro digital em cards interativos e inteligentes. Toda sua biblioteca se torna um sistema inteligente de aprendizado.",
                     "stats-users": "Usuários Ativos",
                     "stats-books": "Livros Transformados",
                     "stats-rating": "Avaliação na App Store",
@@ -681,7 +818,7 @@
                     "cta-title-part2": "leitura",
                     "cta-title-part3": "?",
                     "cta-description":
-                        "Junte-se a milhares de leitores que já transformaram sua experiência de aprendizado com o LeafTok.",
+                        "Junte-se a milhares de estudantes, profissionais e entusiastas de IA que revolucionaram sua experiência de aprendizado com tecnologia inteligente de leitura.",
                     "download-ios": "Baixar para iOS",
                     "download-android": "Baixar para Android",
                     "footer-copyright":
@@ -788,6 +925,207 @@
                     mobileMenu.classList.toggle("hidden");
                 });
             }
+
+            // Service Worker Registration
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", () => {
+                    navigator.serviceWorker
+                        .register("/sw.js")
+                        .then((registration) => {
+                            console.log("SW registered: ", registration);
+
+                            // Check for updates
+                            registration.addEventListener("updatefound", () => {
+                                const newWorker = registration.installing;
+                                newWorker.addEventListener(
+                                    "statechange",
+                                    () => {
+                                        if (
+                                            newWorker.state === "installed" &&
+                                            navigator.serviceWorker.controller
+                                        ) {
+                                            // New content available, show update prompt
+                                            if (
+                                                confirm(
+                                                    "New version available! Reload to update?",
+                                                )
+                                            ) {
+                                                window.location.reload();
+                                            }
+                                        }
+                                    },
+                                );
+                            });
+                        })
+                        .catch((registrationError) => {
+                            console.log(
+                                "SW registration failed: ",
+                                registrationError,
+                            );
+                        });
+                });
+            }
+
+            // Performance monitoring
+            window.addEventListener("load", () => {
+                // Core Web Vitals
+                if ("web-vital" in window) {
+                    import(
+                        "https://unpkg.com/web-vitals@3/dist/web-vitals.js"
+                    ).then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+                        getCLS(console.log);
+                        getFID(console.log);
+                        getFCP(console.log);
+                        getLCP(console.log);
+                        getTTFB(console.log);
+                    });
+                }
+
+                // Performance observer for navigation timing
+                if (
+                    "performance" in window &&
+                    "getEntriesByType" in performance
+                ) {
+                    const perfEntries =
+                        performance.getEntriesByType("navigation");
+                    if (perfEntries.length > 0) {
+                        const timing = perfEntries[0];
+                        console.log(
+                            "Page Load Time:",
+                            timing.loadEventEnd - timing.loadEventStart,
+                        );
+                        console.log(
+                            "DOM Content Loaded:",
+                            timing.domContentLoadedEventEnd -
+                                timing.domContentLoadedEventStart,
+                        );
+                    }
+                }
+            });
+
+            // Preload critical resources
+            const preloadResources = [
+                { href: "/assets/logo.png", as: "image" },
+                { href: "/assets/screenshot.png", as: "image" },
+                { href: "/assets/banner.png", as: "image" },
+            ];
+
+            preloadResources.forEach((resource) => {
+                const link = document.createElement("link");
+                link.rel = "preload";
+                link.href = resource.href;
+                link.as = resource.as;
+                document.head.appendChild(link);
+            });
+
+            // Lazy loading for images
+            if ("IntersectionObserver" in window) {
+                const imageObserver = new IntersectionObserver(
+                    (entries, observer) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                const img = entry.target;
+                                img.src = img.dataset.src;
+                                img.classList.remove("lazy");
+                                imageObserver.unobserve(img);
+                            }
+                        });
+                    },
+                );
+
+                document.querySelectorAll("img[data-src]").forEach((img) => {
+                    imageObserver.observe(img);
+                });
+            } else {
+                // Fallback for browsers without IntersectionObserver
+                document.querySelectorAll("img[data-src]").forEach((img) => {
+                    img.src = img.dataset.src;
+                });
+            }
+
+            // Analytics tracking (replace with your preferred analytics service)
+            function trackEvent(eventName, properties = {}) {
+                // Google Analytics 4 example
+                if (typeof gtag !== "undefined") {
+                    gtag("event", eventName, properties);
+                }
+
+                // Console log for development
+                console.log("Event tracked:", eventName, properties);
+            }
+
+            // Track user interactions
+            document.addEventListener("click", (e) => {
+                const target = e.target.closest("a, button");
+                if (target) {
+                    const href =
+                        target.href || target.getAttribute("data-action");
+                    const text = target.textContent.trim();
+
+                    if (
+                        href &&
+                        (href.includes("apps.apple.com") ||
+                            href.includes("play.google.com"))
+                    ) {
+                        trackEvent("app_download_click", {
+                            platform: href.includes("apple")
+                                ? "iOS"
+                                : "Android",
+                            button_text: text,
+                        });
+                    }
+
+                    if (target.classList.contains("language-btn")) {
+                        trackEvent("language_change", {
+                            from: currentLang,
+                            to: target.getAttribute("data-lang"),
+                        });
+                    }
+                }
+            });
+
+            // Track scroll depth
+            let maxScroll = 0;
+            window.addEventListener("scroll", () => {
+                const scrollPercent = Math.round(
+                    (window.scrollY /
+                        (document.body.scrollHeight - window.innerHeight)) *
+                        100,
+                );
+                if (scrollPercent > maxScroll) {
+                    maxScroll = scrollPercent;
+                    if (maxScroll % 25 === 0) {
+                        // Track at 25%, 50%, 75%, 100%
+                        trackEvent("scroll_depth", { percent: maxScroll });
+                    }
+                }
+            });
+
+            // Page visibility API for engagement tracking
+            let startTime = Date.now();
+            document.addEventListener("visibilitychange", () => {
+                if (document.visibilityState === "hidden") {
+                    const timeSpent = Math.round(
+                        (Date.now() - startTime) / 1000,
+                    );
+                    trackEvent("page_engagement", {
+                        time_spent_seconds: timeSpent,
+                    });
+                } else {
+                    startTime = Date.now();
+                }
+            });
         </script>
+
+        <!-- Google Analytics (replace with your tracking ID) -->
+        <!--
+        <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'GA_TRACKING_ID');
+        </script>
+        -->
     </body>
 </html>

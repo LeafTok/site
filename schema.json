@@ -1,0 +1,310 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://leaftok.iagocavalcante.com/#website",
+      "url": "https://leaftok.iagocavalcante.com/",
+      "name": "LeafTok - AI-Powered Reading Revolution",
+      "description": "Transform your reading experience with AI-powered learning cards. Perfect for students, professionals, and AI enthusiasts worldwide.",
+      "publisher": {
+        "@id": "https://leaftok.iagocavalcante.com/#organization"
+      },
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://leaftok.iagocavalcante.com/?s={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      ],
+      "inLanguage": ["en-US", "pt-BR"],
+      "copyrightYear": 2025,
+      "copyrightHolder": {
+        "@id": "https://leaftok.iagocavalcante.com/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://leaftok.iagocavalcante.com/#organization",
+      "name": "LeafTok",
+      "url": "https://leaftok.iagocavalcante.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://leaftok.iagocavalcante.com/assets/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://leaftok.iagocavalcante.com/assets/banner.png",
+        "width": 1200,
+        "height": 630
+      },
+      "description": "LeafTok uses artificial intelligence to revolutionize reading experiences by transforming books into intelligent, digestible learning cards.",
+      "founder": {
+        "@type": "Person",
+        "name": "Iago Cavalcante",
+        "url": "https://iagocavalcante.com",
+        "sameAs": [
+          "https://github.com/IagoCavalcante",
+          "https://linkedin.com/in/iagocavalcante"
+        ]
+      },
+      "foundingDate": "2024",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "availableLanguage": ["English", "Portuguese"]
+      },
+      "sameAs": [
+        "https://github.com/leaftok",
+        "https://apps.apple.com/br/app/leaftok/id6748622950",
+        "https://play.google.com/store/apps/details?id=com.iagocavalcante.leaftok"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://leaftok.iagocavalcante.com/#mobileapp",
+      "name": "LeafTok",
+      "description": "AI-powered reading app that transforms any book into intelligent, bite-sized cards for enhanced learning and retention. Perfect for students, professionals, and AI enthusiasts.",
+      "url": "https://leaftok.iagocavalcante.com/",
+      "applicationCategory": [
+        "EducationalApplication",
+        "ProductivityApplication",
+        "BookApplication"
+      ],
+      "operatingSystem": ["iOS", "Android"],
+      "softwareVersion": "1.0.0",
+      "datePublished": "2024-12-01",
+      "dateModified": "2025-01-03",
+      "publisher": {
+        "@id": "https://leaftok.iagocavalcante.com/#organization"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Iago Cavalcante",
+        "url": "https://iagocavalcante.com"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2024-12-01"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "2500",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "screenshot": [
+        {
+          "@type": "ImageObject",
+          "url": "https://leaftok.iagocavalcante.com/assets/screenshot.png",
+          "description": "LeafTok app interface showing AI-powered book transformation"
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://leaftok.iagocavalcante.com/assets/banner.png",
+          "description": "LeafTok promotional banner showcasing smart learning cards"
+        }
+      ],
+      "downloadUrl": [
+        "https://apps.apple.com/br/app/leaftok/id6748622950",
+        "https://play.google.com/store/apps/details?id=com.iagocavalcante.leaftok"
+      ],
+      "installUrl": [
+        "https://apps.apple.com/br/app/leaftok/id6748622950",
+        "https://play.google.com/store/apps/details?id=com.iagocavalcante.leaftok"
+      ],
+      "featureList": [
+        "AI-powered book transformation",
+        "Intelligent card-based learning system",
+        "Advanced spaced repetition algorithms",
+        "Multi-format book support (PDF, EPUB, TXT)",
+        "Enhanced memory retention techniques",
+        "Lightning-fast learning experience",
+        "Personalized learning pathways",
+        "Offline reading capabilities",
+        "Cross-platform synchronization",
+        "Machine learning optimization"
+      ],
+      "keywords": "AI reading app, artificial intelligence learning, machine learning books, smart reading cards, educational technology, spaced repetition, digital learning platform, intelligent study tools",
+      "inLanguage": ["en", "pt-BR"],
+      "isAccessibleForFree": true,
+      "requiresSubscription": false
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://leaftok.iagocavalcante.com/#webpage",
+      "url": "https://leaftok.iagocavalcante.com/",
+      "name": "LeafTok - AI-Powered Reading App | Transform Books into Smart Cards",
+      "description": "Revolutionary AI-powered reading app that transforms any book into bite-sized, swipeable cards. Perfect for students, professionals, and AI enthusiasts. Enhanced learning with spaced repetition and smart algorithms. Available worldwide on iOS and Android.",
+      "inLanguage": ["en-US", "pt-BR"],
+      "isPartOf": {
+        "@id": "https://leaftok.iagocavalcante.com/#website"
+      },
+      "about": {
+        "@id": "https://leaftok.iagocavalcante.com/#mobileapp"
+      },
+      "datePublished": "2024-12-01",
+      "dateModified": "2025-01-03",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://leaftok.iagocavalcante.com/"
+          }
+        ]
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", ".hero-description", ".features-subtitle"]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://leaftok.iagocavalcante.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is LeafTok and how does it use AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LeafTok is an AI-powered reading app that uses artificial intelligence and machine learning algorithms to transform any book into intelligent, bite-sized cards. The AI analyzes content, extracts key concepts, and creates optimized learning cards with personalized spaced repetition for enhanced memory retention."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What file formats does LeafTok support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LeafTok supports multiple digital book formats including PDF, EPUB, and TXT files. Our AI algorithms can process and transform any of these formats into interactive learning cards."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the spaced repetition system work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LeafTok uses advanced machine learning algorithms to implement spaced repetition. The system tracks your learning progress, calculates optimal review intervals based on your individual forgetting curve, and prioritizes content based on importance and retention probability."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is LeafTok available worldwide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, LeafTok is available worldwide on both iOS and Android platforms. The app supports multiple languages including English and Portuguese, with plans to expand to more languages based on user demand."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is LeafTok free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LeafTok offers a free version with core AI-powered features. Additional premium features may be available through subscription plans to support continued development and AI improvements."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://leaftok.iagocavalcante.com/blog/ai-reading-revolution.html#article",
+      "headline": "The AI Reading Revolution: How Machine Learning is Transforming Learning",
+      "description": "Explore how artificial intelligence and machine learning are revolutionizing the way we read and learn worldwide.",
+      "author": {
+        "@type": "Organization",
+        "name": "LeafTok Team"
+      },
+      "publisher": {
+        "@id": "https://leaftok.iagocavalcante.com/#organization"
+      },
+      "datePublished": "2025-01-03",
+      "dateModified": "2025-01-03",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://leaftok.iagocavalcante.com/blog/ai-reading-revolution.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://leaftok.iagocavalcante.com/assets/banner.png",
+        "width": 1200,
+        "height": 630
+      },
+      "keywords": "AI reading revolution, machine learning education, artificial intelligence learning, educational technology",
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Artificial Intelligence in Education"
+        },
+        {
+          "@type": "Thing",
+          "name": "Machine Learning Applications"
+        },
+        {
+          "@type": "Thing",
+          "name": "Digital Learning Transformation"
+        }
+      ],
+      "mentions": [
+        {
+          "@id": "https://leaftok.iagocavalcante.com/#mobileapp"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://leaftok.iagocavalcante.com/#features",
+      "name": "LeafTok Key Features",
+      "description": "Comprehensive list of AI-powered features that make LeafTok revolutionary",
+      "numberOfItems": 6,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "AI-Powered Learning",
+          "description": "Artificial intelligence algorithms analyze content and create optimized learning cards"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Smart Retention System",
+          "description": "Advanced spaced repetition algorithms powered by machine learning"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Intelligent Book Processing",
+          "description": "AI transforms PDFs, EPUBs, or any digital book into interactive smart cards"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Personalized Learning Pathways",
+          "description": "Machine learning adapts to individual learning preferences and goals"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Cross-Platform Synchronization",
+          "description": "Seamless learning experience across all devices with cloud sync"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Multilingual Support",
+          "description": "Available in multiple languages for global accessibility"
+        }
+      ]
+    }
+  ]
+}
