@@ -7,7 +7,7 @@
     <url>
         <loc>https://leaftok.iagocavalcante.com/</loc>
         <lastmod>2025-01-03</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>daily</changefreq>
         <priority>1.0</priority>
 
         <!-- Hreflang alternatives -->
@@ -18,20 +18,20 @@
         <!-- Images for better SEO -->
         <image:image>
             <image:loc>https://leaftok.iagocavalcante.com/assets/banner.png</image:loc>
-            <image:title>LeafTok AI Reading App - Transform Books into Smart Cards</image:title>
-            <image:caption>Revolutionary AI-powered reading app that transforms books into intelligent learning cards</image:caption>
+            <image:title>LeafTok AI Reading App - 5-Star Rated | Transform Books into Smart Cards</image:title>
+            <image:caption>Revolutionary AI-powered reading app with perfect 5-star rating that transforms books into intelligent learning cards. 30+ users, 50+ books transformed.</image:caption>
         </image:image>
 
         <image:image>
             <image:loc>https://leaftok.iagocavalcante.com/assets/screenshot.png</image:loc>
-            <image:title>LeafTok App Interface Screenshot</image:title>
-            <image:caption>Mobile app interface showing AI-powered book transformation into swipeable cards</image:caption>
+            <image:title>LeafTok 5-Star App Interface Screenshot</image:title>
+            <image:caption>5-star rated mobile app interface showing AI-powered book transformation into swipeable cards. Used by 30+ satisfied users.</image:caption>
         </image:image>
 
         <image:image>
             <image:loc>https://leaftok.iagocavalcante.com/assets/logo.png</image:loc>
-            <image:title>LeafTok Logo</image:title>
-            <image:caption>LeafTok brand logo for AI-powered reading application</image:caption>
+            <image:title>LeafTok 5-Star App Logo</image:title>
+            <image:caption>LeafTok brand logo for 5-star rated AI-powered reading application with 30+ active users</image:caption>
         </image:image>
     </url>
 
@@ -39,15 +39,15 @@
     <url>
         <loc>https://apps.apple.com/br/app/leaftok/id6748622950</loc>
         <lastmod>2025-01-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
     </url>
 
     <url>
         <loc>https://play.google.com/store/apps/details?id=com.iagocavalcante.leaftok</loc>
         <lastmod>2025-01-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
     </url>
 
     <!-- Alternative GitHub Pages URL -->
@@ -55,7 +55,7 @@
         <loc>https://leaftok.github.io/site/</loc>
         <lastmod>2025-01-03</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
 
         <xhtml:link rel="alternate" hreflang="en" href="https://leaftok.github.io/site/" />
         <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leaftok.github.io/site/" />

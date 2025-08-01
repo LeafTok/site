@@ -97,8 +97,8 @@
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "2500",
+        "ratingValue": "5.0",
+        "reviewCount": "30",
         "bestRating": "5",
         "worstRating": "1"
       },
@@ -179,7 +179,7 @@
           "name": "What is LeafTok and how does it use AI?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "LeafTok is an AI-powered reading app that uses artificial intelligence and machine learning algorithms to transform any book into intelligent, bite-sized cards. The AI analyzes content, extracts key concepts, and creates optimized learning cards with personalized spaced repetition for enhanced memory retention."
+            "text": "LeafTok is a 5-star rated AI-powered reading app that uses artificial intelligence and machine learning algorithms to transform any book into intelligent, bite-sized cards. With over 50 books already transformed by our growing community of 30+ users, the AI analyzes content, extracts key concepts, and creates optimized learning cards with personalized spaced repetition for enhanced memory retention."
           }
         },
         {
@@ -211,7 +211,7 @@
           "name": "Is LeafTok free to use?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "LeafTok offers a free version with core AI-powered features. Additional premium features may be available through subscription plans to support continued development and AI improvements."
+            "text": "LeafTok offers a free version with core AI-powered features. Our 5-star rating from 30+ users demonstrates the quality of our free offering. Additional premium features may be available through subscription plans to support continued development and AI improvements."
           }
         }
       ]
