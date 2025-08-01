@@ -20,17 +20,21 @@ A modern, bilingual landing page for LeafTok - the revolutionary app that transf
 ## 🌐 Live Demo
 
 The landing page is automatically deployed to GitHub Pages at:
-`https://[your-username].github.io/[repository-name]/`
+
+- **Primary URL**: https://leaftok.github.io/site/
+- **Custom Domain**: https://leaftok.iagocavalcante.com
 
 ## 🚀 Quick Start
 
 1. **Clone the repository**
+
    ```bash
-   git clone https://github.com/[your-username]/[repository-name].git
-   cd [repository-name]
+   git clone https://github.com/leaftok/site.git
+   cd site
    ```
 
 2. **Open in browser**
+
    ```bash
    open index.html
    # or
@@ -97,6 +101,7 @@ To add a new language:
 ## 🎯 Customization
 
 ### Colors
+
 Update the Tailwind configuration in `index.html`:
 
 ```javascript
@@ -108,10 +113,13 @@ colors: {
 ```
 
 ### Content
+
 All text content uses the `data-i18n` attribute system for easy translation and updates.
 
 ### Assets
+
 Replace files in the `assets/` folder:
+
 - `logo.png` - Your logo
 - `screenshot.png` - App screenshot
 - Favicon files for complete browser support
@@ -165,9 +173,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Author
 
 **Iago Cavalcante**
-- Website: [Your Website]
-- GitHub: [@IagoCavalcante]
-- LinkedIn: [Your LinkedIn]
+
+- Website: https://iagocavalcante.com
+- GitHub: [@IagoCavalcante](https://github.com/IagoCavalcante)
+- App: https://leaftok.iagocavalcante.com
 
 ## 🙏 Acknowledgments
 
