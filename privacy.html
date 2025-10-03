@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- SEO Meta Tags -->
+        <title data-i18n="page-title">Privacy Policy - LeafTok</title>
+        <meta
+            name="description"
+            content="LeafTok Privacy Policy - Learn how we protect your data and respect your privacy"
+        />
+        <meta name="author" content="Iago Cavalcante" />
+        <meta name="robots" content="index, follow" />
+        <link
+            rel="canonical"
+            href="https://leaftok.iagocavalcante.com/privacy.html"
+        />
+
+        <!-- Favicon -->
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="assets/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="assets/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="assets/favicon-16x16.png"
+        />
+        <link rel="manifest" href="assets/site.webmanifest" />
+        <link rel="shortcut icon" href="assets/favicon.ico" />
+        <meta name="theme-color" content="#2DD29F" />
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: {
+                                50: "#f0fdf7",
+                                100: "#dcfce8",
+                                200: "#bbf7d1",
+                                300: "#86efb0",
+                                400: "#2DD29F",
+                                500: "#2DD29F",
+                                600: "#26bd8a",
+                                700: "#1f9a6e",
+                                800: "#1a7b56",
+                                900: "#155f42",
+                            },
+                            dark: {
+                                900: "#13141E",
+                            },
+                        },
+                    },
+                },
+            };
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            * {
+                font-family: "Inter", sans-serif;
+            }
+            .glass-effect {
+                background: rgba(255, 255, 255, 0.25);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.18);
+            }
+            .gradient-text {
+                background: linear-gradient(135deg, #2dd29f, #26bd8a, #1f9a6e);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            .hero-gradient {
+                background: linear-gradient(
+                    135deg,
+                    #f0fdf7 0%,
+                    #ffffff 50%,
+                    #f0fdf7 100%
+                );
+            }
+            .language-btn {
+                transition: all 0.2s ease;
+            }
+            .language-btn:hover {
+                background-color: #f3f4f6;
+            }
+        </style>
+    </head>
+    <body class="min-h-screen hero-gradient">
+        <!-- Navigation -->
+        <nav class="fixed top-0 w-full z-50 glass-effect">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <img
+                            src="assets/logo.png"
+                            alt="LeafTok Logo"
+                            class="w-10 h-10 rounded-xl"
+                        />
+                        <span class="text-2xl font-bold text-gray-900"
+                            >LeafTok</span
+                        >
+                    </a>
+                    <div class="flex items-center space-x-6">
+                        <a
+                            href="index.html"
+                            class="text-gray-700 hover:text-primary-500 transition-colors font-medium"
+                            data-i18n="nav-home"
+                            >Home</a
+                        >
+                        <div class="flex items-center space-x-2 ml-4">
+                            <button
+                                onclick="changeLanguage('en')"
+                                class="language-btn px-3 py-1 rounded-lg text-sm font-medium transition-colors"
+                                data-lang="en"
+                            >
+                                EN
+                            </button>
+                            <button
+                                onclick="changeLanguage('pt')"
+                                class="language-btn px-3 py-1 rounded-lg text-sm font-medium transition-colors"
+                                data-lang="pt"
+                            >
+                                PT
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Privacy Policy Content -->
+        <section class="pt-32 pb-20 px-6">
+            <div class="container mx-auto max-w-4xl">
+                <div class="text-center mb-16">
+                    <h1
+                        class="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
+                        data-i18n="privacy-title"
+                    >
+                        Privacy Policy
+                    </h1>
+                    <p
+                        class="text-lg text-gray-600"
+                        data-i18n="privacy-updated"
+                    >
+                        Last Updated: January 2025
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-3xl shadow-lg p-8 md:p-12 space-y-8">
+                    <!-- Introduction -->
+                    <div>
+                        <h2
+                            class="text-2xl font-bold text-gray-900 mb-4"
+                            data-i18n="section1-title"
+                        >
+                            1. Introduction
+                        </h2>
+                        <p
+                            class="text-gray-600 leading-relaxed"
+                            data-i18n="section1-content"
+                        >
+                            Welcome to LeafTok. We respect your privacy and are
+                            committed to protecting your personal data. This
+                            privacy policy explains how we collect, use, and
+                            safeguard your information when you use our mobile
+                            application.
+                        </p>
+                    </div>
+
+                    <!-- Information We Collect -->
+                    <div>
+                        <h2
+                            class="text-2xl font-bold text-gray-900 mb-4"
+                            data-i18n="section2-title"
+                        >
+                            2. Information We Collect
+                        </h2>
+                        <div class="space-y-4 text-gray-600">
+                            <p data-i18n="section2-intro">
+                                We collect the following types of information:
+                            </p>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li data-i18n="section2-item1">
+                                    <strong>Books and Content:</strong> The
+                                    books you upload (PDFs, EPUBs) are stored
+                                    locally on your device and are not
+                                    transmitted to our servers unless you
+                                    explicitly choose to sync them.
+                                </li>
+                                <li data-i18n="section2-item2">
+                                    <strong>Reading Progress:</strong> Your
+                                    reading history, bookmarks, and learning
+                                    progress are stored locally on your device.
+                                </li>
+                                <li data-i18n="section2-item3">
+                                    <strong>Device Information:</strong> We may
+                                    collect basic device information (device
+                                    type, OS version) for app optimization and
+                                    bug fixes.
+                                </li>
+                                <li data-i18n="section2-item4">
+                                    <strong>Analytics:</strong> Anonymous usage
+                                    statistics to improve app performance and
+                                    user experience.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- How We Use Your Information -->
+                    <div>
+                        <h2
+                            class="text-2xl font-bold text-gray-900 mb-4"
+                            data-i18n="section3-title"
+                        >
+                            3. How We Use Your Information
+                        </h2>
+                        <div class="space-y-4 text-gray-600">
+                            <p data-i18n="section3-intro">
+                                We use the collected information to:
+                            </p>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li data-i18n="section3-item1">
+                                    Provide and improve our services
+                                </li>
+                                <li data-i18n="section3-item2">
+                                    Personalize your reading experience
+                                </li>
+                                <li data-i18n="section3-item3">
+                                    Analyze app performance and fix bugs
+                                </li>
+                                <li data-i18n="section3-item4">
+                                    Develop new features based on user behavior
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Data Storage and Security -->
+                    <div>
+                        <h2
+                            class="text-2xl font-bold text-gray-900 mb-4"
+                            data-i18n="section4-title"
+                        >
+                            4. Data Storage and Security
+                        </h2>
+                        <p
+                            class="text-gray-600 leading-relaxed"
+                            data-i18n="section4-content"
+                        >
+                            All your books and reading data are stored locally
+                            on your device. We implement industry-standard
+                            security measures to protect your information. We do
+                            not sell, trade, or transfer your personal data to
+                            third parties.
+                        </p>
+                    </div>
+
+                    <!-- Third-Party Services -->
+                    <div>
+                        <h2
+                            class="text-2xl font-bold text-gray-900 mb-4"
+                            data-i18n="section5-title"
+                        >
+                            5. Third-Party Services
+                        </h2>
+                        <p
+                            class="text-gray-600 leading-relaxed"
+                            data-i18n="section5-content"
+                        >
+                            LeafTok may use third-party services for analytics
+                            and crash reporting. These services have their own
+                            privacy policies and we encourage you to review
+                            them. We only share anonymous, aggregated data with
+                            these services.
+                        </p>
+                    </div>
+
+                    <!-- Your Rights -->
+                    <div>
+                        <h2
+                            class="text-2xl font-bold text-gray-900 mb-4"
+                            data-i18n="section6-title"
+                        >
+                            6. Your Rights
+                        </h2>
+                        <div class="space-y-4 text-gray-600">
+                            <p data-i18n="section6-intro">You have the right to:</p>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li data-i18n="section6-item1">
+                                    Access your personal data
+                                </li>
+                                <li data-i18n="section6-item2">
+                                    Delete your data at any time
+                                </li>
+                                <li data-i18n="section6-item3">
+                                    Opt-out of analytics tracking
+                                </li>
+                                <li data-i18n="section6-item4">
+                                    Request data portability
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Children's Privacy -->
+                    <div>
+                        <h2
+                            class="text-2xl font-bold text-gray-900 mb-4"
+                            data-i18n="section7-title"
+                        >
+                            7. Children's Privacy
+                        </h2>
+                        <p
+                            class="text-gray-600 leading-relaxed"
+                            data-i18n="section7-content"
+                        >
+                            LeafTok is designed for users aged 13 and above. We
+                            do not knowingly collect personal information from
+                            children under 13. If you believe we have collected
+                            such information, please contact us immediately.
+                        </p>
+                    </div>
+
+                    <!-- Changes to This Policy -->
+                    <div>
+                        <h2
+                            class="text-2xl font-bold text-gray-900 mb-4"
+                            data-i18n="section8-title"
+                        >
+                            8. Changes to This Policy
+                        </h2>
+                        <p
+                            class="text-gray-600 leading-relaxed"
+                            data-i18n="section8-content"
+                        >
+                            We may update this privacy policy from time to time.
+                            We will notify you of any changes by posting the new
+                            privacy policy on this page and updating the "Last
+                            Updated" date.
+                        </p>
+                    </div>
+
+                    <!-- Contact Us -->
+                    <div>
+                        <h2
+                            class="text-2xl font-bold text-gray-900 mb-4"
+                            data-i18n="section9-title"
+                        >
+                            9. Contact Us
+                        </h2>
+                        <p
+                            class="text-gray-600 leading-relaxed"
+                            data-i18n="section9-content"
+                        >
+                            If you have any questions about this Privacy Policy,
+                            please contact us at:
+                        </p>
+                        <p class="text-primary-600 font-medium mt-2">
+                            contact@leaftok.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-dark-900 text-white py-16">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <div
+                    class="flex flex-col md:flex-row items-center justify-between"
+                >
+                    <div class="flex items-center space-x-4 mb-6 md:mb-0">
+                        <img
+                            src="assets/logo.png"
+                            alt="LeafTok Logo"
+                            class="w-10 h-10 rounded-xl"
+                        />
+                        <span class="text-2xl font-bold">LeafTok</span>
+                    </div>
+                    <div class="text-gray-400" data-i18n="footer-copyright">
+                        © 2025 LeafTok by Iago Cavalcante. All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- i18n and Language Switcher Script -->
+        <script>
+            // Language translations
+            const translations = {
+                en: {
+                    "page-title": "Privacy Policy - LeafTok",
+                    "nav-home": "Home",
+                    "privacy-title": "Privacy Policy",
+                    "privacy-updated": "Last Updated: January 2025",
+                    "section1-title": "1. Introduction",
+                    "section1-content":
+                        "Welcome to LeafTok. We respect your privacy and are committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you use our mobile application.",
+                    "section2-title": "2. Information We Collect",
+                    "section2-intro":
+                        "We collect the following types of information:",
+                    "section2-item1":
+                        "Books and Content: The books you upload (PDFs, EPUBs) are stored locally on your device and are not transmitted to our servers unless you explicitly choose to sync them.",
+                    "section2-item2":
+                        "Reading Progress: Your reading history, bookmarks, and learning progress are stored locally on your device.",
+                    "section2-item3":
+                        "Device Information: We may collect basic device information (device type, OS version) for app optimization and bug fixes.",
+                    "section2-item4":
+                        "Analytics: Anonymous usage statistics to improve app performance and user experience.",
+                    "section3-title": "3. How We Use Your Information",
+                    "section3-intro": "We use the collected information to:",
+                    "section3-item1": "Provide and improve our services",
+                    "section3-item2": "Personalize your reading experience",
+                    "section3-item3": "Analyze app performance and fix bugs",
+                    "section3-item4":
+                        "Develop new features based on user behavior",
+                    "section4-title": "4. Data Storage and Security",
+                    "section4-content":
+                        "All your books and reading data are stored locally on your device. We implement industry-standard security measures to protect your information. We do not sell, trade, or transfer your personal data to third parties.",
+                    "section5-title": "5. Third-Party Services",
+                    "section5-content":
+                        "LeafTok may use third-party services for analytics and crash reporting. These services have their own privacy policies and we encourage you to review them. We only share anonymous, aggregated data with these services.",
+                    "section6-title": "6. Your Rights",
+                    "section6-intro": "You have the right to:",
+                    "section6-item1": "Access your personal data",
+                    "section6-item2": "Delete your data at any time",
+                    "section6-item3": "Opt-out of analytics tracking",
+                    "section6-item4": "Request data portability",
+                    "section7-title": "7. Children's Privacy",
+                    "section7-content":
+                        "LeafTok is designed for users aged 13 and above. We do not knowingly collect personal information from children under 13. If you believe we have collected such information, please contact us immediately.",
+                    "section8-title": "8. Changes to This Policy",
+                    "section8-content":
+                        "We may update this privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page and updating the 'Last Updated' date.",
+                    "section9-title": "9. Contact Us",
+                    "section9-content":
+                        "If you have any questions about this Privacy Policy, please contact us at:",
+                    "footer-copyright":
+                        "© 2025 LeafTok by Iago Cavalcante. All rights reserved.",
+                },
+                pt: {
+                    "page-title": "Política de Privacidade - LeafTok",
+                    "nav-home": "Início",
+                    "privacy-title": "Política de Privacidade",
+                    "privacy-updated": "Última Atualização: Janeiro de 2025",
+                    "section1-title": "1. Introdução",
+                    "section1-content":
+                        "Bem-vindo ao LeafTok. Respeitamos sua privacidade e estamos comprometidos em proteger seus dados pessoais. Esta política de privacidade explica como coletamos, usamos e protegemos suas informações quando você usa nosso aplicativo móvel.",
+                    "section2-title": "2. Informações que Coletamos",
+                    "section2-intro":
+                        "Coletamos os seguintes tipos de informações:",
+                    "section2-item1":
+                        "Livros e Conteúdo: Os livros que você carrega (PDFs, EPUBs) são armazenados localmente em seu dispositivo e não são transmitidos para nossos servidores, a menos que você escolha explicitamente sincronizá-los.",
+                    "section2-item2":
+                        "Progresso de Leitura: Seu histórico de leitura, marcadores e progresso de aprendizado são armazenados localmente em seu dispositivo.",
+                    "section2-item3":
+                        "Informações do Dispositivo: Podemos coletar informações básicas do dispositivo (tipo de dispositivo, versão do SO) para otimização do aplicativo e correção de bugs.",
+                    "section2-item4":
+                        "Análise: Estatísticas de uso anônimas para melhorar o desempenho e a experiência do usuário.",
+                    "section3-title": "3. Como Usamos Suas Informações",
+                    "section3-intro":
+                        "Usamos as informações coletadas para:",
+                    "section3-item1": "Fornecer e melhorar nossos serviços",
+                    "section3-item2": "Personalizar sua experiência de leitura",
+                    "section3-item3":
+                        "Analisar o desempenho do aplicativo e corrigir bugs",
+                    "section3-item4":
+                        "Desenvolver novos recursos baseados no comportamento do usuário",
+                    "section4-title": "4. Armazenamento e Segurança de Dados",
+                    "section4-content":
+                        "Todos os seus livros e dados de leitura são armazenados localmente em seu dispositivo. Implementamos medidas de segurança padrão da indústria para proteger suas informações. Não vendemos, trocamos ou transferimos seus dados pessoais para terceiros.",
+                    "section5-title": "5. Serviços de Terceiros",
+                    "section5-content":
+                        "O LeafTok pode usar serviços de terceiros para análise e relatórios de falhas. Esses serviços têm suas próprias políticas de privacidade e encorajamos você a revisá-las. Compartilhamos apenas dados anônimos e agregados com esses serviços.",
+                    "section6-title": "6. Seus Direitos",
+                    "section6-intro": "Você tem o direito de:",
+                    "section6-item1": "Acessar seus dados pessoais",
+                    "section6-item2": "Excluir seus dados a qualquer momento",
+                    "section6-item3":
+                        "Desativar o rastreamento de análise",
+                    "section6-item4": "Solicitar portabilidade de dados",
+                    "section7-title": "7. Privacidade de Crianças",
+                    "section7-content":
+                        "O LeafTok é projetado para usuários com 13 anos ou mais. Não coletamos intencionalmente informações pessoais de crianças menores de 13 anos. Se você acredita que coletamos tais informações, entre em contato conosco imediatamente.",
+                    "section8-title": "8. Alterações nesta Política",
+                    "section8-content":
+                        "Podemos atualizar esta política de privacidade de tempos em tempos. Notificaremos você sobre quaisquer alterações publicando a nova política de privacidade nesta página e atualizando a data de 'Última Atualização'.",
+                    "section9-title": "9. Entre em Contato",
+                    "section9-content":
+                        "Se você tiver alguma dúvida sobre esta Política de Privacidade, entre em contato conosco em:",
+                    "footer-copyright":
+                        "© 2025 LeafTok por Iago Cavalcante. Todos os direitos reservados.",
+                },
+            };
+
+            // Current language
+            let currentLang = localStorage.getItem("leaftok-lang") || "pt";
+
+            // Change language function
+            function changeLanguage(lang) {
+                currentLang = lang;
+                localStorage.setItem("leaftok-lang", lang);
+                updateLanguage();
+                updateLanguageButtons();
+            }
+
+            // Update all text content
+            function updateLanguage() {
+                const elements = document.querySelectorAll("[data-i18n]");
+                elements.forEach((element) => {
+                    const key = element.getAttribute("data-i18n");
+                    if (
+                        translations[currentLang] &&
+                        translations[currentLang][key]
+                    ) {
+                        element.textContent = translations[currentLang][key];
+                    }
+                });
+
+                // Update page title
+                document.title = translations[currentLang]["page-title"];
+            }
+
+            // Update language button styles
+            function updateLanguageButtons() {
+                const buttons = document.querySelectorAll(".language-btn");
+                buttons.forEach((btn) => {
+                    const btnLang = btn.getAttribute("data-lang");
+                    if (btnLang === currentLang) {
+                        btn.classList.add("bg-primary-500", "text-white");
+                        btn.classList.remove(
+                            "text-gray-600",
+                            "hover:bg-gray-100",
+                        );
+                    } else {
+                        btn.classList.remove("bg-primary-500", "text-white");
+                        btn.classList.add("text-gray-600", "hover:bg-gray-100");
+                    }
+                });
+            }
+
+            // Initialize language on page load
+            document.addEventListener("DOMContentLoaded", function () {
+                updateLanguage();
+                updateLanguageButtons();
+            });
+        </script>
+    </body>
+</html>
