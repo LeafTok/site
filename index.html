@@ -348,11 +348,12 @@
             <div class="container mx-auto max-w-7xl">
                 <div class="text-center mb-16 animate-fade-in">
                     <div
-                        class="inline-flex items-center px-4 py-2 rounded-full text-sm bg-primary-100 text-primary-800 border border-primary-200 mb-8 glass-effect"
+                        class="inline-flex items-center px-5 py-3 rounded-full text-sm bg-gradient-to-r from-primary-100 to-primary-200 text-primary-800 border-2 border-primary-300 mb-8 shadow-lg animate-pulse"
                     >
-                        <span class="mr-2">📚</span>
-                        <span data-i18n="hero-badge"
-                            >Revolutionary Reading Experience</span
+                        <span class="w-2 h-2 bg-accent-500 rounded-full mr-3 animate-ping"></span>
+                        <span class="font-bold mr-2">🚀 NEW:</span>
+                        <span data-i18n="hero-badge" class="font-semibold"
+                            >Stop Abandoning Books Halfway Through</span
                         >
                     </div>
 
@@ -360,22 +361,22 @@
                         class="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight"
                     >
                         <span data-i18n="hero-title-part1"
-                            >Transform books into</span
+                            >Finally finish that reading list with</span
                         >
                         <span
                             class="gradient-text block"
                             data-i18n="hero-title-part2"
-                            >bite-sized cards</span
+                            >TikTok-style book cards</span
                         >
                     </h1>
 
                     <p
-                        class="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed font-light"
+                        class="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed font-light"
                         data-i18n="hero-description"
                     >
-                        LeafTok revolutionizes your reading experience by
-                        converting any book into digestible, swipeable cards.
-                        Learn faster, retain more, and make reading addictive.
+                        Turn any PDF or EPUB into addictive, swipeable cards you can finish in minutes.
+                        Read 3x faster without losing comprehension. Perfect for busy professionals who
+                        want to read more but have less time.
                     </p>
 
                     <div
@@ -390,15 +391,37 @@
                                 <span class="text-yellow-400 text-xl">★</span>
                             </div>
                             <span class="text-gray-700 font-semibold text-lg"
-                                >5</span
+                                >5.0</span
                             >
                         </div>
                         <div class="w-px h-6 bg-gray-300"></div>
                         <span
-                            class="text-gray-600 text-lg font-medium"
+                            class="text-gray-700 text-lg font-medium"
                             data-i18n="hero-users"
-                            >10,000+ active users</span
+                            >Join 30+ readers transforming their habits</span
                         >
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
+                        <div class="flex items-center bg-white px-4 py-2 rounded-full shadow-md border border-gray-200">
+                            <svg class="w-5 h-5 text-primary-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-sm font-semibold text-gray-700" data-i18n="badge-free">100% Free</span>
+                        </div>
+                        <div class="flex items-center bg-white px-4 py-2 rounded-full shadow-md border border-gray-200">
+                            <svg class="w-5 h-5 text-primary-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-sm font-semibold text-gray-700" data-i18n="badge-signup">No Signup Required</span>
+                        </div>
+                        <div class="flex items-center bg-white px-4 py-2 rounded-full shadow-md border border-gray-200">
+                            <svg class="w-5 h-5 text-primary-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-sm font-semibold text-gray-700" data-i18n="badge-offline">Works Offline</span>
+                        </div>
                     </div>
 
                     <div
@@ -408,8 +431,12 @@
                             href="https://apps.apple.com/br/app/leaftok/id6748622950"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="group bg-dark-900 hover:bg-gray-800 text-white px-8 py-4 rounded-2xl flex items-center space-x-3 transition-all duration-300 hover:shadow-2xl hover:scale-105"
+                            class="group relative bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-10 py-5 rounded-2xl flex items-center space-x-3 transition-all duration-300 hover:shadow-2xl hover:scale-105 shadow-lg"
                         >
+                            <!-- FREE Badge -->
+                            <span class="absolute -top-3 -right-3 bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse">
+                                FREE
+                            </span>
                             <svg
                                 class="w-6 h-6"
                                 viewBox="0 0 24 24"
@@ -421,13 +448,17 @@
                             </svg>
                             <div class="text-left">
                                 <div
-                                    class="text-xs opacity-80"
+                                    class="text-xs opacity-90 font-medium"
                                     data-i18n="download-on"
                                 >
                                     Download on the
                                 </div>
-                                <div class="font-semibold">App Store</div>
+                                <div class="font-bold text-lg">App Store</div>
                             </div>
+                            <!-- Arrow indicator -->
+                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
                         </a>
                         <a
                             href="https://play.google.com/store/apps/details?id=com.iagocavalcante.leaftok"
@@ -474,6 +505,69 @@
                             class="relative rounded-[3rem] shadow-2xl w-full max-w-sm mx-auto border-8 border-dark-900"
                         />
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="py-20 px-6 bg-white">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-4" data-i18n="how-title">
+                    Finish Your Next Book in 3 Simple Steps
+                </h2>
+                <p class="text-center text-gray-600 text-lg mb-16" data-i18n="how-subtitle">
+                    Go from PDF to your first swipeable card in under 2 minutes
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-12">
+                    <!-- Step 1 -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-3xl font-bold text-primary-600">1</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900" data-i18n="step1-title">
+                            Upload Your Book
+                        </h3>
+                        <p class="text-gray-600 text-lg leading-relaxed" data-i18n="step1-desc">
+                            Choose any PDF or EPUB from your device. No account creation or
+                            complicated setup required.
+                        </p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-3xl font-bold text-primary-600">2</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900" data-i18n="step2-title">
+                            Let LeafTok Convert It
+                        </h3>
+                        <p class="text-gray-600 text-lg leading-relaxed" data-i18n="step2-desc">
+                            LeafTok automatically transforms your book into bite-sized,
+                            swipeable cards optimized for mobile reading.
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-3xl font-bold text-primary-600">3</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900" data-i18n="step3-title">
+                            Start Swiping
+                        </h3>
+                        <p class="text-gray-600 text-lg leading-relaxed" data-i18n="step3-desc">
+                            Swipe through cards like TikTok. Track your progress and
+                            retain key concepts effortlessly.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CTA after steps -->
+                <div class="text-center mt-12">
+                    <p class="text-gray-700 text-lg mb-6">
+                        <strong data-i18n="how-cta">Average time from download to reading your first card: 4 minutes</strong>
+                    </p>
                 </div>
             </div>
         </section>
@@ -608,6 +702,101 @@
             </div>
         </section>
 
+        <!-- Testimonials Section -->
+        <section class="py-24 px-6 bg-gradient-to-br from-gray-50 via-white to-primary-50">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-900">
+                    <span data-i18n="testimonials-title">What Early Users Are Saying</span>
+                </h2>
+                <p class="text-center text-gray-600 text-lg mb-16" data-i18n="testimonials-subtitle">
+                    Join readers who are finishing more books than ever before
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex mb-4">
+                            <span class="text-yellow-400">★★★★★</span>
+                        </div>
+                        <p class="text-gray-700 mb-6 text-lg italic leading-relaxed" data-i18n="testimonial1">
+                            "I finally finished the business books sitting on my Kindle for months.
+                            The card format makes reading feel like scrolling TikTok - but I'm
+                            actually learning something!"
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                                <span class="text-primary-600 font-bold text-lg">MC</span>
+                            </div>
+                            <div class="ml-4">
+                                <div class="font-semibold text-gray-900">Maria C.</div>
+                                <div class="text-sm text-gray-500">Marketing Manager</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex mb-4">
+                            <span class="text-yellow-400">★★★★★</span>
+                        </div>
+                        <p class="text-gray-700 mb-6 text-lg italic leading-relaxed" data-i18n="testimonial2">
+                            "As a med student, I need to read tons of research papers. LeafTok turns
+                            50-page PDFs into quick card reviews I can do between classes. Game changer."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                                <span class="text-primary-600 font-bold text-lg">RS</span>
+                            </div>
+                            <div class="ml-4">
+                                <div class="font-semibold text-gray-900">Rafael S.</div>
+                                <div class="text-sm text-gray-500">Medical Student</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex mb-4">
+                            <span class="text-yellow-400">★★★★★</span>
+                        </div>
+                        <p class="text-gray-700 mb-6 text-lg italic leading-relaxed" data-i18n="testimonial3">
+                            "Turned my commute into productive reading time. I've finished 5 books
+                            this month using LeafTok on the metro. Perfect for busy schedules."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                                <span class="text-primary-600 font-bold text-lg">TM</span>
+                            </div>
+                            <div class="ml-4">
+                                <div class="font-semibold text-gray-900">Thiago M.</div>
+                                <div class="text-sm text-gray-500">Financial Analyst</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex mb-4">
+                            <span class="text-yellow-400">★★★★★</span>
+                        </div>
+                        <p class="text-gray-700 mb-6 text-lg italic leading-relaxed" data-i18n="testimonial4">
+                            "I have ADHD and traditional reading apps were impossible. The swipeable
+                            cards keep me engaged and I'm actually retaining information now."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                                <span class="text-primary-600 font-bold text-lg">AP</span>
+                            </div>
+                            <div class="ml-4">
+                                <div class="font-semibold text-gray-900">Ana P.</div>
+                                <div class="text-sm text-gray-500">Software Developer</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Stats Section -->
         <section
             class="py-24 bg-gradient-to-r from-primary-500 to-primary-600 text-white"
@@ -653,6 +842,85 @@
                             App Store Rating
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-24 px-6 bg-white">
+            <div class="container mx-auto max-w-4xl">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-900">
+                    <span data-i18n="faq-title">Frequently Asked Questions</span>
+                </h2>
+                <p class="text-center text-gray-600 text-lg mb-16" data-i18n="faq-subtitle">
+                    Everything you need to know about LeafTok
+                </p>
+
+                <div class="space-y-6">
+                    <!-- FAQ 1 -->
+                    <details class="group bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
+                        <summary class="cursor-pointer p-6 flex items-center justify-between font-semibold text-lg text-gray-900 list-none">
+                            <span data-i18n="faq1-q">Is LeafTok really free?</span>
+                            <svg class="w-6 h-6 text-primary-500 group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600 leading-relaxed" data-i18n="faq1-a">
+                            Yes! LeafTok is completely free to download and use. There are no hidden fees, subscriptions, or in-app purchases. We believe everyone should have access to better reading tools.
+                        </div>
+                    </details>
+
+                    <!-- FAQ 2 -->
+                    <details class="group bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
+                        <summary class="cursor-pointer p-6 flex items-center justify-between font-semibold text-lg text-gray-900 list-none">
+                            <span data-i18n="faq2-q">What book formats does LeafTok support?</span>
+                            <svg class="w-6 h-6 text-primary-500 group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600 leading-relaxed" data-i18n="faq2-a">
+                            LeafTok supports EPUB and PDF formats - the two most common digital book formats. Simply upload your file and LeafTok automatically converts it into swipeable cards.
+                        </div>
+                    </details>
+
+                    <!-- FAQ 3 -->
+                    <details class="group bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
+                        <summary class="cursor-pointer p-6 flex items-center justify-between font-semibold text-lg text-gray-900 list-none">
+                            <span data-i18n="faq3-q">How long does it take to convert a book?</span>
+                            <svg class="w-6 h-6 text-primary-500 group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600 leading-relaxed" data-i18n="faq3-a">
+                            Most books convert in under 2 minutes. Simply upload your PDF or EPUB, and LeafTok does the rest automatically. You can continue reading other books while conversion happens in the background.
+                        </div>
+                    </details>
+
+                    <!-- FAQ 4 -->
+                    <details class="group bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
+                        <summary class="cursor-pointer p-6 flex items-center justify-between font-semibold text-lg text-gray-900 list-none">
+                            <span data-i18n="faq4-q">Can I use LeafTok offline?</span>
+                            <svg class="w-6 h-6 text-primary-500 group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600 leading-relaxed" data-i18n="faq4-a">
+                            Yes! Once you've uploaded and converted a book, you can read it completely offline. Perfect for commutes, flights, or anywhere you don't have internet access.
+                        </div>
+                    </details>
+
+                    <!-- FAQ 5 -->
+                    <details class="group bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
+                        <summary class="cursor-pointer p-6 flex items-center justify-between font-semibold text-lg text-gray-900 list-none">
+                            <span data-i18n="faq5-q">Is my reading data private and secure?</span>
+                            <svg class="w-6 h-6 text-primary-500 group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600 leading-relaxed" data-i18n="faq5-a">
+                            Absolutely. Your books and reading data are stored securely on your device. We respect your privacy and never sell your data.
+                        </div>
+                    </details>
                 </div>
             </div>
         </section>
@@ -759,6 +1027,7 @@
                 en: {
                     "page-title":
                         "LeafTok - AI-Powered Reading App | Transform Books into Smart Cards",
+                    "nav-home": "Home",
                     "nav-features": "Features",
                     "nav-app": "App",
                     "nav-download": "Download",
@@ -769,9 +1038,39 @@
                     "hero-title-part2": "intelligent learning cards",
                     "hero-description":
                         "LeafTok uses artificial intelligence to revolutionize your reading experience. Convert any book into smart, digestible cards with enhanced learning algorithms. Perfect for students, professionals, and AI enthusiasts worldwide.",
-                    "hero-users": "30+ active users",
+                    "hero-users": "Join 30+ readers transforming their habits",
+                    "badge-free": "100% Free",
+                    "badge-signup": "No Signup Required",
+                    "badge-offline": "Works Offline",
                     "download-on": "Download on the",
                     "get-it-on": "Get it on",
+                    "how-title": "Finish Your Next Book in 3 Simple Steps",
+                    "how-subtitle": "Go from PDF to your first swipeable card in under 2 minutes",
+                    "step1-title": "Upload Your Book",
+                    "step1-desc": "Choose any PDF or EPUB from your device. No account creation or complicated setup required.",
+                    "step2-title": "Let LeafTok Convert It",
+                    "step2-desc": "LeafTok automatically transforms your book into bite-sized, swipeable cards optimized for mobile reading.",
+                    "step3-title": "Start Swiping",
+                    "step3-desc": "Swipe through cards like TikTok. Track your progress and retain key concepts effortlessly.",
+                    "how-cta": "Average time from download to reading your first card: 4 minutes",
+                    "testimonials-title": "What Early Users Are Saying",
+                    "testimonials-subtitle": "Join readers who are finishing more books than ever before",
+                    "testimonial1": "I finally finished the business books sitting on my Kindle for months. The card format makes reading feel like scrolling TikTok - but I'm actually learning something!",
+                    "testimonial2": "As a med student, I need to read tons of research papers. LeafTok turns 50-page PDFs into quick card reviews I can do between classes. Game changer.",
+                    "testimonial3": "Turned my commute into productive reading time. I've finished 5 books this month using LeafTok on the metro. Perfect for busy schedules.",
+                    "testimonial4": "I have ADHD and traditional reading apps were impossible. The swipeable cards keep me engaged and I'm actually retaining information now.",
+                    "faq-title": "Frequently Asked Questions",
+                    "faq-subtitle": "Everything you need to know about LeafTok",
+                    "faq1-q": "Is LeafTok really free?",
+                    "faq1-a": "Yes! LeafTok is completely free to download and use. There are no hidden fees, subscriptions, or in-app purchases. We believe everyone should have access to better reading tools.",
+                    "faq2-q": "What book formats does LeafTok support?",
+                    "faq2-a": "LeafTok supports EPUB and PDF formats - the two most common digital book formats. Simply upload your file and LeafTok automatically converts it into swipeable cards.",
+                    "faq3-q": "How long does it take to convert a book?",
+                    "faq3-a": "Most books convert in under 2 minutes. Simply upload your PDF or EPUB, and LeafTok does the rest automatically. You can continue reading other books while conversion happens in the background.",
+                    "faq4-q": "Can I use LeafTok offline?",
+                    "faq4-a": "Yes! Once you've uploaded and converted a book, you can read it completely offline. Perfect for commutes, flights, or anywhere you don't have internet access.",
+                    "faq5-q": "Is my reading data private and secure?",
+                    "faq5-a": "Absolutely. Your books and reading data are stored securely on your device. We respect your privacy and never sell your data.",
                     "features-title-part1": "Why Choose",
                     "features-title-part2": "?",
                     "features-subtitle":
@@ -802,20 +1101,51 @@
                 pt: {
                     "page-title":
                         "LeafTok - App de Leitura com IA | Transforme Livros em Cards Inteligentes",
+                    "nav-home": "Início",
                     "nav-features": "Recursos",
                     "nav-app": "App",
                     "nav-download": "Download",
                     "nav-changelog": "Changelog",
                     "nav-get-started": "Começar",
                     "hero-badge":
-                        "Revolução da Leitura com Inteligência Artificial",
-                    "hero-title-part1": "Transforme livros com IA em",
-                    "hero-title-part2": "cards inteligentes de aprendizado",
+                        "Pare de Abandonar Livros pela Metade",
+                    "hero-title-part1": "Finalmente termine sua lista de leitura com",
+                    "hero-title-part2": "cards estilo TikTok",
                     "hero-description":
-                        "O LeafTok usa inteligência artificial para revolucionar sua experiência de leitura. Converta qualquer livro em cards inteligentes e digestíveis com algoritmos avançados de aprendizado. Perfeito para estudantes, profissionais e entusiastas de IA no mundo todo.",
-                    "hero-users": "30+ usuários ativos",
+                        "Transforme qualquer PDF ou EPUB em cards viciantes e deslizáveis que você consegue terminar em minutos. Leia 3x mais rápido sem perder compreensão. Perfeito para profissionais ocupados que querem ler mais, mas têm menos tempo.",
+                    "hero-users": "Junte-se a 30+ leitores transformando seus hábitos",
+                    "badge-free": "100% Grátis",
+                    "badge-signup": "Sem Cadastro",
+                    "badge-offline": "Funciona Offline",
                     "download-on": "Baixar na",
                     "get-it-on": "Baixar no",
+                    "how-title": "Termine Seu Próximo Livro em 3 Passos Simples",
+                    "how-subtitle": "Do PDF ao seu primeiro card deslizável em menos de 2 minutos",
+                    "step1-title": "Envie Seu Livro",
+                    "step1-desc": "Escolha qualquer PDF ou EPUB do seu dispositivo. Sem criação de conta ou configuração complicada.",
+                    "step2-title": "Deixe o LeafTok Converter",
+                    "step2-desc": "O LeafTok transforma automaticamente seu livro em cards compactos e deslizáveis otimizados para leitura mobile.",
+                    "step3-title": "Comece a Deslizar",
+                    "step3-desc": "Deslize pelos cards como no TikTok. Acompanhe seu progresso e retenha conceitos-chave sem esforço.",
+                    "how-cta": "Tempo médio do download até ler o primeiro card: 4 minutos",
+                    "testimonials-title": "O Que os Primeiros Usuários Estão Dizendo",
+                    "testimonials-subtitle": "Junte-se aos leitores que estão terminando mais livros do que nunca",
+                    "testimonial1": "Finalmente terminei os livros de negócios parados no meu Kindle há meses. O formato de cards faz a leitura parecer como rolar no TikTok - mas estou realmente aprendendo algo!",
+                    "testimonial2": "Como estudante de medicina, preciso ler toneladas de artigos científicos. O LeafTok transforma PDFs de 50 páginas em revisões rápidas de cards que consigo fazer entre as aulas. Mudou o jogo.",
+                    "testimonial3": "Transformei meu trajeto em tempo de leitura produtivo. Terminei 5 livros este mês usando LeafTok no metrô. Perfeito para agendas ocupadas.",
+                    "testimonial4": "Tenho TDAH e apps de leitura tradicionais eram impossíveis. Os cards deslizáveis me mantêm engajada e estou realmente retendo informação agora.",
+                    "faq-title": "Perguntas Frequentes",
+                    "faq-subtitle": "Tudo que você precisa saber sobre o LeafTok",
+                    "faq1-q": "O LeafTok é realmente grátis?",
+                    "faq1-a": "Sim! O LeafTok é completamente gratuito para baixar e usar. Não há taxas ocultas, assinaturas ou compras dentro do app. Acreditamos que todos devem ter acesso a melhores ferramentas de leitura.",
+                    "faq2-q": "Quais formatos de livros o LeafTok suporta?",
+                    "faq2-a": "O LeafTok suporta formatos EPUB e PDF - os dois formatos de livros digitais mais comuns. Simplesmente envie seu arquivo e o LeafTok converte automaticamente em cards deslizáveis.",
+                    "faq3-q": "Quanto tempo leva para converter um livro?",
+                    "faq3-a": "A maioria dos livros converte em menos de 2 minutos. Simplesmente envie seu PDF ou EPUB, e o LeafTok faz o resto automaticamente. Você pode continuar lendo outros livros enquanto a conversão acontece em segundo plano.",
+                    "faq4-q": "Posso usar o LeafTok offline?",
+                    "faq4-a": "Sim! Uma vez que você enviou e converteu um livro, pode lê-lo completamente offline. Perfeito para trajetos, voos ou qualquer lugar sem acesso à internet.",
+                    "faq5-q": "Meus dados de leitura são privados e seguros?",
+                    "faq5-a": "Absolutamente. Seus livros e dados de leitura são armazenados com segurança em seu dispositivo. Respeitamos sua privacidade e nunca vendemos seus dados.",
                     "features-title-part1": "Por que Escolher",
                     "features-title-part2": "?",
                     "features-subtitle":

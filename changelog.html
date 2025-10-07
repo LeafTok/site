@@ -115,7 +115,7 @@
                     </div>
                     <div class="hidden md:flex items-center space-x-8">
                         <a href="index.html" class="text-gray-700 hover:text-primary-500 transition-colors font-medium" data-i18n="nav-home">Home</a>
-                        <a href="changelog.html" class="text-primary-500 font-semibold">Changelog</a>
+                        <a href="changelog.html" class="text-primary-500 font-semibold" data-i18n="nav-changelog">Changelog</a>
                         <div class="flex items-center space-x-2 ml-4">
                             <button onclick="changeLanguage('en')" class="language-btn px-3 py-1 rounded-lg text-sm font-medium transition-colors" data-lang="en">EN</button>
                             <button onclick="changeLanguage('pt')" class="language-btn px-3 py-1 rounded-lg text-sm font-medium transition-colors" data-lang="pt">PT</button>
@@ -146,56 +146,63 @@
         <section class="pb-24 px-6">
             <div class="container mx-auto max-w-4xl">
                 
-                <!-- Version 1.8.0 -->
+                <!-- Version 1.8.2 -->
                 <div class="version-badge bg-white rounded-2xl shadow-lg hover:shadow-xl p-8 mb-8 border border-gray-100">
                     <div class="flex items-center justify-between mb-6">
                         <div class="flex items-center space-x-4">
-                            <span class="bg-primary-500 text-white px-4 py-2 rounded-full text-lg font-semibold">v1.8.0</span>
-                            <span class="text-gray-500 font-medium" data-i18n="version-1.8.0-date">August 4, 2025</span>
+                            <span class="bg-primary-500 text-white px-4 py-2 rounded-full text-lg font-semibold">v1.8.2</span>
+                            <span class="text-gray-500 font-medium" data-i18n="version-1.8.2-date">January 7, 2025</span>
                         </div>
                         <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium" data-i18n="status-latest">Latest</span>
                     </div>
-                    
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="version-1.8.0-title">Enhanced Reader & UI Consistency</h3>
-                    
+
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="version-1.8.2-title">Enhanced EPUB Navigation</h3>
+
                     <div class="space-y-6">
                         <div>
                             <h4 class="text-lg font-semibold text-primary-600 mb-3" data-i18n="new-features">✨ Added</h4>
                             <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="feature-parser-adapters">Advanced parser adapters for better EPUB/PDF handling</li>
-                                <li data-i18n="feature-enhanced-reader">Enhanced EPUB viewer with improved performance</li>
-                                <li data-i18n="feature-book-cover-cache">Intelligent book cover caching system</li>
-                                <li data-i18n="feature-pan-gesture-scroll">Pan gesture scroll improvements with better responsiveness</li>
+                                <li data-i18n="feature-epub-navigation">EPUB Navigation System with complete table of contents parsing for EPUB 2.0 and 3.x</li>
+                                <li data-i18n="feature-interactive-toc">Interactive TOC Component with beautiful modal and nested navigation</li>
+                                <li data-i18n="feature-landmarks-nav">Landmarks Navigation for quick access to cover, TOC, and body sections</li>
+                                <li data-i18n="feature-page-list">Page List Support for academic and technical content with reference page numbers</li>
+                                <li data-i18n="feature-enhanced-metadata">Enhanced Metadata with full Dublin Core support (contributors, rights, subjects, series)</li>
+                                <li data-i18n="feature-advanced-html">Advanced HTML Processing for tables, figures, footnotes, MathML, SVG, and ruby annotations</li>
+                                <li data-i18n="feature-css-extraction">CSS Extraction to preserve book styling and formatting from EPUB files</li>
+                                <li data-i18n="feature-smart-toc-mapping">Smart TOC Mapping with automatic chapter-to-card mapping using fuzzy search</li>
+                                <li data-i18n="feature-audio-context">Audio Player Context for global audio state management with React Context</li>
                             </ul>
                         </div>
-                        
+
                         <div>
                             <h4 class="text-lg font-semibold text-blue-600 mb-3" data-i18n="changed">🔧 Changed</h4>
                             <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="change-icons-ui">Consistent icon system replacing emojis throughout the app</li>
-                                <li data-i18n="change-audio-controls">Improved audio controls with better functionality</li>
-                                <li data-i18n="change-image-viewer">Enhanced image viewing experience in reader mode</li>
-                                <li data-i18n="change-share-modal">Refactored share citation modal for better usability</li>
+                                <li data-i18n="change-epub-parser">Enhanced EPUB Parser with comprehensive navigation data extraction</li>
+                                <li data-i18n="change-book-details">Improved Book Details with TOC button integration for quick navigation</li>
+                                <li data-i18n="change-reader-experience">Better Reader Experience with previous/current/next chapter detection</li>
+                                <li data-i18n="change-audio-refined">Refined Audio Controls with floating music controls and improved state management</li>
+                                <li data-i18n="change-library-layout">Library Layout Fixes with improved spacing and visual hierarchy</li>
                             </ul>
                         </div>
 
                         <div>
                             <h4 class="text-lg font-semibold text-red-600 mb-3" data-i18n="fixed">🐛 Fixed</h4>
                             <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="fix-epub-parser">EPUB parser stability and content extraction improvements</li>
-                                <li data-i18n="fix-reader-controls">Reader controls now hide properly during reading and show on tap</li>
-                                <li data-i18n="fix-book-covers">Book cover display and caching issues resolved</li>
-                                <li data-i18n="fix-scroll-performance">Enhanced scroll performance with pan move optimizations</li>
+                                <li data-i18n="fix-audio-stability">Audio Player Stability with resolved audio playback issues</li>
+                                <li data-i18n="fix-import-errors">Import Errors with fixed lucide-react-native icon imports</li>
+                                <li data-i18n="fix-layout-bugs">Layout Bugs with fixed spacing issues in library screen</li>
                             </ul>
                         </div>
 
                         <div>
                             <h4 class="text-lg font-semibold text-gray-600 mb-3" data-i18n="technical-improvements">🎯 Technical</h4>
                             <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="tech-parser-architecture">Modular parser architecture with adapter pattern</li>
-                                <li data-i18n="tech-performance-opts">Performance optimizations for reader and UI components</li>
-                                <li data-i18n="tech-cache-management">Improved cache management for book assets</li>
-                                <li data-i18n="tech-gesture-handling">Enhanced gesture handling and touch responsiveness</li>
+                                <li data-i18n="tech-navigation-parser">NavigationParser.ts service for complete EPUB navigation extraction</li>
+                                <li data-i18n="tech-audio-player-context">AudioPlayerContext.tsx for global audio state management</li>
+                                <li data-i18n="tech-toc-component">TableOfContents.tsx component with interactive modal and tabs</li>
+                                <li data-i18n="tech-toc-mapper">Smart TOC-to-card mapping algorithms (tocMapper.ts)</li>
+                                <li data-i18n="tech-css-extractor">CSS style extraction and preservation utilities</li>
+                                <li data-i18n="tech-version-bump">Version bump: 1.8.1 → 1.8.2 (iOS: build 12, Android: version 21)</li>
                             </ul>
                         </div>
                     </div>
@@ -536,30 +543,38 @@
                 en: {
                     "changelog-title": "LeafTok Changelog - Latest Updates & Features",
                     "nav-home": "Home",
+                    "nav-changelog": "Changelog",
                     "changelog-header-part1": "LeafTok",
                     "changelog-header-part2": "Changelog",
                     "changelog-description": "Stay up to date with the latest features, improvements, and fixes in LeafTok",
                     "changelog-badge": "Latest Updates & Features",
-                    
-                    // Version 1.8.0
-                    "version-1.8.0-date": "August 4, 2025",
-                    "version-1.8.0-title": "Enhanced Reader & UI Consistency",
-                    "feature-parser-adapters": "Advanced parser adapters for better EPUB/PDF handling",
-                    "feature-enhanced-reader": "Enhanced EPUB viewer with improved performance",
-                    "feature-book-cover-cache": "Intelligent book cover caching system",
-                    "feature-pan-gesture-scroll": "Pan gesture scroll improvements with better responsiveness",
-                    "change-icons-ui": "Consistent icon system replacing emojis throughout the app",
-                    "change-audio-controls": "Improved audio controls with better functionality",
-                    "change-image-viewer": "Enhanced image viewing experience in reader mode",
-                    "change-share-modal": "Refactored share citation modal for better usability",
-                    "fix-epub-parser": "EPUB parser stability and content extraction improvements",
-                    "fix-reader-controls": "Reader controls now hide properly during reading and show on tap",
-                    "fix-book-covers": "Book cover display and caching issues resolved",
-                    "fix-scroll-performance": "Enhanced scroll performance with pan move optimizations",
-                    "tech-parser-architecture": "Modular parser architecture with adapter pattern",
-                    "tech-performance-opts": "Performance optimizations for reader and UI components",
-                    "tech-cache-management": "Improved cache management for book assets",
-                    "tech-gesture-handling": "Enhanced gesture handling and touch responsiveness",
+
+                    // Version 1.8.2
+                    "version-1.8.2-date": "October 7, 2025",
+                    "version-1.8.2-title": "Enhanced EPUB Navigation",
+                    "feature-epub-navigation": "EPUB Navigation System with complete table of contents parsing for EPUB 2.0 and 3.x",
+                    "feature-interactive-toc": "Interactive TOC Component with beautiful modal and nested navigation",
+                    "feature-landmarks-nav": "Landmarks Navigation for quick access to cover, TOC, and body sections",
+                    "feature-page-list": "Page List Support for academic and technical content with reference page numbers",
+                    "feature-enhanced-metadata": "Enhanced Metadata with full Dublin Core support (contributors, rights, subjects, series)",
+                    "feature-advanced-html": "Advanced HTML Processing for tables, figures, footnotes, MathML, SVG, and ruby annotations",
+                    "feature-css-extraction": "CSS Extraction to preserve book styling and formatting from EPUB files",
+                    "feature-smart-toc-mapping": "Smart TOC Mapping with automatic chapter-to-card mapping using fuzzy search",
+                    "feature-audio-context": "Audio Player Context for global audio state management with React Context",
+                    "change-epub-parser": "Enhanced EPUB Parser with comprehensive navigation data extraction",
+                    "change-book-details": "Improved Book Details with TOC button integration for quick navigation",
+                    "change-reader-experience": "Better Reader Experience with previous/current/next chapter detection",
+                    "change-audio-refined": "Refined Audio Controls with floating music controls and improved state management",
+                    "change-library-layout": "Library Layout Fixes with improved spacing and visual hierarchy",
+                    "fix-audio-stability": "Audio Player Stability with resolved audio playback issues",
+                    "fix-import-errors": "Import Errors with fixed lucide-react-native icon imports",
+                    "fix-layout-bugs": "Layout Bugs with fixed spacing issues in library screen",
+                    "tech-navigation-parser": "NavigationParser.ts service for complete EPUB navigation extraction",
+                    "tech-audio-player-context": "AudioPlayerContext.tsx for global audio state management",
+                    "tech-toc-component": "TableOfContents.tsx component with interactive modal and tabs",
+                    "tech-toc-mapper": "Smart TOC-to-card mapping algorithms (tocMapper.ts)",
+                    "tech-css-extractor": "CSS style extraction and preservation utilities",
+                    "tech-version-bump": "Version bump: 1.8.1 → 1.8.2 (iOS: build 12, Android: version 21)",
                     
                     // Version 1.7.0
                     "version-1.7.0-date": "August 3, 2025",
@@ -687,30 +702,38 @@
                 pt: {
                     "changelog-title": "LeafTok Changelog - Últimas Atualizações e Recursos",
                     "nav-home": "Início",
+                    "nav-changelog": "Changelog",
                     "changelog-header-part1": "LeafTok",
                     "changelog-header-part2": "Changelog",
                     "changelog-description": "Fique por dentro dos últimos recursos, melhorias e correções do LeafTok",
                     "changelog-badge": "Últimas Atualizações e Recursos",
-                    
-                    // Version 1.8.0
-                    "version-1.8.0-date": "4 de Agosto, 2025",
-                    "version-1.8.0-title": "Leitor Aprimorado e Consistência de Interface",
-                    "feature-parser-adapters": "Adaptadores avançados de parser para melhor manipulação de EPUB/PDF",
-                    "feature-enhanced-reader": "Visualizador de EPUB aprimorado com performance melhorada",
-                    "feature-book-cover-cache": "Sistema inteligente de cache de capas de livros",
-                    "feature-pan-gesture-scroll": "Melhorias no scroll por gesto pan com melhor responsividade",
-                    "change-icons-ui": "Sistema de ícones consistente substituindo emojis em todo o aplicativo",
-                    "change-audio-controls": "Controles de áudio melhorados com melhor funcionalidade",
-                    "change-image-viewer": "Experiência aprimorada de visualização de imagens no modo leitor",
-                    "change-share-modal": "Modal de compartilhamento de citação refatorado para melhor usabilidade",
-                    "fix-epub-parser": "Melhorias na estabilidade do parser EPUB e extração de conteúdo",
-                    "fix-reader-controls": "Controles do leitor agora se escondem adequadamente durante a leitura e aparecem ao tocar",
-                    "fix-book-covers": "Problemas de exibição e cache de capas de livros resolvidos",
-                    "fix-scroll-performance": "Performance de scroll aprimorada com otimizações de movimento pan",
-                    "tech-parser-architecture": "Arquitetura modular de parser com padrão adapter",
-                    "tech-performance-opts": "Otimizações de performance para componentes do leitor e interface",
-                    "tech-cache-management": "Gerenciamento de cache melhorado para assets de livros",
-                    "tech-gesture-handling": "Manipulação de gestos aprimorada e responsividade ao toque",
+
+                    // Version 1.8.2
+                    "version-1.8.2-date": "7 de Outubro, 2025",
+                    "version-1.8.2-title": "Navegação EPUB Aprimorada",
+                    "feature-epub-navigation": "Sistema de Navegação EPUB com análise completa do índice para formatos EPUB 2.0 e 3.x",
+                    "feature-interactive-toc": "Componente de Índice Interativo com modal elegante e navegação aninhada",
+                    "feature-landmarks-nav": "Navegação por Marcos para acesso rápido à capa, índice e corpo do livro",
+                    "feature-page-list": "Suporte a Lista de Páginas para conteúdo acadêmico e técnico com números de página de referência",
+                    "feature-enhanced-metadata": "Metadados Aprimorados com suporte completo ao Dublin Core (colaboradores, direitos, assuntos, série)",
+                    "feature-advanced-html": "Processamento HTML Avançado para tabelas, figuras, notas de rodapé, MathML, SVG e anotações ruby",
+                    "feature-css-extraction": "Extração de CSS para preservar o estilo e formatação do livro de arquivos EPUB",
+                    "feature-smart-toc-mapping": "Mapeamento Inteligente de Índice com mapeamento automático de capítulo para card usando busca fuzzy",
+                    "feature-audio-context": "Contexto do Player de Áudio para gerenciamento de estado de áudio global com React Context",
+                    "change-epub-parser": "Parser EPUB Aprimorado com extração completa de dados de navegação",
+                    "change-book-details": "Detalhes do Livro Melhorados com integração do botão de índice para navegação rápida",
+                    "change-reader-experience": "Melhor Experiência de Leitura com detecção de capítulo anterior/atual/próximo",
+                    "change-audio-refined": "Controles de Áudio Refinados com controles flutuantes de música e gerenciamento de estado melhorado",
+                    "change-library-layout": "Correções de Layout da Biblioteca com espaçamento e hierarquia visual melhorados",
+                    "fix-audio-stability": "Estabilidade do Player de Áudio com problemas de reprodução de áudio resolvidos",
+                    "fix-import-errors": "Erros de Importação com importações de ícones lucide-react-native corrigidas",
+                    "fix-layout-bugs": "Bugs de Layout com problemas de espaçamento na tela da biblioteca corrigidos",
+                    "tech-navigation-parser": "Serviço NavigationParser.ts para extração completa de navegação EPUB",
+                    "tech-audio-player-context": "AudioPlayerContext.tsx para gerenciamento de estado de áudio global",
+                    "tech-toc-component": "Componente TableOfContents.tsx com modal interativo e abas",
+                    "tech-toc-mapper": "Algoritmos inteligentes de mapeamento de índice para card (tocMapper.ts)",
+                    "tech-css-extractor": "Utilitários de extração e preservação de estilos CSS",
+                    "tech-version-bump": "Atualização de versão: 1.8.1 → 1.8.2 (iOS: build 12, Android: versão 21)",
                     
                     // Version 1.7.0
                     "version-1.7.0-date": "3 de Agosto, 2025",
