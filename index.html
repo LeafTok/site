@@ -118,13 +118,18 @@
         <link rel="shortcut icon" href="assets/favicon.ico" />
         <meta name="theme-color" content="#2DD29F" />
 
-        <!-- Microsoft Clarity -->
+        <!-- Microsoft Clarity - Deferred -->
         <script type="text/javascript">
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "tmlu6p8leh");
+            // Load Clarity after page load to avoid blocking
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    (function(c,l,a,r,i,t,y){
+                        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                    })(window, document, "clarity", "script", "tmlu6p8leh");
+                }, 2000); // Load after 2 seconds
+            });
         </script>
 
         <!-- Structured Data (JSON-LD) -->
@@ -173,6 +178,10 @@
                 ]
             }
         </script>
+
+        <!-- Preload critical assets -->
+        <link rel="preload" as="image" href="assets/logo.webp" type="image/webp" />
+        <link rel="preload" as="image" href="assets/screenshot.webp" type="image/webp" />
 
         <!-- Preconnect to external domains -->
         <link rel="preconnect" href="https://cdn.tailwindcss.com" />
@@ -322,11 +331,17 @@
             <div class="container mx-auto px-6 py-4">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center space-x-3">
-                        <img
-                            src="assets/logo.png"
-                            alt="LeafTok Logo"
-                            class="w-10 h-10 rounded-xl"
-                        />
+                        <picture>
+                            <source srcset="assets/logo.webp" type="image/webp">
+                            <img
+                                src="assets/logo.png"
+                                alt="LeafTok Logo"
+                                width="40"
+                                height="40"
+                                fetchpriority="high"
+                                class="w-10 h-10 rounded-xl"
+                            />
+                        </picture>
                         <span class="text-2xl font-bold text-gray-900"
                             >LeafTok</span
                         >
@@ -533,11 +548,16 @@
                         <div
                             class="absolute inset-0 bg-gradient-to-r from-primary-400 to-primary-600 rounded-[3rem] blur-3xl opacity-20 scale-105"
                         ></div>
-                        <img
-                            src="assets/screenshot.png"
-                            alt="LeafTok App Screenshot"
-                            class="relative rounded-[3rem] shadow-2xl w-full max-w-sm mx-auto border-8 border-dark-900"
-                        />
+                        <picture>
+                            <source srcset="assets/screenshot.webp" type="image/webp">
+                            <img
+                                src="assets/screenshot.png"
+                                alt="LeafTok App Screenshot"
+                                width="384"
+                                height="768"
+                                class="relative rounded-[3rem] shadow-2xl w-full max-w-sm mx-auto border-8 border-dark-900"
+                            />
+                        </picture>
                     </div>
                 </div>
             </div>
@@ -1031,11 +1051,16 @@
                     class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0"
                 >
                     <div class="flex items-center space-x-4">
-                        <img
-                            src="assets/logo.png"
-                            alt="LeafTok Logo"
-                            class="w-10 h-10 rounded-xl"
-                        />
+                        <picture>
+                            <source srcset="assets/logo.webp" type="image/webp">
+                            <img
+                                src="assets/logo.png"
+                                alt="LeafTok Logo"
+                                width="40"
+                                height="40"
+                                class="w-10 h-10 rounded-xl"
+                            />
+                        </picture>
                         <span class="text-2xl font-bold">LeafTok</span>
                     </div>
                     <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
