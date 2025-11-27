@@ -146,14 +146,69 @@
         <section class="pb-24 px-6">
             <div class="container mx-auto max-w-4xl">
 
+                <!-- Version 1.9.3 -->
+                <div class="version-badge bg-white rounded-2xl shadow-lg hover:shadow-xl p-8 mb-8 border border-gray-100">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center space-x-4">
+                            <span class="bg-primary-500 text-white px-4 py-2 rounded-full text-lg font-semibold">v1.9.3</span>
+                            <span class="text-gray-500 font-medium" data-i18n="version-1.9.3-date">November 26, 2025</span>
+                        </div>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium" data-i18n="status-latest">Latest</span>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="version-1.9.3-title">Reader Customization & Android PDF</h3>
+
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-lg font-semibold text-primary-600 mb-3" data-i18n="new-features">✨ Added</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                                <li data-i18n="feature-font-size-controls">In-Reader Font Size Controls with 4 preset sizes (small, medium, large, extra-large)</li>
+                                <li data-i18n="feature-font-size-modal">Font Size Modal with beautiful interface, live preview and instant application</li>
+                                <li data-i18n="feature-persistent-font">Persistent Font Preferences saved to AsyncStorage and restored on app restart</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-semibold text-blue-600 mb-3" data-i18n="changed">🔧 Changed</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                                <li data-i18n="change-music-default">Music Controls Default - Music button now disabled by default for cleaner reading experience</li>
+                                <li data-i18n="change-onboarding-flow">Onboarding Sample Book Flow - "Read Now" on sample books now completes onboarding before navigating to reader</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-semibold text-red-600 mb-3" data-i18n="fixed">🐛 Fixed</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                                <li data-i18n="fix-android-pdf">Android PDF Extraction - Fixed PDFBox integration for Android using pdfbox-android library</li>
+                                <li data-i18n="fix-jvm-target">JVM Target Compatibility - Fixed Kotlin/Java JVM target mismatch (11 → 17) in native PDF module</li>
+                                <li data-i18n="fix-metainf">META-INF Conflicts - Added packaging exclusions for PDFBox duplicate resources</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-600 mb-3" data-i18n="technical-improvements">🎯 Technical</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                                <li data-i18n="tech-pdfbox-migration">Migrated from org.apache.pdfbox to com.tom-roush:pdfbox-android:2.0.27.0</li>
+                                <li data-i18n="tech-jvm-17">Updated JVM target to 17 for Kotlin and Java compatibility</li>
+                                <li data-i18n="tech-pdfbox-init">Added PDFBoxResourceLoader.init() for Android context initialization</li>
+                                <li data-i18n="tech-font-multiplier">Added fontSizeMultiplier state with persistent storage</li>
+                                <li data-i18n="tech-usecallback">Wrapped renderCardContent in useCallback for proper reactivity</li>
+                                <li data-i18n="tech-extradata">Added extraData prop to FlatList for font size updates</li>
+                                <li data-i18n="tech-version-1.9.3">Version bump: 1.9.2 → 1.9.3 (iOS: build 16, Android: version 25)</li>
+                                <li data-i18n="tech-i18n-font">Added font size translations for English and Portuguese (reader.fontSize.*)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Version 1.9.0 -->
                 <div class="version-badge bg-white rounded-2xl shadow-lg hover:shadow-xl p-8 mb-8 border border-gray-100">
                     <div class="flex items-center justify-between mb-6">
                         <div class="flex items-center space-x-4">
-                            <span class="bg-primary-500 text-white px-4 py-2 rounded-full text-lg font-semibold">v1.9.0</span>
+                            <span class="bg-blue-500 text-white px-4 py-2 rounded-full text-lg font-semibold">v1.9.0</span>
                             <span class="text-gray-500 font-medium" data-i18n="version-1.9.0-date">October 20, 2025</span>
                         </div>
-                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium" data-i18n="status-latest">Latest</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium" data-i18n="status-previous">Previous</span>
                     </div>
 
                     <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="version-1.9.0-title">Offline PDF Excellence</h3>
@@ -621,6 +676,26 @@
                     "changelog-description": "Stay up to date with the latest features, improvements, and fixes in LeafTok",
                     "changelog-badge": "Latest Updates & Features",
 
+                    // Version 1.9.3
+                    "version-1.9.3-date": "November 26, 2025",
+                    "version-1.9.3-title": "Reader Customization & Android PDF",
+                    "feature-font-size-controls": "In-Reader Font Size Controls with 4 preset sizes (small, medium, large, extra-large)",
+                    "feature-font-size-modal": "Font Size Modal with beautiful interface, live preview and instant application",
+                    "feature-persistent-font": "Persistent Font Preferences saved to AsyncStorage and restored on app restart",
+                    "change-music-default": "Music Controls Default - Music button now disabled by default for cleaner reading experience",
+                    "change-onboarding-flow": "Onboarding Sample Book Flow - \"Read Now\" on sample books now completes onboarding before navigating to reader",
+                    "fix-android-pdf": "Android PDF Extraction - Fixed PDFBox integration for Android using pdfbox-android library",
+                    "fix-jvm-target": "JVM Target Compatibility - Fixed Kotlin/Java JVM target mismatch (11 → 17) in native PDF module",
+                    "fix-metainf": "META-INF Conflicts - Added packaging exclusions for PDFBox duplicate resources",
+                    "tech-pdfbox-migration": "Migrated from org.apache.pdfbox to com.tom-roush:pdfbox-android:2.0.27.0",
+                    "tech-jvm-17": "Updated JVM target to 17 for Kotlin and Java compatibility",
+                    "tech-pdfbox-init": "Added PDFBoxResourceLoader.init() for Android context initialization",
+                    "tech-font-multiplier": "Added fontSizeMultiplier state with persistent storage",
+                    "tech-usecallback": "Wrapped renderCardContent in useCallback for proper reactivity",
+                    "tech-extradata": "Added extraData prop to FlatList for font size updates",
+                    "tech-version-1.9.3": "Version bump: 1.9.2 → 1.9.3 (iOS: build 16, Android: version 25)",
+                    "tech-i18n-font": "Added font size translations for English and Portuguese (reader.fontSize.*)",
+
                     // Version 1.9.0
                     "version-1.9.0-date": "October 20, 2025",
                     "version-1.9.0-title": "Offline PDF Excellence",
@@ -811,6 +886,26 @@
                     "changelog-header-part2": "Changelog",
                     "changelog-description": "Fique por dentro dos últimos recursos, melhorias e correções do LeafTok",
                     "changelog-badge": "Últimas Atualizações e Recursos",
+
+                    // Version 1.9.3
+                    "version-1.9.3-date": "26 de Novembro, 2025",
+                    "version-1.9.3-title": "Personalização do Leitor e PDF Android",
+                    "feature-font-size-controls": "Controles de Tamanho de Fonte no Leitor com 4 tamanhos predefinidos (pequeno, médio, grande, extra-grande)",
+                    "feature-font-size-modal": "Modal de Tamanho de Fonte com interface elegante, visualização ao vivo e aplicação instantânea",
+                    "feature-persistent-font": "Preferências de Fonte Persistentes salvas no AsyncStorage e restauradas ao reiniciar o app",
+                    "change-music-default": "Padrão dos Controles de Música - Botão de música agora desabilitado por padrão para experiência de leitura mais limpa",
+                    "change-onboarding-flow": "Fluxo de Livro de Exemplo no Onboarding - \"Ler Agora\" em livros de exemplo agora completa o onboarding antes de navegar para o leitor",
+                    "fix-android-pdf": "Extração de PDF no Android - Correção da integração PDFBox para Android usando biblioteca pdfbox-android",
+                    "fix-jvm-target": "Compatibilidade de Destino JVM - Correção de incompatibilidade de destino JVM Kotlin/Java (11 → 17) no módulo nativo de PDF",
+                    "fix-metainf": "Conflitos META-INF - Adição de exclusões de empacotamento para recursos duplicados do PDFBox",
+                    "tech-pdfbox-migration": "Migração de org.apache.pdfbox para com.tom-roush:pdfbox-android:2.0.27.0",
+                    "tech-jvm-17": "Atualização do destino JVM para 17 para compatibilidade Kotlin e Java",
+                    "tech-pdfbox-init": "Adição de PDFBoxResourceLoader.init() para inicialização de contexto Android",
+                    "tech-font-multiplier": "Adição de estado fontSizeMultiplier com armazenamento persistente",
+                    "tech-usecallback": "Envolvimento de renderCardContent em useCallback para reatividade adequada",
+                    "tech-extradata": "Adição de prop extraData ao FlatList para atualizações de tamanho de fonte",
+                    "tech-version-1.9.3": "Atualização de versão: 1.9.2 → 1.9.3 (iOS: build 16, Android: versão 25)",
+                    "tech-i18n-font": "Adição de traduções de tamanho de fonte para inglês e português (reader.fontSize.*)",
 
                     // Version 1.9.0
                     "version-1.9.0-date": "20 de Outubro, 2025",
