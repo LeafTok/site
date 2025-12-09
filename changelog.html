@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        
+
         <!-- SEO Meta Tags -->
         <title data-i18n="changelog-title">LeafTok Changelog - Latest Updates & Features</title>
         <meta
@@ -27,612 +27,1231 @@
         <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
         <link rel="manifest" href="assets/site.webmanifest" />
         <link rel="shortcut icon" href="assets/favicon.ico" />
-        <meta name="theme-color" content="#2DD29F" />
+        <meta name="theme-color" content="#0a0b0f" />
 
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-            tailwind.config = {
-                theme: {
-                    extend: {
-                        colors: {
-                            primary: {
-                                50: "#f0fdf7",
-                                100: "#dcfce8",
-                                200: "#bbf7d1",
-                                300: "#86efb0",
-                                400: "#2DD29F",
-                                500: "#2DD29F",
-                                600: "#26bd8a",
-                                700: "#1f9a6e",
-                                800: "#1a7b56",
-                                900: "#155f42",
-                            },
-                            dark: {
-                                50: "#f8fafc",
-                                100: "#f1f5f9",
-                                200: "#e2e8f0",
-                                300: "#cbd5e1",
-                                400: "#94a3b8",
-                                500: "#64748b",
-                                600: "#475569",
-                                700: "#334155",
-                                800: "#1e293b",
-                                900: "#13141E",
-                            },
-                        },
-                    },
-                },
-            };
-        </script>
+        <!-- Preconnect to external domains -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-            rel="stylesheet"
-        />
+
+        <!-- Google Fonts - Same as index.html -->
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+
         <style>
-            * {
-                font-family: "Inter", sans-serif;
+            /* CSS Custom Properties - Same as index.html */
+            :root {
+                --primary: #2DD29F;
+                --primary-dark: #26bd8a;
+                --primary-light: #5de8bc;
+                --primary-glow: rgba(45, 210, 159, 0.4);
+                --accent: #D36462;
+                --accent-light: #e88886;
+                --dark: #0a0b0f;
+                --dark-100: #13141E;
+                --dark-200: #1a1c28;
+                --dark-300: #252836;
+                --dark-400: #363a4d;
+                --light: #f8f9fc;
+                --light-200: #e8eaf0;
+                --text-primary: #ffffff;
+                --text-secondary: rgba(255, 255, 255, 0.7);
+                --text-muted: rgba(255, 255, 255, 0.5);
+                --font-serif: 'Instrument Serif', Georgia, serif;
+                --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             }
-            .glass-effect {
-                background: rgba(255, 255, 255, 0.25);
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.18);
+
+            /* Reset & Base */
+            *, *::before, *::after {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
             }
-            .gradient-text {
-                background: linear-gradient(135deg, #2dd29f, #26bd8a, #1f9a6e);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
+
+            html {
+                scroll-behavior: smooth;
             }
-            .hero-gradient {
-                background: linear-gradient(135deg, #f0fdf7 0%, #ffffff 50%, #f0fdf7 100%);
+
+            body {
+                font-family: var(--font-sans);
+                background: var(--dark);
+                color: var(--text-primary);
+                line-height: 1.6;
+                overflow-x: hidden;
+                -webkit-font-smoothing: antialiased;
             }
+
+            /* Grain Texture Overlay */
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+                opacity: 0.03;
+                pointer-events: none;
+                z-index: 9999;
+            }
+
+            /* Typography */
+            h1, h2, h3, h4 {
+                font-family: var(--font-serif);
+                font-weight: 400;
+                line-height: 1.1;
+            }
+
+            .serif-italic {
+                font-family: var(--font-serif);
+                font-style: italic;
+            }
+
+            /* Navigation */
+            .nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 100;
+                padding: 1.5rem 2rem;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .nav.scrolled {
+                background: rgba(10, 11, 15, 0.9);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .nav-container {
+                max-width: 1400px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .logo {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                text-decoration: none;
+                color: var(--text-primary);
+            }
+
+            .logo img {
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+            }
+
+            .logo-text {
+                font-family: var(--font-serif);
+                font-size: 1.75rem;
+                letter-spacing: -0.02em;
+            }
+
+            .nav-links {
+                display: none;
+                gap: 2.5rem;
+                align-items: center;
+            }
+
+            @media (min-width: 768px) {
+                .nav-links {
+                    display: flex;
+                }
+            }
+
+            .nav-links a {
+                color: var(--text-secondary);
+                text-decoration: none;
+                font-size: 0.9rem;
+                font-weight: 500;
+                letter-spacing: 0.02em;
+                text-transform: uppercase;
+                transition: color 0.3s ease;
+                position: relative;
+            }
+
+            .nav-links a::after {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: var(--primary);
+                transition: width 0.3s ease;
+            }
+
+            .nav-links a:hover {
+                color: var(--primary);
+            }
+
+            .nav-links a:hover::after {
+                width: 100%;
+            }
+
+            .nav-links a.active {
+                color: var(--primary);
+            }
+
+            .nav-links a.active::after {
+                width: 100%;
+            }
+
+            .lang-switcher {
+                display: flex;
+                gap: 0.5rem;
+                padding: 0.25rem;
+                background: var(--dark-200);
+                border-radius: 8px;
+            }
+
+            .lang-btn {
+                padding: 0.4rem 0.8rem;
+                border: none;
+                background: transparent;
+                color: var(--text-muted);
+                font-size: 0.8rem;
+                font-weight: 600;
+                cursor: pointer;
+                border-radius: 6px;
+                transition: all 0.3s ease;
+            }
+
+            .lang-btn.active {
+                background: var(--primary);
+                color: var(--dark);
+            }
+
+            /* Mobile Menu Button */
+            .mobile-menu-btn {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                padding: 0.5rem;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+
+            @media (min-width: 768px) {
+                .mobile-menu-btn {
+                    display: none;
+                }
+            }
+
+            .mobile-menu-btn span {
+                display: block;
+                width: 24px;
+                height: 2px;
+                background: var(--text-primary);
+                transition: all 0.3s ease;
+            }
+
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: var(--dark);
+                z-index: 99;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s ease;
+            }
+
+            .mobile-menu.active {
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            .mobile-menu a {
+                font-size: 1.5rem;
+                color: var(--text-primary);
+                text-decoration: none;
+                font-family: var(--font-serif);
+            }
+
+            .mobile-menu-close {
+                position: absolute;
+                top: 2rem;
+                right: 2rem;
+                background: none;
+                border: none;
+                color: var(--text-primary);
+                font-size: 2rem;
+                cursor: pointer;
+            }
+
+            /* Hero Background */
+            .hero-bg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background:
+                    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(45, 210, 159, 0.15), transparent 50%),
+                    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(211, 100, 98, 0.1), transparent 50%),
+                    radial-gradient(ellipse 100% 80% at 50% 100%, rgba(45, 210, 159, 0.08), transparent 40%);
+                animation: bgPulse 15s ease-in-out infinite alternate;
+            }
+
+            @keyframes bgPulse {
+                0% { opacity: 1; transform: scale(1); }
+                100% { opacity: 0.8; transform: scale(1.05); }
+            }
+
+            /* Header Section */
+            .header-section {
+                position: relative;
+                padding: 10rem 2rem 4rem;
+                overflow: hidden;
+            }
+
+            .header-container {
+                max-width: 900px;
+                margin: 0 auto;
+                text-align: center;
+                position: relative;
+                z-index: 2;
+            }
+
+            .header-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.75rem;
+                padding: 0.75rem 1.25rem;
+                background: rgba(45, 210, 159, 0.1);
+                border: 1px solid rgba(45, 210, 159, 0.3);
+                border-radius: 100px;
+                margin-bottom: 2rem;
+                animation: fadeSlideUp 0.8s ease forwards;
+                opacity: 0;
+            }
+
+            .badge-icon {
+                font-size: 1rem;
+            }
+
+            .badge-text {
+                font-size: 0.85rem;
+                font-weight: 600;
+                color: var(--primary);
+                letter-spacing: 0.02em;
+            }
+
+            .header-title {
+                font-size: clamp(3rem, 8vw, 5rem);
+                margin-bottom: 1.5rem;
+                animation: fadeSlideUp 0.8s ease 0.1s forwards;
+                opacity: 0;
+            }
+
+            .header-title .highlight {
+                color: var(--primary);
+                position: relative;
+                display: inline-block;
+            }
+
+            .header-title .highlight::after {
+                content: '';
+                position: absolute;
+                bottom: 0.1em;
+                left: 0;
+                width: 100%;
+                height: 0.15em;
+                background: var(--primary);
+                opacity: 0.3;
+                transform: skewX(-5deg);
+            }
+
+            .header-description {
+                font-size: 1.25rem;
+                color: var(--text-secondary);
+                max-width: 600px;
+                margin: 0 auto;
+                line-height: 1.7;
+                animation: fadeSlideUp 0.8s ease 0.2s forwards;
+                opacity: 0;
+            }
+
+            /* Changelog Section */
+            .changelog-section {
+                padding: 4rem 2rem 6rem;
+            }
+
+            .changelog-container {
+                max-width: 900px;
+                margin: 0 auto;
+            }
+
+            /* Version Cards */
+            .version-card {
+                position: relative;
+                background: linear-gradient(135deg, var(--dark-200), var(--dark-100));
+                border-radius: 24px;
+                border: 1px solid var(--dark-300);
+                padding: 2.5rem;
+                margin-bottom: 2rem;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                animation: fadeSlideUp 0.6s ease forwards;
+                opacity: 0;
+            }
+
+            .version-card:hover {
+                transform: translateY(-4px);
+                border-color: rgba(45, 210, 159, 0.3);
+                box-shadow: 0 20px 60px rgba(45, 210, 159, 0.1);
+            }
+
+            .version-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(circle at top right, var(--primary-glow), transparent 60%);
+                opacity: 0;
+                transition: opacity 0.4s ease;
+                border-radius: 24px;
+                pointer-events: none;
+            }
+
+            .version-card:hover::before {
+                opacity: 0.05;
+            }
+
+            .version-header {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .version-info {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+
             .version-badge {
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                background: var(--primary);
+                color: var(--dark);
+                padding: 0.5rem 1rem;
+                border-radius: 100px;
+                font-size: 1rem;
+                font-weight: 700;
             }
-            .version-badge:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+
+            .version-badge.blue {
+                background: #3b82f6;
+                color: white;
             }
-            .language-btn {
-                transition: all 0.2s ease;
+
+            .version-badge.purple {
+                background: #8b5cf6;
+                color: white;
             }
-            .language-btn:hover {
-                background-color: #f3f4f6;
+
+            .version-badge.amber {
+                background: #f59e0b;
+                color: var(--dark);
+            }
+
+            .version-badge.rose {
+                background: #f43f5e;
+                color: white;
+            }
+
+            .version-badge.indigo {
+                background: #6366f1;
+                color: white;
+            }
+
+            .version-badge.green {
+                background: var(--primary);
+                color: var(--dark);
+            }
+
+            .version-date {
+                color: var(--text-muted);
+                font-size: 0.9rem;
+                font-weight: 500;
+            }
+
+            .status-badge {
+                padding: 0.4rem 0.8rem;
+                border-radius: 100px;
+                font-size: 0.8rem;
+                font-weight: 600;
+            }
+
+            .status-badge.latest {
+                background: rgba(45, 210, 159, 0.15);
+                color: var(--primary);
+                border: 1px solid rgba(45, 210, 159, 0.3);
+            }
+
+            .status-badge.previous {
+                background: rgba(59, 130, 246, 0.15);
+                color: #60a5fa;
+                border: 1px solid rgba(59, 130, 246, 0.3);
+            }
+
+            .status-badge.upcoming {
+                background: rgba(139, 92, 246, 0.15);
+                color: #a78bfa;
+                border: 1px solid rgba(139, 92, 246, 0.3);
+            }
+
+            .version-title {
+                font-family: var(--font-sans);
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin-bottom: 1.5rem;
+                color: var(--text-primary);
+            }
+
+            .change-section {
+                margin-bottom: 1.5rem;
+            }
+
+            .change-section:last-child {
+                margin-bottom: 0;
+            }
+
+            .change-label {
+                font-size: 1rem;
+                font-weight: 600;
+                margin-bottom: 0.75rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .change-label.added {
+                color: var(--primary);
+            }
+
+            .change-label.changed {
+                color: #60a5fa;
+            }
+
+            .change-label.fixed {
+                color: #f87171;
+            }
+
+            .change-label.technical {
+                color: var(--text-muted);
+            }
+
+            .change-label.ux {
+                color: #a78bfa;
+            }
+
+            .change-label.premium {
+                color: #34d399;
+            }
+
+            .change-label.launch {
+                color: var(--primary);
+            }
+
+            .change-label.planned {
+                color: #c084fc;
+            }
+
+            .change-list {
+                list-style: none;
+                padding-left: 1.5rem;
+            }
+
+            .change-list li {
+                position: relative;
+                color: var(--text-secondary);
+                margin-bottom: 0.5rem;
+                padding-left: 1rem;
+                line-height: 1.6;
+            }
+
+            .change-list li::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0.6em;
+                width: 4px;
+                height: 4px;
+                background: var(--primary);
+                border-radius: 50%;
+            }
+
+            /* Roadmap Card */
+            .roadmap-card {
+                background: linear-gradient(135deg, rgba(45, 210, 159, 0.1), rgba(45, 210, 159, 0.05));
+                border: 2px solid rgba(45, 210, 159, 0.3);
+            }
+
+            .roadmap-card:hover {
+                border-color: rgba(45, 210, 159, 0.5);
+            }
+
+            .roadmap-card .version-title {
+                color: var(--primary);
+            }
+
+            .roadmap-card .change-list li {
+                color: var(--text-secondary);
+            }
+
+            /* Footer */
+            .footer {
+                background: var(--dark);
+                padding: 3rem 2rem;
+                border-top: 1px solid var(--dark-300);
+            }
+
+            .footer-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: center;
+            }
+
+            @media (min-width: 768px) {
+                .footer-container {
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+            }
+
+            .footer-logo {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                text-decoration: none;
+                color: var(--text-primary);
+            }
+
+            .footer-logo img {
+                width: 36px;
+                height: 36px;
+                border-radius: 10px;
+            }
+
+            .footer-logo-text {
+                font-family: var(--font-serif);
+                font-size: 1.35rem;
+            }
+
+            .footer-links {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1.5rem;
+                align-items: center;
+            }
+
+            .footer-links a {
+                color: var(--text-muted);
+                text-decoration: none;
+                font-size: 0.9rem;
+                transition: color 0.3s ease;
+            }
+
+            .footer-links a:hover {
+                color: var(--primary);
+            }
+
+            .footer-copyright {
+                color: var(--text-muted);
+                font-size: 0.9rem;
+            }
+
+            /* Animations */
+            @keyframes fadeSlideUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .animate-on-scroll {
+                opacity: 0;
+                transform: translateY(40px);
+                transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .animate-on-scroll.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            /* Responsive */
+            @media (max-width: 767px) {
+                .header-section {
+                    padding-top: 7rem;
+                }
+
+                .version-card {
+                    padding: 1.5rem;
+                }
+
+                .version-header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                .version-info {
+                    flex-wrap: wrap;
+                }
             }
         </style>
     </head>
-    <body class="min-h-screen hero-gradient">
+    <body>
         <!-- Navigation -->
-        <nav class="fixed top-0 w-full z-50 glass-effect">
-            <div class="container mx-auto px-6 py-4">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center space-x-3">
-                        <img src="assets/logo.png" alt="LeafTok Logo" class="w-10 h-10 rounded-xl" />
-                        <span class="text-2xl font-bold text-gray-900">LeafTok</span>
-                    </div>
-                    <div class="hidden md:flex items-center space-x-8">
-                        <a href="index.html" class="text-gray-700 hover:text-primary-500 transition-colors font-medium" data-i18n="nav-home">Home</a>
-                        <a href="changelog.html" class="text-primary-500 font-semibold" data-i18n="nav-changelog">Changelog</a>
-                        <div class="flex items-center space-x-2 ml-4">
-                            <button onclick="changeLanguage('en')" class="language-btn px-3 py-1 rounded-lg text-sm font-medium transition-colors" data-lang="en">EN</button>
-                            <button onclick="changeLanguage('pt')" class="language-btn px-3 py-1 rounded-lg text-sm font-medium transition-colors" data-lang="pt">PT</button>
-                        </div>
+        <nav class="nav" id="nav">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <picture>
+                        <source srcset="assets/logo.webp" type="image/webp">
+                        <img src="assets/logo.png" alt="LeafTok" width="44" height="44" />
+                    </picture>
+                    <span class="logo-text">LeafTok</span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="index.html" data-i18n="nav-home">Home</a>
+                    <a href="changelog.html" class="active" data-i18n="nav-changelog">Changelog</a>
+                    <div class="lang-switcher">
+                        <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+                        <button class="lang-btn active" data-lang="pt" onclick="changeLanguage('pt')">PT</button>
                     </div>
                 </div>
+
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </nav>
 
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()">&times;</button>
+            <a href="index.html" onclick="toggleMobileMenu()" data-i18n="nav-home">Home</a>
+            <a href="changelog.html" onclick="toggleMobileMenu()" data-i18n="nav-changelog">Changelog</a>
+            <div class="lang-switcher" style="margin-top: 1rem;">
+                <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+                <button class="lang-btn active" data-lang="pt" onclick="changeLanguage('pt')">PT</button>
+            </div>
+        </div>
+
         <!-- Header Section -->
-        <section class="pt-32 pb-16 px-6">
-            <div class="container mx-auto max-w-4xl text-center">
-                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+        <section class="header-section">
+            <div class="hero-bg"></div>
+            <div class="header-container">
+                <div class="header-badge">
+                    <span class="badge-icon">&#128640;</span>
+                    <span class="badge-text" data-i18n="changelog-badge">Latest Updates & Features</span>
+                </div>
+
+                <h1 class="header-title">
                     <span data-i18n="changelog-header-part1">LeafTok</span>
-                    <span class="gradient-text" data-i18n="changelog-header-part2">Changelog</span>
+                    <span class="highlight serif-italic" data-i18n="changelog-header-part2">Changelog</span>
                 </h1>
-                <p class="text-xl text-gray-600 mb-8 font-light" data-i18n="changelog-description">
+
+                <p class="header-description" data-i18n="changelog-description">
                     Stay up to date with the latest features, improvements, and fixes in LeafTok
                 </p>
-                <div class="inline-flex items-center px-4 py-2 rounded-full text-sm bg-primary-100 text-primary-800 border border-primary-200">
-                    <span class="mr-2">🚀</span>
-                    <span data-i18n="changelog-badge">Latest Updates & Features</span>
-                </div>
             </div>
         </section>
 
         <!-- Changelog Section -->
-        <section class="pb-24 px-6">
-            <div class="container mx-auto max-w-4xl">
+        <section class="changelog-section">
+            <div class="changelog-container">
 
                 <!-- Version 1.9.3 -->
-                <div class="version-badge bg-white rounded-2xl shadow-lg hover:shadow-xl p-8 mb-8 border border-gray-100">
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="flex items-center space-x-4">
-                            <span class="bg-primary-500 text-white px-4 py-2 rounded-full text-lg font-semibold">v1.9.3</span>
-                            <span class="text-gray-500 font-medium" data-i18n="version-1.9.3-date">November 26, 2025</span>
+                <div class="version-card animate-on-scroll">
+                    <div class="version-header">
+                        <div class="version-info">
+                            <span class="version-badge">v1.9.3</span>
+                            <span class="version-date" data-i18n="version-1.9.3-date">November 26, 2025</span>
                         </div>
-                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium" data-i18n="status-latest">Latest</span>
+                        <span class="status-badge latest" data-i18n="status-latest">Latest</span>
                     </div>
 
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="version-1.9.3-title">Reader Customization & Android PDF</h3>
+                    <h3 class="version-title" data-i18n="version-1.9.3-title">Reader Customization & Android PDF</h3>
 
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="text-lg font-semibold text-primary-600 mb-3" data-i18n="new-features">✨ Added</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="feature-font-size-controls">In-Reader Font Size Controls with 4 preset sizes (small, medium, large, extra-large)</li>
-                                <li data-i18n="feature-font-size-modal">Font Size Modal with beautiful interface, live preview and instant application</li>
-                                <li data-i18n="feature-persistent-font">Persistent Font Preferences saved to AsyncStorage and restored on app restart</li>
-                            </ul>
-                        </div>
+                    <div class="change-section">
+                        <div class="change-label added" data-i18n="new-features">&#10024; Added</div>
+                        <ul class="change-list">
+                            <li data-i18n="feature-font-size-controls">In-Reader Font Size Controls with 4 preset sizes (small, medium, large, extra-large)</li>
+                            <li data-i18n="feature-font-size-modal">Font Size Modal with beautiful interface, live preview and instant application</li>
+                            <li data-i18n="feature-persistent-font">Persistent Font Preferences saved to AsyncStorage and restored on app restart</li>
+                        </ul>
+                    </div>
 
-                        <div>
-                            <h4 class="text-lg font-semibold text-blue-600 mb-3" data-i18n="changed">🔧 Changed</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="change-music-default">Music Controls Default - Music button now disabled by default for cleaner reading experience</li>
-                                <li data-i18n="change-onboarding-flow">Onboarding Sample Book Flow - "Read Now" on sample books now completes onboarding before navigating to reader</li>
-                            </ul>
-                        </div>
+                    <div class="change-section">
+                        <div class="change-label changed" data-i18n="changed">&#128295; Changed</div>
+                        <ul class="change-list">
+                            <li data-i18n="change-music-default">Music Controls Default - Music button now disabled by default for cleaner reading experience</li>
+                            <li data-i18n="change-onboarding-flow">Onboarding Sample Book Flow - "Read Now" on sample books now completes onboarding before navigating to reader</li>
+                        </ul>
+                    </div>
 
-                        <div>
-                            <h4 class="text-lg font-semibold text-red-600 mb-3" data-i18n="fixed">🐛 Fixed</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="fix-android-pdf">Android PDF Extraction - Fixed PDFBox integration for Android using pdfbox-android library</li>
-                                <li data-i18n="fix-jvm-target">JVM Target Compatibility - Fixed Kotlin/Java JVM target mismatch (11 → 17) in native PDF module</li>
-                                <li data-i18n="fix-metainf">META-INF Conflicts - Added packaging exclusions for PDFBox duplicate resources</li>
-                            </ul>
-                        </div>
+                    <div class="change-section">
+                        <div class="change-label fixed" data-i18n="fixed">&#128027; Fixed</div>
+                        <ul class="change-list">
+                            <li data-i18n="fix-android-pdf">Android PDF Extraction - Fixed PDFBox integration for Android using pdfbox-android library</li>
+                            <li data-i18n="fix-jvm-target">JVM Target Compatibility - Fixed Kotlin/Java JVM target mismatch (11 -> 17) in native PDF module</li>
+                            <li data-i18n="fix-metainf">META-INF Conflicts - Added packaging exclusions for PDFBox duplicate resources</li>
+                        </ul>
+                    </div>
 
-                        <div>
-                            <h4 class="text-lg font-semibold text-gray-600 mb-3" data-i18n="technical-improvements">🎯 Technical</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="tech-pdfbox-migration">Migrated from org.apache.pdfbox to com.tom-roush:pdfbox-android:2.0.27.0</li>
-                                <li data-i18n="tech-jvm-17">Updated JVM target to 17 for Kotlin and Java compatibility</li>
-                                <li data-i18n="tech-pdfbox-init">Added PDFBoxResourceLoader.init() for Android context initialization</li>
-                                <li data-i18n="tech-font-multiplier">Added fontSizeMultiplier state with persistent storage</li>
-                                <li data-i18n="tech-usecallback">Wrapped renderCardContent in useCallback for proper reactivity</li>
-                                <li data-i18n="tech-extradata">Added extraData prop to FlatList for font size updates</li>
-                                <li data-i18n="tech-version-1.9.3">Version bump: 1.9.2 → 1.9.3 (iOS: build 16, Android: version 25)</li>
-                                <li data-i18n="tech-i18n-font">Added font size translations for English and Portuguese (reader.fontSize.*)</li>
-                            </ul>
-                        </div>
+                    <div class="change-section">
+                        <div class="change-label technical" data-i18n="technical-improvements">&#127919; Technical</div>
+                        <ul class="change-list">
+                            <li data-i18n="tech-pdfbox-migration">Migrated from org.apache.pdfbox to com.tom-roush:pdfbox-android:2.0.27.0</li>
+                            <li data-i18n="tech-jvm-17">Updated JVM target to 17 for Kotlin and Java compatibility</li>
+                            <li data-i18n="tech-pdfbox-init">Added PDFBoxResourceLoader.init() for Android context initialization</li>
+                            <li data-i18n="tech-font-multiplier">Added fontSizeMultiplier state with persistent storage</li>
+                            <li data-i18n="tech-usecallback">Wrapped renderCardContent in useCallback for proper reactivity</li>
+                            <li data-i18n="tech-extradata">Added extraData prop to FlatList for font size updates</li>
+                            <li data-i18n="tech-version-1.9.3">Version bump: 1.9.2 -> 1.9.3 (iOS: build 16, Android: version 25)</li>
+                            <li data-i18n="tech-i18n-font">Added font size translations for English and Portuguese (reader.fontSize.*)</li>
+                        </ul>
                     </div>
                 </div>
 
                 <!-- Version 1.9.0 -->
-                <div class="version-badge bg-white rounded-2xl shadow-lg hover:shadow-xl p-8 mb-8 border border-gray-100">
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="flex items-center space-x-4">
-                            <span class="bg-blue-500 text-white px-4 py-2 rounded-full text-lg font-semibold">v1.9.0</span>
-                            <span class="text-gray-500 font-medium" data-i18n="version-1.9.0-date">October 20, 2025</span>
+                <div class="version-card animate-on-scroll" style="animation-delay: 0.1s;">
+                    <div class="version-header">
+                        <div class="version-info">
+                            <span class="version-badge blue">v1.9.0</span>
+                            <span class="version-date" data-i18n="version-1.9.0-date">October 20, 2025</span>
                         </div>
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium" data-i18n="status-previous">Previous</span>
+                        <span class="status-badge previous" data-i18n="status-previous">Previous</span>
                     </div>
 
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="version-1.9.0-title">Offline PDF Excellence</h3>
+                    <h3 class="version-title" data-i18n="version-1.9.0-title">Offline PDF Excellence</h3>
 
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="text-lg font-semibold text-primary-600 mb-3" data-i18n="new-features">✨ Added</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="feature-offline-pdf">Offline PDF Processing with complete metadata extraction using pdf-lib library</li>
-                                <li data-i18n="feature-native-parsers">Native PDF Parsers built for iOS (PDFKit) and Android (PDFBox) for full text extraction</li>
-                                <li data-i18n="feature-intelligent-communication">Intelligent User Communication with clear messaging about PDF capabilities and limitations</li>
-                                <li data-i18n="feature-comprehensive-metadata">Comprehensive PDF Metadata extraction (title, author, subject, creator, producer, dates)</li>
-                                <li data-i18n="feature-pdf-validation">PDF Validation System with robust file validation and corruption detection</li>
-                                <li data-i18n="feature-enhanced-file-size">Enhanced File Size Support with 100MB limit for large PDF documents</li>
-                            </ul>
-                        </div>
+                    <div class="change-section">
+                        <div class="change-label added" data-i18n="new-features">&#10024; Added</div>
+                        <ul class="change-list">
+                            <li data-i18n="feature-offline-pdf">Offline PDF Processing with complete metadata extraction using pdf-lib library</li>
+                            <li data-i18n="feature-native-parsers">Native PDF Parsers built for iOS (PDFKit) and Android (PDFBox) for full text extraction</li>
+                            <li data-i18n="feature-intelligent-communication">Intelligent User Communication with clear messaging about PDF capabilities and limitations</li>
+                            <li data-i18n="feature-comprehensive-metadata">Comprehensive PDF Metadata extraction (title, author, subject, creator, producer, dates)</li>
+                            <li data-i18n="feature-pdf-validation">PDF Validation System with robust file validation and corruption detection</li>
+                            <li data-i18n="feature-enhanced-file-size">Enhanced File Size Support with 100MB limit for large PDF documents</li>
+                        </ul>
+                    </div>
 
-                        <div>
-                            <h4 class="text-lg font-semibold text-blue-600 mb-3" data-i18n="changed">🔧 Changed</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="change-removed-api">Removed API Dependency for PDF processing - fully offline operation</li>
-                                <li data-i18n="change-simplified-architecture">Simplified PDF Architecture with removal of 200+ lines of API integration code</li>
-                                <li data-i18n="change-disabled-analytics">Disabled Analytics in Development to avoid test events in PostHog</li>
-                                <li data-i18n="change-improved-error-handling">Improved Error Handling with graceful degradation and informative messages</li>
-                                <li data-i18n="change-better-offline">Better Offline Experience - PDFs load faster without API calls</li>
-                            </ul>
-                        </div>
+                    <div class="change-section">
+                        <div class="change-label changed" data-i18n="changed">&#128295; Changed</div>
+                        <ul class="change-list">
+                            <li data-i18n="change-removed-api">Removed API Dependency for PDF processing - fully offline operation</li>
+                            <li data-i18n="change-simplified-architecture">Simplified PDF Architecture with removal of 200+ lines of API integration code</li>
+                            <li data-i18n="change-disabled-analytics">Disabled Analytics in Development to avoid test events in PostHog</li>
+                            <li data-i18n="change-improved-error-handling">Improved Error Handling with graceful degradation and informative messages</li>
+                            <li data-i18n="change-better-offline">Better Offline Experience - PDFs load faster without API calls</li>
+                        </ul>
+                    </div>
 
-                        <div>
-                            <h4 class="text-lg font-semibold text-red-600 mb-3" data-i18n="fixed">🐛 Fixed</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="fix-linting">Linting Errors with fixed array type declarations and removed unused variables</li>
-                                <li data-i18n="fix-type-safety">Type Safety improvements with proper TypeScript imports and definitions</li>
-                                <li data-i18n="fix-console-warnings">Console Warnings eliminated - undefined function references and import errors</li>
-                                <li data-i18n="fix-async-processor">Async Processor Removal - removed deprecated API processing flow</li>
-                            </ul>
-                        </div>
+                    <div class="change-section">
+                        <div class="change-label fixed" data-i18n="fixed">&#128027; Fixed</div>
+                        <ul class="change-list">
+                            <li data-i18n="fix-linting">Linting Errors with fixed array type declarations and removed unused variables</li>
+                            <li data-i18n="fix-type-safety">Type Safety improvements with proper TypeScript imports and definitions</li>
+                            <li data-i18n="fix-console-warnings">Console Warnings eliminated - undefined function references and import errors</li>
+                            <li data-i18n="fix-async-processor">Async Processor Removal - removed deprecated API processing flow</li>
+                        </ul>
+                    </div>
 
-                        <div>
-                            <h4 class="text-lg font-semibold text-gray-600 mb-3" data-i18n="technical-improvements">🎯 Technical</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="tech-pdf-data-extract">PdfDataExtractParser.ts - Pure JavaScript PDF extraction using pdf-lib</li>
-                                <li data-i18n="tech-enhanced-adapter">Enhanced PDFParserAdapter.ts with offline-only implementation</li>
-                                <li data-i18n="tech-pdf-lib">pdf-lib@1.17.1 dependency for client-side PDF manipulation</li>
-                                <li data-i18n="tech-util-polyfill">util@0.12.5 - Node.js utility module polyfill for React Native</li>
-                                <li data-i18n="tech-version-1.9">Version bump: 1.8.2 → 1.9.0 (iOS: build 13, Android: version 22)</li>
-                                <li data-i18n="tech-zero-linting">Zero linting errors with improved code quality and type safety</li>
-                            </ul>
-                        </div>
+                    <div class="change-section">
+                        <div class="change-label technical" data-i18n="technical-improvements">&#127919; Technical</div>
+                        <ul class="change-list">
+                            <li data-i18n="tech-pdf-data-extract">PdfDataExtractParser.ts - Pure JavaScript PDF extraction using pdf-lib</li>
+                            <li data-i18n="tech-enhanced-adapter">Enhanced PDFParserAdapter.ts with offline-only implementation</li>
+                            <li data-i18n="tech-pdf-lib">pdf-lib@1.17.1 dependency for client-side PDF manipulation</li>
+                            <li data-i18n="tech-util-polyfill">util@0.12.5 - Node.js utility module polyfill for React Native</li>
+                            <li data-i18n="tech-version-1.9">Version bump: 1.8.2 -> 1.9.0 (iOS: build 13, Android: version 22)</li>
+                            <li data-i18n="tech-zero-linting">Zero linting errors with improved code quality and type safety</li>
+                        </ul>
+                    </div>
 
-                        <div>
-                            <h4 class="text-lg font-semibold text-purple-600 mb-3" data-i18n="user-experience">💡 User Experience</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="ux-fast-upload">Fast PDF upload without network delays</li>
-                                <li data-i18n="ux-clear-explanation">Clear explanation of PDF capabilities and limitations</li>
-                                <li data-i18n="ux-professional-messages">Professional informative messages instead of error screens</li>
-                                <li data-i18n="ux-metadata-display">Metadata displayed: title, author, page count</li>
-                                <li data-i18n="ux-helpful-suggestions">Helpful suggestions for alternative workflows</li>
-                            </ul>
-                        </div>
+                    <div class="change-section">
+                        <div class="change-label ux" data-i18n="user-experience">&#128161; User Experience</div>
+                        <ul class="change-list">
+                            <li data-i18n="ux-fast-upload">Fast PDF upload without network delays</li>
+                            <li data-i18n="ux-clear-explanation">Clear explanation of PDF capabilities and limitations</li>
+                            <li data-i18n="ux-professional-messages">Professional informative messages instead of error screens</li>
+                            <li data-i18n="ux-metadata-display">Metadata displayed: title, author, page count</li>
+                            <li data-i18n="ux-helpful-suggestions">Helpful suggestions for alternative workflows</li>
+                        </ul>
                     </div>
                 </div>
 
                 <!-- Version 1.8.2 -->
-                <div class="version-badge bg-white rounded-2xl shadow-lg hover:shadow-xl p-8 mb-8 border border-gray-100">
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="flex items-center space-x-4">
-                            <span class="bg-blue-500 text-white px-4 py-2 rounded-full text-lg font-semibold">v1.8.2</span>
-                            <span class="text-gray-500 font-medium" data-i18n="version-1.8.2-date">October 7, 2025</span>
+                <div class="version-card animate-on-scroll" style="animation-delay: 0.15s;">
+                    <div class="version-header">
+                        <div class="version-info">
+                            <span class="version-badge blue">v1.8.2</span>
+                            <span class="version-date" data-i18n="version-1.8.2-date">October 7, 2025</span>
                         </div>
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium" data-i18n="status-previous">Previous</span>
+                        <span class="status-badge previous" data-i18n="status-previous">Previous</span>
                     </div>
 
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="version-1.8.2-title">Enhanced EPUB Navigation</h3>
+                    <h3 class="version-title" data-i18n="version-1.8.2-title">Enhanced EPUB Navigation</h3>
 
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="text-lg font-semibold text-primary-600 mb-3" data-i18n="new-features">✨ Added</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="feature-epub-navigation">EPUB Navigation System with complete table of contents parsing for EPUB 2.0 and 3.x</li>
-                                <li data-i18n="feature-interactive-toc">Interactive TOC Component with beautiful modal and nested navigation</li>
-                                <li data-i18n="feature-landmarks-nav">Landmarks Navigation for quick access to cover, TOC, and body sections</li>
-                                <li data-i18n="feature-page-list">Page List Support for academic and technical content with reference page numbers</li>
-                                <li data-i18n="feature-enhanced-metadata">Enhanced Metadata with full Dublin Core support (contributors, rights, subjects, series)</li>
-                                <li data-i18n="feature-advanced-html">Advanced HTML Processing for tables, figures, footnotes, MathML, SVG, and ruby annotations</li>
-                                <li data-i18n="feature-css-extraction">CSS Extraction to preserve book styling and formatting from EPUB files</li>
-                                <li data-i18n="feature-smart-toc-mapping">Smart TOC Mapping with automatic chapter-to-card mapping using fuzzy search</li>
-                                <li data-i18n="feature-audio-context">Audio Player Context for global audio state management with React Context</li>
-                            </ul>
-                        </div>
+                    <div class="change-section">
+                        <div class="change-label added" data-i18n="new-features">&#10024; Added</div>
+                        <ul class="change-list">
+                            <li data-i18n="feature-epub-navigation">EPUB Navigation System with complete table of contents parsing for EPUB 2.0 and 3.x</li>
+                            <li data-i18n="feature-interactive-toc">Interactive TOC Component with beautiful modal and nested navigation</li>
+                            <li data-i18n="feature-landmarks-nav">Landmarks Navigation for quick access to cover, TOC, and body sections</li>
+                            <li data-i18n="feature-page-list">Page List Support for academic and technical content with reference page numbers</li>
+                            <li data-i18n="feature-enhanced-metadata">Enhanced Metadata with full Dublin Core support (contributors, rights, subjects, series)</li>
+                            <li data-i18n="feature-advanced-html">Advanced HTML Processing for tables, figures, footnotes, MathML, SVG, and ruby annotations</li>
+                            <li data-i18n="feature-css-extraction">CSS Extraction to preserve book styling and formatting from EPUB files</li>
+                            <li data-i18n="feature-smart-toc-mapping">Smart TOC Mapping with automatic chapter-to-card mapping using fuzzy search</li>
+                            <li data-i18n="feature-audio-context">Audio Player Context for global audio state management with React Context</li>
+                        </ul>
+                    </div>
 
-                        <div>
-                            <h4 class="text-lg font-semibold text-blue-600 mb-3" data-i18n="changed">🔧 Changed</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="change-epub-parser">Enhanced EPUB Parser with comprehensive navigation data extraction</li>
-                                <li data-i18n="change-book-details">Improved Book Details with TOC button integration for quick navigation</li>
-                                <li data-i18n="change-reader-experience">Better Reader Experience with previous/current/next chapter detection</li>
-                                <li data-i18n="change-audio-refined">Refined Audio Controls with floating music controls and improved state management</li>
-                                <li data-i18n="change-library-layout">Library Layout Fixes with improved spacing and visual hierarchy</li>
-                            </ul>
-                        </div>
+                    <div class="change-section">
+                        <div class="change-label changed" data-i18n="changed">&#128295; Changed</div>
+                        <ul class="change-list">
+                            <li data-i18n="change-epub-parser">Enhanced EPUB Parser with comprehensive navigation data extraction</li>
+                            <li data-i18n="change-book-details">Improved Book Details with TOC button integration for quick navigation</li>
+                            <li data-i18n="change-reader-experience">Better Reader Experience with previous/current/next chapter detection</li>
+                            <li data-i18n="change-audio-refined">Refined Audio Controls with floating music controls and improved state management</li>
+                            <li data-i18n="change-library-layout">Library Layout Fixes with improved spacing and visual hierarchy</li>
+                        </ul>
+                    </div>
 
-                        <div>
-                            <h4 class="text-lg font-semibold text-red-600 mb-3" data-i18n="fixed">🐛 Fixed</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="fix-audio-stability">Audio Player Stability with resolved audio playback issues</li>
-                                <li data-i18n="fix-import-errors">Import Errors with fixed lucide-react-native icon imports</li>
-                                <li data-i18n="fix-layout-bugs">Layout Bugs with fixed spacing issues in library screen</li>
-                            </ul>
-                        </div>
+                    <div class="change-section">
+                        <div class="change-label fixed" data-i18n="fixed">&#128027; Fixed</div>
+                        <ul class="change-list">
+                            <li data-i18n="fix-audio-stability">Audio Player Stability with resolved audio playback issues</li>
+                            <li data-i18n="fix-import-errors">Import Errors with fixed lucide-react-native icon imports</li>
+                            <li data-i18n="fix-layout-bugs">Layout Bugs with fixed spacing issues in library screen</li>
+                        </ul>
+                    </div>
 
-                        <div>
-                            <h4 class="text-lg font-semibold text-gray-600 mb-3" data-i18n="technical-improvements">🎯 Technical</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="tech-navigation-parser">NavigationParser.ts service for complete EPUB navigation extraction</li>
-                                <li data-i18n="tech-audio-player-context">AudioPlayerContext.tsx for global audio state management</li>
-                                <li data-i18n="tech-toc-component">TableOfContents.tsx component with interactive modal and tabs</li>
-                                <li data-i18n="tech-toc-mapper">Smart TOC-to-card mapping algorithms (tocMapper.ts)</li>
-                                <li data-i18n="tech-css-extractor">CSS style extraction and preservation utilities</li>
-                                <li data-i18n="tech-version-bump">Version bump: 1.8.1 → 1.8.2 (iOS: build 12, Android: version 21)</li>
-                            </ul>
-                        </div>
+                    <div class="change-section">
+                        <div class="change-label technical" data-i18n="technical-improvements">&#127919; Technical</div>
+                        <ul class="change-list">
+                            <li data-i18n="tech-navigation-parser">NavigationParser.ts service for complete EPUB navigation extraction</li>
+                            <li data-i18n="tech-audio-player-context">AudioPlayerContext.tsx for global audio state management</li>
+                            <li data-i18n="tech-toc-component">TableOfContents.tsx component with interactive modal and tabs</li>
+                            <li data-i18n="tech-toc-mapper">Smart TOC-to-card mapping algorithms (tocMapper.ts)</li>
+                            <li data-i18n="tech-css-extractor">CSS style extraction and preservation utilities</li>
+                            <li data-i18n="tech-version-bump">Version bump: 1.8.1 -> 1.8.2 (iOS: build 12, Android: version 21)</li>
+                        </ul>
                     </div>
                 </div>
 
                 <!-- Version 1.7.0 -->
-                <div class="version-badge bg-white rounded-2xl shadow-lg hover:shadow-xl p-8 mb-8 border border-gray-100">
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="flex items-center space-x-4">
-                            <span class="bg-blue-500 text-white px-4 py-2 rounded-full text-lg font-semibold">v1.7.0</span>
-                            <span class="text-gray-500 font-medium" data-i18n="version-1.7.0-date">August 3, 2025</span>
+                <div class="version-card animate-on-scroll" style="animation-delay: 0.2s;">
+                    <div class="version-header">
+                        <div class="version-info">
+                            <span class="version-badge blue">v1.7.0</span>
+                            <span class="version-date" data-i18n="version-1.7.0-date">August 3, 2025</span>
                         </div>
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium" data-i18n="status-previous">Previous</span>
+                        <span class="status-badge previous" data-i18n="status-previous">Previous</span>
                     </div>
-                    
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="version-1.7.0-title">Smart Analytics & Social Sharing</h3>
-                    
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="text-lg font-semibold text-primary-600 mb-3" data-i18n="new-features">✨ Added</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="feature-reading-analytics">Reading statistics & analytics dashboard</li>
-                                <li data-i18n="feature-social-cards">Social sharing with beautiful custom card designs</li>
-                                <li data-i18n="feature-instagram-stories">Instagram Stories integration for seamless sharing</li>
-                                <li data-i18n="feature-reading-streaks">Gamified reading streaks with daily goals</li>
-                                <li data-i18n="feature-performance-monitoring">Enhanced performance monitoring and optimization</li>
-                            </ul>
-                        </div>
-                        
-                        <div>
-                            <h4 class="text-lg font-semibold text-blue-600 mb-3" data-i18n="changed">🔧 Changed</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="change-share-cards">Enhanced share cards with gradient backgrounds</li>
-                                <li data-i18n="change-analytics-ui">Improved analytics interface with reading insights</li>
-                                <li data-i18n="change-social-integration">Better social platform integration</li>
-                                <li data-i18n="change-optimized-rendering">Optimized rendering for faster card loading</li>
-                            </ul>
-                        </div>
 
-                        <div>
-                            <h4 class="text-lg font-semibold text-gray-600 mb-3" data-i18n="technical-improvements">🎯 Technical</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="tech-analytics-service">Reading analytics tracking system</li>
-                                <li data-i18n="tech-share-generation">Custom share card generation with styling</li>
-                                <li data-i18n="tech-performance-opts">Performance monitoring and optimization</li>
-                                <li data-i18n="tech-social-apis">Social platform integration APIs</li>
-                            </ul>
-                        </div>
+                    <h3 class="version-title" data-i18n="version-1.7.0-title">Smart Analytics & Social Sharing</h3>
+
+                    <div class="change-section">
+                        <div class="change-label added" data-i18n="new-features">&#10024; Added</div>
+                        <ul class="change-list">
+                            <li data-i18n="feature-reading-analytics">Reading statistics & analytics dashboard</li>
+                            <li data-i18n="feature-social-cards">Social sharing with beautiful custom card designs</li>
+                            <li data-i18n="feature-instagram-stories">Instagram Stories integration for seamless sharing</li>
+                            <li data-i18n="feature-reading-streaks">Gamified reading streaks with daily goals</li>
+                            <li data-i18n="feature-performance-monitoring">Enhanced performance monitoring and optimization</li>
+                        </ul>
+                    </div>
+
+                    <div class="change-section">
+                        <div class="change-label changed" data-i18n="changed">&#128295; Changed</div>
+                        <ul class="change-list">
+                            <li data-i18n="change-share-cards">Enhanced share cards with gradient backgrounds</li>
+                            <li data-i18n="change-analytics-ui">Improved analytics interface with reading insights</li>
+                            <li data-i18n="change-social-integration">Better social platform integration</li>
+                            <li data-i18n="change-optimized-rendering">Optimized rendering for faster card loading</li>
+                        </ul>
+                    </div>
+
+                    <div class="change-section">
+                        <div class="change-label technical" data-i18n="technical-improvements">&#127919; Technical</div>
+                        <ul class="change-list">
+                            <li data-i18n="tech-analytics-service">Reading analytics tracking system</li>
+                            <li data-i18n="tech-share-generation">Custom share card generation with styling</li>
+                            <li data-i18n="tech-performance-opts">Performance monitoring and optimization</li>
+                            <li data-i18n="tech-social-apis">Social platform integration APIs</li>
+                        </ul>
                     </div>
                 </div>
 
                 <!-- Version 1.6.0 -->
-                <div class="version-badge bg-white rounded-2xl shadow-lg hover:shadow-xl p-8 mb-8 border border-gray-100">
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="flex items-center space-x-4">
-                            <span class="bg-blue-500 text-white px-4 py-2 rounded-full text-lg font-semibold">v1.6.0</span>
-                            <span class="text-gray-500 font-medium" data-i18n="version-1.6.0-date">August 1, 2025</span>
+                <div class="version-card animate-on-scroll" style="animation-delay: 0.25s;">
+                    <div class="version-header">
+                        <div class="version-info">
+                            <span class="version-badge blue">v1.6.0</span>
+                            <span class="version-date" data-i18n="version-1.6.0-date">August 1, 2025</span>
                         </div>
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium" data-i18n="status-previous">Previous</span>
+                        <span class="status-badge previous" data-i18n="status-previous">Previous</span>
                     </div>
-                    
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="version-1.6.0-title">Immersive Reading Experience</h3>
-                    
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="text-lg font-semibold text-primary-600 mb-3" data-i18n="new-features">✨ Added</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="feature-tap-controls">Tap-to-show controls for immersive reading</li>
-                                <li data-i18n="feature-smooth-animations">Smooth control animations (300ms fade-in/fade-out)</li>
-                                <li data-i18n="feature-auto-hide">Auto-hide timer - controls disappear after 3 seconds</li>
-                                <li data-i18n="feature-gesture-nav">Gesture-based navigation with tap-anywhere interface</li>
-                                <li data-i18n="feature-image-repair">Image repair system for missing book images</li>
-                                <li data-i18n="feature-error-handling">Enhanced error handling with graceful fallbacks</li>
-                            </ul>
-                        </div>
-                        
-                        <div>
-                            <h4 class="text-lg font-semibold text-blue-600 mb-3" data-i18n="changed">🔧 Changed</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="change-reader-ux">Enhanced reader UX - controls only appear when user taps</li>
-                                <li data-i18n="change-focus">Improved focus with clean, distraction-free reading by default</li>
-                                <li data-i18n="change-animations">Better animations using native driver for performance</li>
-                                <li data-i18n="change-image-loading">Image loading stability with reduced console warnings</li>
-                            </ul>
-                        </div>
 
-                        <div>
-                            <h4 class="text-lg font-semibold text-red-600 mb-3" data-i18n="fixed">🐛 Fixed</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="fix-image-errors">Image file not found errors eliminated</li>
-                                <li data-i18n="fix-legacy-paths">Legacy image path issues fixed</li>
-                                <li data-i18n="fix-uri-resolution">Improved image URI resolution with better fallbacks</li>
-                            </ul>
-                        </div>
+                    <h3 class="version-title" data-i18n="version-1.6.0-title">Immersive Reading Experience</h3>
+
+                    <div class="change-section">
+                        <div class="change-label added" data-i18n="new-features">&#10024; Added</div>
+                        <ul class="change-list">
+                            <li data-i18n="feature-tap-controls">Tap-to-show controls for immersive reading</li>
+                            <li data-i18n="feature-smooth-animations">Smooth control animations (300ms fade-in/fade-out)</li>
+                            <li data-i18n="feature-auto-hide">Auto-hide timer - controls disappear after 3 seconds</li>
+                            <li data-i18n="feature-gesture-nav">Gesture-based navigation with tap-anywhere interface</li>
+                            <li data-i18n="feature-image-repair">Image repair system for missing book images</li>
+                            <li data-i18n="feature-error-handling">Enhanced error handling with graceful fallbacks</li>
+                        </ul>
+                    </div>
+
+                    <div class="change-section">
+                        <div class="change-label changed" data-i18n="changed">&#128295; Changed</div>
+                        <ul class="change-list">
+                            <li data-i18n="change-reader-ux">Enhanced reader UX - controls only appear when user taps</li>
+                            <li data-i18n="change-focus">Improved focus with clean, distraction-free reading by default</li>
+                            <li data-i18n="change-animations">Better animations using native driver for performance</li>
+                            <li data-i18n="change-image-loading">Image loading stability with reduced console warnings</li>
+                        </ul>
+                    </div>
+
+                    <div class="change-section">
+                        <div class="change-label fixed" data-i18n="fixed">&#128027; Fixed</div>
+                        <ul class="change-list">
+                            <li data-i18n="fix-image-errors">Image file not found errors eliminated</li>
+                            <li data-i18n="fix-legacy-paths">Legacy image path issues fixed</li>
+                            <li data-i18n="fix-uri-resolution">Improved image URI resolution with better fallbacks</li>
+                        </ul>
                     </div>
                 </div>
 
                 <!-- Version 1.5.0 -->
-                <div class="version-badge bg-white rounded-2xl shadow-lg hover:shadow-xl p-8 mb-8 border border-gray-100">
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="flex items-center space-x-4">
-                            <span class="bg-blue-500 text-white px-4 py-2 rounded-full text-lg font-semibold">v1.5.0</span>
-                            <span class="text-gray-500 font-medium" data-i18n="version-1.5.0-date">July 28, 2025</span>
+                <div class="version-card animate-on-scroll" style="animation-delay: 0.3s;">
+                    <div class="version-header">
+                        <div class="version-info">
+                            <span class="version-badge blue">v1.5.0</span>
+                            <span class="version-date" data-i18n="version-1.5.0-date">July 28, 2025</span>
                         </div>
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium" data-i18n="status-compatibility">Universal Design</span>
+                        <span class="status-badge previous" data-i18n="status-compatibility">Universal Design</span>
                     </div>
-                    
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="version-1.5.0-title">Device Compatibility</h3>
-                    
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="text-lg font-semibold text-primary-600 mb-3" data-i18n="new-features">✨ Added</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="feature-safe-area">Safe area implementation for all devices</li>
-                                <li data-i18n="feature-device-support">Universal device support with notches and home indicators</li>
-                                <li data-i18n="feature-dynamic-controls">Dynamic control positioning based on device safe areas</li>
-                                <li data-i18n="feature-splash-branding">Splash screen branding with primary colors</li>
-                            </ul>
-                        </div>
+
+                    <h3 class="version-title" data-i18n="version-1.5.0-title">Device Compatibility</h3>
+
+                    <div class="change-section">
+                        <div class="change-label added" data-i18n="new-features">&#10024; Added</div>
+                        <ul class="change-list">
+                            <li data-i18n="feature-safe-area">Safe area implementation for all devices</li>
+                            <li data-i18n="feature-device-support">Universal device support with notches and home indicators</li>
+                            <li data-i18n="feature-dynamic-controls">Dynamic control positioning based on device safe areas</li>
+                            <li data-i18n="feature-splash-branding">Splash screen branding with primary colors</li>
+                        </ul>
                     </div>
                 </div>
 
                 <!-- Version 1.4.0 -->
-                <div class="version-badge bg-white rounded-2xl shadow-lg hover:shadow-xl p-8 mb-8 border border-gray-100">
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="flex items-center space-x-4">
-                            <span class="bg-purple-500 text-white px-4 py-2 rounded-full text-lg font-semibold">v1.4.0</span>
-                            <span class="text-gray-500 font-medium" data-i18n="version-1.4.0-date">July 24, 2025</span>
+                <div class="version-card animate-on-scroll" style="animation-delay: 0.35s;">
+                    <div class="version-header">
+                        <div class="version-info">
+                            <span class="version-badge purple">v1.4.0</span>
+                            <span class="version-date" data-i18n="version-1.4.0-date">July 24, 2025</span>
                         </div>
-                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium" data-i18n="status-customization">Personal Preferences</span>
+                        <span class="status-badge previous" data-i18n="status-customization">Personal Preferences</span>
                     </div>
-                    
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="version-1.4.0-title">Comprehensive Settings</h3>
-                    
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="text-lg font-semibold text-primary-600 mb-3" data-i18n="new-features">✨ Added</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="feature-settings-screen">Dedicated settings screen for complete customization</li>
-                                <li data-i18n="feature-audio-prefs">Audio preferences: auto-play, fade-out, sleep timer</li>
-                                <li data-i18n="feature-reading-custom">Reading customization: screen on, haptic feedback, font size</li>
-                                <li data-i18n="feature-data-mgmt">Data management: auto-save, export, clear data options</li>
-                            </ul>
-                        </div>
+
+                    <h3 class="version-title" data-i18n="version-1.4.0-title">Comprehensive Settings</h3>
+
+                    <div class="change-section">
+                        <div class="change-label added" data-i18n="new-features">&#10024; Added</div>
+                        <ul class="change-list">
+                            <li data-i18n="feature-settings-screen">Dedicated settings screen for complete customization</li>
+                            <li data-i18n="feature-audio-prefs">Audio preferences: auto-play, fade-out, sleep timer</li>
+                            <li data-i18n="feature-reading-custom">Reading customization: screen on, haptic feedback, font size</li>
+                            <li data-i18n="feature-data-mgmt">Data management: auto-save, export, clear data options</li>
+                        </ul>
                     </div>
                 </div>
 
                 <!-- Version 1.3.0 -->
-                <div class="version-badge bg-white rounded-2xl shadow-lg hover:shadow-xl p-8 mb-8 border border-gray-100">
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="flex items-center space-x-4">
-                            <span class="bg-amber-500 text-white px-4 py-2 rounded-full text-lg font-semibold">v1.3.0</span>
-                            <span class="text-gray-500 font-medium" data-i18n="version-1.3.0-date">July 22, 2025</span>
+                <div class="version-card animate-on-scroll" style="animation-delay: 0.4s;">
+                    <div class="version-header">
+                        <div class="version-info">
+                            <span class="version-badge amber">v1.3.0</span>
+                            <span class="version-date" data-i18n="version-1.3.0-date">July 22, 2025</span>
                         </div>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium" data-i18n="status-premium">Audio Marketplace</span>
+                        <span class="status-badge previous" data-i18n="status-premium">Audio Marketplace</span>
                     </div>
-                    
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="version-1.3.0-title">Premium Audio System</h3>
-                    
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="text-lg font-semibold text-primary-600 mb-3" data-i18n="new-features">✨ Added</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="feature-premium-audio-system">Premium audio system with freemium model</li>
-                                <li data-i18n="feature-audio-categories">Advanced audio categories (Ambient, Lo-Fi, Nature, Classical)</li>
-                                <li data-i18n="feature-iap-integration">In-app purchases integration</li>
-                                <li data-i18n="feature-tiktok-controls">TikTok-style audio controls</li>
-                                <li data-i18n="feature-offline-playback">Offline playback for premium content</li>
-                            </ul>
-                        </div>
 
-                        <div>
-                            <h4 class="text-lg font-semibold text-green-600 mb-3" data-i18n="premium-packages">💰 Premium Packages</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li>Complete Lo-Fi Collection ($4.99)</li>
-                                <li>Premium Nature Sounds ($7.99)</li>
-                                <li>Focus Master Package ($9.99)</li>
-                                <li>LeafTok Premium ($14.99)</li>
-                            </ul>
-                        </div>
+                    <h3 class="version-title" data-i18n="version-1.3.0-title">Premium Audio System</h3>
+
+                    <div class="change-section">
+                        <div class="change-label added" data-i18n="new-features">&#10024; Added</div>
+                        <ul class="change-list">
+                            <li data-i18n="feature-premium-audio-system">Premium audio system with freemium model</li>
+                            <li data-i18n="feature-audio-categories">Advanced audio categories (Ambient, Lo-Fi, Nature, Classical)</li>
+                            <li data-i18n="feature-iap-integration">In-app purchases integration</li>
+                            <li data-i18n="feature-tiktok-controls">TikTok-style audio controls</li>
+                            <li data-i18n="feature-offline-playback">Offline playback for premium content</li>
+                        </ul>
+                    </div>
+
+                    <div class="change-section">
+                        <div class="change-label premium" data-i18n="premium-packages">&#128176; Premium Packages</div>
+                        <ul class="change-list">
+                            <li>Complete Lo-Fi Collection ($4.99)</li>
+                            <li>Premium Nature Sounds ($7.99)</li>
+                            <li>Focus Master Package ($9.99)</li>
+                            <li>LeafTok Premium ($14.99)</li>
+                        </ul>
                     </div>
                 </div>
 
                 <!-- Version 1.2.0 -->
-                <div class="version-badge bg-white rounded-2xl shadow-lg hover:shadow-xl p-8 mb-8 border border-gray-100">
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="flex items-center space-x-4">
-                            <span class="bg-rose-500 text-white px-4 py-2 rounded-full text-lg font-semibold">v1.2.0</span>
-                            <span class="text-gray-500 font-medium" data-i18n="version-1.2.0-date">July 22, 2025</span>
+                <div class="version-card animate-on-scroll" style="animation-delay: 0.45s;">
+                    <div class="version-header">
+                        <div class="version-info">
+                            <span class="version-badge rose">v1.2.0</span>
+                            <span class="version-date" data-i18n="version-1.2.0-date">July 22, 2025</span>
                         </div>
-                        <span class="bg-rose-100 text-rose-800 px-3 py-1 rounded-full text-sm font-medium" data-i18n="status-polish">Visual Polish</span>
+                        <span class="status-badge previous" data-i18n="status-polish">Visual Polish</span>
                     </div>
-                    
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="version-1.2.0-title">Enhanced UX</h3>
-                    
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="text-lg font-semibold text-primary-600 mb-3" data-i18n="new-features">✨ Added</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="feature-card-animations">Enhanced card animations with touch feedback</li>
-                                <li data-i18n="feature-responsive-typography">Advanced responsive typography (22-28px)</li>
-                                <li data-i18n="feature-visual-feedback">Visual feedback with glow effects and transitions</li>
-                                <li data-i18n="feature-progress-animations">Reading progress with animated progress bars</li>
-                                <li data-i18n="feature-performance-opts">Hardware-accelerated performance optimizations</li>
-                            </ul>
-                        </div>
+
+                    <h3 class="version-title" data-i18n="version-1.2.0-title">Enhanced UX</h3>
+
+                    <div class="change-section">
+                        <div class="change-label added" data-i18n="new-features">&#10024; Added</div>
+                        <ul class="change-list">
+                            <li data-i18n="feature-card-animations">Enhanced card animations with touch feedback</li>
+                            <li data-i18n="feature-responsive-typography">Advanced responsive typography (22-28px)</li>
+                            <li data-i18n="feature-visual-feedback">Visual feedback with glow effects and transitions</li>
+                            <li data-i18n="feature-progress-animations">Reading progress with animated progress bars</li>
+                            <li data-i18n="feature-performance-opts">Hardware-accelerated performance optimizations</li>
+                        </ul>
                     </div>
                 </div>
 
                 <!-- Version 1.1.0 -->
-                <div class="version-badge bg-white rounded-2xl shadow-lg hover:shadow-xl p-8 mb-8 border border-gray-100">
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="flex items-center space-x-4">
-                            <span class="bg-indigo-500 text-white px-4 py-2 rounded-full text-lg font-semibold">v1.1.0</span>
-                            <span class="text-gray-500 font-medium" data-i18n="version-1.1.0-date">July 22, 2025</span>
+                <div class="version-card animate-on-scroll" style="animation-delay: 0.5s;">
+                    <div class="version-header">
+                        <div class="version-info">
+                            <span class="version-badge indigo">v1.1.0</span>
+                            <span class="version-date" data-i18n="version-1.1.0-date">July 22, 2025</span>
                         </div>
-                        <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium" data-i18n="status-audio-foundation">Focus Sounds</span>
+                        <span class="status-badge previous" data-i18n="status-audio-foundation">Focus Sounds</span>
                     </div>
-                    
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="version-1.1.0-title">Lofi Music & Ambient Sounds</h3>
-                    
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="text-lg font-semibold text-primary-600 mb-3" data-i18n="new-features">✨ Added</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="feature-ambient-tracks">8 unique ambient tracks for enhanced focus</li>
-                                <li data-i18n="feature-audio-generation">Real-time audio generation with Web Audio API</li>
-                                <li data-i18n="feature-volume-control">Advanced 11-level precision volume control</li>
-                                <li data-i18n="feature-smart-memory">Smart memory for track, volume, and preferences</li>
-                                <li data-i18n="feature-sleep-timer">Sleep timer with 15-90 minute options</li>
-                            </ul>
-                        </div>
+
+                    <h3 class="version-title" data-i18n="version-1.1.0-title">Lofi Music & Ambient Sounds</h3>
+
+                    <div class="change-section">
+                        <div class="change-label added" data-i18n="new-features">&#10024; Added</div>
+                        <ul class="change-list">
+                            <li data-i18n="feature-ambient-tracks">8 unique ambient tracks for enhanced focus</li>
+                            <li data-i18n="feature-audio-generation">Real-time audio generation with Web Audio API</li>
+                            <li data-i18n="feature-volume-control">Advanced 11-level precision volume control</li>
+                            <li data-i18n="feature-smart-memory">Smart memory for track, volume, and preferences</li>
+                            <li data-i18n="feature-sleep-timer">Sleep timer with 15-90 minute options</li>
+                        </ul>
                     </div>
                 </div>
 
                 <!-- Version 1.0.0 -->
-                <div class="version-badge bg-white rounded-2xl shadow-lg hover:shadow-xl p-8 mb-8 border border-gray-100">
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="flex items-center space-x-4">
-                            <span class="bg-green-500 text-white px-4 py-2 rounded-full text-lg font-semibold">v1.0.0</span>
-                            <span class="text-gray-500 font-medium" data-i18n="version-1.0.0-date">July 18, 2025</span>
+                <div class="version-card animate-on-scroll" style="animation-delay: 0.55s;">
+                    <div class="version-header">
+                        <div class="version-info">
+                            <span class="version-badge green">v1.0.0</span>
+                            <span class="version-date" data-i18n="version-1.0.0-date">July 18, 2025</span>
                         </div>
-                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium" data-i18n="status-initial">Reading Revolution</span>
+                        <span class="status-badge previous" data-i18n="status-initial">Reading Revolution</span>
                     </div>
-                    
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="version-1.0.0-title">Core Reading Platform</h3>
-                    
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="text-lg font-semibold text-primary-600 mb-3" data-i18n="launch-features">📖 Launch Features</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="feature-rich-content">Rich content support (images, code blocks, mixed content)</li>
-                                <li data-i18n="feature-smart-cards">Smart card generation with content-aware breaking</li>
-                                <li data-i18n="feature-i18n-support">Internationalization (English and Portuguese Brazil)</li>
-                                <li data-i18n="feature-tiktok-reader">TikTok-style reader with vertical scroll/swipe</li>
-                                <li data-i18n="feature-local-import">Local content import (EPUB/PDF parsing)</li>
-                            </ul>
-                        </div>
-                        
-                        <div>
-                            <h4 class="text-lg font-semibold text-gray-600 mb-3" data-i18n="technical-foundation">🎯 Technical Foundation</h4>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li data-i18n="tech-expo-router">Expo Router with TypeScript</li>
-                                <li data-i18n="tech-react-native-new">React Native with New Architecture</li>
-                                <li data-i18n="tech-cross-platform">Cross-platform support (iOS, Android, Web)</li>
-                                <li data-i18n="tech-performance">Performance: <100ms transitions</li>
-                            </ul>
-                        </div>
+
+                    <h3 class="version-title" data-i18n="version-1.0.0-title">Core Reading Platform</h3>
+
+                    <div class="change-section">
+                        <div class="change-label launch" data-i18n="launch-features">&#128214; Launch Features</div>
+                        <ul class="change-list">
+                            <li data-i18n="feature-rich-content">Rich content support (images, code blocks, mixed content)</li>
+                            <li data-i18n="feature-smart-cards">Smart card generation with content-aware breaking</li>
+                            <li data-i18n="feature-i18n-support">Internationalization (English and Portuguese Brazil)</li>
+                            <li data-i18n="feature-tiktok-reader">TikTok-style reader with vertical scroll/swipe</li>
+                            <li data-i18n="feature-local-import">Local content import (EPUB/PDF parsing)</li>
+                        </ul>
+                    </div>
+
+                    <div class="change-section">
+                        <div class="change-label technical" data-i18n="technical-foundation">&#127919; Technical Foundation</div>
+                        <ul class="change-list">
+                            <li data-i18n="tech-expo-router">Expo Router with TypeScript</li>
+                            <li data-i18n="tech-react-native-new">React Native with New Architecture</li>
+                            <li data-i18n="tech-cross-platform">Cross-platform support (iOS, Android, Web)</li>
+                            <li data-i18n="tech-performance">Performance: &lt;100ms transitions</li>
+                        </ul>
                     </div>
                 </div>
 
                 <!-- Roadmap -->
-                <div class="version-badge bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl shadow-lg p-8 border-2 border-primary-200">
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="flex items-center space-x-4">
-                            <span class="bg-primary-500 text-white px-4 py-2 rounded-full text-lg font-semibold">v1.10.0+</span>
-                            <span class="text-primary-700 font-medium" data-i18n="roadmap-date">Roadmap</span>
+                <div class="version-card roadmap-card animate-on-scroll" style="animation-delay: 0.6s;">
+                    <div class="version-header">
+                        <div class="version-info">
+                            <span class="version-badge">v1.10.0+</span>
+                            <span class="version-date" data-i18n="roadmap-date">Roadmap</span>
                         </div>
-                        <span class="bg-primary-200 text-primary-800 px-3 py-1 rounded-full text-sm font-medium" data-i18n="status-upcoming">Upcoming</span>
+                        <span class="status-badge upcoming" data-i18n="status-upcoming">Upcoming</span>
                     </div>
 
-                    <h3 class="text-2xl font-bold text-primary-900 mb-4" data-i18n="roadmap-title">Future Features</h3>
+                    <h3 class="version-title" data-i18n="roadmap-title">Future Features</h3>
 
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="text-lg font-semibold text-primary-700 mb-3" data-i18n="planned-v110">🔮 Version 1.10.0 - Planned</h4>
-                            <ul class="list-disc list-inside space-y-2 text-primary-800 ml-4">
-                                <li data-i18n="feature-native-pdf">Native module integration for full PDF text extraction (PDFKit for iOS, PDFBox for Android)</li>
-                                <li data-i18n="feature-cloud-sync">Cloud synchronization and backup</li>
-                                <li data-i18n="feature-advanced-gestures">Advanced gesture controls and customization</li>
-                                <li data-i18n="feature-reading-groups">Reading groups and community features</li>
-                                <li data-i18n="feature-annotation">Annotation and highlighting system</li>
-                            </ul>
-                        </div>
+                    <div class="change-section">
+                        <div class="change-label planned" data-i18n="planned-v110">&#128302; Version 1.10.0 - Planned</div>
+                        <ul class="change-list">
+                            <li data-i18n="feature-native-pdf">Native module integration for full PDF text extraction (PDFKit for iOS, PDFBox for Android)</li>
+                            <li data-i18n="feature-cloud-sync">Cloud synchronization and backup</li>
+                            <li data-i18n="feature-advanced-gestures">Advanced gesture controls and customization</li>
+                            <li data-i18n="feature-reading-groups">Reading groups and community features</li>
+                            <li data-i18n="feature-annotation">Annotation and highlighting system</li>
+                        </ul>
+                    </div>
 
-                        <div>
-                            <h4 class="text-lg font-semibold text-primary-700 mb-3" data-i18n="planned-v20">🌟 Version 2.0.0 - Future</h4>
-                            <ul class="list-disc list-inside space-y-2 text-primary-800 ml-4">
-                                <li data-i18n="feature-ai-insights">AI-powered reading insights</li>
-                                <li data-i18n="feature-community-expanded">Community features and book recommendations</li>
-                                <li data-i18n="feature-custom-themes">Advanced customization themes</li>
-                                <li data-i18n="feature-reading-goals">Reading goals and achievements</li>
-                            </ul>
-                        </div>
+                    <div class="change-section">
+                        <div class="change-label planned" data-i18n="planned-v20">&#127775; Version 2.0.0 - Future</div>
+                        <ul class="change-list">
+                            <li data-i18n="feature-ai-insights">AI-powered reading insights</li>
+                            <li data-i18n="feature-community-expanded">Community features and book recommendations</li>
+                            <li data-i18n="feature-custom-themes">Advanced customization themes</li>
+                            <li data-i18n="feature-reading-goals">Reading goals and achievements</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -640,25 +1259,19 @@
         </section>
 
         <!-- Footer -->
-        <footer class="bg-dark-900 text-white py-16">
-            <div class="container mx-auto px-6 max-w-7xl">
-                <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
-                    <div class="flex items-center space-x-4">
-                        <img src="assets/logo.png" alt="LeafTok Logo" class="w-10 h-10 rounded-xl" />
-                        <span class="text-2xl font-bold">LeafTok</span>
-                    </div>
-                    <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
-                        <a
-                            href="privacy.html"
-                            class="text-gray-400 hover:text-primary-400 transition-colors"
-                            data-i18n="footer-privacy"
-                        >
-                            Privacy Policy
-                        </a>
-                        <div class="text-gray-400" data-i18n="footer-copyright">
-                            © 2025 LeafTok by Iago Cavalcante. All rights reserved.
-                        </div>
-                    </div>
+        <footer class="footer">
+            <div class="footer-container">
+                <a href="index.html" class="footer-logo">
+                    <picture>
+                        <source srcset="assets/logo.webp" type="image/webp">
+                        <img src="assets/logo.png" alt="LeafTok" width="36" height="36" />
+                    </picture>
+                    <span class="footer-logo-text">LeafTok</span>
+                </a>
+
+                <div class="footer-links">
+                    <a href="privacy.html" data-i18n="footer-privacy">Privacy Policy</a>
+                    <span class="footer-copyright" data-i18n="footer-copyright">&copy; 2025 LeafTok by Iago Cavalcante. All rights reserved.</span>
                 </div>
             </div>
         </footer>
@@ -685,7 +1298,7 @@
                     "change-music-default": "Music Controls Default - Music button now disabled by default for cleaner reading experience",
                     "change-onboarding-flow": "Onboarding Sample Book Flow - \"Read Now\" on sample books now completes onboarding before navigating to reader",
                     "fix-android-pdf": "Android PDF Extraction - Fixed PDFBox integration for Android using pdfbox-android library",
-                    "fix-jvm-target": "JVM Target Compatibility - Fixed Kotlin/Java JVM target mismatch (11 → 17) in native PDF module",
+                    "fix-jvm-target": "JVM Target Compatibility - Fixed Kotlin/Java JVM target mismatch (11 -> 17) in native PDF module",
                     "fix-metainf": "META-INF Conflicts - Added packaging exclusions for PDFBox duplicate resources",
                     "tech-pdfbox-migration": "Migrated from org.apache.pdfbox to com.tom-roush:pdfbox-android:2.0.27.0",
                     "tech-jvm-17": "Updated JVM target to 17 for Kotlin and Java compatibility",
@@ -693,7 +1306,7 @@
                     "tech-font-multiplier": "Added fontSizeMultiplier state with persistent storage",
                     "tech-usecallback": "Wrapped renderCardContent in useCallback for proper reactivity",
                     "tech-extradata": "Added extraData prop to FlatList for font size updates",
-                    "tech-version-1.9.3": "Version bump: 1.9.2 → 1.9.3 (iOS: build 16, Android: version 25)",
+                    "tech-version-1.9.3": "Version bump: 1.9.2 -> 1.9.3 (iOS: build 16, Android: version 25)",
                     "tech-i18n-font": "Added font size translations for English and Portuguese (reader.fontSize.*)",
 
                     // Version 1.9.0
@@ -718,9 +1331,9 @@
                     "tech-enhanced-adapter": "Enhanced PDFParserAdapter.ts with offline-only implementation",
                     "tech-pdf-lib": "pdf-lib@1.17.1 dependency for client-side PDF manipulation",
                     "tech-util-polyfill": "util@0.12.5 - Node.js utility module polyfill for React Native",
-                    "tech-version-1.9": "Version bump: 1.8.2 → 1.9.0 (iOS: build 13, Android: version 22)",
+                    "tech-version-1.9": "Version bump: 1.8.2 -> 1.9.0 (iOS: build 13, Android: version 22)",
                     "tech-zero-linting": "Zero linting errors with improved code quality and type safety",
-                    "user-experience": "💡 User Experience",
+                    "user-experience": "User Experience",
                     "ux-fast-upload": "Fast PDF upload without network delays",
                     "ux-clear-explanation": "Clear explanation of PDF capabilities and limitations",
                     "ux-professional-messages": "Professional informative messages instead of error screens",
@@ -752,8 +1365,8 @@
                     "tech-toc-component": "TableOfContents.tsx component with interactive modal and tabs",
                     "tech-toc-mapper": "Smart TOC-to-card mapping algorithms (tocMapper.ts)",
                     "tech-css-extractor": "CSS style extraction and preservation utilities",
-                    "tech-version-bump": "Version bump: 1.8.1 → 1.8.2 (iOS: build 12, Android: version 21)",
-                    
+                    "tech-version-bump": "Version bump: 1.8.1 -> 1.8.2 (iOS: build 12, Android: version 21)",
+
                     // Version 1.7.0
                     "version-1.7.0-date": "August 3, 2025",
                     "version-1.7.0-title": "Smart Analytics & Social Sharing",
@@ -766,34 +1379,34 @@
                     "change-analytics-ui": "Improved analytics interface with reading insights",
                     "change-social-integration": "Better social platform integration",
                     "change-optimized-rendering": "Optimized rendering for faster card loading",
-                    "technical-improvements": "🎯 Technical",
+                    "technical-improvements": "Technical",
                     "tech-analytics-service": "Reading analytics tracking system",
                     "tech-share-generation": "Custom share card generation with styling",
                     "tech-performance-opts": "Performance monitoring and optimization",
                     "tech-social-apis": "Social platform integration APIs",
                     "status-previous": "Previous",
-                    
+
                     // Version 1.6.0
                     "version-1.6.0-date": "August 1, 2025",
                     "status-latest": "Latest",
                     "version-1.6.0-title": "Immersive Reading Experience",
-                    "new-features": "✨ Added",
+                    "new-features": "Added",
                     "feature-tap-controls": "Tap-to-show controls for immersive reading",
                     "feature-smooth-animations": "Smooth control animations (300ms fade-in/fade-out)",
                     "feature-auto-hide": "Auto-hide timer - controls disappear after 3 seconds",
                     "feature-gesture-nav": "Gesture-based navigation with tap-anywhere interface",
                     "feature-image-repair": "Image repair system for missing book images",
                     "feature-error-handling": "Enhanced error handling with graceful fallbacks",
-                    "changed": "🔧 Changed",
+                    "changed": "Changed",
                     "change-reader-ux": "Enhanced reader UX - controls only appear when user taps",
                     "change-focus": "Improved focus with clean, distraction-free reading by default",
                     "change-animations": "Better animations using native driver for performance",
                     "change-image-loading": "Image loading stability with reduced console warnings",
-                    "fixed": "🐛 Fixed",
+                    "fixed": "Fixed",
                     "fix-image-errors": "Image file not found errors eliminated",
                     "fix-legacy-paths": "Legacy image path issues fixed",
                     "fix-uri-resolution": "Improved image URI resolution with better fallbacks",
-                    
+
                     // Version 1.5.0
                     "version-1.5.0-date": "July 28, 2025",
                     "status-compatibility": "Universal Design",
@@ -802,7 +1415,7 @@
                     "feature-device-support": "Universal device support with notches and home indicators",
                     "feature-dynamic-controls": "Dynamic control positioning based on device safe areas",
                     "feature-splash-branding": "Splash screen branding with primary colors",
-                    
+
                     // Version 1.4.0
                     "version-1.4.0-date": "July 24, 2025",
                     "status-customization": "Personal Preferences",
@@ -811,7 +1424,7 @@
                     "feature-audio-prefs": "Audio preferences: auto-play, fade-out, sleep timer",
                     "feature-reading-custom": "Reading customization: screen on, haptic feedback, font size",
                     "feature-data-mgmt": "Data management: auto-save, export, clear data options",
-                    
+
                     // Version 1.3.0
                     "version-1.3.0-date": "July 22, 2025",
                     "status-premium": "Audio Marketplace",
@@ -821,8 +1434,8 @@
                     "feature-iap-integration": "In-app purchases integration",
                     "feature-tiktok-controls": "TikTok-style audio controls",
                     "feature-offline-playback": "Offline playback for premium content",
-                    "premium-packages": "💰 Premium Packages",
-                    
+                    "premium-packages": "Premium Packages",
+
                     // Version 1.2.0
                     "version-1.2.0-date": "July 22, 2025",
                     "status-polish": "Visual Polish",
@@ -832,7 +1445,7 @@
                     "feature-visual-feedback": "Visual feedback with glow effects and transitions",
                     "feature-progress-animations": "Reading progress with animated progress bars",
                     "feature-performance-opts": "Hardware-accelerated performance optimizations",
-                    
+
                     // Version 1.1.0
                     "version-1.1.0-date": "July 22, 2025",
                     "status-audio-foundation": "Focus Sounds",
@@ -842,252 +1455,252 @@
                     "feature-volume-control": "Advanced 11-level precision volume control",
                     "feature-smart-memory": "Smart memory for track, volume, and preferences",
                     "feature-sleep-timer": "Sleep timer with 15-90 minute options",
-                    
+
                     // Version 1.0.0
                     "version-1.0.0-date": "July 18, 2025",
                     "status-initial": "Reading Revolution",
                     "version-1.0.0-title": "Core Reading Platform",
-                    "launch-features": "📖 Launch Features",
+                    "launch-features": "Launch Features",
                     "feature-rich-content": "Rich content support (images, code blocks, mixed content)",
                     "feature-smart-cards": "Smart card generation with content-aware breaking",
                     "feature-i18n-support": "Internationalization (English and Portuguese Brazil)",
                     "feature-tiktok-reader": "TikTok-style reader with vertical scroll/swipe",
                     "feature-local-import": "Local content import (EPUB/PDF parsing)",
-                    "technical-foundation": "🎯 Technical Foundation",
+                    "technical-foundation": "Technical Foundation",
                     "tech-expo-router": "Expo Router with TypeScript",
                     "tech-react-native-new": "React Native with New Architecture",
                     "tech-cross-platform": "Cross-platform support (iOS, Android, Web)",
                     "tech-performance": "Performance: <100ms transitions",
-                    
+
                     // Roadmap
                     "roadmap-date": "Roadmap",
                     "status-upcoming": "Upcoming",
                     "roadmap-title": "Future Features",
-                    "planned-v110": "🔮 Version 1.10.0 - Planned",
+                    "planned-v110": "Version 1.10.0 - Planned",
                     "feature-native-pdf": "Native module integration for full PDF text extraction (PDFKit for iOS, PDFBox for Android)",
                     "feature-cloud-sync": "Cloud synchronization and backup",
                     "feature-advanced-gestures": "Advanced gesture controls and customization",
                     "feature-reading-groups": "Reading groups and community features",
                     "feature-annotation": "Annotation and highlighting system",
-                    "planned-v20": "🌟 Version 2.0.0 - Future",
+                    "planned-v20": "Version 2.0.0 - Future",
                     "feature-ai-insights": "AI-powered reading insights",
                     "feature-community-expanded": "Community features and book recommendations",
                     "feature-custom-themes": "Advanced customization themes",
                     "feature-reading-goals": "Reading goals and achievements",
 
                     "footer-privacy": "Privacy Policy",
-                    "footer-copyright": "© 2025 LeafTok by Iago Cavalcante. All rights reserved."
+                    "footer-copyright": "\u00a9 2025 LeafTok by Iago Cavalcante. All rights reserved."
                 },
                 pt: {
-                    "changelog-title": "LeafTok Changelog - Últimas Atualizações e Recursos",
-                    "nav-home": "Início",
+                    "changelog-title": "LeafTok Changelog - Ultimas Atualizacoes e Recursos",
+                    "nav-home": "Inicio",
                     "nav-changelog": "Changelog",
                     "changelog-header-part1": "LeafTok",
                     "changelog-header-part2": "Changelog",
-                    "changelog-description": "Fique por dentro dos últimos recursos, melhorias e correções do LeafTok",
-                    "changelog-badge": "Últimas Atualizações e Recursos",
+                    "changelog-description": "Fique por dentro dos ultimos recursos, melhorias e correcoes do LeafTok",
+                    "changelog-badge": "Ultimas Atualizacoes e Recursos",
 
                     // Version 1.9.3
                     "version-1.9.3-date": "26 de Novembro, 2025",
-                    "version-1.9.3-title": "Personalização do Leitor e PDF Android",
-                    "feature-font-size-controls": "Controles de Tamanho de Fonte no Leitor com 4 tamanhos predefinidos (pequeno, médio, grande, extra-grande)",
-                    "feature-font-size-modal": "Modal de Tamanho de Fonte com interface elegante, visualização ao vivo e aplicação instantânea",
-                    "feature-persistent-font": "Preferências de Fonte Persistentes salvas no AsyncStorage e restauradas ao reiniciar o app",
-                    "change-music-default": "Padrão dos Controles de Música - Botão de música agora desabilitado por padrão para experiência de leitura mais limpa",
+                    "version-1.9.3-title": "Personalizacao do Leitor e PDF Android",
+                    "feature-font-size-controls": "Controles de Tamanho de Fonte no Leitor com 4 tamanhos predefinidos (pequeno, medio, grande, extra-grande)",
+                    "feature-font-size-modal": "Modal de Tamanho de Fonte com interface elegante, visualizacao ao vivo e aplicacao instantanea",
+                    "feature-persistent-font": "Preferencias de Fonte Persistentes salvas no AsyncStorage e restauradas ao reiniciar o app",
+                    "change-music-default": "Padrao dos Controles de Musica - Botao de musica agora desabilitado por padrao para experiencia de leitura mais limpa",
                     "change-onboarding-flow": "Fluxo de Livro de Exemplo no Onboarding - \"Ler Agora\" em livros de exemplo agora completa o onboarding antes de navegar para o leitor",
-                    "fix-android-pdf": "Extração de PDF no Android - Correção da integração PDFBox para Android usando biblioteca pdfbox-android",
-                    "fix-jvm-target": "Compatibilidade de Destino JVM - Correção de incompatibilidade de destino JVM Kotlin/Java (11 → 17) no módulo nativo de PDF",
-                    "fix-metainf": "Conflitos META-INF - Adição de exclusões de empacotamento para recursos duplicados do PDFBox",
-                    "tech-pdfbox-migration": "Migração de org.apache.pdfbox para com.tom-roush:pdfbox-android:2.0.27.0",
-                    "tech-jvm-17": "Atualização do destino JVM para 17 para compatibilidade Kotlin e Java",
-                    "tech-pdfbox-init": "Adição de PDFBoxResourceLoader.init() para inicialização de contexto Android",
-                    "tech-font-multiplier": "Adição de estado fontSizeMultiplier com armazenamento persistente",
+                    "fix-android-pdf": "Extracao de PDF no Android - Correcao da integracao PDFBox para Android usando biblioteca pdfbox-android",
+                    "fix-jvm-target": "Compatibilidade de Destino JVM - Correcao de incompatibilidade de destino JVM Kotlin/Java (11 -> 17) no modulo nativo de PDF",
+                    "fix-metainf": "Conflitos META-INF - Adicao de exclusoes de empacotamento para recursos duplicados do PDFBox",
+                    "tech-pdfbox-migration": "Migracao de org.apache.pdfbox para com.tom-roush:pdfbox-android:2.0.27.0",
+                    "tech-jvm-17": "Atualizacao do destino JVM para 17 para compatibilidade Kotlin e Java",
+                    "tech-pdfbox-init": "Adicao de PDFBoxResourceLoader.init() para inicializacao de contexto Android",
+                    "tech-font-multiplier": "Adicao de estado fontSizeMultiplier com armazenamento persistente",
                     "tech-usecallback": "Envolvimento de renderCardContent em useCallback para reatividade adequada",
-                    "tech-extradata": "Adição de prop extraData ao FlatList para atualizações de tamanho de fonte",
-                    "tech-version-1.9.3": "Atualização de versão: 1.9.2 → 1.9.3 (iOS: build 16, Android: versão 25)",
-                    "tech-i18n-font": "Adição de traduções de tamanho de fonte para inglês e português (reader.fontSize.*)",
+                    "tech-extradata": "Adicao de prop extraData ao FlatList para atualizacoes de tamanho de fonte",
+                    "tech-version-1.9.3": "Atualizacao de versao: 1.9.2 -> 1.9.3 (iOS: build 16, Android: versao 25)",
+                    "tech-i18n-font": "Adicao de traducoes de tamanho de fonte para ingles e portugues (reader.fontSize.*)",
 
                     // Version 1.9.0
                     "version-1.9.0-date": "20 de Outubro, 2025",
-                    "version-1.9.0-title": "Excelência em PDF Offline",
-                    "feature-offline-pdf": "Processamento PDF Offline com extração completa de metadados usando biblioteca pdf-lib",
-                    "feature-native-parsers": "Parsers PDF Nativos construídos para iOS (PDFKit) e Android (PDFBox) para extração completa de texto",
-                    "feature-intelligent-communication": "Comunicação Inteligente com Usuário com mensagens claras sobre capacidades e limitações de PDF",
-                    "feature-comprehensive-metadata": "Extração Abrangente de Metadados PDF (título, autor, assunto, criador, produtor, datas)",
-                    "feature-pdf-validation": "Sistema de Validação PDF com validação robusta de arquivo e detecção de corrupção",
+                    "version-1.9.0-title": "Excelencia em PDF Offline",
+                    "feature-offline-pdf": "Processamento PDF Offline com extracao completa de metadados usando biblioteca pdf-lib",
+                    "feature-native-parsers": "Parsers PDF Nativos construidos para iOS (PDFKit) e Android (PDFBox) para extracao completa de texto",
+                    "feature-intelligent-communication": "Comunicacao Inteligente com Usuario com mensagens claras sobre capacidades e limitacoes de PDF",
+                    "feature-comprehensive-metadata": "Extracao Abrangente de Metadados PDF (titulo, autor, assunto, criador, produtor, datas)",
+                    "feature-pdf-validation": "Sistema de Validacao PDF com validacao robusta de arquivo e deteccao de corrupcao",
                     "feature-enhanced-file-size": "Suporte Aprimorado de Tamanho de Arquivo com limite de 100MB para documentos PDF grandes",
-                    "change-removed-api": "Removida Dependência de API para processamento PDF - operação totalmente offline",
-                    "change-simplified-architecture": "Arquitetura PDF Simplificada com remoção de 200+ linhas de código de integração de API",
-                    "change-disabled-analytics": "Análises Desabilitadas em Desenvolvimento para evitar eventos de teste no PostHog",
-                    "change-improved-error-handling": "Tratamento de Erros Melhorado com degradação elegante e mensagens informativas",
-                    "change-better-offline": "Melhor Experiência Offline - PDFs carregam mais rápido sem chamadas de API",
-                    "fix-linting": "Erros de Linting com declarações de tipo array corrigidas e variáveis não utilizadas removidas",
-                    "fix-type-safety": "Melhorias de Segurança de Tipos com imports e definições TypeScript adequadas",
-                    "fix-console-warnings": "Avisos de Console eliminados - referências de função indefinidas e erros de importação",
-                    "fix-async-processor": "Remoção de Processador Assíncrono - removido fluxo de processamento de API obsoleto",
-                    "tech-pdf-data-extract": "PdfDataExtractParser.ts - Extração de PDF JavaScript puro usando pdf-lib",
-                    "tech-enhanced-adapter": "PDFParserAdapter.ts aprimorado com implementação apenas offline",
-                    "tech-pdf-lib": "Dependência pdf-lib@1.17.1 para manipulação de PDF do lado do cliente",
-                    "tech-util-polyfill": "util@0.12.5 - Polyfill de módulo utilitário Node.js para React Native",
-                    "tech-version-1.9": "Atualização de versão: 1.8.2 → 1.9.0 (iOS: build 13, Android: versão 22)",
-                    "tech-zero-linting": "Zero erros de linting com qualidade de código e segurança de tipos melhoradas",
-                    "user-experience": "💡 Experiência do Usuário",
-                    "ux-fast-upload": "Upload rápido de PDF sem atrasos de rede",
-                    "ux-clear-explanation": "Explicação clara de capacidades e limitações de PDF",
+                    "change-removed-api": "Removida Dependencia de API para processamento PDF - operacao totalmente offline",
+                    "change-simplified-architecture": "Arquitetura PDF Simplificada com remocao de 200+ linhas de codigo de integracao de API",
+                    "change-disabled-analytics": "Analises Desabilitadas em Desenvolvimento para evitar eventos de teste no PostHog",
+                    "change-improved-error-handling": "Tratamento de Erros Melhorado com degradacao elegante e mensagens informativas",
+                    "change-better-offline": "Melhor Experiencia Offline - PDFs carregam mais rapido sem chamadas de API",
+                    "fix-linting": "Erros de Linting com declaracoes de tipo array corrigidas e variaveis nao utilizadas removidas",
+                    "fix-type-safety": "Melhorias de Seguranca de Tipos com imports e definicoes TypeScript adequadas",
+                    "fix-console-warnings": "Avisos de Console eliminados - referencias de funcao indefinidas e erros de importacao",
+                    "fix-async-processor": "Remocao de Processador Assincrono - removido fluxo de processamento de API obsoleto",
+                    "tech-pdf-data-extract": "PdfDataExtractParser.ts - Extracao de PDF JavaScript puro usando pdf-lib",
+                    "tech-enhanced-adapter": "PDFParserAdapter.ts aprimorado com implementacao apenas offline",
+                    "tech-pdf-lib": "Dependencia pdf-lib@1.17.1 para manipulacao de PDF do lado do cliente",
+                    "tech-util-polyfill": "util@0.12.5 - Polyfill de modulo utilitario Node.js para React Native",
+                    "tech-version-1.9": "Atualizacao de versao: 1.8.2 -> 1.9.0 (iOS: build 13, Android: versao 22)",
+                    "tech-zero-linting": "Zero erros de linting com qualidade de codigo e seguranca de tipos melhoradas",
+                    "user-experience": "Experiencia do Usuario",
+                    "ux-fast-upload": "Upload rapido de PDF sem atrasos de rede",
+                    "ux-clear-explanation": "Explicacao clara de capacidades e limitacoes de PDF",
                     "ux-professional-messages": "Mensagens informativas profissionais em vez de telas de erro",
-                    "ux-metadata-display": "Metadados exibidos: título, autor, contagem de páginas",
-                    "ux-helpful-suggestions": "Sugestões úteis para fluxos de trabalho alternativos",
+                    "ux-metadata-display": "Metadados exibidos: titulo, autor, contagem de paginas",
+                    "ux-helpful-suggestions": "Sugestoes uteis para fluxos de trabalho alternativos",
 
                     // Version 1.8.2
                     "version-1.8.2-date": "7 de Outubro, 2025",
-                    "version-1.8.2-title": "Navegação EPUB Aprimorada",
-                    "feature-epub-navigation": "Sistema de Navegação EPUB com análise completa do índice para formatos EPUB 2.0 e 3.x",
-                    "feature-interactive-toc": "Componente de Índice Interativo com modal elegante e navegação aninhada",
-                    "feature-landmarks-nav": "Navegação por Marcos para acesso rápido à capa, índice e corpo do livro",
-                    "feature-page-list": "Suporte a Lista de Páginas para conteúdo acadêmico e técnico com números de página de referência",
-                    "feature-enhanced-metadata": "Metadados Aprimorados com suporte completo ao Dublin Core (colaboradores, direitos, assuntos, série)",
-                    "feature-advanced-html": "Processamento HTML Avançado para tabelas, figuras, notas de rodapé, MathML, SVG e anotações ruby",
-                    "feature-css-extraction": "Extração de CSS para preservar o estilo e formatação do livro de arquivos EPUB",
-                    "feature-smart-toc-mapping": "Mapeamento Inteligente de Índice com mapeamento automático de capítulo para card usando busca fuzzy",
-                    "feature-audio-context": "Contexto do Player de Áudio para gerenciamento de estado de áudio global com React Context",
-                    "change-epub-parser": "Parser EPUB Aprimorado com extração completa de dados de navegação",
-                    "change-book-details": "Detalhes do Livro Melhorados com integração do botão de índice para navegação rápida",
-                    "change-reader-experience": "Melhor Experiência de Leitura com detecção de capítulo anterior/atual/próximo",
-                    "change-audio-refined": "Controles de Áudio Refinados com controles flutuantes de música e gerenciamento de estado melhorado",
-                    "change-library-layout": "Correções de Layout da Biblioteca com espaçamento e hierarquia visual melhorados",
-                    "fix-audio-stability": "Estabilidade do Player de Áudio com problemas de reprodução de áudio resolvidos",
-                    "fix-import-errors": "Erros de Importação com importações de ícones lucide-react-native corrigidas",
-                    "fix-layout-bugs": "Bugs de Layout com problemas de espaçamento na tela da biblioteca corrigidos",
-                    "tech-navigation-parser": "Serviço NavigationParser.ts para extração completa de navegação EPUB",
-                    "tech-audio-player-context": "AudioPlayerContext.tsx para gerenciamento de estado de áudio global",
+                    "version-1.8.2-title": "Navegacao EPUB Aprimorada",
+                    "feature-epub-navigation": "Sistema de Navegacao EPUB com analise completa do indice para formatos EPUB 2.0 e 3.x",
+                    "feature-interactive-toc": "Componente de Indice Interativo com modal elegante e navegacao aninhada",
+                    "feature-landmarks-nav": "Navegacao por Marcos para acesso rapido a capa, indice e corpo do livro",
+                    "feature-page-list": "Suporte a Lista de Paginas para conteudo academico e tecnico com numeros de pagina de referencia",
+                    "feature-enhanced-metadata": "Metadados Aprimorados com suporte completo ao Dublin Core (colaboradores, direitos, assuntos, serie)",
+                    "feature-advanced-html": "Processamento HTML Avancado para tabelas, figuras, notas de rodape, MathML, SVG e anotacoes ruby",
+                    "feature-css-extraction": "Extracao de CSS para preservar o estilo e formatacao do livro de arquivos EPUB",
+                    "feature-smart-toc-mapping": "Mapeamento Inteligente de Indice com mapeamento automatico de capitulo para card usando busca fuzzy",
+                    "feature-audio-context": "Contexto do Player de Audio para gerenciamento de estado de audio global com React Context",
+                    "change-epub-parser": "Parser EPUB Aprimorado com extracao completa de dados de navegacao",
+                    "change-book-details": "Detalhes do Livro Melhorados com integracao do botao de indice para navegacao rapida",
+                    "change-reader-experience": "Melhor Experiencia de Leitura com deteccao de capitulo anterior/atual/proximo",
+                    "change-audio-refined": "Controles de Audio Refinados com controles flutuantes de musica e gerenciamento de estado melhorado",
+                    "change-library-layout": "Correcoes de Layout da Biblioteca com espacamento e hierarquia visual melhorados",
+                    "fix-audio-stability": "Estabilidade do Player de Audio com problemas de reproducao de audio resolvidos",
+                    "fix-import-errors": "Erros de Importacao com importacoes de icones lucide-react-native corrigidas",
+                    "fix-layout-bugs": "Bugs de Layout com problemas de espacamento na tela da biblioteca corrigidos",
+                    "tech-navigation-parser": "Servico NavigationParser.ts para extracao completa de navegacao EPUB",
+                    "tech-audio-player-context": "AudioPlayerContext.tsx para gerenciamento de estado de audio global",
                     "tech-toc-component": "Componente TableOfContents.tsx com modal interativo e abas",
-                    "tech-toc-mapper": "Algoritmos inteligentes de mapeamento de índice para card (tocMapper.ts)",
-                    "tech-css-extractor": "Utilitários de extração e preservação de estilos CSS",
-                    "tech-version-bump": "Atualização de versão: 1.8.1 → 1.8.2 (iOS: build 12, Android: versão 21)",
-                    
+                    "tech-toc-mapper": "Algoritmos inteligentes de mapeamento de indice para card (tocMapper.ts)",
+                    "tech-css-extractor": "Utilitarios de extracao e preservacao de estilos CSS",
+                    "tech-version-bump": "Atualizacao de versao: 1.8.1 -> 1.8.2 (iOS: build 12, Android: versao 21)",
+
                     // Version 1.7.0
                     "version-1.7.0-date": "3 de Agosto, 2025",
-                    "version-1.7.0-title": "Análises Inteligentes e Compartilhamento Social",
-                    "feature-reading-analytics": "Painel de estatísticas e análises de leitura",
+                    "version-1.7.0-title": "Analises Inteligentes e Compartilhamento Social",
+                    "feature-reading-analytics": "Painel de estatisticas e analises de leitura",
                     "feature-social-cards": "Compartilhamento social com designs personalizados bonitos",
-                    "feature-instagram-stories": "Integração com Instagram Stories para compartilhamento perfeito",
-                    "feature-reading-streaks": "Sequências de leitura gamificadas com metas diárias",
-                    "feature-performance-monitoring": "Monitoramento e otimização de performance aprimorados",
+                    "feature-instagram-stories": "Integracao com Instagram Stories para compartilhamento perfeito",
+                    "feature-reading-streaks": "Sequencias de leitura gamificadas com metas diarias",
+                    "feature-performance-monitoring": "Monitoramento e otimizacao de performance aprimorados",
                     "change-share-cards": "Cards de compartilhamento aprimorados com fundos gradientes",
-                    "change-analytics-ui": "Interface de análises melhorada com insights de leitura",
-                    "change-social-integration": "Melhor integração com plataformas sociais",
-                    "change-optimized-rendering": "Renderização otimizada para carregamento mais rápido de cards",
-                    "technical-improvements": "🎯 Técnico",
-                    "tech-analytics-service": "Sistema de rastreamento de análises de leitura",
-                    "tech-share-generation": "Geração personalizada de cards de compartilhamento com estilo",
-                    "tech-performance-opts": "Monitoramento e otimização de performance",
-                    "tech-social-apis": "APIs de integração com plataformas sociais",
+                    "change-analytics-ui": "Interface de analises melhorada com insights de leitura",
+                    "change-social-integration": "Melhor integracao com plataformas sociais",
+                    "change-optimized-rendering": "Renderizacao otimizada para carregamento mais rapido de cards",
+                    "technical-improvements": "Tecnico",
+                    "tech-analytics-service": "Sistema de rastreamento de analises de leitura",
+                    "tech-share-generation": "Geracao personalizada de cards de compartilhamento com estilo",
+                    "tech-performance-opts": "Monitoramento e otimizacao de performance",
+                    "tech-social-apis": "APIs de integracao com plataformas sociais",
                     "status-previous": "Anterior",
-                    
+
                     // Version 1.6.0
                     "version-1.6.0-date": "1 de Agosto, 2025",
                     "status-latest": "Mais Recente",
-                    "version-1.6.0-title": "Experiência de Leitura Imersiva",
-                    "new-features": "✨ Adicionado",
+                    "version-1.6.0-title": "Experiencia de Leitura Imersiva",
+                    "new-features": "Adicionado",
                     "feature-tap-controls": "Controles por toque para leitura imersiva",
-                    "feature-smooth-animations": "Animações suaves de controles (300ms fade-in/fade-out)",
-                    "feature-auto-hide": "Timer de ocultação - controles desaparecem após 3 segundos",
-                    "feature-gesture-nav": "Navegação por gestos com interface tocar-em-qualquer-lugar",
+                    "feature-smooth-animations": "Animacoes suaves de controles (300ms fade-in/fade-out)",
+                    "feature-auto-hide": "Timer de ocultacao - controles desaparecem apos 3 segundos",
+                    "feature-gesture-nav": "Navegacao por gestos com interface tocar-em-qualquer-lugar",
                     "feature-image-repair": "Sistema de reparo de imagens para imagens ausentes dos livros",
                     "feature-error-handling": "Tratamento aprimorado de erros com fallbacks elegantes",
-                    "changed": "🔧 Alterado",
-                    "change-reader-ux": "UX aprimorada do leitor - controles aparecem apenas quando o usuário toca",
-                    "change-focus": "Foco melhorado com leitura limpa e sem distrações por padrão",
-                    "change-animations": "Melhores animações usando driver nativo para performance",
+                    "changed": "Alterado",
+                    "change-reader-ux": "UX aprimorada do leitor - controles aparecem apenas quando o usuario toca",
+                    "change-focus": "Foco melhorado com leitura limpa e sem distracoes por padrao",
+                    "change-animations": "Melhores animacoes usando driver nativo para performance",
                     "change-image-loading": "Estabilidade de carregamento de imagens com avisos reduzidos no console",
-                    "fixed": "🐛 Corrigido",
-                    "fix-image-errors": "Erros de arquivo de imagem não encontrado eliminados",
+                    "fixed": "Corrigido",
+                    "fix-image-errors": "Erros de arquivo de imagem nao encontrado eliminados",
                     "fix-legacy-paths": "Problemas de caminhos de imagem legados corrigidos",
-                    "fix-uri-resolution": "Resolução de URI de imagens melhorada com melhores fallbacks",
-                    
+                    "fix-uri-resolution": "Resolucao de URI de imagens melhorada com melhores fallbacks",
+
                     // Version 1.5.0
                     "version-1.5.0-date": "28 de Julho, 2025",
                     "status-compatibility": "Design Universal",
                     "version-1.5.0-title": "Compatibilidade com Dispositivos",
-                    "feature-safe-area": "Implementação de área segura para todos os dispositivos",
+                    "feature-safe-area": "Implementacao de area segura para todos os dispositivos",
                     "feature-device-support": "Suporte universal a dispositivos com notches e indicadores home",
-                    "feature-dynamic-controls": "Posicionamento dinâmico de controles baseado em áreas seguras",
-                    "feature-splash-branding": "Branding da tela de splash com cores primárias",
-                    
+                    "feature-dynamic-controls": "Posicionamento dinamico de controles baseado em areas seguras",
+                    "feature-splash-branding": "Branding da tela de splash com cores primarias",
+
                     // Version 1.4.0
                     "version-1.4.0-date": "24 de Julho, 2025",
-                    "status-customization": "Preferências Pessoais",
-                    "version-1.4.0-title": "Configurações Abrangentes",
-                    "feature-settings-screen": "Tela de configurações dedicada para personalização completa",
-                    "feature-audio-prefs": "Preferências de áudio: auto-play, fade-out, sleep timer",
-                    "feature-reading-custom": "Personalização de leitura: tela ligada, feedback tátil, tamanho da fonte",
-                    "feature-data-mgmt": "Gerenciamento de dados: auto-save, exportar, limpar opções de dados",
-                    
+                    "status-customization": "Preferencias Pessoais",
+                    "version-1.4.0-title": "Configuracoes Abrangentes",
+                    "feature-settings-screen": "Tela de configuracoes dedicada para personalizacao completa",
+                    "feature-audio-prefs": "Preferencias de audio: auto-play, fade-out, sleep timer",
+                    "feature-reading-custom": "Personalizacao de leitura: tela ligada, feedback tatil, tamanho da fonte",
+                    "feature-data-mgmt": "Gerenciamento de dados: auto-save, exportar, limpar opcoes de dados",
+
                     // Version 1.3.0
                     "version-1.3.0-date": "22 de Julho, 2025",
-                    "status-premium": "Marketplace de Áudio",
-                    "version-1.3.0-title": "Sistema de Áudio Premium",
-                    "feature-premium-audio-system": "Sistema de áudio premium com modelo freemium",
-                    "feature-audio-categories": "Categorias avançadas de áudio (Ambiente, Lo-Fi, Natureza, Clássico)",
-                    "feature-iap-integration": "Integração de compras no aplicativo",
-                    "feature-tiktok-controls": "Controles de áudio estilo TikTok",
-                    "feature-offline-playback": "Reprodução offline para conteúdo premium",
-                    "premium-packages": "💰 Pacotes Premium",
-                    
+                    "status-premium": "Marketplace de Audio",
+                    "version-1.3.0-title": "Sistema de Audio Premium",
+                    "feature-premium-audio-system": "Sistema de audio premium com modelo freemium",
+                    "feature-audio-categories": "Categorias avancadas de audio (Ambiente, Lo-Fi, Natureza, Classico)",
+                    "feature-iap-integration": "Integracao de compras no aplicativo",
+                    "feature-tiktok-controls": "Controles de audio estilo TikTok",
+                    "feature-offline-playback": "Reproducao offline para conteudo premium",
+                    "premium-packages": "Pacotes Premium",
+
                     // Version 1.2.0
                     "version-1.2.0-date": "22 de Julho, 2025",
                     "status-polish": "Polimento Visual",
                     "version-1.2.0-title": "UX Aprimorada",
-                    "feature-card-animations": "Animações de cartão aprimoradas com feedback tátil",
-                    "feature-responsive-typography": "Tipografia responsiva avançada (22-28px)",
-                    "feature-visual-feedback": "Feedback visual com efeitos de brilho e transições",
+                    "feature-card-animations": "Animacoes de cartao aprimoradas com feedback tatil",
+                    "feature-responsive-typography": "Tipografia responsiva avancada (22-28px)",
+                    "feature-visual-feedback": "Feedback visual com efeitos de brilho e transicoes",
                     "feature-progress-animations": "Progresso de leitura com barras de progresso animadas",
-                    "feature-performance-opts": "Otimizações de performance aceleradas por hardware",
-                    
+                    "feature-performance-opts": "Otimizacoes de performance aceleradas por hardware",
+
                     // Version 1.1.0
                     "version-1.1.0-date": "22 de Julho, 2025",
                     "status-audio-foundation": "Sons de Foco",
-                    "version-1.1.0-title": "Música Lofi e Sons Ambiente",
-                    "feature-ambient-tracks": "8 faixas ambiente únicas para foco aprimorado",
-                    "feature-audio-generation": "Geração de áudio em tempo real com Web Audio API",
-                    "feature-volume-control": "Controle de volume avançado de 11 níveis de precisão",
-                    "feature-smart-memory": "Memória inteligente para faixa, volume e preferências",
-                    "feature-sleep-timer": "Sleep timer com opções de 15-90 minutos",
-                    
+                    "version-1.1.0-title": "Musica Lofi e Sons Ambiente",
+                    "feature-ambient-tracks": "8 faixas ambiente unicas para foco aprimorado",
+                    "feature-audio-generation": "Geracao de audio em tempo real com Web Audio API",
+                    "feature-volume-control": "Controle de volume avancado de 11 niveis de precisao",
+                    "feature-smart-memory": "Memoria inteligente para faixa, volume e preferencias",
+                    "feature-sleep-timer": "Sleep timer com opcoes de 15-90 minutos",
+
                     // Version 1.0.0
                     "version-1.0.0-date": "18 de Julho, 2025",
-                    "status-initial": "Revolução da Leitura",
+                    "status-initial": "Revolucao da Leitura",
                     "version-1.0.0-title": "Plataforma Central de Leitura",
-                    "launch-features": "📖 Recursos de Lançamento",
-                    "feature-rich-content": "Suporte a conteúdo rico (imagens, blocos de código, conteúdo misto)",
-                    "feature-smart-cards": "Geração inteligente de cartões com quebra consciente de conteúdo",
-                    "feature-i18n-support": "Internacionalização (Inglês e Português Brasil)",
+                    "launch-features": "Recursos de Lancamento",
+                    "feature-rich-content": "Suporte a conteudo rico (imagens, blocos de codigo, conteudo misto)",
+                    "feature-smart-cards": "Geracao inteligente de cartoes com quebra consciente de conteudo",
+                    "feature-i18n-support": "Internacionalizacao (Ingles e Portugues Brasil)",
                     "feature-tiktok-reader": "Leitor estilo TikTok com scroll/swipe vertical",
-                    "feature-local-import": "Importação de conteúdo local (parsing EPUB/PDF)",
-                    "technical-foundation": "🎯 Base Técnica",
+                    "feature-local-import": "Importacao de conteudo local (parsing EPUB/PDF)",
+                    "technical-foundation": "Base Tecnica",
                     "tech-expo-router": "Expo Router com TypeScript",
                     "tech-react-native-new": "React Native com Nova Arquitetura",
                     "tech-cross-platform": "Suporte multiplataforma (iOS, Android, Web)",
-                    "tech-performance": "Performance: transições <100ms",
-                    
+                    "tech-performance": "Performance: transicoes <100ms",
+
                     // Roadmap
                     "roadmap-date": "Roadmap",
-                    "status-upcoming": "Próximo",
+                    "status-upcoming": "Proximo",
                     "roadmap-title": "Recursos Futuros",
-                    "planned-v110": "🔮 Versão 1.10.0 - Planejado",
-                    "feature-native-pdf": "Integração de módulo nativo para extração completa de texto PDF (PDFKit para iOS, PDFBox para Android)",
-                    "feature-cloud-sync": "Sincronização na nuvem e backup",
-                    "feature-advanced-gestures": "Controles avançados de gestos e personalização",
-                    "feature-reading-groups": "Grupos de leitura e recursos comunitários",
-                    "feature-annotation": "Sistema de anotações e destaques",
-                    "planned-v20": "🌟 Versão 2.0.0 - Futuro",
+                    "planned-v110": "Versao 1.10.0 - Planejado",
+                    "feature-native-pdf": "Integracao de modulo nativo para extracao completa de texto PDF (PDFKit para iOS, PDFBox para Android)",
+                    "feature-cloud-sync": "Sincronizacao na nuvem e backup",
+                    "feature-advanced-gestures": "Controles avancados de gestos e personalizacao",
+                    "feature-reading-groups": "Grupos de leitura e recursos comunitarios",
+                    "feature-annotation": "Sistema de anotacoes e destaques",
+                    "planned-v20": "Versao 2.0.0 - Futuro",
                     "feature-ai-insights": "Insights de leitura com IA",
-                    "feature-community-expanded": "Recursos comunitários e recomendações de livros",
-                    "feature-custom-themes": "Temas de personalização avançados",
+                    "feature-community-expanded": "Recursos comunitarios e recomendacoes de livros",
+                    "feature-custom-themes": "Temas de personalizacao avancados",
                     "feature-reading-goals": "Metas de leitura e conquistas",
 
-                    "footer-privacy": "Política de Privacidade",
-                    "footer-copyright": "© 2025 LeafTok por Iago Cavalcante. Todos os direitos reservados."
+                    "footer-privacy": "Politica de Privacidade",
+                    "footer-copyright": "\u00a9 2025 LeafTok por Iago Cavalcante. Todos os direitos reservados."
                 }
             };
 
@@ -1118,18 +1731,49 @@
 
             // Update language button styles
             function updateLanguageButtons() {
-                const buttons = document.querySelectorAll(".language-btn");
+                const buttons = document.querySelectorAll(".lang-btn");
                 buttons.forEach((btn) => {
                     const btnLang = btn.getAttribute("data-lang");
                     if (btnLang === currentLang) {
-                        btn.classList.add("bg-primary-500", "text-white");
-                        btn.classList.remove("text-gray-600", "hover:bg-gray-100");
+                        btn.classList.add("active");
                     } else {
-                        btn.classList.remove("bg-primary-500", "text-white");
-                        btn.classList.add("text-gray-600", "hover:bg-gray-100");
+                        btn.classList.remove("active");
                     }
                 });
             }
+
+            // Mobile Menu
+            function toggleMobileMenu() {
+                document.getElementById('mobileMenu').classList.toggle('active');
+            }
+
+            // Navigation scroll effect
+            window.addEventListener('scroll', () => {
+                const nav = document.getElementById('nav');
+                const currentScroll = window.pageYOffset;
+
+                if (currentScroll > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
             // Initialize language on page load
             document.addEventListener("DOMContentLoaded", function () {

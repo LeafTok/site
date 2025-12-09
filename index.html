@@ -116,11 +116,10 @@
         />
         <link rel="manifest" href="assets/site.webmanifest" />
         <link rel="shortcut icon" href="assets/favicon.ico" />
-        <meta name="theme-color" content="#2DD29F" />
+        <meta name="theme-color" content="#0a0b0f" />
 
         <!-- Microsoft Clarity - Deferred -->
         <script type="text/javascript">
-            // Load Clarity after page load to avoid blocking
             window.addEventListener('load', function() {
                 setTimeout(function() {
                     (function(c,l,a,r,i,t,y){
@@ -128,7 +127,7 @@
                         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
                         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
                     })(window, document, "clarity", "script", "tmlu6p8leh");
-                }, 2000); // Load after 2 seconds
+                }, 2000);
             });
         </script>
 
@@ -184,777 +183,1574 @@
         <link rel="preload" as="image" href="assets/screenshot.webp" type="image/webp" />
 
         <!-- Preconnect to external domains -->
-        <link rel="preconnect" href="https://cdn.tailwindcss.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="dns-prefetch" href="https://www.clarity.ms" />
 
-        <!-- Optimized Google Fonts - load async -->
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-            rel="stylesheet"
-            media="print"
-            onload="this.media='all'"
-        />
-        <noscript>
-            <link
-                href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-                rel="stylesheet"
-            />
-        </noscript>
-
-        <!-- Load Tailwind CSS after page is fully interactive -->
-        <script>
-            // Defer Tailwind loading until 1 second after page load to prevent any blocking
-            setTimeout(function() {
-                var script = document.createElement('script');
-                script.src = 'https://cdn.tailwindcss.com';
-                script.async = true;
-                document.head.appendChild(script);
-
-                script.onload = function() {
-                    tailwind.config = {
-                        theme: {
-                            extend: {
-                                colors: {
-                                    primary: {
-                                        50: "#f0fdf7",
-                                        100: "#dcfce8",
-                                        200: "#bbf7d1",
-                                        300: "#86efb0",
-                                        400: "#2DD29F",
-                                        500: "#2DD29F",
-                                        600: "#26bd8a",
-                                        700: "#1f9a6e",
-                                        800: "#1a7b56",
-                                        900: "#155f42",
-                                    },
-                                    accent: {
-                                        50: "#fef2f2",
-                                        100: "#fee2e2",
-                                        200: "#fecaca",
-                                        300: "#fca5a5",
-                                        400: "#f87171",
-                                        500: "#D36462",
-                                        600: "#D36462",
-                                        700: "#b91c1c",
-                                        800: "#991b1b",
-                                        900: "#7f1d1d",
-                                    },
-                                    dark: {
-                                        50: "#f8fafc",
-                                        100: "#f1f5f9",
-                                        200: "#e2e8f0",
-                                        300: "#cbd5e1",
-                                        400: "#94a3b8",
-                                        500: "#64748b",
-                                        600: "#475569",
-                                        700: "#334155",
-                                        800: "#1e293b",
-                                        900: "#13141E",
-                                    },
-                                },
-                                animation: {
-                                    float: "float 6s ease-in-out infinite",
-                                    "slide-up": "slideUp 0.5s ease-out",
-                                    "fade-in": "fadeIn 0.6s ease-out",
-                                },
-                                keyframes: {
-                                    float: {
-                                        "0%, 100%": { transform: "translateY(0px)" },
-                                        "50%": { transform: "translateY(-20px)" },
-                                    },
-                                    slideUp: {
-                                        "0%": {
-                                            transform: "translateY(30px)",
-                                            opacity: "0",
-                                        },
-                                        "100%": {
-                                            transform: "translateY(0px)",
-                                            opacity: "1",
-                                        },
-                                    },
-                                    fadeIn: {
-                                        "0%": { opacity: "0" },
-                                        "100%": { opacity: "1" },
-                                    },
-                                },
-                            },
-                        },
-                    };
-                };
-            }, 1000); // Load 1 second after page starts
-        </script>
+        <!-- Google Fonts - Distinctive Typography -->
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
 
         <style>
-            /* Critical CSS - Inline for fastest render */
-            * {
-                font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            }
-            body {
-                margin: 0;
-                min-height: 100vh;
-            }
-            .min-h-screen {
-                min-height: 100vh;
-            }
-            .hero-gradient {
-                background: linear-gradient(135deg, #f0fdf7 0%, #ffffff 50%, #f0fdf7 100%);
+            /* CSS Custom Properties */
+            :root {
+                --primary: #2DD29F;
+                --primary-dark: #26bd8a;
+                --primary-light: #5de8bc;
+                --primary-glow: rgba(45, 210, 159, 0.4);
+                --accent: #D36462;
+                --accent-light: #e88886;
+                --dark: #0a0b0f;
+                --dark-100: #13141E;
+                --dark-200: #1a1c28;
+                --dark-300: #252836;
+                --dark-400: #363a4d;
+                --light: #f8f9fc;
+                --light-200: #e8eaf0;
+                --text-primary: #ffffff;
+                --text-secondary: rgba(255, 255, 255, 0.7);
+                --text-muted: rgba(255, 255, 255, 0.5);
+                --font-serif: 'Instrument Serif', Georgia, serif;
+                --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             }
 
-            /* LCP Element - Hero Text */
-            .gradient-text {
-                background: linear-gradient(135deg, #2dd29f, #26bd8a, #1f9a6e);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
+            /* Reset & Base */
+            *, *::before, *::after {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                font-family: var(--font-sans);
+                background: var(--dark);
+                color: var(--text-primary);
+                line-height: 1.6;
+                overflow-x: hidden;
+                -webkit-font-smoothing: antialiased;
+            }
+
+            /* Grain Texture Overlay */
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+                opacity: 0.03;
+                pointer-events: none;
+                z-index: 9999;
+            }
+
+            /* Typography */
+            h1, h2, h3, h4 {
+                font-family: var(--font-serif);
+                font-weight: 400;
+                line-height: 1.1;
+            }
+
+            .serif-italic {
+                font-family: var(--font-serif);
+                font-style: italic;
+            }
+
+            /* Animated Background Gradient */
+            .hero-bg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background:
+                    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(45, 210, 159, 0.15), transparent 50%),
+                    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(211, 100, 98, 0.1), transparent 50%),
+                    radial-gradient(ellipse 100% 80% at 50% 100%, rgba(45, 210, 159, 0.08), transparent 40%);
+                animation: bgPulse 15s ease-in-out infinite alternate;
+            }
+
+            @keyframes bgPulse {
+                0% { opacity: 1; transform: scale(1); }
+                100% { opacity: 0.8; transform: scale(1.05); }
+            }
+
+            /* Floating Leaf Shapes */
+            .leaf-shape {
+                position: absolute;
+                border-radius: 0 70% 70% 70%;
+                background: linear-gradient(135deg, var(--primary), transparent);
+                opacity: 0.1;
+                animation: leafFloat 20s ease-in-out infinite;
+            }
+
+            .leaf-shape:nth-child(1) {
+                width: 300px;
+                height: 300px;
+                top: 10%;
+                right: 5%;
+                animation-delay: 0s;
+            }
+
+            .leaf-shape:nth-child(2) {
+                width: 200px;
+                height: 200px;
+                bottom: 20%;
+                left: 10%;
+                animation-delay: -5s;
+                transform: rotate(180deg);
+            }
+
+            .leaf-shape:nth-child(3) {
+                width: 150px;
+                height: 150px;
+                top: 60%;
+                right: 15%;
+                animation-delay: -10s;
+                transform: rotate(90deg);
+            }
+
+            @keyframes leafFloat {
+                0%, 100% { transform: translateY(0) rotate(0deg); }
+                50% { transform: translateY(-30px) rotate(5deg); }
+            }
+
+            /* Navigation */
+            .nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 100;
+                padding: 1.5rem 2rem;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .nav.scrolled {
+                background: rgba(10, 11, 15, 0.9);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .nav-container {
+                max-width: 1400px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .logo {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                text-decoration: none;
+                color: var(--text-primary);
+            }
+
+            .logo img {
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+            }
+
+            .logo-text {
+                font-family: var(--font-serif);
+                font-size: 1.75rem;
+                letter-spacing: -0.02em;
+            }
+
+            .nav-links {
+                display: none;
+                gap: 2.5rem;
+                align-items: center;
+            }
+
+            @media (min-width: 768px) {
+                .nav-links {
+                    display: flex;
+                }
+            }
+
+            .nav-links a {
+                color: var(--text-secondary);
+                text-decoration: none;
+                font-size: 0.9rem;
+                font-weight: 500;
+                letter-spacing: 0.02em;
+                text-transform: uppercase;
+                transition: color 0.3s ease;
+                position: relative;
+            }
+
+            .nav-links a::after {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: var(--primary);
+                transition: width 0.3s ease;
+            }
+
+            .nav-links a:hover {
+                color: var(--primary);
+            }
+
+            .nav-links a:hover::after {
+                width: 100%;
+            }
+
+            .lang-switcher {
+                display: flex;
+                gap: 0.5rem;
+                padding: 0.25rem;
+                background: var(--dark-200);
+                border-radius: 8px;
+            }
+
+            .lang-btn {
+                padding: 0.4rem 0.8rem;
+                border: none;
+                background: transparent;
+                color: var(--text-muted);
+                font-size: 0.8rem;
+                font-weight: 600;
+                cursor: pointer;
+                border-radius: 6px;
+                transition: all 0.3s ease;
+            }
+
+            .lang-btn.active {
+                background: var(--primary);
+                color: var(--dark);
+            }
+
+            /* Hero Section */
+            .hero {
+                position: relative;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                padding: 8rem 2rem 4rem;
+                overflow: hidden;
+            }
+
+            .hero-container {
+                max-width: 1400px;
+                margin: 0 auto;
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 4rem;
+                align-items: center;
+            }
+
+            @media (min-width: 1024px) {
+                .hero-container {
+                    grid-template-columns: 1.2fr 1fr;
+                }
+            }
+
+            .hero-content {
+                position: relative;
+                z-index: 2;
+            }
+
+            .hero-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.75rem;
+                padding: 0.75rem 1.25rem;
+                background: rgba(45, 210, 159, 0.1);
+                border: 1px solid rgba(45, 210, 159, 0.3);
+                border-radius: 100px;
+                margin-bottom: 2rem;
+                animation: fadeSlideUp 0.8s ease forwards;
+                opacity: 0;
+            }
+
+            .badge-dot {
+                width: 8px;
+                height: 8px;
+                background: var(--accent);
+                border-radius: 50%;
+                animation: pulse 2s ease infinite;
+            }
+
+            @keyframes pulse {
+                0%, 100% { transform: scale(1); opacity: 1; }
+                50% { transform: scale(1.2); opacity: 0.7; }
+            }
+
+            .badge-text {
+                font-size: 0.85rem;
+                font-weight: 600;
+                color: var(--primary);
+                letter-spacing: 0.02em;
+            }
+
+            .hero-title {
+                font-size: clamp(3rem, 8vw, 5.5rem);
+                margin-bottom: 1.5rem;
+                animation: fadeSlideUp 0.8s ease 0.1s forwards;
+                opacity: 0;
+            }
+
+            .hero-title .line {
                 display: block;
             }
 
-            /* Hero Section Critical Styles */
-            .pt-32 { padding-top: 8rem; }
-            .pb-20 { padding-bottom: 5rem; }
-            .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-            .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
-            .px-4 { padding-left: 1rem; padding-right: 1rem; }
-            .px-5 { padding-left: 1.25rem; padding-right: 1.25rem; }
-            .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
-            .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-            .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
-            .container { width: 100%; margin-left: auto; margin-right: auto; }
-            @media (min-width: 1280px) { .max-w-7xl { max-width: 80rem; } }
-            @media (min-width: 768px) { .max-w-3xl { max-width: 48rem; } }
-            .mx-auto { margin-left: auto; margin-right: auto; }
-            .text-center { text-align: center; }
-            .mb-16 { margin-bottom: 4rem; }
-            .mb-12 { margin-bottom: 3rem; }
-            .mb-8 { margin-bottom: 2rem; }
-            .text-5xl { font-size: 3rem; line-height: 1; }
-            .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
-            .font-bold { font-weight: 700; }
-            .font-semibold { font-weight: 600; }
-            .font-light { font-weight: 300; }
-            .text-gray-900 { color: #111827; }
-            .text-gray-700 { color: #374151; }
-            .text-primary-800 { color: #1a7b56; }
-            .leading-tight { line-height: 1.25; }
-            .leading-relaxed { line-height: 1.625; }
-            .block { display: block; }
-            .inline-flex { display: inline-flex; }
-            .flex { display: flex; }
-            .items-center { align-items: center; }
-            .justify-center { justify-content: center; }
-            .space-x-3 > * + * { margin-left: 0.75rem; }
-            .rounded-full { border-radius: 9999px; }
-            .rounded-lg { border-radius: 0.5rem; }
-            .rounded-xl { border-radius: 0.75rem; }
-            .w-2 { width: 0.5rem; }
-            .h-2 { height: 0.5rem; }
-            .w-10 { width: 2.5rem; }
-            .h-10 { height: 2.5rem; }
-            .mr-2 { margin-right: 0.5rem; }
-            .mr-3 { margin-right: 0.75rem; }
-            .fixed { position: fixed; }
-            .top-0 { top: 0; }
-            .w-full { width: 100%; }
-            .z-50 { z-index: 50; }
-            .justify-between { justify-content: space-between; }
-            .hidden { display: none; }
-            .text-2xl { font-size: 1.5rem; line-height: 2rem; }
-            .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
-            .bg-primary-500 { background-color: #2DD29F; }
-            .text-white { color: #fff; }
-            .bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-stops)); }
-            .from-primary-100 { --tw-gradient-from: #dcfce8; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent); }
-            .to-primary-200 { --tw-gradient-to: #bbf7d1; }
-            .border-2 { border-width: 2px; }
-            .border-primary-300 { border-color: #86efb0; }
-            .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); }
-            .bg-accent-500 { background-color: #D36462; }
-            .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-            .animate-ping { animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite; }
-            .animate-fade-in { animation: fadeIn 0.6s ease-out; }
-            @media (min-width: 768px) {
-                .md\\:flex { display: flex; }
-                .md\\:space-x-8 > * + * { margin-left: 2rem; }
+            .hero-title .highlight {
+                color: var(--primary);
+                position: relative;
+                display: inline-block;
+            }
+
+            .hero-title .highlight::after {
+                content: '';
+                position: absolute;
+                bottom: 0.1em;
+                left: 0;
+                width: 100%;
+                height: 0.15em;
+                background: var(--primary);
+                opacity: 0.3;
+                transform: skewX(-5deg);
+            }
+
+            .hero-description {
+                font-size: 1.25rem;
+                color: var(--text-secondary);
+                max-width: 540px;
+                margin-bottom: 2rem;
+                line-height: 1.7;
+                animation: fadeSlideUp 0.8s ease 0.2s forwards;
+                opacity: 0;
+            }
+
+            .hero-stats {
+                display: flex;
+                gap: 2rem;
+                margin-bottom: 2.5rem;
+                animation: fadeSlideUp 0.8s ease 0.3s forwards;
+                opacity: 0;
+            }
+
+            .stat {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .stat-stars {
+                color: #fbbf24;
+                font-size: 1.1rem;
+            }
+
+            .stat-text {
+                font-size: 0.95rem;
+                color: var(--text-secondary);
+            }
+
+            .stat-divider {
+                width: 1px;
+                height: 24px;
+                background: var(--dark-400);
+            }
+
+            .hero-cta {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                animation: fadeSlideUp 0.8s ease 0.4s forwards;
+                opacity: 0;
+            }
+
+            .btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.75rem;
+                padding: 1rem 1.75rem;
+                border-radius: 16px;
+                font-weight: 600;
+                font-size: 0.95rem;
+                text-decoration: none;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                border: none;
+                cursor: pointer;
+            }
+
+            .btn-primary {
+                background: var(--primary);
+                color: var(--dark);
+                box-shadow: 0 0 40px var(--primary-glow);
+            }
+
+            .btn-primary:hover {
+                background: var(--primary-light);
+                transform: translateY(-2px);
+                box-shadow: 0 0 60px var(--primary-glow);
+            }
+
+            .btn-secondary {
+                background: transparent;
+                color: var(--text-primary);
+                border: 1px solid var(--dark-400);
+            }
+
+            .btn-secondary:hover {
+                border-color: var(--primary);
+                color: var(--primary);
+                transform: translateY(-2px);
+            }
+
+            .btn-icon {
+                width: 24px;
+                height: 24px;
+            }
+
+            .btn-badge {
+                position: absolute;
+                top: -8px;
+                right: -8px;
+                background: var(--accent);
+                color: white;
+                font-size: 0.7rem;
+                font-weight: 700;
+                padding: 0.25rem 0.5rem;
+                border-radius: 6px;
+                animation: badgePulse 2s ease infinite;
+            }
+
+            @keyframes badgePulse {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+            }
+
+            /* Hero Phone Mockup */
+            .hero-visual {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                animation: fadeSlideUp 0.8s ease 0.5s forwards;
+                opacity: 0;
+            }
+
+            .phone-container {
+                position: relative;
+            }
+
+            .phone-glow {
+                position: absolute;
+                inset: -20%;
+                background: radial-gradient(circle, var(--primary-glow), transparent 70%);
+                filter: blur(60px);
+                animation: glowPulse 4s ease-in-out infinite;
+            }
+
+            @keyframes glowPulse {
+                0%, 100% { opacity: 0.6; transform: scale(1); }
+                50% { opacity: 0.8; transform: scale(1.1); }
+            }
+
+            .phone-frame {
+                position: relative;
+                width: 280px;
+                border-radius: 40px;
+                overflow: hidden;
+                border: 8px solid var(--dark-100);
+                box-shadow:
+                    0 50px 100px rgba(0, 0, 0, 0.5),
+                    0 0 0 1px rgba(255, 255, 255, 0.1),
+                    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+                animation: phoneFloat 6s ease-in-out infinite;
+            }
+
+            @keyframes phoneFloat {
+                0%, 100% { transform: translateY(0) rotate(-2deg); }
+                50% { transform: translateY(-20px) rotate(2deg); }
+            }
+
+            .phone-frame img {
+                width: 100%;
+                display: block;
+            }
+
+            .floating-card {
+                position: absolute;
+                background: var(--dark-200);
+                border-radius: 16px;
+                padding: 1rem 1.25rem;
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                animation: cardFloat 5s ease-in-out infinite;
+            }
+
+            .floating-card.card-1 {
+                top: 15%;
+                left: -60px;
+                animation-delay: 0s;
+            }
+
+            .floating-card.card-2 {
+                bottom: 20%;
+                right: -80px;
+                animation-delay: -2.5s;
+            }
+
+            @keyframes cardFloat {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-10px); }
+            }
+
+            .card-icon {
+                width: 40px;
+                height: 40px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.25rem;
+            }
+
+            .card-icon.green {
+                background: rgba(45, 210, 159, 0.2);
+                color: var(--primary);
+            }
+
+            .card-icon.coral {
+                background: rgba(211, 100, 98, 0.2);
+                color: var(--accent);
+            }
+
+            .card-text {
+                font-size: 0.85rem;
+                font-weight: 600;
+            }
+
+            .card-subtext {
+                font-size: 0.75rem;
+                color: var(--text-muted);
+            }
+
+            /* Trust Badges */
+            .trust-badges {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                margin-top: 3rem;
+                animation: fadeSlideUp 0.8s ease 0.6s forwards;
+                opacity: 0;
+            }
+
+            .trust-badge {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.6rem 1rem;
+                background: var(--dark-200);
+                border-radius: 100px;
+                font-size: 0.8rem;
+                font-weight: 500;
+                color: var(--text-secondary);
+            }
+
+            .trust-badge svg {
+                width: 16px;
+                height: 16px;
+                color: var(--primary);
+            }
+
+            /* Sections Common */
+            section {
+                padding: 6rem 2rem;
+            }
+
+            .section-container {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .section-header {
+                text-align: center;
+                margin-bottom: 4rem;
+            }
+
+            .section-tag {
+                display: inline-block;
+                font-size: 0.8rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.15em;
+                color: var(--primary);
+                margin-bottom: 1rem;
+            }
+
+            .section-title {
+                font-size: clamp(2.5rem, 5vw, 4rem);
+                margin-bottom: 1rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.15rem;
+                color: var(--text-secondary);
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            /* How It Works */
+            .how-section {
+                background: var(--dark-100);
+                position: relative;
+                overflow: hidden;
+            }
+
+            .how-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            }
+
+            .steps-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
             @media (min-width: 768px) {
-                .md\\:text-7xl { font-size: 4.5rem; line-height: 1; }
+                .steps-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 3rem;
+                }
+            }
+
+            .step-card {
+                position: relative;
+                padding: 2.5rem;
+                background: var(--dark-200);
+                border-radius: 24px;
+                border: 1px solid var(--dark-300);
+                transition: all 0.4s ease;
+            }
+
+            .step-card:hover {
+                transform: translateY(-8px);
+                border-color: var(--primary);
+                box-shadow: 0 20px 60px rgba(45, 210, 159, 0.1);
+            }
+
+            .step-number {
+                font-family: var(--font-serif);
+                font-size: 5rem;
+                color: var(--primary);
+                opacity: 0.15;
+                position: absolute;
+                top: 1rem;
+                right: 1.5rem;
+                line-height: 1;
+            }
+
+            .step-icon {
+                width: 56px;
+                height: 56px;
+                background: rgba(45, 210, 159, 0.1);
+                border-radius: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1.5rem;
+                color: var(--primary);
+            }
+
+            .step-title {
+                font-family: var(--font-sans);
+                font-size: 1.35rem;
+                font-weight: 600;
+                margin-bottom: 0.75rem;
+            }
+
+            .step-desc {
+                color: var(--text-secondary);
+                line-height: 1.7;
+            }
+
+            .step-connector {
+                display: none;
+            }
+
+            @media (min-width: 768px) {
+                .step-connector {
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    right: -1.5rem;
+                    width: 3rem;
+                    height: 2px;
+                    background: linear-gradient(90deg, var(--dark-400), var(--primary), var(--dark-400));
+                }
+
+                .step-card:last-child .step-connector {
+                    display: none;
+                }
+            }
+
+            /* Features Section */
+            .features-section {
+                position: relative;
+            }
+
+            .features-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            @media (min-width: 768px) {
+                .features-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (min-width: 1024px) {
+                .features-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+
+            .feature-card {
+                padding: 2.5rem;
+                background: linear-gradient(135deg, var(--dark-200), var(--dark-100));
+                border-radius: 24px;
+                border: 1px solid var(--dark-300);
+                transition: all 0.4s ease;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .feature-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(circle at top right, var(--primary-glow), transparent 60%);
+                opacity: 0;
+                transition: opacity 0.4s ease;
+            }
+
+            .feature-card:hover {
+                transform: translateY(-8px);
+                border-color: rgba(45, 210, 159, 0.3);
+            }
+
+            .feature-card:hover::before {
+                opacity: 0.1;
+            }
+
+            .feature-icon {
+                width: 64px;
+                height: 64px;
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1.5rem;
+                position: relative;
+                z-index: 1;
+            }
+
+            .feature-icon.green {
+                background: linear-gradient(135deg, rgba(45, 210, 159, 0.2), rgba(45, 210, 159, 0.05));
+                color: var(--primary);
+            }
+
+            .feature-icon.coral {
+                background: linear-gradient(135deg, rgba(211, 100, 98, 0.2), rgba(211, 100, 98, 0.05));
+                color: var(--accent);
+            }
+
+            .feature-icon.purple {
+                background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0.05));
+                color: #8b5cf6;
+            }
+
+            .feature-title {
+                font-family: var(--font-sans);
+                font-size: 1.35rem;
+                font-weight: 600;
+                margin-bottom: 0.75rem;
+                position: relative;
+                z-index: 1;
+            }
+
+            .feature-desc {
+                color: var(--text-secondary);
+                line-height: 1.7;
+                position: relative;
+                z-index: 1;
+            }
+
+            /* Stats Section */
+            .stats-section {
+                background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+                position: relative;
+                overflow: hidden;
+            }
+
+            .stats-section::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30z' fill='none' stroke='rgba(255,255,255,0.1)' stroke-width='1'/%3E%3C/svg%3E");
+                opacity: 0.5;
+            }
+
+            .stats-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+                position: relative;
+                z-index: 1;
+            }
+
+            .stat-item {
+                text-align: center;
+                color: var(--dark);
+            }
+
+            .stat-number {
+                font-family: var(--font-serif);
+                font-size: clamp(3rem, 8vw, 5rem);
+                line-height: 1;
+                margin-bottom: 0.5rem;
+            }
+
+            .stat-label {
+                font-size: 1rem;
+                font-weight: 500;
+                opacity: 0.8;
+            }
+
+            /* Testimonials */
+            .testimonials-section {
+                background: var(--dark-100);
+            }
+
+            .testimonials-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            @media (min-width: 768px) {
+                .testimonials-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            .testimonial-card {
+                padding: 2.5rem;
+                background: var(--dark-200);
+                border-radius: 24px;
+                border: 1px solid var(--dark-300);
+                transition: all 0.4s ease;
+            }
+
+            .testimonial-card:hover {
+                border-color: rgba(45, 210, 159, 0.3);
+                transform: translateY(-4px);
+            }
+
+            .testimonial-stars {
+                color: #fbbf24;
+                font-size: 1.1rem;
+                margin-bottom: 1.25rem;
+            }
+
+            .testimonial-text {
+                font-size: 1.15rem;
+                line-height: 1.7;
+                margin-bottom: 1.5rem;
+                font-style: italic;
+                color: var(--text-secondary);
+            }
+
+            .testimonial-author {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .author-avatar {
+                width: 48px;
+                height: 48px;
+                border-radius: 14px;
+                background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 700;
+                color: var(--dark);
+            }
+
+            .author-info {
+                flex: 1;
+            }
+
+            .author-name {
+                font-weight: 600;
+                margin-bottom: 0.15rem;
+            }
+
+            .author-device {
+                font-size: 0.85rem;
+                color: var(--text-muted);
+            }
+
+            /* FAQ Section */
+            .faq-section {
+                background: var(--dark);
+            }
+
+            .faq-list {
+                max-width: 800px;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .faq-item {
+                background: var(--dark-200);
+                border-radius: 16px;
+                border: 1px solid var(--dark-300);
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .faq-item:hover {
+                border-color: var(--dark-400);
+            }
+
+            .faq-question {
+                width: 100%;
+                padding: 1.5rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background: transparent;
+                border: none;
+                color: var(--text-primary);
+                font-size: 1.1rem;
+                font-weight: 500;
+                text-align: left;
+                cursor: pointer;
+                font-family: var(--font-sans);
+            }
+
+            .faq-icon {
+                width: 24px;
+                height: 24px;
+                color: var(--primary);
+                transition: transform 0.3s ease;
+            }
+
+            .faq-item[open] .faq-icon {
+                transform: rotate(180deg);
+            }
+
+            .faq-answer {
+                padding: 0 1.5rem 1.5rem;
+                color: var(--text-secondary);
+                line-height: 1.7;
+            }
+
+            /* CTA Section */
+            .cta-section {
+                background: var(--dark-100);
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .cta-section::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 600px;
+                height: 600px;
+                background: radial-gradient(circle, var(--primary-glow), transparent 70%);
+                filter: blur(80px);
+                opacity: 0.3;
+            }
+
+            .cta-content {
+                position: relative;
+                z-index: 1;
+            }
+
+            .cta-title {
+                font-size: clamp(2.5rem, 6vw, 4rem);
+                margin-bottom: 1.5rem;
+            }
+
+            .cta-description {
+                font-size: 1.25rem;
+                color: var(--text-secondary);
+                max-width: 600px;
+                margin: 0 auto 2.5rem;
+            }
+
+            .cta-buttons {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            /* Footer */
+            .footer {
+                background: var(--dark);
+                padding: 3rem 2rem;
+                border-top: 1px solid var(--dark-300);
+            }
+
+            .footer-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: center;
+            }
+
+            @media (min-width: 768px) {
+                .footer-container {
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+            }
+
+            .footer-logo {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                text-decoration: none;
+                color: var(--text-primary);
+            }
+
+            .footer-logo img {
+                width: 36px;
+                height: 36px;
+                border-radius: 10px;
+            }
+
+            .footer-logo-text {
+                font-family: var(--font-serif);
+                font-size: 1.35rem;
+            }
+
+            .footer-links {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1.5rem;
+                align-items: center;
+            }
+
+            .footer-links a {
+                color: var(--text-muted);
+                text-decoration: none;
+                font-size: 0.9rem;
+                transition: color 0.3s ease;
+            }
+
+            .footer-links a:hover {
+                color: var(--primary);
+            }
+
+            .footer-copyright {
+                color: var(--text-muted);
+                font-size: 0.9rem;
             }
 
             /* Animations */
-            @keyframes fadeIn {
-                0% { opacity: 0; }
-                100% { opacity: 1; }
-            }
-            @keyframes pulse {
-                0%, 100% { opacity: 1; }
-                50% { opacity: 0.5; }
-            }
-            @keyframes ping {
-                75%, 100% { transform: scale(2); opacity: 0; }
+            @keyframes fadeSlideUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
 
-            /* Navigation & Interaction Styles */
-            .glass-effect {
-                background: rgba(255, 255, 255, 0.25);
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.18);
+            .animate-on-scroll {
+                opacity: 0;
+                transform: translateY(40px);
+                transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
             }
-            .transition-colors {
-                transition-property: color, background-color, border-color;
-                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-                transition-duration: 150ms;
+
+            .animate-on-scroll.visible {
+                opacity: 1;
+                transform: translateY(0);
             }
-            .hover\\:text-primary-500:hover { color: #2DD29F; }
-            .text-gray-600 { color: #4b5563; }
-            .hover\\:bg-gray-100:hover { background-color: #f3f4f6; }
-            .ml-4 { margin-left: 1rem; }
-            .space-x-2 > * + * { margin-left: 0.5rem; }
-            .font-medium { font-weight: 500; }
-            .card-hover {
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+            /* Responsive Helpers */
+            @media (max-width: 767px) {
+                .hero {
+                    padding-top: 6rem;
+                }
+
+                .hero-title {
+                    font-size: 2.5rem;
+                }
+
+                .hero-stats {
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+
+                .stat-divider {
+                    display: none;
+                }
+
+                .phone-frame {
+                    width: 240px;
+                }
+
+                .floating-card {
+                    display: none;
+                }
+
+                .stats-grid {
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
+                }
             }
-            .card-hover:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+
+            /* Scroll Indicator */
+            .scroll-indicator {
+                position: absolute;
+                bottom: 2rem;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+                color: var(--text-muted);
+                font-size: 0.75rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                animation: fadeSlideUp 0.8s ease 1s forwards;
+                opacity: 0;
             }
-            .language-btn {
-                transition: all 0.2s ease;
+
+            .scroll-line {
+                width: 1px;
+                height: 40px;
+                background: linear-gradient(180deg, var(--primary), transparent);
+                animation: scrollPulse 2s ease infinite;
             }
-            .language-btn:hover {
-                background-color: #f3f4f6;
+
+            @keyframes scrollPulse {
+                0%, 100% { opacity: 0.3; height: 40px; }
+                50% { opacity: 1; height: 60px; }
+            }
+
+            /* Mobile Menu */
+            .mobile-menu-btn {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                padding: 0.5rem;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+
+            @media (min-width: 768px) {
+                .mobile-menu-btn {
+                    display: none;
+                }
+            }
+
+            .mobile-menu-btn span {
+                display: block;
+                width: 24px;
+                height: 2px;
+                background: var(--text-primary);
+                transition: all 0.3s ease;
+            }
+
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: var(--dark);
+                z-index: 99;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s ease;
+            }
+
+            .mobile-menu.active {
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            .mobile-menu a {
+                font-size: 1.5rem;
+                color: var(--text-primary);
+                text-decoration: none;
+                font-family: var(--font-serif);
+            }
+
+            .mobile-menu-close {
+                position: absolute;
+                top: 2rem;
+                right: 2rem;
+                background: none;
+                border: none;
+                color: var(--text-primary);
+                font-size: 2rem;
+                cursor: pointer;
             }
         </style>
     </head>
-    <body class="min-h-screen hero-gradient">
+    <body>
         <!-- Navigation -->
-        <nav class="fixed top-0 w-full z-50 glass-effect">
-            <div class="container mx-auto px-6 py-4">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center space-x-3">
-                        <picture>
-                            <source srcset="assets/logo.webp" type="image/webp">
-                            <img
-                                src="assets/logo.png"
-                                alt="LeafTok Logo"
-                                width="40"
-                                height="40"
-                                fetchpriority="high"
-                                class="w-10 h-10 rounded-xl"
-                            />
-                        </picture>
-                        <span class="text-2xl font-bold text-gray-900"
-                            >LeafTok</span
-                        >
+        <nav class="nav" id="nav">
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <picture>
+                        <source srcset="assets/logo.webp" type="image/webp">
+                        <img src="assets/logo.png" alt="LeafTok" width="44" height="44" />
+                    </picture>
+                    <span class="logo-text">LeafTok</span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="#features" data-i18n="nav-features">Features</a>
+                    <a href="#screenshots" data-i18n="nav-app">App</a>
+                    <a href="#download" data-i18n="nav-download">Download</a>
+                    <a href="changelog.html" data-i18n="nav-changelog">Changelog</a>
+                    <div class="lang-switcher">
+                        <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+                        <button class="lang-btn active" data-lang="pt" onclick="changeLanguage('pt')">PT</button>
                     </div>
-                    <div class="hidden md:flex items-center space-x-8">
-                        <a
-                            href="#features"
-                            class="text-gray-700 hover:text-primary-500 transition-colors font-medium"
-                            data-i18n="nav-features"
-                            >Features</a
-                        >
-                        <a
-                            href="#screenshots"
-                            class="text-gray-700 hover:text-primary-500 transition-colors font-medium"
-                            data-i18n="nav-app"
-                            >App</a
-                        >
-                        <a
-                            href="#download"
-                            class="text-gray-700 hover:text-primary-500 transition-colors font-medium"
-                            data-i18n="nav-download"
-                            >Download</a
-                        >
-                        <a
-                            href="changelog.html"
-                            class="text-gray-700 hover:text-primary-500 transition-colors font-medium"
-                            data-i18n="nav-changelog"
-                            >Changelog</a
-                        >
-                        <div class="flex items-center space-x-2 ml-4">
-                            <button
-                                onclick="changeLanguage('en')"
-                                class="language-btn px-3 py-1 rounded-lg text-sm font-medium transition-colors"
-                                data-lang="en"
-                            >
-                                EN
-                            </button>
-                            <button
-                                onclick="changeLanguage('pt')"
-                                class="language-btn px-3 py-1 rounded-lg text-sm font-medium transition-colors"
-                                data-lang="pt"
-                            >
-                                PT
-                            </button>
+                </div>
+
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()">&times;</button>
+            <a href="#features" onclick="toggleMobileMenu()" data-i18n="nav-features">Features</a>
+            <a href="#screenshots" onclick="toggleMobileMenu()" data-i18n="nav-app">App</a>
+            <a href="#download" onclick="toggleMobileMenu()" data-i18n="nav-download">Download</a>
+            <a href="changelog.html" data-i18n="nav-changelog">Changelog</a>
+            <div class="lang-switcher" style="margin-top: 1rem;">
+                <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+                <button class="lang-btn active" data-lang="pt" onclick="changeLanguage('pt')">PT</button>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="leaf-shape"></div>
+            <div class="leaf-shape"></div>
+            <div class="leaf-shape"></div>
+
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        <span class="badge-text" data-i18n="hero-badge">AI-Powered Reading Revolution</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        <span class="line" data-i18n="hero-title-part1">Transform books into</span>
+                        <span class="line highlight serif-italic" data-i18n="hero-title-part2">swipeable magic</span>
+                    </h1>
+
+                    <p class="hero-description" data-i18n="hero-description">
+                        Turn any PDF or EPUB into addictive, TikTok-style cards. Read 3x faster without losing comprehension. Perfect for busy professionals who want to read more.
+                    </p>
+
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <span class="stat-text">5.0 Rating</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <span class="stat-text" data-i18n="hero-users">100+ readers transforming habits</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="https://apps.apple.com/br/app/leaftok/id6748622950" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="position: relative;">
+                            <span class="btn-badge">FREE</span>
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                            </svg>
+                            <span data-i18n="download-on">App Store</span>
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.iagocavalcante.leaftok" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                            </svg>
+                            <span data-i18n="get-it-on">Google Play</span>
+                        </a>
+                    </div>
+
+                    <div class="trust-badges">
+                        <div class="trust-badge">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span data-i18n="badge-free">100% Free</span>
+                        </div>
+                        <div class="trust-badge">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span data-i18n="badge-signup">No Signup Required</span>
+                        </div>
+                        <div class="trust-badge">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span data-i18n="badge-offline">Works Offline</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual" id="screenshots">
+                    <div class="phone-container">
+                        <div class="phone-glow"></div>
+                        <div class="phone-frame">
+                            <picture>
+                                <source srcset="assets/screenshot.webp" type="image/webp">
+                                <img src="assets/screenshot.png" alt="LeafTok App Screenshot" width="280" height="560" />
+                            </picture>
+                        </div>
+                        <div class="floating-card card-1">
+                            <div class="card-icon green">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="card-text">3x Faster</div>
+                                <div class="card-subtext" data-i18n="card-reading">Reading Speed</div>
+                            </div>
+                        </div>
+                        <div class="floating-card card-2">
+                            <div class="card-icon coral">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="card-text">PDF & EPUB</div>
+                                <div class="card-subtext" data-i18n="card-formats">All Formats</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </nav>
 
-        <!-- Hero Section -->
-        <section class="pt-32 pb-20 px-6">
-            <div class="container mx-auto max-w-7xl">
-                <div class="text-center mb-16 animate-fade-in">
-                    <div
-                        class="inline-flex items-center px-5 py-3 rounded-full text-sm bg-gradient-to-r from-primary-100 to-primary-200 text-primary-800 border-2 border-primary-300 mb-8 shadow-lg animate-pulse"
-                    >
-                        <span class="w-2 h-2 bg-accent-500 rounded-full mr-3 animate-ping"></span>
-                        <span class="font-bold mr-2">🚀 NEW:</span>
-                        <span data-i18n="hero-badge" class="font-semibold"
-                            >Stop Abandoning Books Halfway Through</span
-                        >
-                    </div>
-
-                    <h1
-                        class="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight"
-                    >
-                        <span data-i18n="hero-title-part1"
-                            >Finally finish that reading list with</span
-                        >
-                        <span
-                            class="gradient-text block"
-                            data-i18n="hero-title-part2"
-                            >TikTok-style book cards</span
-                        >
-                    </h1>
-
-                    <p
-                        class="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed font-light"
-                        data-i18n="hero-description"
-                    >
-                        Turn any PDF or EPUB into addictive, swipeable cards you can finish in minutes.
-                        Read 3x faster without losing comprehension. Perfect for busy professionals who
-                        want to read more but have less time.
-                    </p>
-
-                    <div
-                        class="flex items-center justify-center mb-12 space-x-6"
-                    >
-                        <div class="flex items-center space-x-2">
-                            <div class="flex space-x-1">
-                                <span class="text-yellow-400 text-xl">★</span>
-                                <span class="text-yellow-400 text-xl">★</span>
-                                <span class="text-yellow-400 text-xl">★</span>
-                                <span class="text-yellow-400 text-xl">★</span>
-                                <span class="text-yellow-400 text-xl">★</span>
-                            </div>
-                            <span class="text-gray-700 font-semibold text-lg"
-                                >5.0</span
-                            >
-                        </div>
-                        <div class="w-px h-6 bg-gray-300"></div>
-                        <span
-                            class="text-gray-700 text-lg font-medium"
-                            data-i18n="hero-users"
-                            >Join 100+ readers transforming their habits</span
-                        >
-                    </div>
-
-                    <!-- Trust Badges -->
-                    <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
-                        <div class="flex items-center bg-white px-4 py-2 rounded-full shadow-md border border-gray-200">
-                            <svg class="w-5 h-5 text-primary-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-sm font-semibold text-gray-700" data-i18n="badge-free">100% Free</span>
-                        </div>
-                        <div class="flex items-center bg-white px-4 py-2 rounded-full shadow-md border border-gray-200">
-                            <svg class="w-5 h-5 text-primary-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-sm font-semibold text-gray-700" data-i18n="badge-signup">No Signup Required</span>
-                        </div>
-                        <div class="flex items-center bg-white px-4 py-2 rounded-full shadow-md border border-gray-200">
-                            <svg class="w-5 h-5 text-primary-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-sm font-semibold text-gray-700" data-i18n="badge-offline">Works Offline</span>
-                        </div>
-                    </div>
-
-                    <div
-                        class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-20"
-                    >
-                        <a
-                            href="https://apps.apple.com/br/app/leaftok/id6748622950"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="group relative bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-10 py-5 rounded-2xl flex items-center space-x-3 transition-all duration-300 hover:shadow-2xl hover:scale-105 shadow-lg"
-                        >
-                            <!-- FREE Badge -->
-                            <span class="absolute -top-3 -right-3 bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse">
-                                FREE
-                            </span>
-                            <svg
-                                class="w-6 h-6"
-                                viewBox="0 0 24 24"
-                                fill="currentColor"
-                            >
-                                <path
-                                    d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
-                                />
-                            </svg>
-                            <div class="text-left">
-                                <div
-                                    class="text-xs opacity-90 font-medium"
-                                    data-i18n="download-on"
-                                >
-                                    Download on the
-                                </div>
-                                <div class="font-bold text-lg">App Store</div>
-                            </div>
-                            <!-- Arrow indicator -->
-                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                            </svg>
-                        </a>
-                        <a
-                            href="https://play.google.com/store/apps/details?id=com.iagocavalcante.leaftok"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="group border-2 border-gray-300 hover:border-primary-400 px-8 py-4 rounded-2xl flex items-center space-x-3 bg-white hover:bg-primary-50 transition-all duration-300 hover:shadow-xl hover:scale-105"
-                        >
-                            <svg
-                                class="w-6 h-6 text-gray-700 group-hover:text-primary-500"
-                                viewBox="0 0 24 24"
-                                fill="currentColor"
-                            >
-                                <path
-                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"
-                                />
-                            </svg>
-                            <div class="text-left">
-                                <div
-                                    class="text-xs text-gray-600"
-                                    data-i18n="get-it-on"
-                                >
-                                    Get it on
-                                </div>
-                                <div class="font-semibold text-gray-900">
-                                    Google Play
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- App Screenshot -->
-                <div
-                    id="screenshots"
-                    class="relative max-w-sm mx-auto animate-float"
-                >
-                    <div class="relative">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-r from-primary-400 to-primary-600 rounded-[3rem] blur-3xl opacity-20 scale-105"
-                        ></div>
-                        <picture>
-                            <source srcset="assets/screenshot.webp" type="image/webp">
-                            <img
-                                src="assets/screenshot.png"
-                                alt="LeafTok App Screenshot"
-                                width="384"
-                                height="768"
-                                class="relative rounded-[3rem] shadow-2xl w-full max-w-sm mx-auto border-8 border-dark-900"
-                            />
-                        </picture>
-                    </div>
-                </div>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
             </div>
         </section>
 
         <!-- How It Works Section -->
-        <section class="py-20 px-6 bg-white">
-            <div class="container mx-auto max-w-6xl">
-                <h2 class="text-4xl md:text-5xl font-bold text-center mb-4" data-i18n="how-title">
-                    Finish Your Next Book in 3 Simple Steps
-                </h2>
-                <p class="text-center text-gray-600 text-lg mb-16" data-i18n="how-subtitle">
-                    Go from PDF to your first swipeable card in under 2 minutes
-                </p>
-
-                <div class="grid md:grid-cols-3 gap-12">
-                    <!-- Step 1 -->
-                    <div class="text-center">
-                        <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <span class="text-3xl font-bold text-primary-600">1</span>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4 text-gray-900" data-i18n="step1-title">
-                            Upload Your Book
-                        </h3>
-                        <p class="text-gray-600 text-lg leading-relaxed" data-i18n="step1-desc">
-                            Choose any PDF or EPUB from your device. No account creation or
-                            complicated setup required.
-                        </p>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div class="text-center">
-                        <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <span class="text-3xl font-bold text-primary-600">2</span>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4 text-gray-900" data-i18n="step2-title">
-                            Let LeafTok Convert It
-                        </h3>
-                        <p class="text-gray-600 text-lg leading-relaxed" data-i18n="step2-desc">
-                            LeafTok automatically transforms your book into bite-sized,
-                            swipeable cards optimized for mobile reading.
-                        </p>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="text-center">
-                        <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <span class="text-3xl font-bold text-primary-600">3</span>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4 text-gray-900" data-i18n="step3-title">
-                            Start Swiping
-                        </h3>
-                        <p class="text-gray-600 text-lg leading-relaxed" data-i18n="step3-desc">
-                            Swipe through cards like TikTok. Track your progress and
-                            retain key concepts effortlessly.
-                        </p>
-                    </div>
+        <section class="how-section">
+            <div class="section-container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-tag" data-i18n="how-tag">How It Works</span>
+                    <h2 class="section-title" data-i18n="how-title">Finish Your Next Book in 3 Simple Steps</h2>
+                    <p class="section-subtitle" data-i18n="how-subtitle">Go from PDF to your first swipeable card in under 2 minutes</p>
                 </div>
 
-                <!-- CTA after steps -->
-                <div class="text-center mt-12">
-                    <p class="text-gray-700 text-lg mb-6">
-                        <strong data-i18n="how-cta">Average time from download to reading your first card: 4 minutes</strong>
-                    </p>
+                <div class="steps-grid">
+                    <div class="step-card animate-on-scroll">
+                        <span class="step-number">01</span>
+                        <div class="step-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="17 8 12 3 7 8"/>
+                                <line x1="12" y1="3" x2="12" y2="15"/>
+                            </svg>
+                        </div>
+                        <h3 class="step-title" data-i18n="step1-title">Upload Your Book</h3>
+                        <p class="step-desc" data-i18n="step1-desc">Choose any PDF or EPUB from your device. No account creation or complicated setup required.</p>
+                        <div class="step-connector"></div>
+                    </div>
+
+                    <div class="step-card animate-on-scroll" style="animation-delay: 0.1s;">
+                        <span class="step-number">02</span>
+                        <div class="step-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h3 class="step-title" data-i18n="step2-title">Let LeafTok Convert It</h3>
+                        <p class="step-desc" data-i18n="step2-desc">LeafTok automatically transforms your book into bite-sized, swipeable cards optimized for mobile reading.</p>
+                        <div class="step-connector"></div>
+                    </div>
+
+                    <div class="step-card animate-on-scroll" style="animation-delay: 0.2s;">
+                        <span class="step-number">03</span>
+                        <div class="step-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <path d="M9 15l2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <h3 class="step-title" data-i18n="step3-title">Start Swiping</h3>
+                        <p class="step-desc" data-i18n="step3-desc">Swipe through cards like TikTok. Track your progress and retain key concepts effortlessly.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Features Section -->
-        <section id="features" class="py-24 px-6 bg-white">
-            <div class="container mx-auto max-w-7xl">
-                <div class="text-center mb-20">
-                    <h2
-                        class="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-                    >
-                        <span data-i18n="features-title-part1">Why Choose</span>
-                        <span class="gradient-text">LeafTok</span
-                        ><span data-i18n="features-title-part2">?</span>
+        <section class="features-section" id="features">
+            <div class="section-container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-tag" data-i18n="features-tag">Why LeafTok</span>
+                    <h2 class="section-title">
+                        <span data-i18n="features-title-part1">Why Choose </span>
+                        <span class="serif-italic" style="color: var(--primary);">LeafTok</span>
+                        <span data-i18n="features-title-part2">?</span>
                     </h2>
-                    <p
-                        class="text-xl text-gray-600 max-w-3xl mx-auto font-light"
-                        data-i18n="features-subtitle"
-                    >
-                        Experience reading like never before with our innovative
-                        card-based approach designed for modern learners
-                    </p>
+                    <p class="section-subtitle" data-i18n="features-subtitle">Experience reading like never before with our innovative card-based approach designed for modern learners</p>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
-                    <div
-                        class="bg-gradient-to-br from-white to-primary-50 rounded-3xl shadow-lg hover:shadow-2xl card-hover p-10 text-center border border-primary-100"
-                    >
-                        <div
-                            class="w-20 h-20 bg-gradient-to-br from-primary-400 to-primary-600 rounded-3xl mx-auto mb-8 flex items-center justify-center shadow-lg"
-                        >
-                            <svg
-                                class="w-10 h-10 text-white"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                                ></path>
+                <div class="features-grid">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon green">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
                             </svg>
                         </div>
-                        <h3
-                            class="text-2xl font-bold mb-6 text-gray-900"
-                            data-i18n="feature1-title"
-                        >
-                            Lightning Fast Learning
-                        </h3>
-                        <p
-                            class="text-gray-600 text-lg leading-relaxed"
-                            data-i18n="feature1-description"
-                        >
-                            Absorb key concepts in seconds with our bite-sized
-                            card format. Perfect for busy schedules and modern
-                            attention spans.
-                        </p>
+                        <h3 class="feature-title" data-i18n="feature1-title">Lightning Fast Learning</h3>
+                        <p class="feature-desc" data-i18n="feature1-description">Absorb key concepts in seconds with our bite-sized card format. Perfect for busy schedules and modern attention spans.</p>
                     </div>
 
-                    <div
-                        class="bg-gradient-to-br from-white to-accent-50 rounded-3xl shadow-lg hover:shadow-2xl card-hover p-10 text-center border border-accent-100"
-                    >
-                        <div
-                            class="w-20 h-20 bg-gradient-to-br from-accent-400 to-accent-600 rounded-3xl mx-auto mb-8 flex items-center justify-center shadow-lg"
-                        >
-                            <svg
-                                class="w-10 h-10 text-white"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                                ></path>
+                    <div class="feature-card animate-on-scroll" style="animation-delay: 0.1s;">
+                        <div class="feature-icon coral">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
                             </svg>
                         </div>
-                        <h3
-                            class="text-2xl font-bold mb-6 text-gray-900"
-                            data-i18n="feature2-title"
-                        >
-                            Enhanced Retention
-                        </h3>
-                        <p
-                            class="text-gray-600 text-lg leading-relaxed"
-                            data-i18n="feature2-description"
-                        >
-                            Our spaced repetition system helps you remember what
-                            you read. Turn passive reading into active learning.
-                        </p>
+                        <h3 class="feature-title" data-i18n="feature2-title">Enhanced Retention</h3>
+                        <p class="feature-desc" data-i18n="feature2-description">Our spaced repetition system helps you remember what you read. Turn passive reading into active learning.</p>
                     </div>
 
-                    <div
-                        class="bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-lg hover:shadow-2xl card-hover p-10 text-center border border-gray-100"
-                    >
-                        <div
-                            class="w-20 h-20 bg-gradient-to-br from-dark-400 to-dark-600 rounded-3xl mx-auto mb-8 flex items-center justify-center shadow-lg"
-                        >
-                            <svg
-                                class="w-10 h-10 text-white"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                                ></path>
+                    <div class="feature-card animate-on-scroll" style="animation-delay: 0.2s;">
+                        <div class="feature-icon purple">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                             </svg>
                         </div>
-                        <h3
-                            class="text-2xl font-bold mb-6 text-gray-900"
-                            data-i18n="feature3-title"
-                        >
-                            Any Book, Any Format
-                        </h3>
-                        <p
-                            class="text-gray-600 text-lg leading-relaxed"
-                            data-i18n="feature3-description"
-                        >
-                            Transform PDFs, EPUBs, or any digital book into
-                            interactive cards. Your entire library, reimagined.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section class="py-24 px-6 bg-gradient-to-br from-gray-50 via-white to-primary-50">
-            <div class="container mx-auto max-w-6xl">
-                <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-900">
-                    <span data-i18n="testimonials-title">What Early Users Are Saying</span>
-                </h2>
-                <p class="text-center text-gray-600 text-lg mb-16" data-i18n="testimonials-subtitle">
-                    Join readers who are finishing more books than ever before
-                </p>
-
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Testimonial 1 -->
-                    <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-                        <div class="flex mb-4">
-                            <span class="text-yellow-400">★★★★★</span>
-                        </div>
-                        <p class="text-gray-700 mb-6 text-lg italic leading-relaxed" data-i18n="testimonial1">
-                            "This app is amazing, instead of spending time on TikTok, now I read my books"
-                        </p>
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
-                                <span class="text-primary-600 font-bold text-lg">TD</span>
-                            </div>
-                            <div class="ml-4">
-                                <div class="font-semibold text-gray-900">Tiago Danin</div>
-                                <div class="text-sm text-gray-500">Samsung Galaxy S22 Ultra</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 2 -->
-                    <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-                        <div class="flex mb-4">
-                            <span class="text-yellow-400">★★★★★</span>
-                        </div>
-                        <p class="text-gray-700 mb-6 text-lg italic leading-relaxed" data-i18n="testimonial2">
-                            "Interesting, it's possible to delve deeper into competitive studies"
-                        </p>
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
-                                <span class="text-primary-600 font-bold text-lg">ML</span>
-                            </div>
-                            <div class="ml-4">
-                                <div class="font-semibold text-gray-900">Mairton Leal</div>
-                                <div class="text-sm text-gray-500">Redmi Note 9 Pro</div>
-                            </div>
-                        </div>
+                        <h3 class="feature-title" data-i18n="feature3-title">Any Book, Any Format</h3>
+                        <p class="feature-desc" data-i18n="feature3-description">Transform PDFs, EPUBs, or any digital book into interactive cards. Your entire library, reimagined.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Stats Section -->
-        <section
-            class="py-24 bg-gradient-to-r from-primary-500 to-primary-600 text-white"
-        >
-            <div class="container mx-auto px-6 max-w-7xl">
-                <div class="grid md:grid-cols-3 gap-12 text-center">
-                    <div class="group">
-                        <div
-                            class="text-5xl md:text-6xl font-bold mb-4 group-hover:scale-110 transition-transform duration-300"
-                        >
-                            100+
-                        </div>
-                        <div
-                            class="text-primary-100 text-xl font-medium"
-                            data-i18n="stats-users"
-                        >
-                            Active Users
+        <section class="stats-section">
+            <div class="section-container">
+                <div class="stats-grid animate-on-scroll">
+                    <div class="stat-item">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label" data-i18n="stats-users">Active Users</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label" data-i18n="stats-books">Books Transformed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5.0</div>
+                        <div class="stat-label" data-i18n="stats-rating">App Store Rating</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="section-container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-tag" data-i18n="testimonials-tag">Testimonials</span>
+                    <h2 class="section-title" data-i18n="testimonials-title">What Early Users Are Saying</h2>
+                    <p class="section-subtitle" data-i18n="testimonials-subtitle">Join readers who are finishing more books than ever before</p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card animate-on-scroll">
+                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="testimonial-text" data-i18n="testimonial1">"This app is amazing, instead of spending time on TikTok, now I read my books"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">TD</div>
+                            <div class="author-info">
+                                <div class="author-name">Tiago Danin</div>
+                                <div class="author-device">Samsung Galaxy S22 Ultra</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="group">
-                        <div
-                            class="text-5xl md:text-6xl font-bold mb-4 group-hover:scale-110 transition-transform duration-300"
-                        >
-                            50+
-                        </div>
-                        <div
-                            class="text-primary-100 text-xl font-medium"
-                            data-i18n="stats-books"
-                        >
-                            Books Transformed
-                        </div>
-                    </div>
-                    <div class="group">
-                        <div
-                            class="text-5xl md:text-6xl font-bold mb-4 group-hover:scale-110 transition-transform duration-300"
-                        >
-                            5.0★
-                        </div>
-                        <div
-                            class="text-primary-100 text-xl font-medium"
-                            data-i18n="stats-rating"
-                        >
-                            App Store Rating
+
+                    <div class="testimonial-card animate-on-scroll" style="animation-delay: 0.1s;">
+                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="testimonial-text" data-i18n="testimonial2">"Interesting, it's possible to delve deeper into competitive studies"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">ML</div>
+                            <div class="author-info">
+                                <div class="author-name">Mairton Leal</div>
+                                <div class="author-device">Redmi Note 9 Pro</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -962,208 +1758,137 @@
         </section>
 
         <!-- FAQ Section -->
-        <section class="py-24 px-6 bg-white">
-            <div class="container mx-auto max-w-4xl">
-                <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-900">
-                    <span data-i18n="faq-title">Frequently Asked Questions</span>
-                </h2>
-                <p class="text-center text-gray-600 text-lg mb-16" data-i18n="faq-subtitle">
-                    Everything you need to know about LeafTok
-                </p>
+        <section class="faq-section">
+            <div class="section-container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-tag" data-i18n="faq-tag">FAQ</span>
+                    <h2 class="section-title" data-i18n="faq-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle" data-i18n="faq-subtitle">Everything you need to know about LeafTok</p>
+                </div>
 
-                <div class="space-y-6">
-                    <!-- FAQ 1 -->
-                    <details class="group bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
-                        <summary class="cursor-pointer p-6 flex items-center justify-between font-semibold text-lg text-gray-900 list-none">
+                <div class="faq-list">
+                    <details class="faq-item animate-on-scroll">
+                        <summary class="faq-question">
                             <span data-i18n="faq1-q">Is LeafTok really free?</span>
-                            <svg class="w-6 h-6 text-primary-500 group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 9l-7 7-7-7"/>
                             </svg>
                         </summary>
-                        <div class="px-6 pb-6 text-gray-600 leading-relaxed" data-i18n="faq1-a">
-                            Yes! LeafTok is completely free to download and use. There are no hidden fees, subscriptions, or in-app purchases. We believe everyone should have access to better reading tools.
-                        </div>
+                        <div class="faq-answer" data-i18n="faq1-a">Yes! LeafTok is completely free to download and use. There are no hidden fees, subscriptions, or in-app purchases. We believe everyone should have access to better reading tools.</div>
                     </details>
 
-                    <!-- FAQ 2 -->
-                    <details class="group bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
-                        <summary class="cursor-pointer p-6 flex items-center justify-between font-semibold text-lg text-gray-900 list-none">
+                    <details class="faq-item animate-on-scroll" style="animation-delay: 0.05s;">
+                        <summary class="faq-question">
                             <span data-i18n="faq2-q">What book formats does LeafTok support?</span>
-                            <svg class="w-6 h-6 text-primary-500 group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 9l-7 7-7-7"/>
                             </svg>
                         </summary>
-                        <div class="px-6 pb-6 text-gray-600 leading-relaxed" data-i18n="faq2-a">
-                            LeafTok supports EPUB and PDF formats - the two most common digital book formats. Simply upload your file and LeafTok automatically converts it into swipeable cards.
-                        </div>
+                        <div class="faq-answer" data-i18n="faq2-a">LeafTok supports EPUB and PDF formats - the two most common digital book formats. Simply upload your file and LeafTok automatically converts it into swipeable cards.</div>
                     </details>
 
-                    <!-- FAQ 3 -->
-                    <details class="group bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
-                        <summary class="cursor-pointer p-6 flex items-center justify-between font-semibold text-lg text-gray-900 list-none">
+                    <details class="faq-item animate-on-scroll" style="animation-delay: 0.1s;">
+                        <summary class="faq-question">
                             <span data-i18n="faq3-q">How long does it take to convert a book?</span>
-                            <svg class="w-6 h-6 text-primary-500 group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 9l-7 7-7-7"/>
                             </svg>
                         </summary>
-                        <div class="px-6 pb-6 text-gray-600 leading-relaxed" data-i18n="faq3-a">
-                            Most books convert in under 2 minutes. Simply upload your PDF or EPUB, and LeafTok does the rest automatically. You can continue reading other books while conversion happens in the background.
-                        </div>
+                        <div class="faq-answer" data-i18n="faq3-a">Most books convert in under 2 minutes. Simply upload your PDF or EPUB, and LeafTok does the rest automatically. You can continue reading other books while conversion happens in the background.</div>
                     </details>
 
-                    <!-- FAQ 4 -->
-                    <details class="group bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
-                        <summary class="cursor-pointer p-6 flex items-center justify-between font-semibold text-lg text-gray-900 list-none">
+                    <details class="faq-item animate-on-scroll" style="animation-delay: 0.15s;">
+                        <summary class="faq-question">
                             <span data-i18n="faq4-q">Can I use LeafTok offline?</span>
-                            <svg class="w-6 h-6 text-primary-500 group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 9l-7 7-7-7"/>
                             </svg>
                         </summary>
-                        <div class="px-6 pb-6 text-gray-600 leading-relaxed" data-i18n="faq4-a">
-                            Yes! Once you've uploaded and converted a book, you can read it completely offline. Perfect for commutes, flights, or anywhere you don't have internet access.
-                        </div>
+                        <div class="faq-answer" data-i18n="faq4-a">Yes! Once you've uploaded and converted a book, you can read it completely offline. Perfect for commutes, flights, or anywhere you don't have internet access.</div>
                     </details>
 
-                    <!-- FAQ 5 -->
-                    <details class="group bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
-                        <summary class="cursor-pointer p-6 flex items-center justify-between font-semibold text-lg text-gray-900 list-none">
+                    <details class="faq-item animate-on-scroll" style="animation-delay: 0.2s;">
+                        <summary class="faq-question">
                             <span data-i18n="faq5-q">Is my reading data private and secure?</span>
-                            <svg class="w-6 h-6 text-primary-500 group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 9l-7 7-7-7"/>
                             </svg>
                         </summary>
-                        <div class="px-6 pb-6 text-gray-600 leading-relaxed" data-i18n="faq5-a">
-                            Absolutely. Your books and reading data are stored securely on your device. We respect your privacy and never sell your data.
-                        </div>
+                        <div class="faq-answer" data-i18n="faq5-a">Absolutely. Your books and reading data are stored securely on your device. We respect your privacy and never sell your data.</div>
                     </details>
                 </div>
             </div>
         </section>
 
-        <!-- Final CTA Section -->
-        <section
-            id="download"
-            class="py-24 px-6 bg-gradient-to-br from-gray-50 to-white"
-        >
-            <div class="container mx-auto max-w-4xl text-center">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-                    <span data-i18n="cta-title-part1"
-                        >Ready to revolutionize your</span
-                    >
-                    <span class="gradient-text" data-i18n="cta-title-part2"
-                        >reading</span
-                    ><span data-i18n="cta-title-part3">?</span>
-                </h2>
-                <p
-                    class="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto font-light leading-relaxed"
-                    data-i18n="cta-description"
-                >
-                    Join thousands of readers who have already transformed their
-                    learning experience with LeafTok.
-                </p>
+        <!-- CTA Section -->
+        <section class="cta-section" id="download">
+            <div class="section-container">
+                <div class="cta-content animate-on-scroll">
+                    <h2 class="cta-title">
+                        <span data-i18n="cta-title-part1">Ready to revolutionize your </span>
+                        <span class="serif-italic" style="color: var(--primary);" data-i18n="cta-title-part2">reading</span>
+                        <span data-i18n="cta-title-part3">?</span>
+                    </h2>
+                    <p class="cta-description" data-i18n="cta-description">Join thousands of readers who have already transformed their learning experience with LeafTok.</p>
 
-                <div
-                    class="flex flex-col sm:flex-row items-center justify-center space-y-6 sm:space-y-0 sm:space-x-8"
-                >
-                    <a
-                        href="https://apps.apple.com/br/app/leaftok/id6748622950"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="group bg-primary-500 hover:bg-primary-600 text-white px-10 py-5 rounded-2xl flex items-center space-x-4 transition-all duration-300 hover:shadow-2xl hover:scale-105 text-lg font-semibold"
-                    >
-                        <svg
-                            class="w-7 h-7"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                        >
-                            <path
-                                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
-                            />
-                        </svg>
-                        <span data-i18n="download-ios">Download for iOS</span>
-                    </a>
-                    <a
-                        href="https://play.google.com/store/apps/details?id=com.iagocavalcante.leaftok"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="group border-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white px-10 py-5 rounded-2xl flex items-center space-x-4 bg-white transition-all duration-300 hover:shadow-xl hover:scale-105 text-lg font-semibold"
-                    >
-                        <svg
-                            class="w-7 h-7"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                        >
-                            <path
-                                d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"
-                            />
-                        </svg>
-                        <span data-i18n="download-android"
-                            >Download for Android</span
-                        >
-                    </a>
+                    <div class="cta-buttons">
+                        <a href="https://apps.apple.com/br/app/leaftok/id6748622950" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                            </svg>
+                            <span data-i18n="download-ios">Download for iOS</span>
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.iagocavalcante.leaftok" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                            </svg>
+                            <span data-i18n="download-android">Download for Android</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer class="bg-dark-900 text-white py-16">
-            <div class="container mx-auto px-6 max-w-7xl">
-                <div
-                    class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0"
-                >
-                    <div class="flex items-center space-x-4">
-                        <picture>
-                            <source srcset="assets/logo.webp" type="image/webp">
-                            <img
-                                src="assets/logo.png"
-                                alt="LeafTok Logo"
-                                width="40"
-                                height="40"
-                                class="w-10 h-10 rounded-xl"
-                            />
-                        </picture>
-                        <span class="text-2xl font-bold">LeafTok</span>
-                    </div>
-                    <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
-                        <a
-                            href="privacy.html"
-                            class="text-gray-400 hover:text-primary-400 transition-colors"
-                            data-i18n="footer-privacy"
-                        >
-                            Privacy Policy
-                        </a>
-                        <div class="text-gray-400" data-i18n="footer-copyright">
-                            © 2025 LeafTok by Iago Cavalcante. All rights reserved.
-                        </div>
-                    </div>
+        <footer class="footer">
+            <div class="footer-container">
+                <a href="#" class="footer-logo">
+                    <picture>
+                        <source srcset="assets/logo.webp" type="image/webp">
+                        <img src="assets/logo.png" alt="LeafTok" width="36" height="36" />
+                    </picture>
+                    <span class="footer-logo-text">LeafTok</span>
+                </a>
+
+                <div class="footer-links">
+                    <a href="privacy.html" data-i18n="footer-privacy">Privacy Policy</a>
+                    <span class="footer-copyright" data-i18n="footer-copyright">&copy; 2025 LeafTok by Iago Cavalcante. All rights reserved.</span>
                 </div>
             </div>
         </footer>
 
-        <!-- Smooth scrolling, animations and i18n -->
         <script>
             // Language translations
             const translations = {
                 en: {
-                    "page-title":
-                        "LeafTok - AI-Powered Reading App | Transform Books into Smart Cards",
-                    "nav-home": "Home",
+                    "page-title": "LeafTok - AI-Powered Reading App | Transform Books into Smart Cards",
                     "nav-features": "Features",
                     "nav-app": "App",
                     "nav-download": "Download",
                     "nav-changelog": "Changelog",
-                    "nav-get-started": "Get Started",
                     "hero-badge": "AI-Powered Reading Revolution",
-                    "hero-title-part1": "Transform books with AI into",
-                    "hero-title-part2": "intelligent learning cards",
-                    "hero-description":
-                        "LeafTok uses artificial intelligence to revolutionize your reading experience. Convert any book into smart, digestible cards with enhanced learning algorithms. Perfect for students, professionals, and AI enthusiasts worldwide.",
-                    "hero-users": "Join 100+ readers transforming their habits",
+                    "hero-title-part1": "Transform books into",
+                    "hero-title-part2": "swipeable magic",
+                    "hero-description": "Turn any PDF or EPUB into addictive, TikTok-style cards. Read 3x faster without losing comprehension. Perfect for busy professionals who want to read more.",
+                    "hero-users": "100+ readers transforming habits",
                     "badge-free": "100% Free",
                     "badge-signup": "No Signup Required",
                     "badge-offline": "Works Offline",
-                    "download-on": "Download on the",
-                    "get-it-on": "Get it on",
+                    "download-on": "App Store",
+                    "get-it-on": "Google Play",
+                    "card-reading": "Reading Speed",
+                    "card-formats": "All Formats",
+                    "how-tag": "How It Works",
                     "how-title": "Finish Your Next Book in 3 Simple Steps",
                     "how-subtitle": "Go from PDF to your first swipeable card in under 2 minutes",
                     "step1-title": "Upload Your Book",
@@ -1172,11 +1897,25 @@
                     "step2-desc": "LeafTok automatically transforms your book into bite-sized, swipeable cards optimized for mobile reading.",
                     "step3-title": "Start Swiping",
                     "step3-desc": "Swipe through cards like TikTok. Track your progress and retain key concepts effortlessly.",
-                    "how-cta": "Average time from download to reading your first card: 4 minutes",
+                    "features-tag": "Why LeafTok",
+                    "features-title-part1": "Why Choose ",
+                    "features-title-part2": "?",
+                    "features-subtitle": "Experience reading like never before with our innovative card-based approach designed for modern learners",
+                    "feature1-title": "Lightning Fast Learning",
+                    "feature1-description": "Absorb key concepts in seconds with our bite-sized card format. Perfect for busy schedules and modern attention spans.",
+                    "feature2-title": "Enhanced Retention",
+                    "feature2-description": "Our spaced repetition system helps you remember what you read. Turn passive reading into active learning.",
+                    "feature3-title": "Any Book, Any Format",
+                    "feature3-description": "Transform PDFs, EPUBs, or any digital book into interactive cards. Your entire library, reimagined.",
+                    "stats-users": "Active Users",
+                    "stats-books": "Books Transformed",
+                    "stats-rating": "App Store Rating",
+                    "testimonials-tag": "Testimonials",
                     "testimonials-title": "What Early Users Are Saying",
                     "testimonials-subtitle": "Join readers who are finishing more books than ever before",
-                    "testimonial1": "This app is amazing, instead of spending time on TikTok, now I read my books",
-                    "testimonial2": "Interesting, it's possible to delve deeper into competitive studies",
+                    "testimonial1": "\"This app is amazing, instead of spending time on TikTok, now I read my books\"",
+                    "testimonial2": "\"Interesting, it's possible to delve deeper into competitive studies\"",
+                    "faq-tag": "FAQ",
                     "faq-title": "Frequently Asked Questions",
                     "faq-subtitle": "Everything you need to know about LeafTok",
                     "faq1-q": "Is LeafTok really free?",
@@ -1189,172 +1928,136 @@
                     "faq4-a": "Yes! Once you've uploaded and converted a book, you can read it completely offline. Perfect for commutes, flights, or anywhere you don't have internet access.",
                     "faq5-q": "Is my reading data private and secure?",
                     "faq5-a": "Absolutely. Your books and reading data are stored securely on your device. We respect your privacy and never sell your data.",
-                    "features-title-part1": "Why Choose",
-                    "features-title-part2": "?",
-                    "features-subtitle":
-                        "Experience AI-powered reading with intelligent algorithms designed for modern learners, students, and professionals worldwide",
-                    "feature1-title": "AI-Powered Learning",
-                    "feature1-description":
-                        "Our artificial intelligence algorithms analyze content and create optimized learning cards. Perfect for busy professionals, students, and anyone seeking efficient knowledge acquisition.",
-                    "feature2-title": "Smart Retention System",
-                    "feature2-description":
-                        "Advanced spaced repetition algorithms powered by machine learning help you remember what you read. Transform passive reading into intelligent, active learning.",
-                    "feature3-title": "Intelligent Book Processing",
-                    "feature3-description":
-                        "AI transforms PDFs, EPUBs, or any digital book into interactive, smart cards. Your entire library becomes an intelligent learning system.",
-                    "stats-users": "Active Users",
-                    "stats-books": "Books Transformed",
-                    "stats-rating": "App Store Rating",
-                    "cta-title-part1": "Ready to revolutionize your",
+                    "cta-title-part1": "Ready to revolutionize your ",
                     "cta-title-part2": "reading",
                     "cta-title-part3": "?",
-                    "cta-description":
-                        "Join 100+ students, professionals, and AI enthusiasts who have already transformed over 50 books with our 5-star rated intelligent reading technology.",
+                    "cta-description": "Join thousands of readers who have already transformed their learning experience with LeafTok.",
                     "download-ios": "Download for iOS",
                     "download-android": "Download for Android",
                     "footer-privacy": "Privacy Policy",
-                    "footer-copyright":
-                        "© 2025 LeafTok by Iago Cavalcante. All rights reserved.",
+                    "footer-copyright": "\u00a9 2025 LeafTok by Iago Cavalcante. All rights reserved."
                 },
                 pt: {
-                    "page-title":
-                        "LeafTok - App de Leitura com IA | Transforme Livros em Cards Inteligentes",
-                    "nav-home": "Início",
+                    "page-title": "LeafTok - App de Leitura com IA | Transforme Livros em Cards Inteligentes",
                     "nav-features": "Recursos",
                     "nav-app": "App",
                     "nav-download": "Download",
                     "nav-changelog": "Changelog",
-                    "nav-get-started": "Começar",
-                    "hero-badge":
-                        "Pare de Abandonar Livros pela Metade",
-                    "hero-title-part1": "Finalmente termine sua lista de leitura com",
-                    "hero-title-part2": "cards estilo TikTok",
-                    "hero-description":
-                        "Transforme qualquer PDF ou EPUB em cards viciantes e deslizáveis que você consegue terminar em minutos. Leia 3x mais rápido sem perder compreensão. Perfeito para profissionais ocupados que querem ler mais, mas têm menos tempo.",
-                    "hero-users": "Junte-se a 100+ leitores transformando seus hábitos",
-                    "badge-free": "100% Grátis",
+                    "hero-badge": "Pare de Abandonar Livros",
+                    "hero-title-part1": "Transforme livros em",
+                    "hero-title-part2": "cards deslizantes",
+                    "hero-description": "Transforme qualquer PDF ou EPUB em cards viciantes estilo TikTok. Leia 3x mais r\u00e1pido sem perder compreens\u00e3o. Perfeito para profissionais ocupados.",
+                    "hero-users": "100+ leitores transformando h\u00e1bitos",
+                    "badge-free": "100% Gr\u00e1tis",
                     "badge-signup": "Sem Cadastro",
                     "badge-offline": "Funciona Offline",
-                    "download-on": "Baixar na",
-                    "get-it-on": "Baixar no",
-                    "how-title": "Termine Seu Próximo Livro em 3 Passos Simples",
-                    "how-subtitle": "Do PDF ao seu primeiro card deslizável em menos de 2 minutos",
+                    "download-on": "App Store",
+                    "get-it-on": "Google Play",
+                    "card-reading": "Velocidade de Leitura",
+                    "card-formats": "Todos Formatos",
+                    "how-tag": "Como Funciona",
+                    "how-title": "Termine Seu Pr\u00f3ximo Livro em 3 Passos",
+                    "how-subtitle": "Do PDF ao seu primeiro card em menos de 2 minutos",
                     "step1-title": "Envie Seu Livro",
-                    "step1-desc": "Escolha qualquer PDF ou EPUB do seu dispositivo. Sem criação de conta ou configuração complicada.",
+                    "step1-desc": "Escolha qualquer PDF ou EPUB do seu dispositivo. Sem cria\u00e7\u00e3o de conta ou configura\u00e7\u00e3o complicada.",
                     "step2-title": "Deixe o LeafTok Converter",
-                    "step2-desc": "O LeafTok transforma automaticamente seu livro em cards compactos e deslizáveis otimizados para leitura mobile.",
+                    "step2-desc": "O LeafTok transforma automaticamente seu livro em cards compactos e desliz\u00e1veis otimizados para leitura mobile.",
                     "step3-title": "Comece a Deslizar",
-                    "step3-desc": "Deslize pelos cards como no TikTok. Acompanhe seu progresso e retenha conceitos-chave sem esforço.",
-                    "how-cta": "Tempo médio do download até ler o primeiro card: 4 minutos",
-                    "testimonials-title": "O Que os Primeiros Usuários Estão Dizendo",
-                    "testimonials-subtitle": "Junte-se aos leitores que estão terminando mais livros do que nunca",
-                    "testimonial1": "Esse app é incrível, ao invés de perder tempo no TikTok, agora leio meus livros",
-                    "testimonial2": "Interessante, é possível se aprofundar mais em estudos para concursos",
-                    "faq-title": "Perguntas Frequentes",
-                    "faq-subtitle": "Tudo que você precisa saber sobre o LeafTok",
-                    "faq1-q": "O LeafTok é realmente grátis?",
-                    "faq1-a": "Sim! O LeafTok é completamente gratuito para baixar e usar. Não há taxas ocultas, assinaturas ou compras dentro do app. Acreditamos que todos devem ter acesso a melhores ferramentas de leitura.",
-                    "faq2-q": "Quais formatos de livros o LeafTok suporta?",
-                    "faq2-a": "O LeafTok suporta formatos EPUB e PDF - os dois formatos de livros digitais mais comuns. Simplesmente envie seu arquivo e o LeafTok converte automaticamente em cards deslizáveis.",
-                    "faq3-q": "Quanto tempo leva para converter um livro?",
-                    "faq3-a": "A maioria dos livros converte em menos de 2 minutos. Simplesmente envie seu PDF ou EPUB, e o LeafTok faz o resto automaticamente. Você pode continuar lendo outros livros enquanto a conversão acontece em segundo plano.",
-                    "faq4-q": "Posso usar o LeafTok offline?",
-                    "faq4-a": "Sim! Uma vez que você enviou e converteu um livro, pode lê-lo completamente offline. Perfeito para trajetos, voos ou qualquer lugar sem acesso à internet.",
-                    "faq5-q": "Meus dados de leitura são privados e seguros?",
-                    "faq5-a": "Absolutamente. Seus livros e dados de leitura são armazenados com segurança em seu dispositivo. Respeitamos sua privacidade e nunca vendemos seus dados.",
-                    "features-title-part1": "Por que Escolher",
+                    "step3-desc": "Deslize pelos cards como no TikTok. Acompanhe seu progresso e retenha conceitos-chave sem esfor\u00e7o.",
+                    "features-tag": "Por que LeafTok",
+                    "features-title-part1": "Por que Escolher ",
                     "features-title-part2": "?",
-                    "features-subtitle":
-                        "Experimente a leitura com IA e algoritmos inteligentes projetados para estudantes modernos, profissionais e entusiastas de tecnologia mundial",
-                    "feature1-title": "Aprendizado com IA",
-                    "feature1-description":
-                        "Nossos algoritmos de inteligência artificial analisam o conteúdo e criam cards de aprendizado otimizados. Perfeito para profissionais ocupados, estudantes e qualquer pessoa que busca aquisição eficiente de conhecimento.",
-                    "feature2-title": "Sistema Inteligente de Retenção",
-                    "feature2-description":
-                        "Algoritmos avançados de repetição espaçada com machine learning ajudam você a lembrar do que leu. Transforme leitura passiva em aprendizado inteligente e ativo.",
-                    "feature3-title": "Processamento Inteligente de Livros",
-                    "feature3-description":
-                        "A IA transforma PDFs, EPUBs ou qualquer livro digital em cards interativos e inteligentes. Toda sua biblioteca se torna um sistema inteligente de aprendizado.",
-                    "stats-users": "Usuários Ativos",
+                    "features-subtitle": "Experimente a leitura como nunca antes com nossa abordagem inovadora baseada em cards",
+                    "feature1-title": "Aprendizado Rel\u00e2mpago",
+                    "feature1-description": "Absorva conceitos-chave em segundos com nosso formato de cards compactos. Perfeito para agendas lotadas.",
+                    "feature2-title": "Reten\u00e7\u00e3o Aprimorada",
+                    "feature2-description": "Nosso sistema de repeti\u00e7\u00e3o espa\u00e7ada ajuda voc\u00ea a lembrar o que leu. Transforme leitura passiva em aprendizado ativo.",
+                    "feature3-title": "Qualquer Livro, Qualquer Formato",
+                    "feature3-description": "Transforme PDFs, EPUBs ou qualquer livro digital em cards interativos. Toda sua biblioteca, reimaginada.",
+                    "stats-users": "Usu\u00e1rios Ativos",
                     "stats-books": "Livros Transformados",
-                    "stats-rating": "Avaliação na App Store",
-                    "cta-title-part1": "Pronto para revolucionar sua",
+                    "stats-rating": "Avalia\u00e7\u00e3o App Store",
+                    "testimonials-tag": "Depoimentos",
+                    "testimonials-title": "O Que os Primeiros Usu\u00e1rios Dizem",
+                    "testimonials-subtitle": "Junte-se aos leitores que est\u00e3o terminando mais livros do que nunca",
+                    "testimonial1": "\"Esse app \u00e9 incr\u00edvel, ao inv\u00e9s de perder tempo no TikTok, agora leio meus livros\"",
+                    "testimonial2": "\"Interessante, \u00e9 poss\u00edvel se aprofundar mais em estudos para concursos\"",
+                    "faq-tag": "FAQ",
+                    "faq-title": "Perguntas Frequentes",
+                    "faq-subtitle": "Tudo que voc\u00ea precisa saber sobre o LeafTok",
+                    "faq1-q": "O LeafTok \u00e9 realmente gr\u00e1tis?",
+                    "faq1-a": "Sim! O LeafTok \u00e9 completamente gratuito para baixar e usar. N\u00e3o h\u00e1 taxas ocultas, assinaturas ou compras dentro do app.",
+                    "faq2-q": "Quais formatos de livros o LeafTok suporta?",
+                    "faq2-a": "O LeafTok suporta formatos EPUB e PDF - os dois formatos de livros digitais mais comuns. Simplesmente envie seu arquivo e o LeafTok converte automaticamente.",
+                    "faq3-q": "Quanto tempo leva para converter um livro?",
+                    "faq3-a": "A maioria dos livros converte em menos de 2 minutos. Simplesmente envie seu PDF ou EPUB, e o LeafTok faz o resto automaticamente.",
+                    "faq4-q": "Posso usar o LeafTok offline?",
+                    "faq4-a": "Sim! Uma vez que voc\u00ea enviou e converteu um livro, pode l\u00ea-lo completamente offline. Perfeito para trajetos e voos.",
+                    "faq5-q": "Meus dados de leitura s\u00e3o privados?",
+                    "faq5-a": "Absolutamente. Seus livros e dados de leitura s\u00e3o armazenados com seguran\u00e7a em seu dispositivo. Respeitamos sua privacidade.",
+                    "cta-title-part1": "Pronto para revolucionar sua ",
                     "cta-title-part2": "leitura",
                     "cta-title-part3": "?",
-                    "cta-description":
-                        "Junte-se a mais de 30 estudantes, profissionais e entusiastas de IA que já transformaram mais de 50 livros com nossa tecnologia inteligente de leitura avaliada com 5 estrelas.",
+                    "cta-description": "Junte-se a milhares de leitores que j\u00e1 transformaram sua experi\u00eancia de aprendizado com o LeafTok.",
                     "download-ios": "Baixar para iOS",
                     "download-android": "Baixar para Android",
-                    "footer-privacy": "Política de Privacidade",
-                    "footer-copyright":
-                        "© 2025 LeafTok por Iago Cavalcante. Todos os direitos reservados.",
-                },
+                    "footer-privacy": "Pol\u00edtica de Privacidade",
+                    "footer-copyright": "\u00a9 2025 LeafTok por Iago Cavalcante. Todos os direitos reservados."
+                }
             };
 
-            // Current language (default to Portuguese for Brazilian audience)
-            let currentLang = localStorage.getItem("leaftok-lang") || "pt";
+            let currentLang = localStorage.getItem('leaftok-lang') || 'pt';
 
-            // Change language function
             function changeLanguage(lang) {
                 currentLang = lang;
-                localStorage.setItem("leaftok-lang", lang);
+                localStorage.setItem('leaftok-lang', lang);
                 updateLanguage();
                 updateLanguageButtons();
             }
 
-            // Update all text content
             function updateLanguage() {
-                const elements = document.querySelectorAll("[data-i18n]");
-                elements.forEach((element) => {
-                    const key = element.getAttribute("data-i18n");
-                    if (
-                        translations[currentLang] &&
-                        translations[currentLang][key]
-                    ) {
-                        element.textContent = translations[currentLang][key];
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (translations[currentLang] && translations[currentLang][key]) {
+                        el.textContent = translations[currentLang][key];
                     }
                 });
-
-                // Update page title
-                document.title = translations[currentLang]["page-title"];
+                document.title = translations[currentLang]['page-title'];
             }
 
-            // Update language button styles
             function updateLanguageButtons() {
-                const buttons = document.querySelectorAll(".language-btn");
-                buttons.forEach((btn) => {
-                    const btnLang = btn.getAttribute("data-lang");
-                    if (btnLang === currentLang) {
-                        btn.classList.add("bg-primary-500", "text-white");
-                        btn.classList.remove(
-                            "text-gray-600",
-                            "hover:bg-gray-100",
-                        );
-                    } else {
-                        btn.classList.remove("bg-primary-500", "text-white");
-                        btn.classList.add("text-gray-600", "hover:bg-gray-100");
-                    }
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.lang === currentLang);
                 });
             }
 
-            // Initialize language on page load
-            document.addEventListener("DOMContentLoaded", function () {
-                updateLanguage();
-                updateLanguageButtons();
+            // Mobile Menu
+            function toggleMobileMenu() {
+                document.getElementById('mobileMenu').classList.toggle('active');
+            }
+
+            // Navigation scroll effect
+            let lastScroll = 0;
+            window.addEventListener('scroll', () => {
+                const nav = document.getElementById('nav');
+                const currentScroll = window.pageYOffset;
+
+                if (currentScroll > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+
+                lastScroll = currentScroll;
             });
 
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-                anchor.addEventListener("click", function (e) {
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
                     e.preventDefault();
-                    const target = document.querySelector(
-                        this.getAttribute("href"),
-                    );
+                    const target = document.querySelector(this.getAttribute('href'));
                     if (target) {
-                        target.scrollIntoView({
-                            behavior: "smooth",
-                            block: "start",
-                        });
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 });
             });
@@ -1362,235 +2065,31 @@
             // Intersection Observer for animations
             const observerOptions = {
                 threshold: 0.1,
-                rootMargin: "0px 0px -50px 0px",
+                rootMargin: '0px 0px -50px 0px'
             };
 
             const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
+                entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add("animate-slide-up");
+                        entry.target.classList.add('visible');
                     }
                 });
             }, observerOptions);
 
-            // Observe feature cards
-            document.querySelectorAll(".card-hover").forEach((card) => {
-                observer.observe(card);
+            document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+            // Initialize
+            document.addEventListener('DOMContentLoaded', () => {
+                updateLanguage();
+                updateLanguageButtons();
             });
 
-            // Mobile menu toggle (if needed)
-            const mobileMenuButton =
-                document.querySelector("[data-mobile-menu]");
-            const mobileMenu = document.querySelector(
-                "[data-mobile-menu-content]",
-            );
-
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener("click", () => {
-                    mobileMenu.classList.toggle("hidden");
+            // Service Worker
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/sw.js').catch(() => {});
                 });
             }
-
-            // Service Worker Registration
-            if ("serviceWorker" in navigator) {
-                window.addEventListener("load", () => {
-                    navigator.serviceWorker
-                        .register("/sw.js")
-                        .then((registration) => {
-                            console.log("SW registered: ", registration);
-
-                            // Check for updates
-                            registration.addEventListener("updatefound", () => {
-                                const newWorker = registration.installing;
-                                newWorker.addEventListener(
-                                    "statechange",
-                                    () => {
-                                        if (
-                                            newWorker.state === "installed" &&
-                                            navigator.serviceWorker.controller
-                                        ) {
-                                            // New content available, show update prompt
-                                            if (
-                                                confirm(
-                                                    "New version available! Reload to update?",
-                                                )
-                                            ) {
-                                                window.location.reload();
-                                            }
-                                        }
-                                    },
-                                );
-                            });
-                        })
-                        .catch((registrationError) => {
-                            console.log(
-                                "SW registration failed: ",
-                                registrationError,
-                            );
-                        });
-                });
-            }
-
-            // Performance monitoring
-            window.addEventListener("load", () => {
-                // Core Web Vitals
-                if ("web-vital" in window) {
-                    import(
-                        "https://unpkg.com/web-vitals@3/dist/web-vitals.js"
-                    ).then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-                        getCLS(console.log);
-                        getFID(console.log);
-                        getFCP(console.log);
-                        getLCP(console.log);
-                        getTTFB(console.log);
-                    });
-                }
-
-                // Performance observer for navigation timing
-                if (
-                    "performance" in window &&
-                    "getEntriesByType" in performance
-                ) {
-                    const perfEntries =
-                        performance.getEntriesByType("navigation");
-                    if (perfEntries.length > 0) {
-                        const timing = perfEntries[0];
-                        console.log(
-                            "Page Load Time:",
-                            timing.loadEventEnd - timing.loadEventStart,
-                        );
-                        console.log(
-                            "DOM Content Loaded:",
-                            timing.domContentLoadedEventEnd -
-                                timing.domContentLoadedEventStart,
-                        );
-                    }
-                }
-            });
-
-            // Preload critical resources
-            const preloadResources = [
-                { href: "/assets/logo.png", as: "image" },
-                { href: "/assets/screenshot.png", as: "image" },
-                { href: "/assets/banner.png", as: "image" },
-            ];
-
-            preloadResources.forEach((resource) => {
-                const link = document.createElement("link");
-                link.rel = "preload";
-                link.href = resource.href;
-                link.as = resource.as;
-                document.head.appendChild(link);
-            });
-
-            // Lazy loading for images
-            if ("IntersectionObserver" in window) {
-                const imageObserver = new IntersectionObserver(
-                    (entries, observer) => {
-                        entries.forEach((entry) => {
-                            if (entry.isIntersecting) {
-                                const img = entry.target;
-                                img.src = img.dataset.src;
-                                img.classList.remove("lazy");
-                                imageObserver.unobserve(img);
-                            }
-                        });
-                    },
-                );
-
-                document.querySelectorAll("img[data-src]").forEach((img) => {
-                    imageObserver.observe(img);
-                });
-            } else {
-                // Fallback for browsers without IntersectionObserver
-                document.querySelectorAll("img[data-src]").forEach((img) => {
-                    img.src = img.dataset.src;
-                });
-            }
-
-            // Analytics tracking (replace with your preferred analytics service)
-            function trackEvent(eventName, properties = {}) {
-                // Google Analytics 4 example
-                if (typeof gtag !== "undefined") {
-                    gtag("event", eventName, properties);
-                }
-
-                // Console log for development
-                console.log("Event tracked:", eventName, properties);
-            }
-
-            // Track user interactions
-            document.addEventListener("click", (e) => {
-                const target = e.target.closest("a, button");
-                if (target) {
-                    const href =
-                        target.href || target.getAttribute("data-action");
-                    const text = target.textContent.trim();
-
-                    if (
-                        href &&
-                        (href.includes("apps.apple.com") ||
-                            href.includes("play.google.com"))
-                    ) {
-                        trackEvent("app_download_click", {
-                            platform: href.includes("apple")
-                                ? "iOS"
-                                : "Android",
-                            button_text: text,
-                        });
-                    }
-
-                    if (target.classList.contains("language-btn")) {
-                        trackEvent("language_change", {
-                            from: currentLang,
-                            to: target.getAttribute("data-lang"),
-                        });
-                    }
-                }
-            });
-
-            // Track scroll depth
-            let maxScroll = 0;
-            window.addEventListener("scroll", () => {
-                const scrollPercent = Math.round(
-                    (window.scrollY /
-                        (document.body.scrollHeight - window.innerHeight)) *
-                        100,
-                );
-                if (scrollPercent > maxScroll) {
-                    maxScroll = scrollPercent;
-                    if (maxScroll % 25 === 0) {
-                        // Track at 25%, 50%, 75%, 100%
-                        trackEvent("scroll_depth", { percent: maxScroll });
-                    }
-                }
-            });
-
-            // Page visibility API for engagement tracking
-            let startTime = Date.now();
-            document.addEventListener("visibilitychange", () => {
-                if (document.visibilityState === "hidden") {
-                    const timeSpent = Math.round(
-                        (Date.now() - startTime) / 1000,
-                    );
-                    trackEvent("page_engagement", {
-                        time_spent_seconds: timeSpent,
-                    });
-                } else {
-                    startTime = Date.now();
-                }
-            });
         </script>
-
-        <!-- Google Analytics (replace with your tracking ID) -->
-        <!--
-        <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'GA_TRACKING_ID');
-        </script>
-        -->
     </body>
 </html>
