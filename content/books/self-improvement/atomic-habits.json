@@ -1,0 +1,45 @@
+{
+  "slug": "atomic-habits",
+  "title": "Atomic Habits",
+  "author": {
+    "slug": "james-clear",
+    "name": "James Clear"
+  },
+  "category": {
+    "slug": "self-improvement",
+    "name": "Self-Improvement"
+  },
+  "description": "An Easy & Proven Way to Build Good Habits & Break Bad Ones. Atomic Habits offers a proven framework for improving every day.",
+  "summary": "Atomic Habits by James Clear is a comprehensive guide to building good habits and breaking bad ones. The book introduces the concept of 'atomic habits' - tiny changes that compound over time to produce remarkable results. Clear argues that habits are the compound interest of self-improvement, and that making small improvements consistently will yield significant long-term benefits.\n\nThe book presents a four-step framework for building better habits: make it obvious, make it attractive, make it easy, and make it satisfying. Each step addresses a different aspect of habit formation and provides practical strategies for implementation.",
+  "keyTakeaways": [
+    "Habits are the compound interest of self-improvement - small habits make a big difference over time",
+    "Focus on systems rather than goals - you don't rise to the level of your goals, you fall to the level of your systems",
+    "The Four Laws of Behavior Change: Make it obvious, make it attractive, make it easy, make it satisfying",
+    "Identity-based habits are more powerful than outcome-based habits - focus on who you wish to become",
+    "Environment design is crucial - make good habits obvious and bad habits invisible"
+  ],
+  "coverImage": "/assets/books/atomic-habits.jpg",
+  "isbn": "9780735211292",
+  "publishedYear": 2018,
+  "pageCount": 320,
+  "rating": {
+    "value": 4.8,
+    "count": 125000
+  },
+  "faq": [
+    {
+      "question": "What is the main idea of Atomic Habits?",
+      "answer": "The main idea is that tiny changes in behavior, when repeated consistently, compound over time to produce remarkable results. Rather than focusing on big goals, focus on small improvements in your daily systems."
+    },
+    {
+      "question": "What are the Four Laws of Behavior Change?",
+      "answer": "The Four Laws are: 1) Make it obvious - design your environment to make cues for good habits visible, 2) Make it attractive - pair habits with things you enjoy, 3) Make it easy - reduce friction for good habits, 4) Make it satisfying - reward yourself immediately after good habits."
+    },
+    {
+      "question": "How long does it take to build a new habit according to Atomic Habits?",
+      "answer": "The book emphasizes that habit formation isn't about time but about repetition. The key is to focus on the process and systems rather than obsessing over how long it takes. Some habits may form quickly while others take longer."
+    }
+  ],
+  "relatedBooks": ["deep-work", "the-power-of-habit", "mindset"],
+  "topics": ["productivity", "habits", "personal-development"]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "self-improvement",
+    "name": "Self-Improvement",
+    "description": "Books about personal growth, productivity, and building better habits.",
+    "bookCount": 0
+  },
+  {
+    "slug": "business",
+    "name": "Business",
+    "description": "Books about entrepreneurship, leadership, and business strategy.",
+    "bookCount": 0
+  },
+  {
+    "slug": "technology",
+    "name": "Technology",
+    "description": "Books about technology, software development, and digital innovation.",
+    "bookCount": 0
+  },
+  {
+    "slug": "psychology",
+    "name": "Psychology",
+    "description": "Books about human behavior, cognitive science, and emotional intelligence.",
+    "bookCount": 0
+  },
+  {
+    "slug": "fiction",
+    "name": "Fiction",
+    "description": "Novels and stories that inspire, entertain, and expand perspectives.",
+    "bookCount": 0
+  }
+]
