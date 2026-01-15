@@ -14,7 +14,7 @@
         />
         <meta
             name="keywords"
-            content="AI reading app, artificial intelligence learning, machine learning books, smart reading cards, AI-powered education, digital learning platform, book transformation AI, spaced repetition algorithm, mobile reading app, educational technology, AI study tools, intelligent reading assistant"
+            content="PDF reader app, EPUB reader, reading app, free ebook reader, speed reading app, book management app, Leitor PDF, app para ler livros, reading productivity, digital book app, AI reading app, smart reading cards, spaced repetition algorithm, mobile reading app, educational technology"
         />
         <meta name="author" content="Iago Cavalcante" />
         <meta
@@ -22,23 +22,23 @@
             content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
         />
         <meta name="googlebot" content="index, follow" />
-        <link rel="canonical" href="https://leaftok.github.io/site/" />
+        <link rel="canonical" href="https://leaftok.app/" />
 
         <!-- Hreflang for International SEO -->
         <link
             rel="alternate"
             hreflang="en"
-            href="https://leaftok.github.io/site/"
+            href="https://leaftok.app/"
         />
         <link
             rel="alternate"
             hreflang="pt-BR"
-            href="https://leaftok.github.io/site/"
+            href="https://leaftok.app/"
         />
         <link
             rel="alternate"
             hreflang="x-default"
-            href="https://leaftok.github.io/site/"
+            href="https://leaftok.app/"
         />
 
         <!-- Open Graph Meta Tags -->
@@ -52,10 +52,10 @@
             property="og:description"
             content="Transform any book into intelligent, swipeable cards with AI. Perfect for modern learners, students, and professionals. Join 10,000+ users revolutionizing their reading experience with artificial intelligence."
         />
-        <meta property="og:url" content="https://leaftok.github.io/site/" />
+        <meta property="og:url" content="https://leaftok.app/" />
         <meta
             property="og:image"
-            content="https://leaftok.github.io/site/assets/banner.png"
+            content="https://leaftok.app/assets/banner.png"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -80,7 +80,7 @@
         />
         <meta
             name="twitter:image"
-            content="https://leaftok.github.io/site/assets/banner.png"
+            content="https://leaftok.app/assets/banner.png"
         />
         <meta
             name="twitter:image:alt"
@@ -118,6 +118,40 @@
         <link rel="shortcut icon" href="assets/favicon.ico" />
         <meta name="theme-color" content="#0a0b0f" />
 
+        <!-- Google Analytics 4 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX');
+
+            // Track App Download Clicks
+            document.addEventListener('DOMContentLoaded', function() {
+                // App Store click tracking
+                document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        gtag('event', 'app_download_click', {
+                            'event_category': 'engagement',
+                            'event_label': 'App Store',
+                            'transport_type': 'beacon'
+                        });
+                    });
+                });
+
+                // Google Play click tracking
+                document.querySelectorAll('a[href*="play.google.com"]').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        gtag('event', 'app_download_click', {
+                            'event_category': 'engagement',
+                            'event_label': 'Google Play',
+                            'transport_type': 'beacon'
+                        });
+                    });
+                });
+            });
+        </script>
+
         <!-- Microsoft Clarity - Deferred -->
         <script type="text/javascript">
             window.addEventListener('load', function() {
@@ -131,15 +165,16 @@
             });
         </script>
 
-        <!-- Structured Data (JSON-LD) -->
+        <!-- Structured Data (JSON-LD) - SoftwareApplication -->
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "SoftwareApplication",
                 "name": "LeafTok",
-                "description": "AI-powered reading app that transforms books into intelligent, bite-sized cards for enhanced learning and retention",
-                "url": "https://leaftok.github.io/site/",
+                "description": "AI-powered PDF reader and EPUB reader app that transforms books into intelligent, bite-sized cards for enhanced learning and retention. The best free ebook reader for busy professionals.",
+                "url": "https://leaftok.app/",
                 "applicationCategory": "EducationalApplication",
+                "applicationSubCategory": "EReader",
                 "operatingSystem": ["iOS", "Android"],
                 "offers": {
                     "@type": "Offer",
@@ -154,26 +189,123 @@
                 "publisher": {
                     "@type": "Organization",
                     "name": "LeafTok",
-                    "url": "https://leaftok.iagocavalcante.com/"
+                    "url": "https://leaftok.app/"
                 },
                 "aggregateRating": {
                     "@type": "AggregateRating",
                     "ratingValue": "5.0",
                     "ratingCount": "30"
                 },
-                "keywords": "AI reading, artificial intelligence, machine learning, educational technology, smart cards, spaced repetition, digital learning",
-                "screenshot": "https://leaftok.github.io/site/assets/screenshot.png",
+                "keywords": "PDF reader app, EPUB reader, reading app, free ebook reader, speed reading app, book management app, AI reading, spaced repetition, digital learning",
+                "screenshot": "https://leaftok.app/assets/screenshot.png",
                 "downloadUrl": [
                     "https://apps.apple.com/br/app/leaftok/id6748622950",
                     "https://play.google.com/store/apps/details?id=com.iagocavalcante.leaftok"
                 ],
                 "featureList": [
                     "AI-powered book transformation",
+                    "PDF and EPUB reader",
                     "Intelligent card-based learning",
                     "Spaced repetition algorithm",
-                    "Multi-format book support (PDF, EPUB)",
-                    "Enhanced retention system",
-                    "Lightning-fast learning experience"
+                    "Speed reading features",
+                    "Book management and organization",
+                    "Enhanced retention system"
+                ]
+            }
+        </script>
+
+        <!-- Structured Data (JSON-LD) - Organization -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "LeafTok",
+                "url": "https://leaftok.app/",
+                "logo": "https://leaftok.app/assets/logo.png",
+                "description": "LeafTok creates innovative reading apps that transform how people learn from books using AI technology.",
+                "founder": {
+                    "@type": "Person",
+                    "name": "Iago Cavalcante"
+                },
+                "sameAs": [
+                    "https://twitter.com/leaftok",
+                    "https://apps.apple.com/br/app/leaftok/id6748622950",
+                    "https://play.google.com/store/apps/details?id=com.iagocavalcante.leaftok"
+                ],
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "contactType": "customer support",
+                    "url": "https://leaftok.app/"
+                }
+            }
+        </script>
+
+        <!-- Structured Data (JSON-LD) - BreadcrumbList -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://leaftok.app/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Privacy Policy",
+                        "item": "https://leaftok.app/privacy.html"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Changelog",
+                        "item": "https://leaftok.app/changelog.html"
+                    }
+                ]
+            }
+        </script>
+
+        <!-- Structured Data (JSON-LD) - FAQPage -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What file formats does LeafTok support?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "LeafTok supports PDF and EPUB file formats, making it a versatile ebook reader for all your digital books and documents."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is LeafTok free to use?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, LeafTok is a free ebook reader app available on both iOS and Android. Download it from the App Store or Google Play."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How does LeafTok help with reading productivity?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "LeafTok uses AI to transform books into bite-sized, swipeable cards with spaced repetition algorithms, helping you read faster and retain more information."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I use LeafTok for speed reading?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, LeafTok is designed as a speed reading app that breaks down content into digestible cards, allowing you to consume books much faster than traditional reading."
+                        }
+                    }
                 ]
             }
         </script>

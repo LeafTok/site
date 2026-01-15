@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://leaftok.iagocavalcante.com/sitemap.xml
+Sitemap: https://leaftok.app/sitemap.xml
 
 # Crawl-delay for polite crawling
 Crawl-delay: 1
