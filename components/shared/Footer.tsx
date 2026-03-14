@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -12,8 +14,6 @@ const footerLinks: FooterLink[] = [
 ];
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="border-t border-white/5 py-8 mt-auto">
       <div className="max-w-container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -43,7 +43,7 @@ export function Footer() {
             ))}
           </div>
           <span className="text-text-muted">
-            &copy; {currentYear} LeafTok by Iago Cavalcante. All rights reserved.
+            &copy; {new Date().getFullYear()} LeafTok by Iago Cavalcante. All rights reserved.
           </span>
         </div>
       </div>
