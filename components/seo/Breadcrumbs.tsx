@@ -8,9 +8,6 @@ interface BreadcrumbsProps {
   className?: string;
 }
 
-/**
- * Breadcrumbs component with visual navigation and JSON-LD schema
- */
 export function Breadcrumbs({ items, className = '' }: BreadcrumbsProps) {
   if (items.length === 0) return null;
 
@@ -21,7 +18,7 @@ export function Breadcrumbs({ items, className = '' }: BreadcrumbsProps) {
       <InlineSchema schema={schema} />
       <nav
         aria-label="Breadcrumb"
-        className={`text-sm text-text-secondary ${className}`}
+        className={`text-sm text-ink-secondary ${className}`}
       >
         <ol className="flex flex-wrap items-center gap-2">
           {items.map((item, index) => {
@@ -30,18 +27,18 @@ export function Breadcrumbs({ items, className = '' }: BreadcrumbsProps) {
             return (
               <li key={item.url} className="flex items-center gap-2">
                 {isLast ? (
-                  <span className="text-text-muted" aria-current="page">
+                  <span className="text-ink-muted" aria-current="page">
                     {item.label}
                   </span>
                 ) : (
                   <>
                     <Link
                       href={item.url}
-                      className="hover:text-text-primary transition-colors duration-200"
+                      className="hover:text-ink transition-colors duration-200"
                     >
                       {item.label}
                     </Link>
-                    <span className="text-text-muted" aria-hidden="true">
+                    <span className="text-ink-muted" aria-hidden="true">
                       /
                     </span>
                   </>
@@ -55,9 +52,6 @@ export function Breadcrumbs({ items, className = '' }: BreadcrumbsProps) {
   );
 }
 
-/**
- * Generate breadcrumb items for a book summary page
- */
 export function generateBookBreadcrumbs(
   categorySlug: string,
   categoryName: string,
@@ -72,9 +66,6 @@ export function generateBookBreadcrumbs(
   ];
 }
 
-/**
- * Generate breadcrumb items for an author page
- */
 export function generateAuthorBreadcrumbs(authorName: string, authorSlug: string): Breadcrumb[] {
   return [
     { label: 'Home', url: '/' },
@@ -83,9 +74,6 @@ export function generateAuthorBreadcrumbs(authorName: string, authorSlug: string
   ];
 }
 
-/**
- * Generate breadcrumb items for a category hub page
- */
 export function generateCategoryBreadcrumbs(
   categoryName: string,
   categorySlug: string
@@ -97,9 +85,6 @@ export function generateCategoryBreadcrumbs(
   ];
 }
 
-/**
- * Generate breadcrumb items for a topic hub page
- */
 export function generateTopicBreadcrumbs(topicName: string, topicSlug: string): Breadcrumb[] {
   return [
     { label: 'Home', url: '/' },
@@ -108,9 +93,6 @@ export function generateTopicBreadcrumbs(topicName: string, topicSlug: string): 
   ];
 }
 
-/**
- * Generate breadcrumb items for a blog article
- */
 export function generateBlogBreadcrumbs(articleTitle: string, articleSlug: string): Breadcrumb[] {
   return [
     { label: 'Home', url: '/' },

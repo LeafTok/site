@@ -1,8 +1,7 @@
 import type { Metadata, Viewport } from 'next';
-import { DM_Sans, Instrument_Serif } from 'next/font/google';
+import { DM_Sans, Literata } from 'next/font/google';
 import './globals.css';
 
-// Font configuration
 const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-sans',
@@ -10,23 +9,22 @@ const dmSans = DM_Sans({
   weight: ['300', '400', '500', '600', '700'],
 });
 
-const instrumentSerif = Instrument_Serif({
+const literata = Literata({
   subsets: ['latin'],
   variable: '--font-serif',
   display: 'swap',
-  weight: '400',
+  weight: ['400', '500', '600', '700'],
   style: ['normal', 'italic'],
 });
 
-// Site-wide metadata defaults
 export const metadata: Metadata = {
   metadataBase: new URL('https://leaftok.app'),
   title: {
-    default: 'LeafTok - AI-Powered Reading App | Transform Books into Smart Cards',
+    default: 'LeafTok — Your Books, Reimagined',
     template: '%s | LeafTok',
   },
   description:
-    'Revolutionary AI-powered reading app that transforms any book into bite-sized, swipeable cards. Perfect for students, professionals, and AI enthusiasts.',
+    'Turn any PDF or EPUB into TikTok-style swipeable cards. Read 3x faster with AI narration, ambient soundscapes, and beautiful themes.',
   keywords: [
     'PDF reader app',
     'EPUB reader',
@@ -57,16 +55,16 @@ export const metadata: Metadata = {
     locale: 'en_US',
     alternateLocale: 'pt_BR',
     siteName: 'LeafTok',
-    title: 'LeafTok - AI-Powered Reading Revolution | Smart Learning Cards',
+    title: 'LeafTok — Your Books, Reimagined',
     description:
-      'Transform any book into intelligent, swipeable cards with AI. Perfect for modern learners, students, and professionals.',
+      'Turn any PDF or EPUB into TikTok-style swipeable cards. Read 3x faster with AI narration, ambient soundscapes, and beautiful themes.',
     url: 'https://leaftok.app/',
     images: [
       {
         url: '/assets/banner.png',
         width: 1200,
         height: 630,
-        alt: 'LeafTok AI Reading App - Transform Books into Smart Cards',
+        alt: 'LeafTok — Your Books, Reimagined',
       },
     ],
   },
@@ -74,9 +72,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@leaftok',
     creator: '@iagocavalcante',
-    title: 'LeafTok - AI Reading Revolution | Smart Learning Cards',
+    title: 'LeafTok — Your Books, Reimagined',
     description:
-      'AI-powered app that transforms books into bite-sized cards. Enhanced learning with smart algorithms.',
+      'Turn any PDF or EPUB into TikTok-style swipeable cards. Read 3x faster.',
     images: ['/assets/banner.png'],
   },
   alternates: {
@@ -93,7 +91,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#0a0b0f',
+  themeColor: '#FAF6F0',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -105,27 +103,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${instrumentSerif.variable}`}>
+    <html lang="en" className={`${dmSans.variable} ${literata.variable}`}>
       <head>
-        {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.clarity.ms" />
-
-        {/* Favicon */}
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
         <link rel="manifest" href="/assets/site.webmanifest" />
         <link rel="shortcut icon" href="/assets/favicon.ico" />
-
-        {/* PWA meta tags */}
         <meta name="application-name" content="LeafTok" />
         <meta name="apple-mobile-web-app-title" content="LeafTok" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="msapplication-TileColor" content="#2DD29F" />
+        <meta name="msapplication-TileColor" content="#3D7A5F" />
       </head>
       <body className="font-sans">{children}</body>
     </html>
