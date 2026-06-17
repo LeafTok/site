@@ -22,6 +22,7 @@ const config: Config = {
         ink: {
           DEFAULT: '#1A1612',
           light: '#2C2620',
+          secondary: '#5C5347',
           muted: '#5C5347',
           faint: '#8A7E72',
         },

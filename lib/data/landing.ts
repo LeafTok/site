@@ -1,0 +1,194 @@
+import type { FAQItem } from '@/lib/types';
+
+/**
+ * Centralized copy for the editorial landing page.
+ *
+ * Chapter *prose* (lead paragraphs + epigraphs) lives in the chapter
+ * components because it embeds inline <Footnote> JSX. Everything that is
+ * plain data — marginalia, footnote bodies, FAQ, contents, plates, type
+ * specimens, ledger — lives here so copy is editable in one place.
+ *
+ * Every claim is cross-checked against shipping iOS code (see
+ * leaftok-docs/plans/2026-06-17-landing-page-editorial-refresh-design.md).
+ */
+
+export interface MarginNote {
+  text: string;
+}
+
+/** Masthead strip beneath the hero. */
+export const masthead = {
+  issue: 'iOS Edition',
+  volume: 'Free to start',
+  note: 'A field guide to reading on your phone',
+};
+
+/** Table of contents — doubles as in-page jump links. */
+export interface ContentsEntry {
+  numeral: string;
+  id: string;
+  title: string;
+  blurb: string;
+}
+
+export const contents: ContentsEntry[] = [
+  { numeral: 'I', id: 'read', title: 'Read', blurb: 'Any book, sliced into swipeable cards' },
+  { numeral: 'II', id: 'listen', title: 'Listen', blurb: '16 on-device voices, hands-free' },
+  { numeral: 'III', id: 'make-it-yours', title: 'Make it yours', blurb: 'Themes, fonts, accessibility' },
+  { numeral: 'IV', id: 'track', title: 'Track & keep', blurb: 'Streaks, shelves, favorites' },
+];
+
+/** Hero trust row — honest, verifiable proof (replaces the 5.0★ badge). */
+export const heroTrust: string[] = ['Free to start', 'No signup', 'Works offline'];
+
+/** Chapter 01 · READ */
+export const readMarginalia: MarginNote[] = [
+  { text: 'Chapters preserved' },
+  { text: 'Swipe sideways to jump chapters' },
+  { text: 'Images & code blocks kept intact' },
+];
+
+/** Chapter 02 · LISTEN */
+export const listenMarginalia: MarginNote[] = [
+  { text: 'British & American voices' },
+  { text: 'Generated on-device — works offline' },
+  { text: 'Sleep timer fades out gently' },
+];
+
+export const soundscapes = ['Rain', 'Forest', 'Café', 'Brown noise', 'White noise', 'Pink noise'];
+
+/** Chapter 03 · MAKE IT YOURS — live type specimens. */
+export interface Specimen {
+  name: string;
+  /** Real iOS font-family string with graceful web fallbacks. */
+  stack: string;
+}
+
+export const specimens: Specimen[] = [
+  { name: 'Georgia', stack: 'Georgia, serif' },
+  { name: 'New York', stack: '"New York", ui-serif, Georgia, serif' },
+  { name: 'Palatino', stack: '"Palatino Linotype", Palatino, "Book Antiqua", serif' },
+  { name: 'Charter', stack: 'Charter, "Bitstream Charter", Georgia, serif' },
+  { name: 'System', stack: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif' },
+];
+
+export const specimenLine =
+  'She read three chapters before her stop — and remembered every one.';
+
+export interface ReadingTheme {
+  name: string;
+  /** Background + ink preview swatch (illustrative of the in-app theme). */
+  bg: string;
+  ink: string;
+}
+
+export const themes: ReadingTheme[] = [
+  { name: 'Light', bg: '#FAF6F0', ink: '#1A1612' },
+  { name: 'Sepia', bg: '#EFE3CC', ink: '#4A3B28' },
+  { name: 'Reader', bg: '#F3ECDD', ink: '#2C2620' },
+  { name: 'High contrast', bg: '#FFFFFF', ink: '#000000' },
+  { name: 'Dark', bg: '#1A1612', ink: '#F5EDE2' },
+];
+
+export const accessibilityNotes: MarginNote[] = [
+  { text: 'OpenDyslexic font' },
+  { text: 'High-contrast mode' },
+  { text: 'Reduced motion' },
+  { text: 'Simplified UI' },
+];
+
+/** Chapter 04 · TRACK & KEEP */
+export interface LedgerStat {
+  value: string;
+  label: string;
+  detail: string;
+}
+
+export const ledger: LedgerStat[] = [
+  { value: '3×', label: 'Faster reading', detail: 'same comprehension' },
+  { value: '16', label: 'AI voices', detail: 'on-device' },
+  { value: '5', label: 'Reading themes', detail: 'sepia → dark' },
+  { value: '100%', label: 'Offline', detail: 'every feature' },
+];
+
+export const shelves = ['Want to read', 'Reading', 'Finished'];
+
+export const trackMarginalia: MarginNote[] = [
+  { text: 'Favorite any card you want to keep' },
+  { text: 'Search back through your saved cards' },
+  { text: 'Share a card straight to anywhere' },
+];
+
+/** Plates — the existing 5 screenshots, framed like a book's photo plates. */
+export interface Plate {
+  src: string;
+  numeral: string;
+  caption: string;
+}
+
+export const plates: Plate[] = [
+  { src: '/assets/screenshot-01-swipe-books-like-tiktok.webp', numeral: 'I', caption: 'Swipeable cards' },
+  { src: '/assets/screenshot-02-listen-hands-free.webp', numeral: 'II', caption: 'Hands-free listening' },
+  { src: '/assets/screenshot-03-get-ai-summaries.webp', numeral: 'III', caption: 'AI summaries' },
+  { src: '/assets/screenshot-04-turn-epub-into-cards.webp', numeral: 'IV', caption: 'EPUB into cards' },
+  { src: '/assets/screenshot-05-read-to-lo-fi-beats.webp', numeral: 'V', caption: 'Read to lo-fi' },
+];
+
+/** Getting-started steps. */
+export interface Step {
+  numeral: string;
+  title: string;
+  description: string;
+}
+
+export const steps: Step[] = [
+  {
+    numeral: '01',
+    title: 'Drop in a book',
+    description: 'Any PDF or EPUB you already own. No account. No setup wizard. Just a file.',
+  },
+  {
+    numeral: '02',
+    title: 'We do the magic',
+    description: 'LeafTok splits it into hundreds of optimized cards — chapters, images, and formatting preserved.',
+  },
+  {
+    numeral: '03',
+    title: 'Swipe & absorb',
+    description: 'Read like you scroll. Track progress, build a streak, and actually finish the book this time.',
+  },
+];
+
+/** FAQ — objection handling, matched to the ICP's real doubts. */
+export const homeFAQs: FAQItem[] = [
+  {
+    question: 'Will it work with the books I already own?',
+    answer:
+      'Yes. Drop in any EPUB or PDF from your device and LeafTok turns it into swipeable cards automatically — chapters, images, and formatting preserved. No catalog lock-in, no re-buying.',
+  },
+  {
+    question: 'Is LeafTok really free?',
+    answer:
+      'Free to download, no signup, with 3 book slots and the core reading experience. Upgrade to Pro for unlimited books, AI narration voices, and AI-powered summaries.',
+  },
+  {
+    question: 'Is the “3× faster” claim real — do I still remember what I read?',
+    answer:
+      'The speed comes from bite-sized cards (100–350 characters), each sized to its content so your eye never loses the line. You read in focused bursts instead of fighting a wall of text — built for comprehension, not skimming.',
+  },
+  {
+    question: 'Can I really use it offline?',
+    answer:
+      'Once a book is converted, everything works offline — reading, narration, and ambient audio. The 16 Kokoro voices are generated on-device, so flights, commutes, and dead zones are no problem.',
+  },
+  {
+    question: 'What can I customize?',
+    answer:
+      '5 reading themes (light, sepia, reader, high-contrast, dark), 5 fonts with adjustable size and line spacing, plus accessibility options: OpenDyslexic, high contrast, and reduced motion. English and Portuguese (Brazil) interface.',
+  },
+  {
+    question: 'Will I actually keep using it?',
+    answer:
+      'A built-in sample book gets you to your first swipe in seconds, reading streaks keep the habit going, and you can favorite any card to revisit later. It’s designed to feel like the feed — but pointed at books.',
+  },
+];

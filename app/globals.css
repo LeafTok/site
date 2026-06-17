@@ -101,6 +101,92 @@
     @apply font-serif text-7xl text-ink/5 absolute -top-2 -left-2 select-none;
     line-height: 1;
   }
+
+  /* ── Editorial layer (composes existing tokens only) ───────────────── */
+
+  /* Chapter opener: "CHAPTER 02 · LISTEN" */
+  .chapter-kicker {
+    @apply inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-primary;
+  }
+
+  /* Drop cap on a chapter's lead paragraph */
+  .dropcap::first-letter {
+    font-family: 'Literata', Georgia, serif;
+    float: left;
+    font-size: 3.6em;
+    line-height: 0.72;
+    font-weight: 500;
+    padding: 0.04em 0.1em 0 0;
+    color: #3D7A5F; /* primary */
+  }
+
+  /* Reader-annotation notes living in the page margin */
+  .marginalia {
+    @apply font-serif italic text-ink-faint;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .marginalia-note {
+    @apply relative pl-4 border-l border-primary/20;
+  }
+
+  /* Pull quote / epigraph */
+  .epigraph {
+    @apply font-serif italic text-ink-secondary;
+    text-wrap: balance;
+  }
+
+  /* Footnote reference marker + expandable panel */
+  .footnote-ref {
+    @apply align-super font-sans font-semibold text-accent;
+    font-size: 0.62em;
+    line-height: 0;
+    padding-inline: 0.1em;
+    border-bottom: 1px dotted currentColor;
+  }
+
+  .footnote-ref:hover {
+    @apply text-accent-light;
+  }
+
+  .footnote-panel {
+    @apply font-sans text-sm text-ink-secondary bg-paper-cream/70 border border-ink/5 rounded-lg;
+  }
+
+  /* Type-specimen row (Chapter 03) */
+  .type-specimen-row {
+    @apply border-t border-ink/5 py-5 first:border-t-0;
+  }
+
+  /* Stat ledger (Chapter 04) */
+  .ledger-row {
+    @apply flex items-baseline justify-between gap-6 border-b border-dashed border-ink/15 py-4;
+  }
+
+  /* Masthead strip + table of contents */
+  .masthead-meta {
+    @apply text-xs uppercase tracking-[0.22em] text-ink-faint;
+  }
+
+  .contents-link {
+    @apply flex items-baseline gap-4 py-3 border-t border-ink/10 transition-colors hover:text-primary;
+  }
+}
+
+@layer utilities {
+  /* Respect the reader's reduced-motion preference (parity with the app's
+     reduced-motion setting). Neutralizes float/marquee/reveal animations. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
 
 @layer utilities {
