@@ -1,32 +1,26 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { ChapterOpener, Marginalia } from './Chapter';
-import { Footnote } from './Footnote';
+import { useState } from "react";
+import { ChapterOpener, Marginalia } from "./Chapter";
+import { Footnote } from "./Footnote";
 import {
   accessibilityNotes,
   specimenLine,
   specimens,
   themes,
-} from '@/lib/data/landing';
+} from "@/lib/data/landing";
 
 export function MakeItYoursChapter() {
   const [selected, setSelected] = useState(0);
   const theme = themes[selected];
 
   return (
-    <section id="make-it-yours" className="scroll-mt-24 py-24 lg:py-32">
+    <section id="make-it-yours" className="scroll-mt-24 py-20 lg:py-32">
       <div className="section-container">
         <ChapterOpener
           numeral="III"
           kicker="Make it yours"
-          heading={
-            <>
-              Make it{' '}
-              <span className="text-primary underline decoration-primary/20 decoration-wavy underline-offset-8">disappear</span>, so the
-              words don&rsquo;t.
-            </>
-          }
+          heading={<>Make the interface disappear. Keep the words.</>}
         />
 
         <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-12">
@@ -38,7 +32,7 @@ export function MakeItYoursChapter() {
               whichever language
               <Footnote marker="3">
                 English and Portuguese (Brazil), across the whole app.
-              </Footnote>{' '}
+              </Footnote>{" "}
               you think in.
             </p>
             <p className="epigraph mt-10 text-2xl leading-snug lg:text-[1.75rem]">
@@ -63,21 +57,24 @@ export function MakeItYoursChapter() {
                   onMouseEnter={() => setSelected(i)}
                   onFocus={() => setSelected(i)}
                   onClick={() => setSelected(i)}
-                  className={`h-10 w-10 rounded-full border transition-transform duration-200 ${
+                  className={`min-h-11 border px-3 py-2 text-xs font-semibold transition-colors duration-200 ${
                     i === selected
-                      ? 'scale-110 ring-2 ring-primary ring-offset-2 ring-offset-paper'
-                      : 'border-ink/15 hover:scale-105'
+                      ? "border-ink bg-ink text-paper"
+                      : "border-ink/20 bg-transparent text-ink hover:border-ink/50"
                   }`}
-                  style={{ background: t.bg }}
+                  style={
+                    i === selected
+                      ? undefined
+                      : { boxShadow: `inset 0 -4px ${t.bg}` }
+                  }
                 >
-                  <span className="sr-only">{t.name}</span>
+                  {t.name}
                 </button>
               ))}
-              <span className="ml-1 text-sm text-ink-muted">{theme.name}</span>
             </div>
 
             <div
-              className="rounded-lg border border-ink/10 p-6 transition-colors duration-200 lg:p-8"
+              className="border-l-4 border-ink p-6 transition-colors duration-200 lg:p-10"
               style={{ background: theme.bg, color: theme.ink }}
             >
               <p
@@ -103,8 +100,8 @@ export function MakeItYoursChapter() {
                 </div>
               ))}
               <p className="mt-6 text-xs" style={{ opacity: 0.5 }}>
-                A taste of the in-app fonts&mdash;exact rendering depends on your
-                device.
+                A taste of the in-app fonts&mdash;exact rendering depends on
+                your device.
               </p>
             </div>
           </div>

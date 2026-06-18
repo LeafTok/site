@@ -1,28 +1,28 @@
-import { Metadata } from 'next';
-import Image from 'next/image';
-import { Header, Footer, AppStoreButtons } from '@/components/shared';
-import { SchemaGenerator, FAQSection } from '@/components/seo';
+import { Metadata } from "next";
+import Image from "next/image";
+import { Header, Footer, AppStoreButtons } from "@/components/shared";
+import { SchemaGenerator, FAQSection } from "@/components/seo";
 import {
   Masthead,
   ReadChapter,
   ListenChapter,
   MakeItYoursChapter,
   TrackChapter,
-  Plates,
-} from '@/components/landing';
+  DownloadPrompt,
+} from "@/components/landing";
 import {
   generateOrganizationSchema,
   generateSoftwareApplicationSchema,
   generateWebSiteSchema,
-} from '@/lib/schema/generators';
-import { heroTrust, steps, homeFAQs } from '@/lib/data/landing';
+} from "@/lib/schema/generators";
+import { heroTrust, steps, homeFAQs } from "@/lib/data/landing";
 
 export const metadata: Metadata = {
-  title: 'LeafTok — Your Books, Reimagined',
+  title: "LeafTok — Your Books, Reimagined",
   description:
-    'Turn any PDF or EPUB you already own into TikTok-style swipeable cards. Read 3x faster with 16 on-device AI voices, ambient soundscapes, and beautiful themes. The reading app that actually makes you finish books.',
+    "Turn any PDF or EPUB you already own into focused, swipeable cards with on-device narration, ambient soundscapes, and accessible reading themes.",
   alternates: {
-    canonical: 'https://leaftok.app/',
+    canonical: "https://leaftok.app/",
   },
 };
 
@@ -39,106 +39,60 @@ export default function HomePage() {
       <SchemaGenerator schemas={schemas} />
       <Header />
 
-      <main>
-        {/* Hero — the title page */}
-        <section className="relative flex min-h-screen items-center overflow-hidden pb-20 pt-28">
-          <div className="hero-glow" />
+      <main id="main-content">
+        {/* Hero — an editorial poster, not a SaaS split screen */}
+        <section className="overflow-hidden pb-20 pt-32 lg:pb-28 lg:pt-36">
+          <div className="section-container">
+            <div className="mb-10 flex items-center justify-between border-y border-ink/15 py-3 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-ink-muted sm:text-[0.68rem] sm:tracking-[0.2em]">
+              <span>LeafTok Reader</span>
+              <span className="hidden sm:inline">
+                For books left unfinished
+              </span>
+              <span>Est. 2025</span>
+            </div>
 
-          <div className="relative z-10 mx-auto max-w-container px-6">
-            <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-8">
-              {/* Copy */}
-              <div className="animate-fadeIn lg:col-span-7">
-                <div className="badge mb-8">
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  <span>iOS &middot; Free to start</span>
-                </div>
+            <div className="relative grid lg:grid-cols-12">
+              <h1 className="relative z-10 col-span-full min-w-0 font-serif text-[clamp(3.2rem,11vw,9.5rem)] leading-[0.82] tracking-[-0.06em] lg:leading-[0.78] lg:tracking-[-0.065em]">
+                <span className="block">Stop reading</span>
+                <span className="block lg:pl-[10vw]">books the old way.</span>
+                <span className="block text-primary lg:pl-[3vw]">
+                  Swipe <span className="block sm:inline">forward.</span>
+                </span>
+              </h1>
 
-                <h1 className="mb-6 font-serif text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight">
-                  <span className="block">Stop reading books</span>
-                  <span className="block">
-                    <span className="text-ink-muted line-through decoration-accent/50 decoration-[3px] underline-offset-4">
-                      the old way
-                    </span>
-                  </span>
-                  <span className="mt-1 block text-primary underline decoration-primary/20 decoration-wavy underline-offset-8">Start swiping them.</span>
-                </h1>
-
-                <p className="mb-5 text-xl font-medium text-ink-secondary">
+              <div className="relative z-20 mt-12 max-w-xl lg:col-span-5 lg:mt-20">
+                <p className="font-serif text-2xl leading-snug text-ink lg:text-3xl">
                   You didn&rsquo;t stop loving books. The feed just got louder.
                 </p>
-
-                <p className="mb-10 max-w-lg text-lg leading-relaxed text-ink-secondary lg:text-xl">
-                  LeafTok turns any PDF or EPUB you already own into swipeable
-                  cards. You read 3&times; faster, keep the comprehension, and
-                  actually finish.
+                <p className="mt-6 max-w-md text-lg leading-relaxed text-ink-secondary">
+                  Turn any PDF or EPUB you own into focused cards that keep your
+                  place and help you finish.
                 </p>
-
-                <div className="mb-10 flex flex-col items-start gap-4 sm:flex-row">
+                <div className="mt-8">
                   <AppStoreButtons showBadge />
                 </div>
-
-                {/* Honest trust row (replaces the unverified 5.0★ badge) */}
-                <div className="flex flex-wrap items-center gap-4 text-sm text-ink-muted">
-                  {heroTrust.map((item, i) => (
-                    <span key={item} className="flex items-center gap-4">
-                      {i > 0 && <span aria-hidden="true" className="h-4 w-px bg-ink/15" />}
-                      {item}
-                    </span>
+                <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm text-ink-muted">
+                  {heroTrust.map((item) => (
+                    <span key={item}>&bull;&ensp;{item}</span>
                   ))}
                 </div>
               </div>
 
-              {/* Phone */}
-              <div
-                className="flex animate-slideUp justify-center lg:col-span-5 lg:justify-end"
-                style={{ animationDelay: '150ms' }}
-              >
-                <div className="relative">
-                  <div className="relative w-[280px] lg:w-[320px]">
-                    <Image
-                      src="/assets/screenshot-01-swipe-books-like-tiktok.webp"
-                      alt="LeafTok — swipe books like TikTok"
-                      width={400}
-                      height={870}
-                      className="rounded-[2.5rem] shadow-[0_25px_80px_-15px_rgba(26,22,18,0.2)]"
-                      priority
-                    />
-
-                    {/* Floating margin notes */}
-                    <div className="absolute -left-6 top-1/3 rounded-lg border border-ink/10 bg-paper-warm px-4 py-3 shadow-md">
-                      <div className="flex items-center gap-2.5">
-                        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-primary">
-                            <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-                          </svg>
-                        </div>
-                        <div>
-                          <div className="text-sm font-semibold text-ink">3&times; faster</div>
-                          <div className="text-xs text-ink-muted">same comprehension</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      className="absolute -right-6 bottom-1/3 rounded-lg border border-ink/10 bg-paper-warm px-4 py-3 shadow-md"
-                      style={{ animationDelay: '-3s' }}
-                    >
-                      <div className="flex items-center gap-2.5">
-                        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent/10">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent">
-                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
-                            <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
-                          </svg>
-                        </div>
-                        <div>
-                          <div className="text-sm font-semibold text-ink">16 voices</div>
-                          <div className="text-xs text-ink-muted">on-device</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <figure className="relative z-0 mx-auto mt-14 w-[260px] lg:absolute lg:-bottom-24 lg:right-[3vw] lg:mt-0 lg:w-[330px] lg:rotate-[1.5deg]">
+                <div className="absolute -inset-5 -z-10 border border-ink/15" />
+                <Image
+                  src="/assets/screenshot-01-swipe-books-like-tiktok.webp"
+                  alt="LeafTok turning a book into swipeable reading cards"
+                  width={400}
+                  height={870}
+                  className="w-full shadow-[18px_24px_0_rgba(26,22,18,0.10)]"
+                  priority
+                />
+                <figcaption className="mt-5 flex justify-between border-b border-ink/20 pb-2 text-[0.68rem] uppercase tracking-[0.18em] text-ink-muted">
+                  <span>Fig. 01</span>
+                  <span>Reading, recut</span>
+                </figcaption>
+              </figure>
             </div>
           </div>
         </section>
@@ -149,43 +103,46 @@ export default function HomePage() {
         {/* The four chapters */}
         <ReadChapter />
         <ListenChapter />
+        <DownloadPrompt
+          eyebrow="Read or listen anywhere"
+          title="Try your first book in minutes."
+        />
         <MakeItYoursChapter />
         <TrackChapter />
-
-        {/* Plates — screenshot showcase */}
-        <Plates />
 
         {/* Getting started */}
         <section id="getting-started" className="scroll-mt-24 py-24 lg:py-32">
           <div className="max-w-container mx-auto px-6">
-            <header className="mb-20 max-w-xl">
+            <header className="mb-16 max-w-xl">
               <div className="editorial-rule mb-5" />
               <h2 className="font-serif text-4xl tracking-tight lg:text-5xl">
-                Three steps. Two minutes.
+                From file to first card.
               </h2>
               <p className="mt-4 text-lg text-ink-secondary">
-                From a file to your first swipeable card. No account, no setup, no waiting.
+                No account, no setup wizard, no waiting room.
               </p>
             </header>
 
-            <div className="grid gap-8 md:grid-cols-3 lg:gap-12">
+            <ol className="process-line">
               {steps.map((step, index) => (
-                <div key={step.numeral} className="group">
-                  <span className="mb-4 inline-block select-none font-serif text-6xl leading-none text-primary/15 lg:text-7xl">
+                <li key={step.numeral} className="process-step">
+                  <span className="masthead-meta text-primary">
                     {step.numeral}
                   </span>
-                  <h3 className="mb-3 text-xl font-semibold text-ink">{step.title}</h3>
-                  <p className="leading-relaxed text-ink-secondary">{step.description}</p>
+                  <h3 className="mb-3 text-xl font-semibold text-ink">
+                    {step.title}
+                  </h3>
+                  <p className="leading-relaxed text-ink-secondary">
+                    {step.description}
+                  </p>
                   {index < steps.length - 1 && (
-                    <div className="mt-8 hidden md:block">
-                      <svg width="40" height="12" viewBox="0 0 40 12" className="text-ink/10">
-                        <path d="M0 6h36l-4-5M36 6l-4 5" fill="none" stroke="currentColor" strokeWidth="1.5" />
-                      </svg>
-                    </div>
+                    <span className="process-arrow" aria-hidden="true">
+                      &rarr;
+                    </span>
                   )}
-                </div>
+                </li>
               ))}
-            </div>
+            </ol>
           </div>
         </section>
 
@@ -204,20 +161,24 @@ export default function HomePage() {
         </section>
 
         {/* Final CTA — the colophon */}
-        <section id="download" className="relative scroll-mt-24 overflow-hidden py-28 lg:py-36">
-          <div className="hero-glow opacity-50" />
-          <div className="leaf-shape top-[10%] right-[10%] h-[200px] w-[200px] opacity-[0.05]" />
-          <div className="leaf-shape bottom-[15%] left-[8%] h-[150px] w-[150px] rotate-180 opacity-[0.04]" />
-
-          <div className="relative z-10 mx-auto max-w-container px-6 text-center">
-            <h2 className="mb-6 font-serif text-4xl tracking-tight lg:text-6xl">
-              Your bookshelf is <span className="text-primary underline decoration-primary/20 decoration-wavy underline-offset-8">waiting</span>
-            </h2>
-            <p className="mx-auto mb-4 max-w-lg text-lg text-ink-secondary lg:text-xl">
-              Stop buying books you never finish. Start swiping through them in minutes.
-            </p>
-            <p className="mb-10 font-medium text-ink-muted">Free to try. No account needed.</p>
-            <div className="flex justify-center">
+        <section
+          id="download"
+          className="scroll-mt-24 overflow-hidden bg-primary py-24 text-paper lg:py-32"
+        >
+          <div className="section-container grid gap-12 lg:grid-cols-12 lg:items-end">
+            <div className="lg:col-span-8">
+              <p className="mb-8 text-xs font-semibold uppercase tracking-[0.22em] text-paper/70">
+                The next page is yours
+              </p>
+              <h2 className="font-serif text-[clamp(4rem,9vw,8rem)] leading-[0.82] tracking-[-0.055em]">
+                Start with one page.
+              </h2>
+            </div>
+            <div className="border-l border-paper/35 pl-6 lg:col-span-4">
+              <p className="mb-8 text-xl leading-relaxed text-paper/85">
+                Your books are already waiting. LeafTok is free to try and needs
+                no account.
+              </p>
               <AppStoreButtons showBadge />
             </div>
           </div>

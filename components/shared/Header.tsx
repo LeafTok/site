@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 interface NavLink {
   label: string;
@@ -11,41 +11,108 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-  { label: 'Features', href: '/#read' },
-  { label: 'How it works', href: '/#getting-started' },
-  { label: 'Download', href: '/#download' },
-  { label: 'Changelog', href: '/changelog/' },
+  { label: "Features", href: "/#read" },
+  { label: "How it works", href: "/#getting-started" },
+  { label: "Download", href: "/#download" },
+  { label: "Changelog", href: "/changelog/" },
 ];
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 768px)");
+    const closeOnDesktop = (event: MediaQueryListEvent) => {
+      if (event.matches) setIsMobileMenuOpen(false);
+    };
+
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => desktop.removeEventListener("change", closeOnDesktop);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMobileMenuOpen(false);
+        menuButtonRef.current?.focus();
+        return;
+      }
+
+      if (event.key === "Tab" && mobileMenuRef.current) {
+        const items = [
+          menuButtonRef.current,
+          ...mobileMenuRef.current.querySelectorAll<HTMLElement>(
+            "a[href], button",
+          ),
+        ].filter((item): item is HTMLElement => Boolean(item));
+        const first = items[0];
+        const last = items[items.length - 1];
+
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    const pageRegions = document.querySelectorAll<HTMLElement>("main, footer");
+    document.body.style.overflow = "hidden";
+    pageRegions.forEach((region) => {
+      region.inert = true;
+    });
+    document.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      pageRegions.forEach((region) => {
+        region.inert = false;
+      });
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [isMobileMenuOpen]);
+
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setIsMobileMenuOpen((open) => !open);
   };
 
   return (
     <>
+      <a href="#main-content" className="skip-link">
+        Skip to content
+      </a>
       <nav
+        aria-label="Primary navigation"
         className={`fixed top-0 left-0 w-full z-[100] px-6 py-5 transition-all duration-300 ${
-          isScrolled ? 'nav-scrolled' : ''
+          isScrolled ? "nav-scrolled" : ""
         }`}
       >
         <div className="max-w-container mx-auto flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-3 no-underline text-ink">
+          <Link
+            href="/"
+            className="flex items-center gap-3 no-underline text-ink"
+          >
             <Image
               src="/assets/logo-dark.webp"
-              alt="LeafTok"
+              alt=""
               width={36}
               height={36}
               className="rounded-lg"
@@ -64,64 +131,70 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href="https://apps.apple.com/br/app/leaftok/id6748622950"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary text-sm px-5 py-2.5"
-            >
+            <Link href="/#download" className="btn-primary text-sm px-5 py-2.5">
               Get the App
-            </a>
+            </Link>
           </div>
 
           <button
-            className="md:hidden flex flex-col gap-[5px] p-2"
+            ref={menuButtonRef}
+            className="md:hidden flex min-h-11 min-w-11 flex-col items-center justify-center gap-[5px] rounded-lg"
             onClick={toggleMobileMenu}
-            aria-label="Toggle mobile menu"
+            aria-label={
+              isMobileMenuOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+            }
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
             <span
               className={`w-6 h-0.5 bg-ink transition-transform duration-300 ${
-                isMobileMenuOpen ? 'rotate-45 translate-y-[7px]' : ''
+                isMobileMenuOpen ? "rotate-45 translate-y-[7px]" : ""
               }`}
             />
             <span
               className={`w-6 h-0.5 bg-ink transition-opacity duration-300 ${
-                isMobileMenuOpen ? 'opacity-0' : ''
+                isMobileMenuOpen ? "opacity-0" : ""
               }`}
             />
             <span
               className={`w-6 h-0.5 bg-ink transition-transform duration-300 ${
-                isMobileMenuOpen ? '-rotate-45 -translate-y-[7px]' : ''
+                isMobileMenuOpen ? "-rotate-45 -translate-y-[7px]" : ""
               }`}
             />
           </button>
         </div>
       </nav>
 
-      <div
-        className={`fixed inset-0 z-[99] bg-paper flex flex-col items-center justify-center gap-8 transition-all duration-200 ${
-          isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
-      >
-        <button
-          className="absolute top-6 right-6 text-4xl text-ink hover:text-primary transition-colors"
-          onClick={toggleMobileMenu}
-          aria-label="Close mobile menu"
+      {isMobileMenuOpen && (
+        <div
+          ref={mobileMenuRef}
+          id="mobile-navigation"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Site navigation"
+          className="fixed inset-0 z-[99] flex flex-col items-center justify-center gap-8 bg-paper px-6 pt-20 md:hidden"
         >
-          &times;
-        </button>
-
-        {navLinks.map((link) => (
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-2xl text-ink transition-colors duration-200 hover:text-primary"
+              onClick={toggleMobileMenu}
+            >
+              {link.label}
+            </Link>
+          ))}
           <Link
-            key={link.href}
-            href={link.href}
-            className="text-2xl text-ink hover:text-primary transition-colors duration-300"
+            href="/#download"
+            className="btn-primary mt-2"
             onClick={toggleMobileMenu}
           >
-            {link.label}
+            Choose your app store
           </Link>
-        ))}
-      </div>
+        </div>
+      )}
     </>
   );
 }

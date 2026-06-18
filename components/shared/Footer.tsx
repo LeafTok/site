@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 
 interface FooterLink {
   label: string;
@@ -9,9 +9,9 @@ interface FooterLink {
 }
 
 const footerLinks: FooterLink[] = [
-  { label: 'Privacy Policy', href: '/privacy/' },
-  { label: 'Terms', href: '/terms/' },
-  { label: 'Changelog', href: '/changelog/' },
+  { label: "Privacy Policy", href: "/privacy/" },
+  { label: "Terms", href: "/terms/" },
+  { label: "Changelog", href: "/changelog/" },
 ];
 
 export function Footer() {
@@ -20,10 +20,13 @@ export function Footer() {
       <div className="max-w-container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex flex-col gap-2">
-            <Link href="/" className="flex items-center gap-2 no-underline text-ink">
+            <Link
+              href="/"
+              className="flex items-center gap-2 no-underline text-ink"
+            >
               <Image
                 src="/assets/logo-dark.webp"
-                alt="LeafTok"
+                alt=""
                 width={32}
                 height={32}
                 className="rounded-lg"

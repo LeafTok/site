@@ -1,7 +1,7 @@
-import { siteConfig } from '@/lib/types';
+import { siteConfig } from "@/lib/types";
 
 interface AppStoreButtonsProps {
-  variant?: 'primary' | 'compact';
+  variant?: "primary" | "compact";
   showBadge?: boolean;
 }
 
@@ -17,15 +17,18 @@ const PlayStoreIcon = () => (
   </svg>
 );
 
-export function AppStoreButtons({ variant = 'primary', showBadge = false }: AppStoreButtonsProps) {
-  if (variant === 'compact') {
+export function AppStoreButtons({
+  variant = "primary",
+  showBadge = false,
+}: AppStoreButtonsProps) {
+  if (variant === "compact") {
     return (
       <div className="flex flex-wrap gap-3">
         <a
           href={siteConfig.appStoreLinks.ios}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2 bg-ink/5 hover:bg-ink/10 border border-ink/10 rounded-lg text-ink transition-all duration-200"
+          className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-ink/10 bg-ink/5 px-4 py-2 text-ink transition-colors duration-200 hover:bg-ink/10"
           aria-label="Download on the App Store"
         >
           <AppleIcon />
@@ -35,7 +38,7 @@ export function AppStoreButtons({ variant = 'primary', showBadge = false }: AppS
           href={siteConfig.appStoreLinks.android}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2 bg-ink/5 hover:bg-ink/10 border border-ink/10 rounded-lg text-ink transition-all duration-200"
+          className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-ink/10 bg-ink/5 px-4 py-2 text-ink transition-colors duration-200 hover:bg-ink/10"
           aria-label="Get it on Google Play"
         >
           <PlayStoreIcon />

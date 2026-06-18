@@ -1,19 +1,14 @@
-import { ChapterOpener, Marginalia } from './Chapter';
-import { ledger, shelves, trackMarginalia } from '@/lib/data/landing';
+import { ChapterOpener, Marginalia } from "./Chapter";
+import { ledger, shelves, trackMarginalia } from "@/lib/data/landing";
 
 export function TrackChapter() {
   return (
-    <section id="track" className="scroll-mt-24 py-24 lg:py-32">
+    <section id="track" className="scroll-mt-24 py-20 lg:py-32">
       <div className="section-container">
         <ChapterOpener
           numeral="IV"
           kicker="Track & keep"
-          heading={
-            <>
-              Reading you can actually{' '}
-              <span className="rounded bg-primary/10 px-2 text-primary">see</span>.
-            </>
-          }
+          heading={<>A reading habit, recorded in ink.</>}
         />
 
         <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-12">
@@ -30,29 +25,45 @@ export function TrackChapter() {
             <Marginalia notes={trackMarginalia} />
           </div>
 
-          {/* Stat ledger + shelves */}
+          {/* Ruled reading ledger */}
           <div className="lg:col-span-7">
-            <div className="rounded-lg border border-ink/10 bg-paper p-6 lg:p-8">
-              <p className="masthead-meta mb-2">By the numbers</p>
+            <div className="border-y-2 border-ink">
+              <div className="flex items-center justify-between border-b border-ink/20 py-4">
+                <p className="masthead-meta text-ink">Reader&rsquo;s ledger</p>
+                <p className="font-serif text-sm italic text-ink-muted">
+                  Updated as you read
+                </p>
+              </div>
               {ledger.map((stat) => (
                 <div key={stat.label} className="ledger-row last:border-b-0">
-                  <span className="font-serif text-4xl tracking-tight text-primary">
+                  <span className="font-serif text-5xl tracking-tight text-primary lg:text-6xl">
                     {stat.value}
                   </span>
                   <span className="text-right">
-                    <span className="block font-medium text-ink">{stat.label}</span>
-                    <span className="block text-sm text-ink-muted">{stat.detail}</span>
+                    <span className="block font-medium text-ink">
+                      {stat.label}
+                    </span>
+                    <span className="block text-sm text-ink-muted">
+                      {stat.detail}
+                    </span>
                   </span>
                 </div>
               ))}
             </div>
 
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              <span className="text-sm text-ink-muted">Every book sits on a shelf:</span>
-              {shelves.map((shelf) => (
-                <span key={shelf} className="badge">
-                  {shelf}
-                </span>
+            <div className="mt-10 grid grid-cols-3 border-y border-ink/15">
+              {shelves.map((shelf, index) => (
+                <div
+                  key={shelf}
+                  className="border-r border-ink/15 px-3 py-4 text-center last:border-r-0"
+                >
+                  <span className="block font-serif text-2xl text-primary">
+                    {index + 1}
+                  </span>
+                  <span className="text-xs uppercase tracking-[0.14em] text-ink-muted">
+                    {shelf}
+                  </span>
+                </div>
               ))}
             </div>
           </div>
