@@ -41,7 +41,7 @@ export default function HomePage() {
 
       <main id="main-content">
         {/* Hero — an editorial poster, not a SaaS split screen */}
-        <section className="overflow-hidden pb-20 pt-32 lg:pb-28 lg:pt-36">
+        <section className="overflow-hidden pb-20 pt-28 lg:pb-24 lg:pt-28">
           <div className="section-container">
             <div className="mb-10 flex items-center justify-between border-y border-ink/15 py-3 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-ink-muted sm:text-[0.68rem] sm:tracking-[0.2em]">
               <span>LeafTok Reader</span>
@@ -51,16 +51,16 @@ export default function HomePage() {
               <span>Est. 2025</span>
             </div>
 
-            <div className="relative grid lg:grid-cols-12">
-              <h1 className="relative z-10 col-span-full min-w-0 font-serif text-[clamp(3.2rem,11vw,9.5rem)] leading-[0.82] tracking-[-0.06em] lg:leading-[0.78] lg:tracking-[-0.065em]">
+            <div className="relative grid gap-x-8 lg:grid-cols-12">
+              <h1 className="relative z-10 col-span-full min-w-0 font-serif text-[clamp(3.2rem,8vw,7rem)] leading-[0.84] tracking-[-0.055em] lg:col-span-9 lg:leading-[0.82] lg:tracking-[-0.06em]">
                 <span className="block">Stop reading</span>
-                <span className="block lg:pl-[10vw]">books the old way.</span>
-                <span className="block text-primary lg:pl-[3vw]">
+                <span className="block lg:pl-[5vw]">books the old way.</span>
+                <span className="block text-primary lg:pl-[1.5vw]">
                   Swipe <span className="block sm:inline">forward.</span>
                 </span>
               </h1>
 
-              <div className="relative z-20 mt-12 max-w-xl lg:col-span-5 lg:mt-20">
+              <div className="relative z-20 mt-10 max-w-xl lg:col-span-5 lg:row-start-2 lg:mt-12">
                 <p className="font-serif text-2xl leading-snug text-ink lg:text-3xl">
                   You didn&rsquo;t stop loving books. The feed just got louder.
                 </p>
@@ -78,8 +78,8 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <figure className="relative z-0 mx-auto mt-14 w-[260px] lg:absolute lg:-bottom-24 lg:right-[3vw] lg:mt-0 lg:w-[330px] lg:rotate-[1.5deg]">
-                <div className="absolute -inset-5 -z-10 border border-ink/15" />
+              <figure className="relative z-20 mx-auto mt-14 w-[260px] lg:col-span-3 lg:col-start-10 lg:row-span-2 lg:row-start-1 lg:my-10 lg:w-[280px] lg:self-end lg:justify-self-end lg:rotate-[1deg]">
+                <div className="absolute -inset-4 -z-10 border border-ink/15" />
                 <Image
                   src="/assets/screenshot-01-swipe-books-like-tiktok.webp"
                   alt="LeafTok turning a book into swipeable reading cards"
