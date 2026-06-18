@@ -9,7 +9,7 @@ export function Plates() {
           <div className="editorial-rule mb-5" />
           <p className="chapter-kicker mb-4">Plates</p>
           <h2 className="font-serif text-4xl tracking-tight lg:text-5xl">
-            See it in <span className="serif-italic text-primary">action</span>.
+            See it in <span className="text-primary underline decoration-primary/20 decoration-wavy underline-offset-8">action</span>.
           </h2>
           <p className="mt-4 text-lg text-ink-secondary">
             Five screens, five ways LeafTok changes how you read.
@@ -25,7 +25,7 @@ export function Plates() {
                   alt={plate.caption}
                   width={400}
                   height={870}
-                  className="rounded-2xl shadow-lg transition-shadow duration-300 hover:shadow-xl"
+                  className="rounded-xl shadow-md transition-shadow duration-200 hover:shadow-lg"
                 />
                 <figcaption className="mt-4 text-sm text-ink-muted">
                   <span className="font-serif text-ink">Plate {plate.numeral}</span>

@@ -80,7 +80,7 @@ export function Chapter({
           <div className={`lg:col-span-7 ${mirror ? 'lg:order-2' : ''}`}>
             <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_190px]">
               <div>
-                <p className="dropcap text-lg leading-relaxed text-ink-secondary">{lead}</p>
+                <p className="text-lg leading-relaxed text-ink-secondary">{lead}</p>
                 {children}
                 {epigraph && (
                   <p className="epigraph mt-10 text-2xl leading-snug lg:text-[1.75rem]">

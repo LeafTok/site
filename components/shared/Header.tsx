@@ -48,7 +48,7 @@ export function Header() {
               alt="LeafTok"
               width={36}
               height={36}
-              className="rounded-xl"
+              className="rounded-lg"
               priority
             />
             <span className="font-serif text-2xl tracking-tight">LeafTok</span>
@@ -99,7 +99,7 @@ export function Header() {
       </nav>
 
       <div
-        className={`fixed inset-0 z-[99] bg-paper/98 backdrop-blur-xl flex flex-col items-center justify-center gap-8 transition-all duration-300 ${
+        className={`fixed inset-0 z-[99] bg-paper flex flex-col items-center justify-center gap-8 transition-all duration-200 ${
           isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >

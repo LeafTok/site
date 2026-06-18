@@ -55,7 +55,7 @@ export function AppStoreButtons({ variant = 'primary', showBadge = false }: AppS
         aria-label="Download on the App Store"
       >
         {showBadge && (
-          <span className="absolute -top-2 -right-2 px-2 py-0.5 text-[10px] font-bold bg-accent text-paper rounded-full">
+          <span className="absolute -top-2 -right-2 px-2 py-0.5 text-[10px] font-bold bg-accent text-paper rounded">
             FREE
           </span>
         )}

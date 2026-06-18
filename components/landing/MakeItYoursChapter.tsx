@@ -23,7 +23,7 @@ export function MakeItYoursChapter() {
           heading={
             <>
               Make it{' '}
-              <span className="serif-italic text-primary">disappear</span>, so the
+              <span className="text-primary underline decoration-primary/20 decoration-wavy underline-offset-8">disappear</span>, so the
               words don&rsquo;t.
             </>
           }
@@ -32,9 +32,9 @@ export function MakeItYoursChapter() {
         <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-12">
           {/* Prose + accessibility marginalia */}
           <div className="lg:col-span-5">
-            <p className="dropcap text-lg leading-relaxed text-ink-secondary">
+            <p className="text-lg leading-relaxed text-ink-secondary">
               Five typefaces, each a different mood. Size and spacing that bend
-              to your eyes. Five themes, from paper-bright to midnight&mdash;in
+              to your eyes. Five themes, from paper-bright to midnight. In
               whichever language
               <Footnote marker="3">
                 English and Portuguese (Brazil), across the whole app.
@@ -77,7 +77,7 @@ export function MakeItYoursChapter() {
             </div>
 
             <div
-              className="rounded-2xl border border-ink/10 p-6 transition-colors duration-300 lg:p-8"
+              className="rounded-lg border border-ink/10 p-6 transition-colors duration-200 lg:p-8"
               style={{ background: theme.bg, color: theme.ink }}
             >
               <p

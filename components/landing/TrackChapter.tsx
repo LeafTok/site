@@ -11,7 +11,7 @@ export function TrackChapter() {
           heading={
             <>
               Reading you can actually{' '}
-              <span className="serif-italic text-primary">see</span>.
+              <span className="rounded bg-primary/10 px-2 text-primary">see</span>.
             </>
           }
         />
@@ -19,7 +19,7 @@ export function TrackChapter() {
         <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-12">
           {/* Prose + marginalia */}
           <div className="lg:col-span-5">
-            <p className="dropcap text-lg leading-relaxed text-ink-secondary">
+            <p className="text-lg leading-relaxed text-ink-secondary">
               Every book lands on a shelf and moves itself along as you read. A
               streak counts the days you showed up; a running tally remembers
               every card you&rsquo;ve turned.
@@ -32,7 +32,7 @@ export function TrackChapter() {
 
           {/* Stat ledger + shelves */}
           <div className="lg:col-span-7">
-            <div className="rounded-2xl border border-ink/5 bg-paper p-6 lg:p-8">
+            <div className="rounded-lg border border-ink/10 bg-paper p-6 lg:p-8">
               <p className="masthead-meta mb-2">By the numbers</p>
               {ledger.map((stat) => (
                 <div key={stat.label} className="ledger-row last:border-b-0">

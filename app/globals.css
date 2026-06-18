@@ -13,19 +13,6 @@
     overflow-x: hidden;
   }
 
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    opacity: 0.025;
-    pointer-events: none;
-    z-index: 9999;
-  }
-
   h1, h2, h3, h4 {
     @apply font-serif;
     line-height: 1.05;
@@ -42,34 +29,32 @@
   }
 
   .nav-scrolled {
-    @apply bg-paper/90 backdrop-blur-xl border-b border-ink/5;
+    @apply bg-paper border-b border-ink/5;
   }
 
   .hero-glow {
     @apply absolute inset-0;
     background:
-      radial-gradient(ellipse 70% 50% at 30% 30%, rgba(61, 122, 95, 0.08), transparent 60%),
-      radial-gradient(ellipse 50% 40% at 70% 70%, rgba(196, 101, 74, 0.06), transparent 50%);
+      radial-gradient(ellipse 70% 50% at 30% 30%, rgba(61, 122, 95, 0.04), transparent 60%);
   }
 
   .leaf-shape {
-    @apply absolute rounded-leaf;
-    background: linear-gradient(135deg, #3D7A5F15, transparent);
-    animation: float 6s ease-in-out infinite;
+    @apply absolute;
+    background: linear-gradient(135deg, #3D7A5F08, transparent);
+    border-radius: 50%;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 text-base font-semibold text-paper bg-ink rounded-full transition-all duration-300;
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 text-base font-semibold text-paper bg-ink rounded-lg transition-all duration-200;
   }
 
   .btn-primary:hover {
     @apply bg-ink-light;
-    transform: translateY(-1px);
-    box-shadow: 0 8px 30px rgba(26, 22, 18, 0.2);
+    box-shadow: 0 4px 20px rgba(26, 22, 18, 0.15);
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 text-base font-medium text-ink bg-transparent border-2 border-ink/15 rounded-full transition-all duration-300;
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 text-base font-medium text-ink bg-transparent border-2 border-ink/15 rounded-lg transition-all duration-200;
   }
 
   .btn-secondary:hover {
@@ -77,16 +62,15 @@
   }
 
   .card {
-    @apply bg-paper-warm rounded-2xl p-8 border border-ink/5 transition-all duration-300;
+    @apply bg-paper-warm rounded-lg p-6 border border-ink/10 transition-all duration-200;
   }
 
   .card:hover {
-    @apply bg-paper-cream border-ink/10;
-    transform: translateY(-2px);
+    @apply border-ink/20;
   }
 
   .badge {
-    @apply inline-flex items-center gap-2 px-4 py-1.5 text-sm font-medium text-primary bg-primary-muted border border-primary/15 rounded-full;
+    @apply inline-flex items-center gap-2 px-3 py-1 text-xs font-medium text-primary bg-primary-muted border border-primary/10 rounded;
   }
 
   .section-container {
@@ -94,7 +78,7 @@
   }
 
   .editorial-rule {
-    @apply w-12 h-[2px] bg-primary;
+    @apply w-8 h-[2px] bg-ink/20;
   }
 
   .feature-number {
@@ -106,34 +90,23 @@
 
   /* Chapter opener: "CHAPTER 02 · LISTEN" */
   .chapter-kicker {
-    @apply inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-primary;
-  }
-
-  /* Drop cap on a chapter's lead paragraph */
-  .dropcap::first-letter {
-    font-family: 'Literata', Georgia, serif;
-    float: left;
-    font-size: 3.6em;
-    line-height: 0.72;
-    font-weight: 500;
-    padding: 0.04em 0.1em 0 0;
-    color: #3D7A5F; /* primary */
+    @apply inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-ink-muted;
   }
 
   /* Reader-annotation notes living in the page margin */
   .marginalia {
-    @apply font-serif italic text-ink-faint;
-    font-size: 0.95rem;
+    @apply font-sans text-ink-faint;
+    font-size: 0.85rem;
     line-height: 1.5;
   }
 
   .marginalia-note {
-    @apply relative pl-4 border-l border-primary/20;
+    @apply relative pl-4 border-l border-ink/15;
   }
 
   /* Pull quote / epigraph */
   .epigraph {
-    @apply font-serif italic text-ink-secondary;
+    @apply font-serif text-ink-secondary;
     text-wrap: balance;
   }
 
@@ -151,7 +124,7 @@
   }
 
   .footnote-panel {
-    @apply font-sans text-sm text-ink-secondary bg-paper-cream/70 border border-ink/5 rounded-lg;
+    @apply font-sans text-sm text-ink-secondary bg-paper-cream/70 border border-ink/10 rounded;
   }
 
   /* Type-specimen row (Chapter 03) */

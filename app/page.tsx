@@ -43,11 +43,6 @@ export default function HomePage() {
         {/* Hero — the title page */}
         <section className="relative flex min-h-screen items-center overflow-hidden pb-20 pt-28">
           <div className="hero-glow" />
-          <div className="leaf-shape top-[15%] right-[8%] h-[250px] w-[250px] opacity-[0.06]" />
-          <div
-            className="leaf-shape bottom-[25%] left-[5%] h-[180px] w-[180px] rotate-180 opacity-[0.04]"
-            style={{ animationDelay: '-2s' }}
-          />
 
           <div className="relative z-10 mx-auto max-w-container px-6">
             <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-8">
@@ -65,16 +60,16 @@ export default function HomePage() {
                       the old way
                     </span>
                   </span>
-                  <span className="serif-italic mt-1 block text-primary">Start swiping them.</span>
+                  <span className="mt-1 block text-primary underline decoration-primary/20 decoration-wavy underline-offset-8">Start swiping them.</span>
                 </h1>
 
-                <p className="serif-italic mb-5 text-xl text-ink-secondary">
-                  You didn&rsquo;t stop loving books&mdash;the feed just got louder.
+                <p className="mb-5 text-xl font-medium text-ink-secondary">
+                  You didn&rsquo;t stop loving books. The feed just got louder.
                 </p>
 
                 <p className="mb-10 max-w-lg text-lg leading-relaxed text-ink-secondary lg:text-xl">
                   LeafTok turns any PDF or EPUB you already own into swipeable
-                  cards&mdash;so you read 3&times; faster, comprehension intact, and
+                  cards. You read 3&times; faster, keep the comprehension, and
                   actually finish.
                 </p>
 
@@ -99,20 +94,18 @@ export default function HomePage() {
                 style={{ animationDelay: '150ms' }}
               >
                 <div className="relative">
-                  <div className="absolute inset-0 -m-8 animate-[spin_60s_linear_infinite] rounded-full border-2 border-dashed border-primary/10" />
-
                   <div className="relative w-[280px] lg:w-[320px]">
                     <Image
                       src="/assets/screenshot-01-swipe-books-like-tiktok.webp"
                       alt="LeafTok — swipe books like TikTok"
                       width={400}
                       height={870}
-                      className="rounded-[2rem] shadow-[0_25px_80px_-15px_rgba(26,22,18,0.25)]"
+                      className="rounded-[2.5rem] shadow-[0_25px_80px_-15px_rgba(26,22,18,0.2)]"
                       priority
                     />
 
                     {/* Floating margin notes */}
-                    <div className="animate-float absolute -left-6 top-1/3 rounded-xl border border-ink/5 bg-paper-warm px-4 py-3 shadow-lg">
+                    <div className="absolute -left-6 top-1/3 rounded-lg border border-ink/10 bg-paper-warm px-4 py-3 shadow-md">
                       <div className="flex items-center gap-2.5">
                         <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
                           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-primary">
@@ -127,7 +120,7 @@ export default function HomePage() {
                     </div>
 
                     <div
-                      className="animate-float absolute -right-6 bottom-1/3 rounded-xl border border-ink/5 bg-paper-warm px-4 py-3 shadow-lg"
+                      className="absolute -right-6 bottom-1/3 rounded-lg border border-ink/10 bg-paper-warm px-4 py-3 shadow-md"
                       style={{ animationDelay: '-3s' }}
                     >
                       <div className="flex items-center gap-2.5">
@@ -218,12 +211,12 @@ export default function HomePage() {
 
           <div className="relative z-10 mx-auto max-w-container px-6 text-center">
             <h2 className="mb-6 font-serif text-4xl tracking-tight lg:text-6xl">
-              Your bookshelf is <span className="serif-italic text-primary">waiting</span>
+              Your bookshelf is <span className="text-primary underline decoration-primary/20 decoration-wavy underline-offset-8">waiting</span>
             </h2>
             <p className="mx-auto mb-4 max-w-lg text-lg text-ink-secondary lg:text-xl">
               Stop buying books you never finish. Start swiping through them in minutes.
             </p>
-            <p className="serif-italic mb-10 text-ink-muted">Free to try. No account needed.</p>
+            <p className="mb-10 font-medium text-ink-muted">Free to try. No account needed.</p>
             <div className="flex justify-center">
               <AppStoreButtons showBadge />
             </div>

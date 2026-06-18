@@ -12,7 +12,7 @@ export function ReadChapter() {
       heading={
         <>
           Your book, sliced into cards you{' '}
-          <span className="serif-italic text-primary">thumb through</span>.
+          <span className="text-primary underline decoration-primary/20 decoration-wavy underline-offset-8">thumb through</span>.
         </>
       }
       marginalia={readMarginalia}
@@ -20,7 +20,7 @@ export function ReadChapter() {
         <>
           Any EPUB or PDF you already own, broken into bite-sized cards
           <Footnote marker="1">
-            100&ndash;350 characters, each card sized to its content so your eye
+            100 to 350 characters, each card sized to its content so your eye
             never loses the line.
           </Footnote>{' '}
           you thumb through like a feed. Chapters, images, and code blocks all
@@ -35,20 +35,20 @@ export function ReadChapter() {
             alt="LeafTok reader showing a book as swipeable cards"
             width={400}
             height={870}
-            className="rounded-[2rem] shadow-[0_25px_80px_-15px_rgba(26,22,18,0.25)]"
+            className="rounded-[2.5rem] shadow-[0_25px_80px_-15px_rgba(26,22,18,0.2)]"
           />
           <Image
             src="/assets/screenshot-04-turn-epub-into-cards.webp"
             alt="An EPUB being turned into cards"
             width={400}
             height={870}
-            className="absolute -bottom-8 -left-12 w-[42%] rounded-[1.25rem] border border-paper/60 shadow-[0_18px_50px_-12px_rgba(26,22,18,0.3)]"
+            className="absolute -bottom-8 -left-12 w-[42%] rounded-xl border border-ink/10 shadow-lg"
           />
         </div>
       }
     >
       <p className="mt-6 leading-relaxed text-ink-secondary">
-        Pressed for time? Generate an AI summary&mdash;key themes, characters,
+        Pressed for time? Generate an AI summary: key themes, characters,
         and chapter-by-chapter insights, powered by GPT-4o. Your first one is
         free.
       </p>

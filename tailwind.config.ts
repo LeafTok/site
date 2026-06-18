@@ -55,10 +55,6 @@ const config: Config = {
         sans: ['DM Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
       },
       keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
-          '50%': { transform: 'translateY(-20px) rotate(3deg)' },
-        },
         fadeIn: {
           '0%': { opacity: '0', transform: 'translateY(24px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
@@ -71,17 +67,11 @@ const config: Config = {
           '0%': { opacity: '0', transform: 'scale(0.95)' },
           '100%': { opacity: '1', transform: 'scale(1)' },
         },
-        marquee: {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
-        },
       },
       animation: {
-        float: 'float 6s ease-in-out infinite',
         fadeIn: 'fadeIn 0.6s ease-out forwards',
         slideUp: 'slideUp 0.8s ease-out forwards',
         fadeInScale: 'fadeInScale 0.5s ease-out forwards',
-        marquee: 'marquee 30s linear infinite',
       },
       maxWidth: {
         container: '1200px',
