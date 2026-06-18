@@ -13,63 +13,48 @@
     overflow-x: hidden;
   }
 
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    opacity: 0.025;
-    pointer-events: none;
-    z-index: 9999;
-  }
-
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     @apply font-serif;
     line-height: 1.05;
   }
 
   ::selection {
-    background: #3D7A5F30;
+    background: #3d7a5f30;
+  }
+
+  :focus-visible {
+    outline: 3px solid #3d7a5f;
+    outline-offset: 3px;
   }
 }
 
 @layer components {
-  .serif-italic {
-    @apply font-serif italic;
-  }
-
   .nav-scrolled {
-    @apply bg-paper/90 backdrop-blur-xl border-b border-ink/5;
+    @apply bg-paper border-b border-ink/5;
   }
 
-  .hero-glow {
-    @apply absolute inset-0;
-    background:
-      radial-gradient(ellipse 70% 50% at 30% 30%, rgba(61, 122, 95, 0.08), transparent 60%),
-      radial-gradient(ellipse 50% 40% at 70% 70%, rgba(196, 101, 74, 0.06), transparent 50%);
+  .skip-link {
+    @apply fixed left-4 top-4 z-[110] -translate-y-24 rounded-lg bg-ink px-4 py-3 font-semibold text-paper transition-transform duration-200;
   }
 
-  .leaf-shape {
-    @apply absolute rounded-leaf;
-    background: linear-gradient(135deg, #3D7A5F15, transparent);
-    animation: float 6s ease-in-out infinite;
+  .skip-link:focus {
+    @apply translate-y-0;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 text-base font-semibold text-paper bg-ink rounded-full transition-all duration-300;
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 text-base font-semibold text-paper bg-ink rounded-lg transition-all duration-200;
   }
 
   .btn-primary:hover {
     @apply bg-ink-light;
-    transform: translateY(-1px);
-    box-shadow: 0 8px 30px rgba(26, 22, 18, 0.2);
+    box-shadow: 0 4px 20px rgba(26, 22, 18, 0.15);
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 text-base font-medium text-ink bg-transparent border-2 border-ink/15 rounded-full transition-all duration-300;
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 text-base font-medium text-ink bg-transparent border-2 border-ink/15 rounded-lg transition-all duration-200;
   }
 
   .btn-secondary:hover {
@@ -77,16 +62,15 @@
   }
 
   .card {
-    @apply bg-paper-warm rounded-2xl p-8 border border-ink/5 transition-all duration-300;
+    @apply bg-paper-warm rounded-lg p-6 border border-ink/10 transition-all duration-200;
   }
 
   .card:hover {
-    @apply bg-paper-cream border-ink/10;
-    transform: translateY(-2px);
+    @apply border-ink/20;
   }
 
   .badge {
-    @apply inline-flex items-center gap-2 px-4 py-1.5 text-sm font-medium text-primary bg-primary-muted border border-primary/15 rounded-full;
+    @apply inline-flex items-center gap-2 px-3 py-1 text-xs font-medium text-primary bg-primary-muted border border-primary/10 rounded;
   }
 
   .section-container {
@@ -94,12 +78,144 @@
   }
 
   .editorial-rule {
-    @apply w-12 h-[2px] bg-primary;
+    @apply w-8 h-[2px] bg-ink/20;
   }
 
-  .feature-number {
-    @apply font-serif text-7xl text-ink/5 absolute -top-2 -left-2 select-none;
-    line-height: 1;
+  /* ── Editorial layer (composes existing tokens only) ───────────────── */
+
+  /* Chapter opener: "CHAPTER 02 · LISTEN" */
+  .chapter-kicker {
+    @apply inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-ink-muted;
+  }
+
+  /* Reader-annotation notes living in the page margin */
+  .marginalia {
+    @apply font-sans text-ink-faint;
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .marginalia-note {
+    @apply relative border-l border-ink/15 pl-4;
+  }
+
+  /* Pull quote / epigraph */
+  .epigraph {
+    @apply font-serif text-ink-secondary;
+    text-wrap: balance;
+  }
+
+  /* Footnote reference marker + expandable panel */
+  .footnote-ref {
+    @apply relative inline-flex min-h-6 min-w-6 items-center justify-center align-super font-sans font-semibold text-accent;
+    font-size: 0.62em;
+    line-height: 0;
+    border-bottom: 1px dotted currentColor;
+  }
+
+  .footnote-ref::before {
+    content: "";
+    position: absolute;
+    inset: -10px;
+  }
+
+  .footnote-ref:hover {
+    @apply text-accent-light;
+  }
+
+  .footnote-panel {
+    @apply font-sans text-sm text-ink-secondary bg-paper-cream/70 border border-ink/10 rounded;
+  }
+
+  /* Type-specimen row (Chapter 03) */
+  .type-specimen-row {
+    @apply border-t border-ink/5 py-5 first:border-t-0;
+  }
+
+  /* Stat ledger (Chapter 04) */
+  .ledger-row {
+    @apply flex items-baseline justify-between gap-6 border-b border-dashed border-ink/15 py-4;
+  }
+
+  /* Masthead strip + table of contents */
+  .masthead-meta {
+    @apply text-xs uppercase tracking-[0.22em] text-ink-faint;
+  }
+
+  .contents-link {
+    @apply flex items-baseline gap-4 py-3 border-t border-ink/10 transition-colors hover:text-primary;
+  }
+
+  .transformation-spread {
+    @apply grid items-center gap-8 sm:grid-cols-[minmax(0,1fr)_auto_minmax(14rem,0.72fr)];
+  }
+
+  .source-page {
+    @apply relative min-h-[31rem] border border-ink/20 bg-paper-warm p-8 font-serif text-lg leading-relaxed text-ink-secondary sm:p-10;
+    box-shadow: 10px 12px 0 rgba(26, 22, 18, 0.08);
+  }
+
+  .transformation-mark {
+    @apply hidden font-serif text-5xl text-primary sm:block;
+  }
+
+  .process-line {
+    @apply border-y-2 border-ink;
+  }
+
+  .process-step {
+    @apply relative border-b border-ink/20 py-8 last:border-b-0;
+  }
+
+  .process-arrow {
+    @apply mt-6 block w-fit rotate-90 font-serif text-4xl text-primary;
+  }
+
+  .bg-primary .btn-secondary {
+    @apply border-paper/50 text-paper;
+  }
+
+  .bg-primary .btn-secondary:hover {
+    @apply border-paper bg-paper/10;
+  }
+
+  @media (min-width: 768px) {
+    .process-line {
+      @apply grid grid-cols-3;
+    }
+
+    .process-step {
+      @apply border-b-0 border-r border-ink/20 px-8 py-10 first:pl-0 last:border-r-0 last:pr-0;
+    }
+
+    .process-arrow {
+      @apply absolute -right-5 top-1/2 z-10 mt-0 -translate-y-1/2 rotate-0 bg-paper px-2;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .marginalia {
+      @apply flex flex-wrap gap-x-6 gap-y-3;
+    }
+
+    .marginalia-note {
+      @apply min-w-[9rem] flex-1;
+    }
+  }
+}
+
+@layer utilities {
+  /* Respect the reader's reduced-motion preference (parity with the app's
+     reduced-motion setting). Neutralizes float/marquee/reveal animations. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
