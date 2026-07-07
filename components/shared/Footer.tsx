@@ -9,6 +9,7 @@ interface FooterLink {
 }
 
 const footerLinks: FooterLink[] = [
+  { label: "Guides", href: "/guides/" },
   { label: "Privacy Policy", href: "/privacy/" },
   { label: "Terms", href: "/terms/" },
   { label: "Changelog", href: "/changelog/" },

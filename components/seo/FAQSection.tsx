@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import type { FAQItem } from "@/lib/types";
 import { generateFAQSchema } from "@/lib/schema/generators";
 import { InlineSchema } from "./SchemaGenerator";
@@ -76,6 +77,15 @@ export function FAQSection({
                   <div className="min-h-0 overflow-hidden">
                     <div className="max-w-2xl pb-7 pr-12 text-ink-secondary leading-relaxed">
                       {faq.answer}
+                      {faq.learnMore && (
+                        <Link
+                          href={faq.learnMore.href}
+                          className="mt-3 block text-sm font-semibold text-primary hover:underline"
+                          tabIndex={openIndex === index ? 0 : -1}
+                        >
+                          {faq.learnMore.label ?? "Learn more"} &rarr;
+                        </Link>
+                      )}
                     </div>
                   </div>
                 </div>

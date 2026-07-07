@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Header, Footer, AppStoreButtons } from "@/components/shared";
 import { SchemaGenerator, FAQSection } from "@/components/seo";
 import {
@@ -16,11 +17,12 @@ import {
   generateWebSiteSchema,
 } from "@/lib/schema/generators";
 import { heroTrust, steps, homeFAQs } from "@/lib/data/landing";
+import { getAllGuides } from "@/lib/data/guides";
 
 export const metadata: Metadata = {
-  title: "LeafTok — Your Books, Reimagined",
+  title: "LeafTok — Swipe Through Books Like TikTok | EPUB & PDF Reader",
   description:
-    "Turn any PDF or EPUB you already own into focused, swipeable cards with on-device narration, ambient soundscapes, and accessible reading themes.",
+    "The TikTok-style book reader for iPhone. Turn any EPUB or PDF into swipeable cards, listen with on-device narration, keep a reading streak, and read with friends in book clubs. Free to start.",
   alternates: {
     canonical: "https://leaftok.app/",
   },
@@ -157,6 +159,51 @@ export default function HomePage() {
                 subtitle="Everything you need to know before your first swipe"
               />
             </div>
+          </div>
+        </section>
+
+        {/* Field guides — the appendix */}
+        <section id="guides" className="scroll-mt-24 py-24 lg:py-28">
+          <div className="section-container">
+            <header className="mb-14 flex flex-wrap items-end justify-between gap-6">
+              <div className="max-w-xl">
+                <div className="editorial-rule mb-5" />
+                <h2 className="font-serif text-4xl tracking-tight lg:text-5xl">
+                  Appendix: the field guides.
+                </h2>
+                <p className="mt-4 text-lg text-ink-secondary">
+                  Answers first, app second — swipe-reading, narration,
+                  finishing what you start.
+                </p>
+              </div>
+              <Link
+                href="/guides/"
+                className="text-sm font-semibold text-primary hover:underline"
+              >
+                All guides &rarr;
+              </Link>
+            </header>
+
+            <ol className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+              {getAllGuides().map((guide, index) => (
+                <li key={guide.slug}>
+                  <Link
+                    href={`/guides/${guide.slug}/`}
+                    className="group block border-t border-ink/25 pt-4 transition-colors hover:text-primary"
+                  >
+                    <span className="masthead-meta text-primary">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="mt-2 font-serif text-xl leading-snug">
+                      {guide.heading}
+                    </h3>
+                    <span className="mt-3 inline-block text-xs uppercase tracking-[0.16em] text-ink-muted group-hover:text-primary">
+                      {guide.keyword}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ol>
           </div>
         </section>
 
