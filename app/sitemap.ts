@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
-import { getAllBookSlugs, getAllCategories, getAllAuthorSlugs, getAllTopicSlugs } from '@/lib/data/books';
+import { getAllBookSlugs, getAllCategories } from '@/lib/data/books';
+import { getAllGuides } from '@/lib/data/guides';
 
 // Required for static export
 export const dynamic = 'force-static';
@@ -35,7 +36,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+    {
+      url: `${BASE_URL}/guides/`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
   ];
+
+  // Keyword guide pages
+  const guidePages: MetadataRoute.Sitemap = getAllGuides().map((guide) => ({
+    url: `${BASE_URL}/guides/${guide.slug}/`,
+    lastModified: new Date(guide.publishedAt),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
 
   // Category hub pages
   const categories = await getAllCategories();
@@ -55,29 +70,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  // Author pages
-  const authorSlugs = await getAllAuthorSlugs();
-  const authorPages: MetadataRoute.Sitemap = authorSlugs.map((slug) => ({
-    url: `${BASE_URL}/authors/${slug}/`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }));
-
-  // Topic pages
-  const topicSlugs = await getAllTopicSlugs();
-  const topicPages: MetadataRoute.Sitemap = topicSlugs.map((slug) => ({
-    url: `${BASE_URL}/topics/${slug}/`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }));
+  // NOTE: /authors/ and /topics/ routes do not exist in app/ — their sitemap
+  // entries were removed 2026-07-07 because they advertised dead URLs to
+  // crawlers. Restore them here if those routes ship.
 
   return [
     ...staticPages,
+    ...guidePages,
     ...categoryPages,
     ...bookPages,
-    ...authorPages,
-    ...topicPages,
   ];
 }
