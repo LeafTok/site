@@ -58,11 +58,9 @@ export function generateSoftwareApplicationSchema(): SchemaOrg {
       name: siteConfig.name,
       url: siteConfig.url,
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      ratingCount: '30',
-    },
+    // NOTE: no aggregateRating on purpose — the App Store listing has too few
+    // ratings to claim one honestly, and inflated review markup risks a
+    // Google manual action. Add it back when there's a real rating count.
     downloadUrl: [siteConfig.appStoreLinks.ios, siteConfig.appStoreLinks.android],
     screenshot: `${siteConfig.url}/assets/screenshot.png`,
     featureList: [
