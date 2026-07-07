@@ -26,6 +26,9 @@ export function generateOrganizationSchema(): SchemaOrg {
     },
     sameAs: [
       `https://twitter.com/${siteConfig.socialLinks.twitter.replace('@', '')}`,
+      siteConfig.appStoreLinks.ios,
+      siteConfig.appStoreLinks.android,
+      'https://github.com/LeafTok',
     ],
   };
 }
@@ -302,12 +305,15 @@ export function generateGuideArticleSchema(guide: {
     headline: guide.title,
     description: guide.metaDescription,
     url: `${siteConfig.url}/guides/${guide.slug}/`,
+    mainEntityOfPage: `${siteConfig.url}/guides/${guide.slug}/`,
     image: `${siteConfig.url}${guide.screenshotSrc}`,
     datePublished: guide.publishedAt,
+    dateModified: guide.publishedAt,
     author: {
       '@type': 'Person',
       name: siteConfig.author.name,
       url: siteConfig.author.url,
+      sameAs: [`https://twitter.com/${siteConfig.author.twitter.replace('@', '')}`],
     },
     publisher: {
       '@type': 'Organization',

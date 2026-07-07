@@ -19,6 +19,15 @@ interface GuidePageProps {
   params: Promise<{ slug: string }>;
 }
 
+function formatGuideDate(isoDate: string): string {
+  return new Date(`${isoDate}T00:00:00Z`).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "UTC",
+  });
+}
+
 export async function generateStaticParams() {
   return getAllGuides().map((guide) => ({ slug: guide.slug }));
 }
@@ -89,6 +98,26 @@ export default async function GuidePage({ params }: GuidePageProps) {
               <p className="mt-8 max-w-xl font-serif text-2xl leading-snug text-ink lg:text-3xl">
                 {guide.lede}
               </p>
+              <p className="mt-6 text-sm text-ink-muted">
+                By{" "}
+                <a
+                  href="https://iagocavalcante.com"
+                  rel="author"
+                  className="underline decoration-ink/30 underline-offset-2 hover:text-ink"
+                >
+                  Iago Cavalcante
+                </a>
+                , developer of LeafTok &middot; Updated{" "}
+                {formatGuideDate(guide.publishedAt)}
+              </p>
+
+              {/* Quick answer — the citable unit for answer engines */}
+              <div className="mt-10 max-w-2xl border-l-2 border-primary bg-paper-warm p-6">
+                <p className="masthead-meta mb-3 text-primary">Quick answer</p>
+                <p className="text-lg leading-relaxed text-ink">
+                  {guide.quickAnswer}
+                </p>
+              </div>
             </div>
           </header>
 

@@ -31,6 +31,12 @@ export interface Guide {
   heading: string;
   /** Editorial lede beneath the H1. */
   lede: string;
+  /**
+   * 2–3 sentence direct answer to the target query, rendered in a callout
+   * under the H1. This is the citable unit for AI answer engines and
+   * featured snippets — self-contained, factual, no teaser phrasing.
+   */
+  quickAnswer: string;
   /** Opening paragraphs that answer the query directly. */
   intro: string[];
   sections: GuideSection[];
@@ -53,6 +59,8 @@ export const guides: Guide[] = [
       "Looking for a TikTok for books? Learn how swipe-based reading apps turn real books into vertical, bite-sized cards — and how to try it free on iPhone.",
     heading: "TikTok for books, explained",
     lede: "The scroll trained your thumb. Swipe-reading points that reflex at actual books.",
+    quickAnswer:
+      "A “TikTok for books” is a reading app that splits real books into short vertical cards you swipe through like a feed. LeafTok does this on iPhone for any EPUB or PDF you already own — the full text respaced into 100–350 character cards, free to start, no signup, fully offline.",
     intro: [
       "When people search for a “TikTok for books,” they usually mean one of two things: a place to talk about books (that already exists — it’s BookTok), or a way to read real books with the same effortless, vertical, one-thing-at-a-time rhythm the feed taught them. This guide is about the second one.",
       "A swipe-reading app takes a full book — an EPUB or PDF you already own — and splits it into short cards, each holding a focused passage. You swipe up for the next card, exactly like a feed. Same muscle memory, but every swipe moves you through a book instead of away from one.",
@@ -129,6 +137,8 @@ export const guides: Guide[] = [
       "Comparing the best EPUB readers for iPhone in 2026 — Apple Books, PocketBook, Yomu, and LeafTok. Which fits how you actually read, including offline and TTS.",
     heading: "The best EPUB reader for iPhone, honestly",
     lede: "There is no single best reader — there’s the best one for how you actually read.",
+    quickAnswer:
+      "For classic page-based reading, Apple Books (pre-installed, free) is the best EPUB reader for iPhone, and PocketBook is best for wide format support. If you keep abandoning books, LeafTok converts the same EPUB into swipeable, feed-style cards with offline narration — free to start with 3 book slots and no account.",
     intro: [
       "Every EPUB reader on iOS opens the file. The differences that matter are what happens after: how it handles your attention, whether it works offline, whether it can read aloud, and whether it nags you to sign up before you’ve read a page.",
       "Here’s the honest landscape in 2026, including where each option genuinely wins.",
@@ -200,6 +210,8 @@ export const guides: Guide[] = [
       "Want an app that reads your books aloud for free? Compare your options — and see how LeafTok narrates any EPUB or PDF with 16 on-device voices, offline.",
     heading: "An app that reads your books aloud — without a subscription per book",
     lede: "You own the book. You shouldn’t have to buy it again to hear it.",
+    quickAnswer:
+      "iOS Spoken Content (Settings → Accessibility) reads any screen aloud for free, but it behaves like a screen reader. For an actual listening experience, LeafTok narrates any EPUB or PDF with 16 neural voices generated on the iPhone itself — no cloud upload, no per-minute fees, works in airplane mode.",
     intro: [
       "Audiobooks are wonderful and expensive. If you already own a book as an EPUB or PDF, what you actually want is text-to-speech that sounds human, works offline, and doesn’t meter you by the minute.",
       "You have three broad options on iPhone: the system accessibility route, cloud TTS apps, and readers with narration built in. They differ more than the app stores make it look.",
@@ -270,6 +282,8 @@ export const guides: Guide[] = [
       "Turn any PDF into an audiobook on your iPhone — no cloud upload, no per-minute fees. Step-by-step with LeafTok's on-device narration.",
     heading: "Turn any PDF into an audiobook on your iPhone",
     lede: "Three steps, no cloud upload, and it works in airplane mode.",
+    quickAnswer:
+      "You don’t need to upload a PDF anywhere or render an MP3 to listen to it. Share the PDF to LeafTok on iPhone and it becomes narrated, auto-advancing reading cards using on-device voices — private, offline, and ready in seconds. Scanned PDFs need OCR first; digital PDFs work as-is.",
     intro: [
       "Most “PDF to audiobook” tutorials route you through a website: upload the file, wait for a server to synthesize an MP3, download it back. That’s slow, it caps file sizes, and your document — maybe a work report or a draft manuscript — sits on someone’s server.",
       "The cleaner way on iPhone is an app that reads the PDF with voices generated on the device itself. Nothing uploads, nothing renders in a queue, and “converting” takes as long as opening the file.",
@@ -339,6 +353,8 @@ export const guides: Guide[] = [
       "You don't lack discipline — your books are competing with a slot machine. A practical system to finish more books, plus the app format that makes it stick.",
     heading: "How to actually finish books again",
     lede: "You didn’t stop loving books. The feed just got louder.",
+    quickAnswer:
+      "Books die between sessions, not during them — re-entry friction, not discipline, is why you don’t finish. The fix is structural: shrink the reading unit to one passage, make your place impossible to lose, put the book on the phone it competes with, and make the streak visible.",
     intro: [
       "The average abandoned book dies around the first quarter mark, and it rarely dies during reading — it dies between sessions, when picking the book back up loses to picking up the phone. So the honest version of “how to finish more books” is: how do you make returning to the book as easy as opening the feed it competes with?",
       "Willpower advice ignores that asymmetry. A system beats it. Here’s one that works, in escalating order of leverage.",
@@ -414,6 +430,8 @@ export const guides: Guide[] = [
       "Looking for a book club app? Create a club with a share code, read together, and comment on chapters with spoiler flags — inside the reading app itself.",
     heading: "A book club that lives inside the book",
     lede: "Most “book club apps” are group chats about a book. The good ones put the conversation in the book.",
+    quickAnswer:
+      "A good book club app puts the discussion inside the book instead of a separate group chat. LeafTok 3.0 lets you create a club, invite friends with a share code, and comment on chapters with spoiler flags and reactions — right in the reader, with everyone reading at their own pace.",
     intro: [
       "The usual book club stack is duct tape: a group chat for logistics, a spreadsheet for the schedule, and a reading app that knows nothing about either. The conversation happens away from the text, spoilers require honor-system discipline, and half the club silently falls behind.",
       "A real book club app collapses that stack: the club, the book, and the discussion in one place, with spoiler protection built into the mechanics instead of the etiquette.",
@@ -487,6 +505,8 @@ export const guides: Guide[] = [
       "The best reading tracker is the one inside your reader. Streaks, shelves, and favorites that update as you read — no manual logging.",
     heading: "A reading tracker you never have to update",
     lede: "Tracking apps fail for the same reason diets do: the logging is homework.",
+    quickAnswer:
+      "The reading tracker that survives is the one you can’t forget to update. LeafTok tracks streaks, shelves (want to read / reading / finished), and progress automatically as you swipe — reading is the whole logging workflow, so the chain never breaks from a missed entry.",
     intro: [
       "Most reading trackers are diaries: you finish a session, open a second app, and record what you read. It works until the first day you forget, the chain breaks, and the tracker quietly becomes another abandoned app.",
       "The tracker that survives is the one that can’t be forgotten — because it’s the same app you read in, and every swipe is the log entry.",
@@ -560,6 +580,8 @@ export const guides: Guide[] = [
       "Struggle to focus on books? Short-form reading formats, ADHD-friendly typography, and distraction-free design that work with your attention instead of against it.",
     heading: "Reading with a short attention span",
     lede: "Stop trying to fix your focus. Change the shape of the text instead.",
+    quickAnswer:
+      "You don’t need a longer attention span to read books — you need shorter units. Passage-sized cards (one complete thought per screen), accessible typography like OpenDyslexic and high-contrast themes, and reduced-motion design let feed-trained or ADHD attention run for a full reading session.",
     intro: [
       "If your attention span feels shorter than it used to, you’re in the majority, and the advice you’ve gotten — try harder, use a timer, delete the apps — treats it as a character flaw. More useful: treat it as a format mismatch. Dense pages assume an attention style; you’re allowed to pick text shapes that assume yours.",
       "This applies whether your focus is feed-trained, you have ADHD, or reading fatigue arrives fast for any reason. The levers are the same.",
