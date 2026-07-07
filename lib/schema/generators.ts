@@ -287,6 +287,40 @@ export function generateArticleSchema(article: {
 }
 
 /**
+ * Generate Article schema for keyword guide pages (/guides/<slug>/)
+ */
+export function generateGuideArticleSchema(guide: {
+  title: string;
+  metaDescription: string;
+  slug: string;
+  screenshotSrc: string;
+  publishedAt: string;
+}): SchemaOrg {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: guide.title,
+    description: guide.metaDescription,
+    url: `${siteConfig.url}/guides/${guide.slug}/`,
+    image: `${siteConfig.url}${guide.screenshotSrc}`,
+    datePublished: guide.publishedAt,
+    author: {
+      '@type': 'Person',
+      name: siteConfig.author.name,
+      url: siteConfig.author.url,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteConfig.url}/assets/logo.png`,
+      },
+    },
+  };
+}
+
+/**
  * Generate CollectionPage schema for category/topic hub pages
  */
 export function generateCollectionPageSchema(

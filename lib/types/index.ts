@@ -20,6 +20,11 @@ export interface Breadcrumb {
 export interface FAQItem {
   question: string;
   answer: string;
+  /** Optional deep link to a guide page expanding on this answer. */
+  learnMore?: {
+    href: string;
+    label?: string;
+  };
 }
 
 export interface InternalLink {
