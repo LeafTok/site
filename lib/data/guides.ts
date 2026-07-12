@@ -199,7 +199,7 @@ export const guides: Guide[] = [
           "LeafTok includes 16 neural voices generated on-device, so narration works offline and isn’t a system-accessibility workaround. Most classic readers rely on iOS VoiceOver or Spoken Content instead.",
       },
     ],
-    related: ["tiktok-for-books", "app-that-reads-books-aloud", "pdf-to-audiobook-iphone"],
+    related: ["tiktok-for-books", "app-that-reads-books-aloud", "pdf-to-audiobook-iphone", "offline-reading-app"],
     publishedAt: "2026-07-07",
   },
   {
@@ -271,7 +271,7 @@ export const guides: Guide[] = [
           "For comprehension, research broadly finds listening and reading land similarly for narrative text. LeafTok keeps the text on screen while narrating, so you can do both at once.",
       },
     ],
-    related: ["pdf-to-audiobook-iphone", "best-epub-reader-iphone", "tiktok-for-books"],
+    related: ["pdf-to-audiobook-iphone", "best-epub-reader-iphone", "tiktok-for-books", "convert-epub-to-audiobook"],
     publishedAt: "2026-07-07",
   },
   {
@@ -342,7 +342,7 @@ export const guides: Guide[] = [
           "Only after OCR. Narration needs a text layer; run a scan through text recognition first, then import it.",
       },
     ],
-    related: ["app-that-reads-books-aloud", "best-epub-reader-iphone", "tiktok-for-books"],
+    related: ["app-that-reads-books-aloud", "best-epub-reader-iphone", "tiktok-for-books", "best-pdf-reader-iphone"],
     publishedAt: "2026-07-07",
   },
   {
@@ -644,8 +644,304 @@ export const guides: Guide[] = [
           "No. Nothing is summarized or removed — the full text is respaced into passage-sized cards, with chapters and images preserved.",
       },
     ],
-    related: ["tiktok-for-books", "how-to-finish-more-books", "app-that-reads-books-aloud"],
+    related: ["tiktok-for-books", "how-to-finish-more-books", "app-that-reads-books-aloud", "dyslexia-reading-app"],
     publishedAt: "2026-07-07",
+  },
+  {
+    slug: "convert-epub-to-audiobook",
+    keyword: "convert epub to audiobook",
+    title: "How to Convert an EPUB to an Audiobook on iPhone (Free, Offline)",
+    metaDescription:
+      "Turn any EPUB you own into a narrated audiobook on iPhone — no cloud upload, no per-book fee. On-device voices that work in airplane mode, step by step.",
+    heading: "Turn any EPUB into an audiobook on your iPhone",
+    lede: "You already own the book. Hearing it shouldn’t mean buying the audiobook too.",
+    quickAnswer:
+      "You don’t need to buy the audiobook edition or render an MP3 to listen to an EPUB. Share the EPUB to LeafTok on iPhone and it becomes narrated, auto-advancing reading cards read by 16 on-device voices — private, offline, and ready in seconds. Narration is a Pro feature; importing and reading the EPUB is free.",
+    intro: [
+      "An audiobook and an ebook are usually sold as two separate purchases, even when it’s the same title. If you already own the EPUB, paying again just to hear it is a strange tax — and the “convert EPUB to audiobook” tutorials that route you through a website are slow, cap file sizes, and upload your book to a stranger’s server.",
+      "The direct route on iPhone is an app that reads the EPUB with voices generated on the device itself. Nothing uploads, nothing sits in a render queue, and “converting” takes about as long as opening the file.",
+    ],
+    sections: [
+      {
+        heading: "Rendered MP3 vs. live narration",
+        paragraphs: [
+          "A converted MP3 is a frozen thing: one voice, one speed, and no text to follow along with. On-device narration is live — switch voices mid-chapter, read a few cards with your eyes and hand off to your ears, jump by chapter instead of scrubbing a two-hour waveform.",
+          "It’s also the only genuinely private, offline path. If your EPUB is a draft, a purchase you’d rather not share, or simply yours, upload-and-render services are a non-starter.",
+        ],
+      },
+      {
+        heading: "Do you need to convert the file at all?",
+        paragraphs: [
+          "Mostly, no. If the EPUB has real text — nearly all do — an on-device reader narrates it directly, with no export step and no second file to manage. The only EPUBs that need prep are the rare image-only ones, which require OCR before any text-to-speech can read them.",
+        ],
+      },
+    ],
+    leaftokHeading: "EPUB to audiobook with LeafTok",
+    leaftokSteps: [
+      {
+        title: "Share the EPUB to LeafTok",
+        description:
+          "From Files, Mail, or Safari, use the share sheet. LeafTok converts the EPUB into reading cards on-device in seconds, keeping chapters and images intact.",
+      },
+      {
+        title: "Choose a voice and press play",
+        description:
+          "Pick one of 16 Kokoro neural voices — British and American — generated locally. Cards advance automatically as they’re narrated, like an audiobook. Narration is Pro, from $1.99/week.",
+      },
+      {
+        title: "Listen anywhere, fully offline",
+        description:
+          "Flights, subway, a run with no signal — it all works. A sleep timer and rain, forest, or café soundscapes are built in.",
+      },
+    ],
+    screenshot: {
+      src: "/assets/screenshot-02-listen-hands-free.webp",
+      alt: "Converting an EPUB into a narrated audiobook experience in LeafTok on iPhone",
+    },
+    faqs: [
+      {
+        question: "Can I convert an EPUB to an audiobook for free?",
+        answer:
+          "Importing and reading the EPUB in LeafTok is free with 3 book slots and no signup. The 16 on-device narration voices that make it an audiobook experience are part of Pro (from $1.99/week). Nothing uploads and no connection is required.",
+      },
+      {
+        question: "Do I get an MP3 file at the end?",
+        answer:
+          "No — and that’s the point. Instead of a frozen MP3, LeafTok narrates the book live, so you can change voice or speed, follow the text on screen, and jump by chapter. Everything stays inside the app on your device.",
+      },
+      {
+        question: "Will it read a DRM-protected EPUB?",
+        answer:
+          "No. Like any reader, LeafTok opens EPUBs you can already open yourself — DRM-locked store files stay locked. Books you own as standard EPUB or PDF work.",
+      },
+    ],
+    related: ["pdf-to-audiobook-iphone", "app-that-reads-books-aloud", "best-epub-reader-iphone"],
+    publishedAt: "2026-07-11",
+  },
+  {
+    slug: "dyslexia-reading-app",
+    keyword: "dyslexia friendly reading app",
+    title: "Dyslexia-Friendly Reading App: OpenDyslexic, Themes & Read-Aloud",
+    metaDescription:
+      "A dyslexia-friendly way to read your own books on iPhone: OpenDyslexic font, high-contrast themes, adjustable spacing, reduced motion, and on-device read-aloud.",
+    heading: "A dyslexia-friendly reading app for the books you already own",
+    lede: "The words aren’t the problem. The way they’re packed onto the page is.",
+    quickAnswer:
+      "A dyslexia-friendly reading app lets you reshape the text — typeface, size, spacing, contrast — and hear it while you read. LeafTok converts any EPUB or PDF into one-passage-per-screen cards and offers the OpenDyslexic typeface, high-contrast and dark themes, adjustable size and line spacing, reduced motion, and 16 on-device read-aloud voices. It’s a reading format, not a clinical treatment.",
+    intro: [
+      "Dense pages make reading harder than it needs to be for a lot of people — crowded lines, tight spacing, low contrast, and a wall of text your eye has to hold its place in. Dyslexic readers feel this most, but the fixes help anyone whose eyes tire fast.",
+      "The useful move isn’t “try harder.” It’s to reshape the text: a friendlier typeface, more air between the lines, higher contrast, one idea per screen, and the option to hear the words while you see them.",
+    ],
+    sections: [
+      {
+        heading: "What makes reading dyslexia-friendly",
+        paragraphs: [
+          "Research and lived experience converge on a handful of levers. Look for an app that gives you all of them, not just one:",
+        ],
+        list: [
+          "A weighted, distinctive typeface like OpenDyslexic that reduces letter-swapping",
+          "Adjustable text size and generous line spacing — crowding is half the battle",
+          "High-contrast and dark themes, so the page isn’t fighting your eyes",
+          "One passage per screen, so you never lose your place in a block of text",
+          "Read-aloud you can pair with the text, so you see and hear together",
+        ],
+      },
+      {
+        heading: "Why hearing and seeing together helps",
+        paragraphs: [
+          "Dual coding — taking a sentence in through eyes and ears at once — is one of the most reliable supports for effortful readers. It anchors decoding to sound, keeps the pace steady, and takes strain off working memory. An app that keeps the text on screen while it narrates gives you this for free.",
+        ],
+      },
+    ],
+    leaftokHeading: "Setting up LeafTok for dyslexia-friendly reading",
+    leaftokSteps: [
+      {
+        title: "Import your book",
+        description:
+          "Any EPUB or PDF becomes one-passage-per-screen cards on-device — no wall of text to get lost in, and your place is always the card you’re on.",
+      },
+      {
+        title: "Dial in the type",
+        description:
+          "Switch to OpenDyslexic, raise the size and line spacing, pick a high-contrast or dark theme, and turn on reduced motion. All free, all adjustable anytime.",
+      },
+      {
+        title: "Read and listen together",
+        description:
+          "Turn on narration to hear each card in one of 16 on-device voices while the text stays on screen. Narration is Pro (from $1.99/week); the typography settings are free.",
+      },
+    ],
+    screenshot: {
+      src: "/assets/screenshot-01-swipe-books-like-tiktok.webp",
+      alt: "LeafTok with the OpenDyslexic font and a high-contrast theme showing one passage per card",
+    },
+    faqs: [
+      {
+        question: "Is there a dyslexia-friendly reading app for iPhone?",
+        answer:
+          "LeafTok offers the OpenDyslexic typeface, high-contrast and dark themes, adjustable size and spacing, reduced motion, and on-device read-aloud, applied to any EPUB or PDF you own. It’s a reading format designed for effortful reading, not a diagnosis or treatment tool.",
+      },
+      {
+        question: "Does the OpenDyslexic font actually help?",
+        answer:
+          "It varies by person — some readers find its weighted letterforms noticeably reduce swapping and fatigue; others prefer a large, well-spaced standard font. LeafTok lets you try OpenDyslexic and five other fonts and keep whichever works for you.",
+      },
+      {
+        question: "Can it read my textbooks or PDFs aloud?",
+        answer:
+          "Yes, as long as the file has real text. Digital EPUBs and PDFs narrate directly; a scanned PDF needs OCR first so there’s text for the voice to read.",
+      },
+    ],
+    related: ["reading-with-short-attention-span", "app-that-reads-books-aloud", "best-epub-reader-iphone"],
+    publishedAt: "2026-07-11",
+  },
+  {
+    slug: "best-pdf-reader-iphone",
+    keyword: "best pdf reader for iphone",
+    title: "Best PDF Reader for iPhone in 2026: For Reading, Not Just Opening",
+    metaDescription:
+      "The best PDF reader for iPhone depends on the job. Honest picks for viewing, annotating, and — if you actually read long PDFs — a card-based, read-aloud option.",
+    heading: "The best PDF reader for iPhone depends on what you’re doing to the PDF",
+    lede: "Opening a PDF is solved. Reading a long one on a phone, comfortably, is not.",
+    quickAnswer:
+      "For viewing and signing, Apple’s built-in Files and Books handle PDFs for free. For heavy annotation and editing, PDF Expert is the standard. For actually reading a long PDF — a book, report, or paper — LeafTok reflows it into swipeable, one-passage cards with on-device read-aloud, so you’re not pinch-zooming a fixed page on a small screen. It’s free to start; narration is Pro.",
+    intro: [
+      "“Best PDF reader” is really three different questions. Do you need to view and sign a PDF, mark it up heavily, or read a long one end to end? The right app is different for each, and most lists blur them together.",
+      "Here’s the honest split for iPhone in 2026 — including the case almost no list covers: reading a long-form PDF comfortably on a phone-sized screen.",
+    ],
+    sections: [
+      {
+        heading: "For viewing, signing, and light markup",
+        paragraphs: [
+          "Apple’s Files and Books both open PDFs, keep your place, and let you sign or scribble — free, pre-installed, no fuss. For most quick jobs, you already have the best tool.",
+          "If you annotate constantly, PDF Expert and PDFgear are the power tools: editing, form-filling, deep markup. They’re built for working on a PDF.",
+        ],
+      },
+      {
+        heading: "For actually reading a long PDF",
+        paragraphs: [
+          "Every reader above shows a PDF as fixed pages. On a phone that means pinch-zooming, panning across margins, and losing your place in a two-column layout — fine for a page, punishing for a 300-page book.",
+          "This is the gap LeafTok fills: it reflows the PDF into short, swipeable cards sized for the screen, so a long PDF reads like a feed instead of a shrunk-down page. It can also narrate it with on-device voices. It isn’t for editing or signing — it’s for reading.",
+        ],
+      },
+    ],
+    leaftokHeading: "Reading a PDF in LeafTok",
+    leaftokSteps: [
+      {
+        title: "Share the PDF in",
+        description:
+          "From Files, Mail, or Safari, send the PDF to LeafTok. It reflows on-device into swipeable cards, preserving chapters and images — no pinch-zooming.",
+      },
+      {
+        title: "Set it up for your eyes",
+        description:
+          "5 themes, 5 fonts plus OpenDyslexic, adjustable size and spacing. A fixed page becomes text you can actually tune.",
+      },
+      {
+        title: "Read or listen, offline",
+        description:
+          "Swipe through, or let 16 on-device voices read it aloud (Pro). Everything works in airplane mode; scanned PDFs need OCR first.",
+      },
+    ],
+    screenshot: {
+      src: "/assets/screenshot-04-turn-epub-into-cards.webp",
+      alt: "LeafTok reflowing a PDF into swipeable reading cards on iPhone",
+    },
+    faqs: [
+      {
+        question: "What is the best free PDF reader for iPhone?",
+        answer:
+          "Apple’s Files and Books read PDFs for free and are already installed — best for viewing and signing. If you want to read a long PDF comfortably, LeafTok reflows it into swipeable cards free of charge (narration is Pro).",
+      },
+      {
+        question: "Can I annotate or edit PDFs in LeafTok?",
+        answer:
+          "No — LeafTok is a reading app, not a PDF editor. For markup, form-filling, or signing, use PDF Expert, PDFgear, or Apple’s built-in tools. LeafTok is for reading a PDF end to end.",
+      },
+      {
+        question: "Why is reading a PDF on my phone so uncomfortable?",
+        answer:
+          "PDFs are fixed-layout — the page doesn’t reflow to your screen, so you pinch and pan. An app that reflows the text into phone-sized cards removes that, which is what LeafTok does.",
+      },
+    ],
+    related: ["pdf-to-audiobook-iphone", "best-epub-reader-iphone", "offline-reading-app"],
+    publishedAt: "2026-07-11",
+  },
+  {
+    slug: "offline-reading-app",
+    keyword: "offline reading app",
+    title: "Best Offline Reading App for iPhone: Read (and Listen) With No Signal",
+    metaDescription:
+      "Want to read with no internet? An offline reading app for iPhone that turns your own EPUBs and PDFs into cards — with on-device narration that works in airplane mode.",
+    heading: "An offline reading app for flights, subways, and dead zones",
+    lede: "The best reading happens exactly where the signal doesn’t.",
+    quickAnswer:
+      "An offline reading app keeps your books and all its features working with no connection. LeafTok converts any EPUB or PDF you own into swipeable cards entirely on your iPhone, and even its 16 narration voices and ambient soundscapes run offline — so reading and listening work in airplane mode, with no account required.",
+    intro: [
+      "The moments most worth reading in — a flight, a tunnel, a cabin, a long drive — are the ones with no signal. Plenty of “reading apps” quietly assume a connection: cloud libraries, streamed audio, sync that stalls, features that grey out at 30,000 feet.",
+      "A genuinely offline reading app does everything on the device: opens your books, reads them aloud, tracks your progress — all without a bar of signal.",
+    ],
+    sections: [
+      {
+        heading: "“Offline” is a spectrum — check the fine print",
+        paragraphs: [
+          "Most apps are only partly offline. Before you rely on one for a flight, check where it still needs the network:",
+        ],
+        list: [
+          "Library: can you add your own EPUB or PDF, or only download from a catalog while online?",
+          "Audio: is narration streamed (needs signal) or generated on-device (doesn’t)?",
+          "Accounts: does it make you sign in — a step that fails with no connection?",
+          "Progress: does your place still save locally when you’re offline?",
+        ],
+      },
+      {
+        heading: "Why on-device beats “downloaded for offline”",
+        paragraphs: [
+          "Downloading a book for offline is table stakes. The harder part is features: search, narration, themes, streaks. When those run on the device rather than a server, nothing greys out when the signal drops. That’s the difference between a book you can open offline and an app that fully works offline.",
+        ],
+      },
+    ],
+    leaftokHeading: "How LeafTok works with zero signal",
+    leaftokSteps: [
+      {
+        title: "Bring your own books",
+        description:
+          "Import any EPUB or PDF once. Conversion into cards happens on-device — no catalog to stream, no account to sign into.",
+      },
+      {
+        title: "Read and listen in airplane mode",
+        description:
+          "Swiping, search, themes, streaks, and 16 on-device narration voices all work with no connection. Ambient soundscapes too.",
+      },
+      {
+        title: "Your progress stays put",
+        description:
+          "Streaks, shelves, and your exact place save locally, so a dead zone never costs you anything. Narration is Pro; reading is free.",
+      },
+    ],
+    screenshot: {
+      src: "/assets/screenshot-05-read-to-lo-fi-beats.webp",
+      alt: "LeafTok reading and narrating a book offline in airplane mode on iPhone",
+    },
+    faqs: [
+      {
+        question: "What’s the best offline reading app for iPhone?",
+        answer:
+          "If you want your own EPUBs and PDFs plus offline narration, LeafTok runs entirely on-device — reading, search, themes, streaks, and 16 voices all work in airplane mode, with no account. For catalog books, Apple Books also reads downloaded titles offline.",
+      },
+      {
+        question: "Does the read-aloud work without internet?",
+        answer:
+          "Yes. LeafTok’s narration voices are generated on your iPhone, not streamed, so text-to-speech works in airplane mode — unlike cloud TTS apps that need a connection.",
+      },
+      {
+        question: "Do I need an account to use it offline?",
+        answer:
+          "No. LeafTok requires no account at all, so there’s no sign-in step to fail when you’re offline. Import a book and read.",
+      },
+    ],
+    related: ["best-epub-reader-iphone", "best-pdf-reader-iphone", "app-that-reads-books-aloud"],
+    publishedAt: "2026-07-11",
   },
 ];
 
