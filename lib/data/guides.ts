@@ -199,7 +199,7 @@ export const guides: Guide[] = [
           "LeafTok includes 16 neural voices generated on-device, so narration works offline and isn’t a system-accessibility workaround. Most classic readers rely on iOS VoiceOver or Spoken Content instead.",
       },
     ],
-    related: ["tiktok-for-books", "app-that-reads-books-aloud", "pdf-to-audiobook-iphone", "offline-reading-app"],
+    related: ["tiktok-for-books", "app-that-reads-books-aloud", "pdf-to-audiobook-iphone", "offline-reading-app", "free-kindle-alternative"],
     publishedAt: "2026-07-07",
   },
   {
@@ -271,7 +271,7 @@ export const guides: Guide[] = [
           "For comprehension, research broadly finds listening and reading land similarly for narrative text. LeafTok keeps the text on screen while narrating, so you can do both at once.",
       },
     ],
-    related: ["pdf-to-audiobook-iphone", "best-epub-reader-iphone", "tiktok-for-books", "convert-epub-to-audiobook"],
+    related: ["pdf-to-audiobook-iphone", "best-epub-reader-iphone", "tiktok-for-books", "convert-epub-to-audiobook", "text-to-speech-reading-app"],
     publishedAt: "2026-07-07",
   },
   {
@@ -419,7 +419,7 @@ export const guides: Guide[] = [
           "Yes — deliberately and early. A resented book blocks every book behind it. Shelve it and start the next one the same day.",
       },
     ],
-    related: ["tiktok-for-books", "reading-tracker-app", "reading-with-short-attention-span"],
+    related: ["tiktok-for-books", "reading-tracker-app", "reading-with-short-attention-span", "ai-book-summary-app"],
     publishedAt: "2026-07-07",
   },
   {
@@ -644,7 +644,7 @@ export const guides: Guide[] = [
           "No. Nothing is summarized or removed — the full text is respaced into passage-sized cards, with chapters and images preserved.",
       },
     ],
-    related: ["tiktok-for-books", "how-to-finish-more-books", "app-that-reads-books-aloud", "dyslexia-reading-app"],
+    related: ["tiktok-for-books", "how-to-finish-more-books", "app-that-reads-books-aloud", "dyslexia-reading-app", "reading-app-for-adhd"],
     publishedAt: "2026-07-07",
   },
   {
@@ -941,6 +941,306 @@ export const guides: Guide[] = [
       },
     ],
     related: ["best-epub-reader-iphone", "best-pdf-reader-iphone", "app-that-reads-books-aloud"],
+    publishedAt: "2026-07-11",
+  },
+  {
+    slug: "reading-app-for-adhd",
+    keyword: "reading app for adhd",
+    title: "Reading App for ADHD: A Format Built for How You Actually Focus",
+    metaDescription:
+      "An ADHD-friendly reading app for iPhone: one passage per card to beat task-initiation, brown noise and narration to hold focus, and streaks that reward starting.",
+    heading: "A reading app built for an ADHD brain",
+    lede: "You don’t have a reading problem. You have a starting-and-sustaining problem, and the page makes both worse.",
+    quickAnswer:
+      "A reading app that works for ADHD shrinks the cost of starting and holds attention once you begin. LeafTok turns any EPUB or PDF into one-passage-per-screen cards (so starting is a single swipe), adds brown/white/pink noise and 16 on-device narration voices to sustain focus, OpenDyslexic and reduced-motion options, and streaks that reward showing up. It’s a reading format, not an ADHD treatment.",
+    intro: [
+      "ADHD reading rarely fails at comprehension — it fails at the edges: starting (a full page is a big, open-ended commitment your brain won’t initiate) and sustaining (a wall of text gives no feedback, so attention wanders off hunting for stimulation). Then hyperfocus finally arrives — on the thing that isn’t your book.",
+      "The fix isn’t more willpower; it’s a format that lowers the cost of starting and feeds attention while you read. The same brain that can’t open a 300-page PDF will happily swipe fifty cards.",
+    ],
+    sections: [
+      {
+        heading: "Why pages fight an ADHD brain",
+        paragraphs: [
+          "Two forces work against you. Task initiation: an open-ended page has no obvious “done,” so starting feels like signing up for an unknown amount of effort — the exact thing ADHD defers. And stimulation: a static page delivers no feedback, so a novelty-seeking brain drifts to something that does.",
+          "Shrink the unit and both problems shrink. A card is a tiny, obviously-finishable commitment, so starting costs one swipe. And finishing a card every few seconds is steady feedback — the completion hit the feed exploits, pointed at a book instead.",
+        ],
+      },
+      {
+        heading: "What to look for in an ADHD reading app",
+        paragraphs: [
+          "The features that matter aren’t “ADHD” branding — they’re these mechanics:",
+        ],
+        list: [
+          "One short passage per screen, so starting is trivial and your place is never lost",
+          "Background sound — brown or white noise is a well-known focus aid for many ADHD readers",
+          "Read-aloud, so you can add an audio channel when your eyes won’t settle",
+          "Reduced motion and a clean interface, so the app itself isn’t the distraction",
+          "Streaks that reward starting, not just finishing — the ADHD-friendly win condition",
+        ],
+      },
+    ],
+    leaftokHeading: "How LeafTok fits an ADHD brain",
+    leaftokSteps: [
+      {
+        title: "Start with one card",
+        description:
+          "Any EPUB or PDF becomes a deck of cards. The commitment is one swipe, not one chapter — and it reopens exactly where you left off, so re-starting is free too.",
+      },
+      {
+        title: "Add sound to hold focus",
+        description:
+          "Brown, white, or pink noise, or rain and café soundscapes, run under your reading. Or switch on narration — 16 on-device voices — when your eyes won’t sit still. Narration is Pro, from $1.99/week.",
+      },
+      {
+        title: "Let streaks reward showing up",
+        description:
+          "Streaks, shelves, and favorites update as you swipe — a visible reward for starting, which is the hard part. Reduced motion and OpenDyslexic are there when you need them.",
+      },
+    ],
+    screenshot: {
+      src: "/assets/screenshot-01-swipe-books-like-tiktok.webp",
+      alt: "LeafTok showing one passage per card, built for ADHD-friendly reading on iPhone",
+    },
+    faqs: [
+      {
+        question: "Is there a reading app made for ADHD?",
+        answer:
+          "LeafTok isn’t marketed as a medical tool, but its format targets exactly what ADHD readers struggle with: one-swipe task initiation, one passage per screen, background noise and narration to sustain focus, reduced motion, and streaks that reward starting. It’s a reading format, not a treatment.",
+      },
+      {
+        question: "Why can I hyperfocus on my phone but not a book?",
+        answer:
+          "The feed gives constant micro-feedback and novelty; a page gives none until you finish it. Card-based reading gives a book the same steady completion rhythm, so the attention you spend scrolling can go into a book instead.",
+      },
+      {
+        question: "Does brown noise actually help with reading focus?",
+        answer:
+          "Many people with ADHD report that steady broadband noise — brown, white, or pink — reduces distractibility by masking sudden sounds. LeafTok includes all three plus rain, forest, and café, so you can test what works for you.",
+      },
+    ],
+    related: ["reading-with-short-attention-span", "how-to-finish-more-books", "dyslexia-reading-app"],
+    publishedAt: "2026-07-11",
+  },
+  {
+    slug: "free-kindle-alternative",
+    keyword: "free kindle alternative",
+    title: "Free Kindle Alternatives for iPhone (2026): Read Without Amazon",
+    metaDescription:
+      "The best free Kindle alternatives for iPhone in 2026 — Apple Books, Kobo, Libby, and LeafTok. What each does, plus the DRM catch nobody mentions.",
+    heading: "Free Kindle alternatives, and the catch nobody mentions",
+    lede: "You can leave Amazon’s app. Your Amazon-locked purchases are a different story.",
+    quickAnswer:
+      "The best free Kindle alternatives on iPhone are Apple Books (best all-rounder), Kobo (store plus reader), and Libby (free library borrowing). For your own EPUB and PDF files, LeafTok adds a swipeable, feed-style format with on-device read-aloud. The catch: no alternative can open Kindle’s DRM-locked purchases — only files you own as EPUB or PDF, or DRM-free books.",
+    intro: [
+      "“Free Kindle alternative” usually means one of two things: a different app to read in, or a way off Amazon entirely. Both are doable on iPhone — but there’s a catch worth knowing before you switch, because it decides which of your books come with you.",
+      "Here’s the honest map for 2026, including the DRM reality most listicles skip.",
+    ],
+    sections: [
+      {
+        heading: "The DRM catch, first",
+        paragraphs: [
+          "Books you bought in the Kindle store are usually wrapped in Amazon’s DRM, and by design only Amazon’s own apps open them. No third-party reader — not Apple Books, not LeafTok — can legally undo that, so “switching” doesn’t import your Kindle library.",
+          "What does move freely: DRM-free ebooks, books you own as standard EPUB or PDF, public-domain titles, and anything you borrow from a library. If most of your reading is those, you’re free to leave.",
+        ],
+      },
+      {
+        heading: "The free alternatives, by job",
+        paragraphs: ["Pick by what you actually need:"],
+        list: [
+          "Apple Books — pre-installed, free, syncs your own EPUBs and PDFs across devices. The default best all-rounder.",
+          "Kobo — a genuine store-plus-reader if you want an ebook ecosystem that isn’t Amazon.",
+          "Libby — free ebook and audiobook borrowing from your public library, with just a library card.",
+          "LeafTok — for reading your own EPUBs and PDFs in a swipeable, feed-style format with on-device narration, free to start.",
+        ],
+      },
+    ],
+    leaftokHeading: "Where LeafTok fits your escape from Amazon",
+    leaftokSteps: [
+      {
+        title: "Bring the books you own",
+        description:
+          "Import any DRM-free EPUB or PDF — purchases, public-domain classics, library-compatible files. Conversion into cards happens on-device.",
+      },
+      {
+        title: "Read them in a feed, not a page",
+        description:
+          "If your reason for leaving Kindle is that you don’t actually finish books, the swipeable card format is the point — same book, a shape your thumb already knows.",
+      },
+      {
+        title: "Listen, offline, no account",
+        description:
+          "16 on-device voices narrate any book (Pro), everything works offline, and there’s no account or ecosystem to sign into. Free tier: 3 book slots.",
+      },
+    ],
+    screenshot: {
+      src: "/assets/screenshot-04-turn-epub-into-cards.webp",
+      alt: "Reading your own EPUB in LeafTok as a free Kindle alternative on iPhone",
+    },
+    faqs: [
+      {
+        question: "What is the best free alternative to Kindle on iPhone?",
+        answer:
+          "Apple Books is the best free all-rounder (pre-installed, syncs your EPUBs and PDFs). Libby is best for free library borrowing, and LeafTok is best if you want a swipeable, feed-style way to read your own files. None can open Kindle’s DRM-locked purchases.",
+      },
+      {
+        question: "Can I read my Kindle books in another app?",
+        answer:
+          "Not if they’re DRM-protected — only Amazon’s apps open those. DRM-free ebooks and your own EPUB or PDF files open anywhere, including LeafTok.",
+      },
+      {
+        question: "Is LeafTok free?",
+        answer:
+          "Yes to download and read, with 3 book slots and no account. Pro (from $1.99/week) unlocks unlimited books, on-device narration voices, and AI summaries.",
+      },
+    ],
+    related: ["best-epub-reader-iphone", "offline-reading-app", "tiktok-for-books"],
+    publishedAt: "2026-07-11",
+  },
+  {
+    slug: "text-to-speech-reading-app",
+    keyword: "text to speech reading app",
+    title: "Text-to-Speech Reading App for iPhone: Listen to Anything You Read",
+    metaDescription:
+      "A text-to-speech reading app that reads back your books, PDFs, and documents on iPhone — 16 on-device voices that work offline, no cloud upload, no per-minute fees.",
+    heading: "A text-to-speech app for reading — books, PDFs, and documents",
+    lede: "The best TTS isn’t the one with the most voices. It’s the one that works on a plane and keeps your files to itself.",
+    quickAnswer:
+      "A text-to-speech reading app converts written text — books, PDFs, articles, documents — into spoken audio. On iPhone, iOS Spoken Content does this free for any screen; for a real reading experience, LeafTok narrates any EPUB or PDF you import with 16 neural voices generated on-device, so it works offline with no upload and no per-minute metering. Narration is a Pro feature.",
+    intro: [
+      "“Text to speech” covers a lot of ground: some people want to listen to ebooks, others to get through work PDFs, class readings, or long articles without staring at a screen. The right app depends less on voice count and more on two things — does it work offline, and does your text stay private?",
+      "On iPhone there are three tiers, and they differ more than the store listings suggest.",
+    ],
+    sections: [
+      {
+        heading: "The three kinds of TTS on iPhone",
+        paragraphs: [
+          "System-level: iOS Spoken Content (Settings → Accessibility) reads any screen aloud, free. It’s universal but blunt — screen-reader pacing, awkward controls, and it stops when you switch apps.",
+          "Cloud TTS: Speechify-style apps have polished voices but gate the best ones behind subscriptions, need a connection, and send your text to their servers.",
+          "On-device readers: apps that synthesize speech on your iPhone. No connection, no per-minute quota, and the document never leaves the device. LeafTok is in this tier.",
+        ],
+      },
+      {
+        heading: "Why on-device is the right default",
+        paragraphs: [
+          "If you listen on commutes, flights, or anywhere with patchy signal, on-device is the only kind that never cuts out. There’s no monthly character cap because there’s no server bill behind it. And for anything sensitive — a work PDF, an unpublished draft — “it never uploads” isn’t a nice-to-have, it’s the requirement.",
+        ],
+      },
+    ],
+    leaftokHeading: "Listening to your text in LeafTok",
+    leaftokSteps: [
+      {
+        title: "Bring in the text",
+        description:
+          "Share any EPUB or PDF — an ebook, a report, a set of class readings — to LeafTok. It reflows into cards on-device in seconds.",
+      },
+      {
+        title: "Pick a voice, press play",
+        description:
+          "16 Kokoro neural voices, British and American, generated locally. The text is read back card by card while it stays on screen, so you can follow along or look away. Narration is Pro, from $1.99/week.",
+      },
+      {
+        title: "Listen offline, privately",
+        description:
+          "No upload, no connection, no per-minute meter. A sleep timer and ambient soundscapes are built in for long sessions.",
+      },
+    ],
+    screenshot: {
+      src: "/assets/screenshot-02-listen-hands-free.webp",
+      alt: "Text-to-speech reading app narrating a document on iPhone with on-device voices",
+    },
+    faqs: [
+      {
+        question: "What’s the best text-to-speech app for reading on iPhone?",
+        answer:
+          "For free, universal reading, iOS Spoken Content covers any screen. For an actual reading experience with natural voices that work offline, LeafTok narrates any EPUB or PDF with 16 on-device voices (Pro), with nothing uploaded.",
+      },
+      {
+        question: "Can it read PDFs and documents, not just books?",
+        answer:
+          "Yes — any EPUB or PDF with real text: reports, papers, class readings, ebooks. Scanned documents need OCR first so there’s a text layer to read.",
+      },
+      {
+        question: "Does the text-to-speech work offline?",
+        answer:
+          "Yes. LeafTok’s voices are generated on your iPhone rather than streamed, so narration works in airplane mode — unlike cloud TTS apps that need a connection.",
+      },
+    ],
+    related: ["app-that-reads-books-aloud", "pdf-to-audiobook-iphone", "convert-epub-to-audiobook"],
+    publishedAt: "2026-07-11",
+  },
+  {
+    slug: "ai-book-summary-app",
+    keyword: "ai book summary app",
+    title: "AI Book Summary Apps: When Summaries Help (and When to Read)",
+    metaDescription:
+      "How AI book summary apps actually help — deciding what to read, recall, and previewing — and where they fall short. Plus LeafTok’s built-in AI summaries.",
+    heading: "AI book summaries: a tool, not a substitute",
+    lede: "A summary is a great map. It’s a terrible replacement for the territory.",
+    quickAnswer:
+      "AI book summary apps condense a book into its key ideas — useful for deciding what to read, recalling a book you’ve finished, or previewing a chapter. They’re a poor substitute for reading anything you want to genuinely absorb. LeafTok reads your full books as swipeable cards and offers AI-powered summaries as a Pro feature, so you can summarize or read the real thing in one app.",
+    intro: [
+      "AI book summary apps promise a book in five minutes. Sometimes that’s exactly right — and sometimes it quietly robs you of the reason you wanted the book. The trick is knowing which situation you’re in.",
+      "Here’s an honest take on when a summary earns its place, when it doesn’t, and how to keep both options in reach.",
+    ],
+    sections: [
+      {
+        heading: "When a summary is the right tool",
+        paragraphs: ["Summaries genuinely help in a few situations:"],
+        list: [
+          "Triage — deciding whether a book is worth your hours before you commit",
+          "Recall — refreshing a book you’ve already read without a full re-read",
+          "Preview — getting oriented before a dense chapter, then reading it properly",
+          "Non-fiction whose few core ideas are padded across 300 pages",
+        ],
+      },
+      {
+        heading: "When a summary quietly cheats you",
+        paragraphs: [
+          "For narrative — novels, memoir, anything whose value is the experience — a summary hands you the plot and removes the point. And for ideas you actually want to internalize, passively reading a recap builds far weaker memory than working through the argument yourself. A summary tells you what to think; the book teaches you how the author got there.",
+          "The healthy pattern is summary as an entry or exit ramp — to decide, preview, or review — with real reading in between.",
+        ],
+      },
+    ],
+    leaftokHeading: "Summaries and full reading, in one app",
+    leaftokSteps: [
+      {
+        title: "Read the real book as cards",
+        description:
+          "Import any EPUB or PDF and read the full text as swipeable cards — nothing summarized or skipped. This is LeafTok’s core, and it’s free.",
+      },
+      {
+        title: "Summarize when it’s the right call",
+        description:
+          "AI-powered summaries are a Pro feature (from $1.99/week) — use them to triage a book, refresh one you’ve read, or preview a chapter, then swipe into the full text.",
+      },
+      {
+        title: "Keep the good parts",
+        description:
+          "Favorite the passages worth keeping and search them later — the durable version of “I’ll remember this,” built from the actual book.",
+      },
+    ],
+    screenshot: {
+      src: "/assets/screenshot-03-get-ai-summaries.webp",
+      alt: "LeafTok showing an AI-powered book summary alongside the full reading cards on iPhone",
+    },
+    faqs: [
+      {
+        question: "What’s the best AI book summary app?",
+        answer:
+          "It depends on the job. Dedicated services like Blinkist specialize in pre-written non-fiction summaries. LeafTok takes a different approach — it reads your full books as cards and offers AI-powered summaries as a Pro feature, so summarizing and real reading live in one app.",
+      },
+      {
+        question: "Are AI book summaries accurate?",
+        answer:
+          "They’re generally reliable for the main ideas of structured non-fiction, and weaker on nuance, argument, and anything narrative. Treat a summary as a map — good for orientation, not a replacement for the book you actually want to absorb.",
+      },
+      {
+        question: "Should I just read summaries instead of books?",
+        answer:
+          "For triage and recall, summaries are efficient. For anything you want to genuinely understand or experience, they’re a poor substitute — memory and comprehension are far stronger when you work through the real text.",
+      },
+    ],
+    related: ["how-to-finish-more-books", "reading-tracker-app", "tiktok-for-books"],
     publishedAt: "2026-07-11",
   },
 ];
