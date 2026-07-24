@@ -1,4 +1,7 @@
+"use client";
+
 import { siteConfig } from "@/lib/types";
+import { trackEvent } from "@/lib/analytics";
 
 interface AppStoreButtonsProps {
   variant?: "primary" | "compact";
@@ -21,6 +24,10 @@ export function AppStoreButtons({
   variant = "primary",
   showBadge = false,
 }: AppStoreButtonsProps) {
+  const handleStoreClick = (store: "app_store" | "google_play") => {
+    trackEvent("store_open", { store, placement: variant });
+  };
+
   if (variant === "compact") {
     return (
       <div className="flex flex-wrap gap-3">
@@ -30,6 +37,7 @@ export function AppStoreButtons({
           rel="noopener noreferrer"
           className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-ink/10 bg-ink/5 px-4 py-2 text-ink transition-colors duration-200 hover:bg-ink/10"
           aria-label="Download on the App Store"
+          onClick={() => handleStoreClick("app_store")}
         >
           <AppleIcon />
           <span className="text-sm font-medium">App Store</span>
@@ -40,6 +48,7 @@ export function AppStoreButtons({
           rel="noopener noreferrer"
           className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-ink/10 bg-ink/5 px-4 py-2 text-ink transition-colors duration-200 hover:bg-ink/10"
           aria-label="Get it on Google Play"
+          onClick={() => handleStoreClick("google_play")}
         >
           <PlayStoreIcon />
           <span className="text-sm font-medium">Google Play</span>
@@ -56,6 +65,7 @@ export function AppStoreButtons({
         rel="noopener noreferrer"
         className="btn-primary relative"
         aria-label="Download on the App Store"
+        onClick={() => handleStoreClick("app_store")}
       >
         {showBadge && (
           <span className="absolute -top-2 -right-2 px-2 py-0.5 text-[10px] font-bold bg-accent text-paper rounded">
@@ -71,6 +81,7 @@ export function AppStoreButtons({
         rel="noopener noreferrer"
         className="btn-secondary"
         aria-label="Get it on Google Play"
+        onClick={() => handleStoreClick("google_play")}
       >
         <PlayStoreIcon />
         <span>Google Play</span>

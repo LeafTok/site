@@ -136,6 +136,11 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="msapplication-TileColor" content="#3D7A5F" />
+        <script
+          defer
+          src="https://cdn.himetrica.com/tracker.js"
+          data-api-key="hm_d152bb0531eeab6e4f875fccce4185c70467daaf3ff17769"
+        />
       </head>
       <body className="font-sans">{children}</body>
     </html>
