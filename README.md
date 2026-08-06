@@ -157,7 +157,29 @@ Add the category to `content/books/_categories.json`:
 
 ## Deployment
 
-The site deploys automatically to GitHub Pages via GitHub Actions on push to `main`.
+The site is built **locally** and published to the `gh-pages` branch, which GitHub
+Pages serves. There is no CI: this is a pure static export, so a hosted runner adds
+nothing a laptop cannot do.
+
+```bash
+npm run deploy
+```
+
+That builds, then pushes `out/` to `gh-pages`. It refuses to run on a dirty tree, so
+the deployed build always corresponds to a real commit. `main` never carries build
+output — `out/` stays gitignored and the published files live only on `gh-pages`.
+
+### One-time setup per clone
+
+```bash
+git config core.hooksPath .githooks
+```
+
+This enables a `pre-push` hook that runs `type-check`, `lint` and `build` before any
+push to `main`, so broken source cannot land. It intentionally does not build or
+commit the artifact: git has already selected the commits by the time pre-push runs,
+so anything committed there would not be part of the push. Publishing is always the
+explicit `npm run deploy` step. Use `git push --no-verify` to bypass in an emergency.
 
 ### Manual Build
 

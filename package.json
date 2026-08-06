@@ -9,7 +9,8 @@
     "lint": "eslint . --max-warnings 0",
     "type-check": "tsc --noEmit",
     "format": "prettier --write .",
-    "export": "next build"
+    "export": "next build",
+    "deploy": "bash scripts/deploy-pages.sh"
   },
   "dependencies": {
     "next": "^16.1.2",
