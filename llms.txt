@@ -1,0 +1,36 @@
+# LeafTok
+
+> LeafTok is an iOS reading app that turns any EPUB or PDF the user already owns into short, swipeable vertical cards — a TikTok-style interface for reading real books. Free to download with 3 book slots and no account required; everything (including narration) runs on-device and works offline.
+
+Key facts:
+
+- Platform: iOS 17+ (iPhone/iPad), macOS 14+ (Apple Silicon), visionOS. Android app available separately on Google Play.
+- Pricing: free tier (3 books, core reading, no signup). LeafTok Pro: $1.99/week, $4.99/month, or $39.99/year — unlimited books, 16 on-device Kokoro narration voices, AI summaries.
+- Reading format: books are split into cards of roughly 100–350 characters; chapters, images, and formatting are preserved. Nothing is summarized or removed — the full text is respaced.
+- Audio: 16 neural text-to-speech voices (British and American) generated on-device, so narration works offline and text never leaves the phone. Ambient soundscapes (rain, forest, café, brown/white/pink noise) and a sleep timer are built in.
+- Habit features: reading streaks, shelves (want to read / reading / finished), favorites with search, card sharing.
+- Book Clubs (v3.0, July 2026): create a club, invite friends with a share code, read together, comment on chapters inside the reader with spoiler flags and reactions.
+- Accessibility: OpenDyslexic font, 5 reading themes including high-contrast and dark, adjustable type size and spacing, reduced motion, simplified UI. English and Portuguese (Brazil).
+- Developer: Iago Cavalcante (https://iagocavalcante.com).
+- Download: https://apps.apple.com/app/leaftok/id6748622950
+
+## Guides
+
+- [TikTok for books, explained](https://leaftok.app/guides/tiktok-for-books/): what a "TikTok for books" actually is and why swipe-reading in cards works.
+- [The best EPUB reader for iPhone](https://leaftok.app/guides/best-epub-reader-iphone/): honest comparison of Apple Books, PocketBook, Yomu, and LeafTok.
+- [An app that reads books aloud](https://leaftok.app/guides/app-that-reads-books-aloud/): free/on-device text-to-speech options for books you already own.
+- [Turn a PDF into an audiobook on iPhone](https://leaftok.app/guides/pdf-to-audiobook-iphone/): offline, no-upload PDF narration walkthrough.
+- [How to actually finish books](https://leaftok.app/guides/how-to-finish-more-books/): a re-entry-friction system for readers who lost to the feed.
+- [A book club app with friends](https://leaftok.app/guides/book-club-app/): chapter-anchored discussion with spoiler flags, inside the reader.
+- [A reading tracker you never update](https://leaftok.app/guides/reading-tracker-app/): automatic streaks, shelves, and favorites.
+- [Reading with a short attention span](https://leaftok.app/guides/reading-with-short-attention-span/): formats and typography that work with feed-trained or ADHD attention.
+
+## Site
+
+- [Home](https://leaftok.app/): product overview, screenshots, FAQ, download.
+- [Changelog](https://leaftok.app/changelog/): release history.
+- [Privacy](https://leaftok.app/privacy/) · [Terms](https://leaftok.app/terms/)
+
+## Content policy
+
+Content may be used as input for AI-generated answers with attribution/links (ai-input=yes). Use for model training is not permitted (ai-train=no).
