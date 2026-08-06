@@ -29,6 +29,66 @@ interface ChangelogEntry {
 
 const changelog: ChangelogEntry[] = [
   {
+    version: '3.0.3',
+    date: 'August 2026',
+    changes: [
+      {
+        type: 'fix',
+        description:
+          'Fixed a crash that could stop the app from opening. The AI narration voice was loading on every launch — even for readers who never used it — and now loads only when an AI voice is chosen.',
+      },
+    ],
+  },
+  {
+    version: '3.0.2',
+    date: 'August 2026',
+    changes: [
+      { type: 'fix', description: 'Fixed a memory leak when opening several books in a row' },
+      { type: 'improvement', description: 'Faster swiping in long books — no more slowdown as you get deeper in' },
+      { type: 'improvement', description: 'Better reporting of low-memory shutdowns so we can catch them sooner' },
+    ],
+  },
+  {
+    version: '3.0.1',
+    date: 'July 2026',
+    changes: [
+      { type: 'fix', description: 'Fixed crashes while navigating chapters and favoriting cards' },
+      { type: 'fix', description: 'Fixed a crash during narration auto-advance' },
+      { type: 'improvement', description: 'Image-heavy books use far less memory and no longer get shut down by iOS' },
+    ],
+  },
+  {
+    version: '3.0.0',
+    date: 'July 2026',
+    changes: [
+      { type: 'feature', description: 'Book Clubs — create a club, invite friends with a share code, and read together' },
+      { type: 'feature', description: 'Chapter discussions inside the reader, with spoiler flags and emoji reactions' },
+      { type: 'feature', description: 'Reader profiles with a display name and emoji avatar' },
+      { type: 'improvement', description: 'Invite codes are no longer case-sensitive' },
+    ],
+  },
+  {
+    version: '2.1.0',
+    date: 'May 2026',
+    changes: [
+      { type: 'fix', description: 'Fixed crashes when backgrounding the app while audio or narration was playing' },
+      { type: 'fix', description: 'Fixed a crash when closing the reader as narration finished' },
+      { type: 'fix', description: 'Large books no longer get the app shut down for using too much memory' },
+      { type: 'fix', description: 'The app recovers gracefully instead of crashing if local data is corrupted' },
+      { type: 'fix', description: 'The sleep timer can now be cancelled mid-countdown' },
+    ],
+  },
+  {
+    version: '2.0.0',
+    date: 'May 2026',
+    changes: [
+      { type: 'feature', description: 'Rebuilt from the ground up as a native iOS app — faster and smoother throughout' },
+      { type: 'feature', description: 'Kokoro AI voices for natural-sounding narration' },
+      { type: 'feature', description: 'Ambient sound generator — white, brown and pink noise, rain, forest and cafe' },
+      { type: 'improvement', description: 'New local storage engine for quicker library loading' },
+    ],
+  },
+  {
     version: '1.9.3',
     date: 'January 2025',
     changes: [
