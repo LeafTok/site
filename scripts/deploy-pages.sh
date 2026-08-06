@@ -1,27 +1,31 @@
 #!/usr/bin/env bash
 #
-# Publish the static export to the `gh-pages` branch, which GitHub Pages serves.
+# Build locally and publish to Cloudflare Pages.
 #
-# The build runs on this machine, not in CI — that is deliberate. The site is a
-# pure static export (`output: 'export'` in next.config), so there is nothing a
-# hosted runner does here that a laptop cannot, and it keeps the project off
-# GitHub Actions entirely.
+# The build runs on this machine, not in CI — deliberately. The site is a pure
+# static export (`output: 'export'` in next.config), so a hosted runner adds
+# nothing a laptop cannot do, and it keeps the project off GitHub Actions.
 #
-# `main` never carries build output: `out/` stays gitignored, and the published
-# files live only on the orphan `gh-pages` branch.
+# We moved off GitHub Pages in August 2026: GitHub stopped allocating build
+# capacity to the LeafTok org on 2026-07-24, which silently broke every deploy.
+# Cloudflare already fronts the domain, so Pages removes GitHub from the path
+# entirely.
+#
+# `main` never carries build output — `out/` stays gitignored.
 #
 # Usage:  npm run deploy
 set -euo pipefail
 
-BRANCH="gh-pages"
+PROJECT="leaftok-site"
 OUT="out"
-REMOTE="origin"
-DOMAIN="leaftok.app"
+# This login has access to more than one account, so wrangler cannot pick in a
+# non-interactive shell. leaftok.app's zone lives in this one.
+export CLOUDFLARE_ACCOUNT_ID="${CLOUDFLARE_ACCOUNT_ID:-fd2cc36742a3310940462a70e396603b}"
 
 cd "$(dirname "$0")/.."
 
-# Refuse to publish a build made from a dirty tree — the deploy commit records
-# the source SHA it came from, and that claim has to be true.
+# Refuse to publish a build made from a dirty tree — the deployment is labelled
+# with the source SHA it came from, and that claim has to be true.
 if [ -n "$(git status --porcelain --untracked-files=no)" ]; then
     echo "error: working tree has uncommitted changes." >&2
     echo "       Commit or stash them so the deployed build matches a real commit." >&2
@@ -39,42 +43,14 @@ if [ ! -d "$OUT" ]; then
     exit 1
 fi
 
-# Custom domain: Pages reads CNAME from the published root, so it has to be part
-# of the artifact. Without it the domain reverts to *.github.io on every deploy.
-echo "$DOMAIN" > "$OUT/CNAME"
-# Stop Pages running the output through Jekyll, which would drop _next/.
-touch "$OUT/.nojekyll"
+echo "==> Publishing to Cloudflare Pages project '${PROJECT}'"
+# --branch main marks this as the production deployment; anything else would
+# publish to a preview URL and leave the live site untouched.
+npx wrangler pages deploy "$OUT" \
+    --project-name "$PROJECT" \
+    --branch main \
+    --commit-hash "$(git rev-parse HEAD)" \
+    --commit-dirty=false
 
-WORKTREE="$(mktemp -d)"
-cleanup() {
-    git worktree remove --force "$WORKTREE" 2>/dev/null || true
-    rm -rf "$WORKTREE"
-}
-trap cleanup EXIT
-
-echo "==> Staging ${BRANCH}"
-git fetch --quiet "$REMOTE" "$BRANCH" 2>/dev/null || true
-
-if git show-ref --verify --quiet "refs/remotes/${REMOTE}/${BRANCH}"; then
-    git worktree add --quiet "$WORKTREE" -B "$BRANCH" "${REMOTE}/${BRANCH}"
-else
-    # First deploy: start the branch with no history so it never carries source.
-    git worktree add --quiet --orphan -B "$BRANCH" "$WORKTREE"
-fi
-
-# Replace the published tree wholesale so deleted pages actually disappear.
-# `git rm` rather than `rm` keeps the index honest about removals.
-git -C "$WORKTREE" rm -rq --ignore-unmatch . 2>/dev/null || true
-cp -R "$OUT"/. "$WORKTREE"/
-
-git -C "$WORKTREE" add --all
-if git -C "$WORKTREE" diff --cached --quiet; then
-    echo "==> No change in built output; nothing to publish."
-    exit 0
-fi
-
-git -C "$WORKTREE" commit --quiet -m "deploy: site built from ${SOURCE_BRANCH} ${SOURCE_SHA}"
-git -C "$WORKTREE" push --quiet "$REMOTE" "$BRANCH"
-
-echo "==> Published ${SOURCE_SHA} to ${REMOTE}/${BRANCH}"
-echo "    https://${DOMAIN}/ updates within a minute or two."
+echo "==> Published ${SOURCE_SHA}"
+echo "    https://leaftok.app/ updates within a minute or two."

@@ -157,17 +157,26 @@ Add the category to `content/books/_categories.json`:
 
 ## Deployment
 
-The site is built **locally** and published to the `gh-pages` branch, which GitHub
-Pages serves. There is no CI: this is a pure static export, so a hosted runner adds
-nothing a laptop cannot do.
+The site is built **locally** and published to **Cloudflare Pages** (project
+`leaftok-site`). There is no CI: this is a pure static export, so a hosted runner
+adds nothing a laptop cannot do.
 
 ```bash
 npm run deploy
 ```
 
-That builds, then pushes `out/` to `gh-pages`. It refuses to run on a dirty tree, so
+That builds, then uploads `out/` to Cloudflare. It refuses to run on a dirty tree, so
 the deployed build always corresponds to a real commit. `main` never carries build
-output — `out/` stays gitignored and the published files live only on `gh-pages`.
+output — `out/` stays gitignored.
+
+Requires a one-time `npx wrangler login`. The login has access to more than one
+Cloudflare account, so the script pins `CLOUDFLARE_ACCOUNT_ID` to the one holding the
+`leaftok.app` zone; override the env var if that ever changes.
+
+> **Why not GitHub Pages?** GitHub stopped allocating build capacity to the LeafTok
+> org on 2026-07-24 — Actions jobs and Pages builds alike sat unassigned and were
+> cancelled, so pushes to `main` silently stopped deploying. Cloudflare already
+> fronted the domain, so moving to Cloudflare Pages took GitHub out of the path.
 
 ### One-time setup per clone
 
