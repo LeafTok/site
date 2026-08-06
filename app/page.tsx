@@ -71,7 +71,7 @@ export default function HomePage() {
                   place and help you finish.
                 </p>
                 <div className="mt-8">
-                  <AppStoreButtons showBadge />
+                  <AppStoreButtons />
                 </div>
                 <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm text-ink-muted">
                   {heroTrust.map((item) => (
@@ -226,7 +226,7 @@ export default function HomePage() {
                 Your books are already waiting. LeafTok is free to try and needs
                 no account.
               </p>
-              <AppStoreButtons showBadge />
+              <AppStoreButtons />
             </div>
           </div>
         </section>

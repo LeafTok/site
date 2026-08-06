@@ -205,7 +205,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
                 ))}
               </ol>
               <div className="mt-12">
-                <AppStoreButtons showBadge />
+                <AppStoreButtons showFreeNote />
               </div>
             </div>
           </section>

@@ -5,7 +5,12 @@ import { trackEvent } from "@/lib/analytics";
 
 interface AppStoreButtonsProps {
   variant?: "primary" | "compact";
-  showBadge?: boolean;
+  /**
+   * Render a "free on both platforms" note under the buttons. Only worth setting
+   * where nothing nearby already says it — the hero and the closing CTA both
+   * state it in their own copy.
+   */
+  showFreeNote?: boolean;
 }
 
 const AppleIcon = () => (
@@ -22,7 +27,7 @@ const PlayStoreIcon = () => (
 
 export function AppStoreButtons({
   variant = "primary",
-  showBadge = false,
+  showFreeNote = false,
 }: AppStoreButtonsProps) {
   const handleStoreClick = (store: "app_store" | "google_play") => {
     trackEvent("store_open", { store, placement: variant });
@@ -58,34 +63,37 @@ export function AppStoreButtons({
   }
 
   return (
-    <div className="flex flex-wrap gap-3">
-      <a
-        href={siteConfig.appStoreLinks.ios}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="btn-primary relative"
-        aria-label="Download on the App Store"
-        onClick={() => handleStoreClick("app_store")}
-      >
-        {showBadge && (
-          <span className="absolute -top-2 -right-2 px-2 py-0.5 text-[10px] font-bold bg-accent text-paper rounded">
-            FREE
-          </span>
-        )}
-        <AppleIcon />
-        <span>App Store</span>
-      </a>
-      <a
-        href={siteConfig.appStoreLinks.android}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="btn-secondary"
-        aria-label="Get it on Google Play"
-        onClick={() => handleStoreClick("google_play")}
-      >
-        <PlayStoreIcon />
-        <span>Google Play</span>
-      </a>
+    <div>
+      <div className="flex flex-wrap gap-3">
+        <a
+          href={siteConfig.appStoreLinks.ios}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary"
+          aria-label="Download on the App Store"
+          onClick={() => handleStoreClick("app_store")}
+        >
+          <AppleIcon />
+          <span>App Store</span>
+        </a>
+        <a
+          href={siteConfig.appStoreLinks.android}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-secondary"
+          aria-label="Get it on Google Play"
+          onClick={() => handleStoreClick("google_play")}
+        >
+          <PlayStoreIcon />
+          <span>Google Play</span>
+        </a>
+      </div>
+      {/* Sits under both buttons, not on one of them: LeafTok is free to start on
+          iOS and Android alike, and a badge pinned to a single store button read
+          as though the other one cost money. */}
+      {showFreeNote && (
+        <p className="mt-3 text-sm text-ink-muted">Free on iOS and Android</p>
+      )}
     </div>
   );
 }
