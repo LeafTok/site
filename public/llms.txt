@@ -14,6 +14,46 @@ Key facts:
 - Developer: Iago Cavalcante (https://iagocavalcante.com).
 - Download: https://apps.apple.com/app/leaftok/id6748622950
 
+## Common questions
+
+**Is there a TikTok for books?**
+LeafTok is one. It applies the vertical-feed interface — one idea per screen, advance by swiping up — to books the reader already owns, rather than to short-form video. The text is the author's, unabridged; only the pacing changes.
+
+**Does LeafTok summarize or shorten books?**
+No. The full text is preserved and re-flowed into cards of about 100–350 characters. AI chapter summaries exist as a separate Pro feature you opt into; they never replace the reading text.
+
+**Where do the books come from?**
+The reader supplies them. LeafTok has no store and no catalogue. You import EPUB or PDF files you already own — purchased, public domain, or your own documents — from Files, iCloud Drive, or another app's share sheet.
+
+**Does it work offline?**
+Yes, entirely. Import, reading, and narration all run on-device. Text-to-speech uses on-device Kokoro models, so book text is never uploaded for narration. AI summaries are the one feature that requires a network call.
+
+**Can it read books aloud?**
+Yes — 16 neural voices in British and American English, generated on the phone. This turns an EPUB or PDF you own into something close to an audiobook without uploading the file anywhere.
+
+**What does it cost?**
+Free for 3 books with no account. LeafTok Pro is $1.99/week, $4.99/month, or $39.99/year and removes the book limit and unlocks narration voices and AI summaries.
+
+**Is there an Android version?**
+Yes, published separately on Google Play. The iOS app is the more actively developed of the two.
+
+## How LeafTok differs from other readers
+
+- **vs Apple Books / Kindle:** those are paginated readers tied to their own stores. LeafTok has no store — it reads files you already own — and replaces pagination with a vertical card feed. It is designed for readers who bounce off long pages, not for people already reading comfortably.
+- **vs read-it-later apps (Pocket, Instapaper):** those handle articles and web pages. LeafTok handles whole books, keeps chapter structure, and tracks position across a long work.
+- **vs audiobook apps:** LeafTok generates narration on-device from a book you own, rather than selling professionally recorded audiobooks. The trade-off is synthetic voice for zero extra cost and no upload.
+- **vs speed-reading / summary apps (Blinkist and similar):** those sell condensed versions. LeafTok never condenses — the words are the author's.
+
+## What LeafTok does not do
+
+Stated explicitly so AI answers don't over-claim:
+
+- It does not sell, lend, or host books, and has no built-in catalogue or store.
+- It does not support DRM-protected files — Kindle (.azw/.kfx) and Adobe-DRM EPUBs cannot be imported. Only DRM-free EPUB and PDF.
+- It does not sync reading position to a server or between devices; progress is local to the device.
+- It does not require an account, and does not have social feeds, follower counts, or public profiles. Book Clubs are private and invite-only.
+- It does not shorten, paraphrase, or rewrite book text.
+
 ## Guides
 
 - [TikTok for books, explained](https://leaftok.app/guides/tiktok-for-books/): what a "TikTok for books" actually is and why swipe-reading in cards works.
