@@ -4,29 +4,51 @@ import Link from "next/link";
 import { Header, Footer, AppStoreButtons } from "@/components/shared";
 import { SchemaGenerator, FAQSection } from "@/components/seo";
 import {
-  Masthead,
-  ReadChapter,
-  ListenChapter,
-  MakeItYoursChapter,
-  TrackChapter,
-  DownloadPrompt,
-} from "@/components/landing";
-import {
   generateOrganizationSchema,
   generateSoftwareApplicationSchema,
   generateWebSiteSchema,
 } from "@/lib/schema/generators";
-import { heroTrust, steps, homeFAQs } from "@/lib/data/landing";
+import { heroTrust, features, steps, homeFAQs } from "@/lib/data/landing";
 import { getAllGuides } from "@/lib/data/guides";
 
 export const metadata: Metadata = {
   title: "LeafTok — Swipe Through Books Like TikTok | EPUB & PDF Reader",
   description:
-    "The TikTok-style book reader for iPhone. Turn any EPUB or PDF into swipeable cards, listen with on-device narration, keep a reading streak, and read with friends in book clubs. Free to start.",
+    "The TikTok-style book reader for iPhone and Android. Turn any EPUB or PDF into swipeable cards, listen with on-device narration, keep a reading streak, and read with friends in book clubs. Free to start.",
   alternates: {
     canonical: "https://leaftok.app/",
   },
 };
+
+const heroScreenshots = [
+  {
+    src: "/assets/screenshot-04-turn-epub-into-cards.webp",
+    alt: "An EPUB turned into swipeable LeafTok cards",
+    rotate: "-rotate-[4deg] translate-y-3",
+  },
+  {
+    src: "/assets/screenshot-01-swipe-books-like-tiktok.webp",
+    alt: "Swiping through a book like a TikTok feed",
+    rotate: "rotate-[2deg] -translate-y-2",
+  },
+  {
+    src: "/assets/screenshot-03-get-ai-summaries.webp",
+    alt: "An AI-generated summary card in LeafTok",
+    rotate: "-rotate-[2deg] translate-y-4",
+  },
+  {
+    src: "/assets/screenshot-02-listen-hands-free.webp",
+    alt: "LeafTok reading a book aloud hands-free",
+    rotate: "rotate-[3deg] -translate-y-1",
+    hideOnMobile: true,
+  },
+  {
+    src: "/assets/screenshot-05-read-to-lo-fi-beats.webp",
+    alt: "Reading in LeafTok with a lo-fi ambient soundscape",
+    rotate: "-rotate-[3deg] translate-y-2",
+    hideOnMobile: true,
+  },
+];
 
 export default function HomePage() {
   // FAQ schema is emitted once by <FAQSection>; no page-level duplicate here.
@@ -42,117 +64,133 @@ export default function HomePage() {
       <Header />
 
       <main id="main-content">
-        {/* Hero — an editorial poster, not a SaaS split screen */}
-        <section className="overflow-hidden pb-20 pt-28 lg:pb-24 lg:pt-28">
-          <div className="section-container">
-            <div className="mb-10 flex items-center justify-between border-y border-ink/15 py-3 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-ink-muted sm:text-[0.68rem] sm:tracking-[0.2em]">
-              <span>LeafTok Reader</span>
-              <span className="hidden sm:inline">
-                For books left unfinished
-              </span>
-              <span>Est. 2025</span>
+        {/* Hero */}
+        <section className="overflow-hidden pb-16 pt-32 lg:pb-24 lg:pt-40">
+          <div className="section-container flex flex-col items-center text-center">
+            <h1 className="max-w-3xl text-balance font-serif text-[40px] leading-[1.1] tracking-tight lg:text-[52px]">
+              Finish the books you started.
+              <br />
+              One swipe at a time.
+            </h1>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-secondary">
+              Turn any PDF or EPUB you own into focused cards that keep your
+              place and help you finish. Free to start, no account needed.
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+              <Link href="/download/" className="btn-primary">
+                Download free &rarr;
+              </Link>
+              <a href="#how-it-works" className="btn-secondary">
+                Read how it works
+              </a>
             </div>
 
-            <div className="relative grid gap-x-8 lg:grid-cols-12">
-              <h1 className="relative z-10 col-span-full min-w-0 font-serif text-[clamp(3.2rem,8vw,7rem)] leading-[0.84] tracking-[-0.055em] lg:col-span-9 lg:leading-[0.82] lg:tracking-[-0.06em]">
-                <span className="block">Stop reading</span>
-                <span className="block lg:pl-[5vw]">books the old way.</span>
-                <span className="block text-primary lg:pl-[1.5vw]">
-                  Swipe <span className="block sm:inline">forward.</span>
-                </span>
-              </h1>
+            <div className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-ink-faint">
+              {heroTrust.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
 
-              <div className="relative z-20 mt-10 max-w-xl lg:col-span-5 lg:row-start-2 lg:mt-12">
-                <p className="font-serif text-2xl leading-snug text-ink lg:text-3xl">
-                  You didn&rsquo;t stop loving books. The feed just got louder.
-                </p>
-                <p className="mt-6 max-w-md text-lg leading-relaxed text-ink-secondary">
-                  Turn any PDF or EPUB you own into focused cards that keep your
-                  place and help you finish.
-                </p>
-                <div className="mt-8">
-                  <AppStoreButtons />
+            {/* Screenshot collage — a scattered, balanced cluster of real UI */}
+            <div className="mt-16 flex justify-center gap-2 sm:gap-3">
+              {heroScreenshots.map((shot) => (
+                <div
+                  key={shot.src}
+                  className={`w-20 shrink-0 overflow-hidden rounded sm:w-28 lg:w-36 ${shot.rotate} ${
+                    shot.hideOnMobile ? "hidden sm:block" : ""
+                  }`}
+                >
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    width={400}
+                    height={870}
+                    sizes="(max-width: 640px) 25vw, (max-width: 1024px) 15vw, 144px"
+                    className="h-auto w-full"
+                  />
                 </div>
-                <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm text-ink-muted">
-                  {heroTrust.map((item) => (
-                    <span key={item}>&bull;&ensp;{item}</span>
-                  ))}
-                </div>
-              </div>
-
-              <figure className="relative z-20 mx-auto mt-14 w-[260px] lg:col-span-3 lg:col-start-10 lg:row-span-2 lg:row-start-1 lg:my-10 lg:w-[280px] lg:self-end lg:justify-self-end lg:rotate-[1deg]">
-                <div className="absolute -inset-4 -z-10 border border-ink/15" />
-                <Image
-                  src="/assets/screenshot-01-swipe-books-like-tiktok.webp"
-                  alt="LeafTok turning a book into swipeable reading cards"
-                  width={400}
-                  height={870}
-                  className="w-full shadow-[18px_24px_0_rgba(26,22,18,0.10)]"
-                  priority
-                />
-                <figcaption className="mt-5 flex justify-between border-b border-ink/20 pb-2 text-[0.68rem] uppercase tracking-[0.18em] text-ink-muted">
-                  <span>Fig. 01</span>
-                  <span>Reading, recut</span>
-                </figcaption>
-              </figure>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Masthead + Table of contents */}
-        <Masthead />
+        {/* Features */}
+        <section className="py-20 lg:py-24">
+          <div className="section-container">
+            <h2 className="mx-auto max-w-2xl text-balance text-center font-serif text-[28px] leading-[1.35] tracking-tight lg:text-[34px]">
+              Everything you need to actually finish
+            </h2>
 
-        {/* The four chapters */}
-        <ReadChapter />
-        <ListenChapter />
-        <DownloadPrompt
-          eyebrow="Read or listen anywhere"
-          title="Try your first book in minutes."
-        />
-        <MakeItYoursChapter />
-        <TrackChapter />
+            <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {features.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-lg border border-ink/10 bg-paper-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
+                >
+                  {feature.screenshot && (
+                    <div className="relative mb-5 h-48 w-full overflow-hidden rounded">
+                      <Image
+                        src={feature.screenshot.src}
+                        alt={feature.screenshot.alt}
+                        fill
+                        sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 380px"
+                        className="object-cover object-top"
+                      />
+                    </div>
+                  )}
+                  <h3 className="font-sans text-[22px] font-bold text-ink">
+                    {feature.title}
+                  </h3>
+                  <ul className="mt-3 list-none space-y-2.5">
+                    {feature.points.map((point) => (
+                      <li
+                        key={point}
+                        className="text-[15px] leading-relaxed text-ink-secondary"
+                      >
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-        {/* Getting started */}
-        <section id="getting-started" className="scroll-mt-24 py-24 lg:py-32">
-          <div className="max-w-container mx-auto px-6">
-            <header className="mb-16 max-w-xl">
-              <div className="editorial-rule mb-5" />
-              <h2 className="font-serif text-4xl tracking-tight lg:text-5xl">
-                From file to first card.
-              </h2>
-              <p className="mt-4 text-lg text-ink-secondary">
-                No account, no setup wizard, no waiting room.
-              </p>
-            </header>
+        {/* How it works */}
+        <section
+          id="how-it-works"
+          className="scroll-mt-[60px] py-20 lg:py-24"
+        >
+          <div className="section-container">
+            <h2 className="mx-auto max-w-2xl text-balance text-center font-serif text-[28px] leading-[1.35] tracking-tight lg:text-[34px]">
+              From file to first card.
+            </h2>
 
-            <ol className="process-line">
-              {steps.map((step, index) => (
-                <li key={step.numeral} className="process-step">
-                  <span className="masthead-meta text-primary">
-                    {step.numeral}
-                  </span>
-                  <h3 className="mb-3 text-xl font-semibold text-ink">
+            <div className="mt-14 grid gap-5 sm:grid-cols-3">
+              {steps.map((step) => (
+                <div
+                  key={step.numeral}
+                  className="rounded-lg border border-ink/10 bg-paper-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
+                >
+                  <span className="masthead-meta">{step.numeral}</span>
+                  <h3 className="mt-3 font-sans text-[22px] font-bold text-ink">
                     {step.title}
                   </h3>
-                  <p className="leading-relaxed text-ink-secondary">
+                  <p className="mt-3 text-[15px] leading-relaxed text-ink-secondary">
                     {step.description}
                   </p>
-                  {index < steps.length - 1 && (
-                    <span className="process-arrow" aria-hidden="true">
-                      &rarr;
-                    </span>
-                  )}
-                </li>
+                </div>
               ))}
-            </ol>
+            </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="bg-paper-warm py-24">
-          <div className="mx-auto max-w-container px-6">
+        <section className="bg-paper-warm py-20 lg:py-24">
+          <div className="section-container">
             <div className="mx-auto max-w-2xl">
-              <div className="editorial-rule mx-auto mb-6" />
               <FAQSection
                 faqs={homeFAQs}
                 title="Questions, answered"
@@ -162,70 +200,49 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Field guides — the appendix */}
-        <section id="guides" className="scroll-mt-24 py-24 lg:py-28">
+        {/* Field guides */}
+        <section className="py-20 lg:py-24">
           <div className="section-container">
-            <header className="mb-14 flex flex-wrap items-end justify-between gap-6">
-              <div className="max-w-xl">
-                <div className="editorial-rule mb-5" />
-                <h2 className="font-serif text-4xl tracking-tight lg:text-5xl">
-                  Appendix: the field guides.
-                </h2>
-                <p className="mt-4 text-lg text-ink-secondary">
-                  Answers first, app second — swipe-reading, narration,
-                  finishing what you start.
-                </p>
-              </div>
+            <div className="flex flex-wrap items-end justify-between gap-6">
+              <h2 className="font-serif text-[28px] leading-[1.35] tracking-tight lg:text-[34px]">
+                Field guides
+              </h2>
               <Link
                 href="/guides/"
                 className="text-sm font-semibold text-primary hover:underline"
               >
                 All guides &rarr;
               </Link>
-            </header>
+            </div>
 
-            <ol className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
-              {getAllGuides().map((guide, index) => (
-                <li key={guide.slug}>
-                  <Link
-                    href={`/guides/${guide.slug}/`}
-                    className="group block border-t border-ink/25 pt-4 transition-colors hover:text-primary"
-                  >
-                    <span className="masthead-meta text-primary">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <h3 className="mt-2 font-serif text-xl leading-snug">
-                      {guide.heading}
-                    </h3>
-                    <span className="mt-3 inline-block text-xs uppercase tracking-[0.16em] text-ink-muted group-hover:text-primary">
-                      {guide.keyword}
-                    </span>
-                  </Link>
-                </li>
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {getAllGuides().map((guide) => (
+                <Link
+                  key={guide.slug}
+                  href={`/guides/${guide.slug}/`}
+                  className="group rounded-lg border border-ink/10 bg-paper-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.04)] transition-colors hover:border-ink/20"
+                >
+                  <span className="masthead-meta">{guide.keyword}</span>
+                  <h3 className="mt-2 font-serif text-lg leading-snug text-ink group-hover:text-primary">
+                    {guide.heading}
+                  </h3>
+                </Link>
               ))}
-            </ol>
+            </div>
           </div>
         </section>
 
-        {/* Final CTA — the colophon */}
-        <section
-          id="download"
-          className="scroll-mt-24 overflow-hidden bg-primary py-24 text-paper lg:py-32"
-        >
-          <div className="section-container grid gap-12 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-8">
-              <p className="mb-8 text-xs font-semibold uppercase tracking-[0.22em] text-paper/70">
-                The next page is yours
-              </p>
-              <h2 className="font-serif text-[clamp(4rem,9vw,8rem)] leading-[0.82] tracking-[-0.055em]">
-                Start with one page.
-              </h2>
-            </div>
-            <div className="border-l border-paper/35 pl-6 lg:col-span-4">
-              <p className="mb-8 text-xl leading-relaxed text-paper/85">
-                Your books are already waiting. LeafTok is free to try and needs
-                no account.
-              </p>
+        {/* Final CTA */}
+        <section id="download" className="scroll-mt-[60px] py-24 lg:py-28">
+          <div className="section-container flex flex-col items-center text-center">
+            <h2 className="font-serif text-[40px] leading-[1.1] tracking-tight lg:text-[52px]">
+              Start with one page.
+            </h2>
+            <p className="mt-4 max-w-md text-lg text-ink-secondary">
+              Your books are already waiting. LeafTok is free to try and
+              needs no account.
+            </p>
+            <div className="mt-8">
               <AppStoreButtons />
             </div>
           </div>

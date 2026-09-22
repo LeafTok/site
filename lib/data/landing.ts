@@ -1,159 +1,90 @@
 import type { FAQItem } from "@/lib/types";
 
 /**
- * Centralized copy for the editorial landing page.
- *
- * Chapter *prose* (lead paragraphs + epigraphs) lives in the chapter
- * components because it embeds inline <Footnote> JSX. Everything that is
- * plain data — marginalia, footnote bodies, FAQ, contents, type
- * specimens, ledger — lives here so copy is editable in one place.
+ * Centralized copy for the landing page.
  *
  * Every claim is cross-checked against shipping iOS code (see
  * leaftok-docs/plans/2026-06-17-landing-page-editorial-refresh-design.md).
  */
 
-export interface MarginNote {
-  text: string;
-}
-
-/** Masthead strip beneath the hero. */
-export const masthead = {
-  issue: "iOS Edition",
-  volume: "Free to start",
-  note: "A field guide to reading on your phone",
-};
-
-/** Table of contents — doubles as in-page jump links. */
-export interface ContentsEntry {
-  numeral: string;
-  id: string;
-  title: string;
-  blurb: string;
-}
-
-export const contents: ContentsEntry[] = [
-  {
-    numeral: "I",
-    id: "read",
-    title: "Read",
-    blurb: "Any book, sliced into swipeable cards",
-  },
-  {
-    numeral: "II",
-    id: "listen",
-    title: "Listen",
-    blurb: "16 on-device voices, hands-free",
-  },
-  {
-    numeral: "III",
-    id: "make-it-yours",
-    title: "Make it yours",
-    blurb: "Themes, fonts, accessibility",
-  },
-  {
-    numeral: "IV",
-    id: "track",
-    title: "Track & keep",
-    blurb: "Streaks, shelves, favorites",
-  },
-];
-
-/** Hero trust row — honest, verifiable proof (replaces the 5.0★ badge). */
+/** Hero trust row — honest, verifiable proof. */
 export const heroTrust: string[] = [
   "Free to start",
   "No signup",
   "Works offline",
 ];
 
-/** Chapter 01 · READ */
-export const readMarginalia: MarginNote[] = [
-  { text: "Chapters preserved" },
-  { text: "Swipe sideways to jump chapters" },
-  { text: "Images & code blocks kept intact" },
-];
-
-/** Chapter 02 · LISTEN */
-export const listenMarginalia: MarginNote[] = [
-  { text: "British & American voices" },
-  { text: "Generated on-device — works offline" },
-  { text: "Sleep timer fades out gently" },
-];
-
-export const soundscapes = [
-  "Rain",
-  "Forest",
-  "Café",
-  "Brown noise",
-  "White noise",
-  "Pink noise",
-];
-
-/** Chapter 03 · MAKE IT YOURS — live type specimens. */
-export interface Specimen {
-  name: string;
-  /** Real iOS font-family string with graceful web fallbacks. */
-  stack: string;
+/** Feature grid — what you get. */
+export interface Feature {
+  title: string;
+  points: string[];
+  screenshot?: {
+    src: string;
+    alt: string;
+  };
 }
 
-export const specimens: Specimen[] = [
-  { name: "Georgia", stack: "Georgia, serif" },
-  { name: "New York", stack: '"New York", ui-serif, Georgia, serif' },
+export const features: Feature[] = [
   {
-    name: "Palatino",
-    stack: '"Palatino Linotype", Palatino, "Book Antiqua", serif',
+    title: "Swipe-first reading",
+    points: [
+      "Any EPUB or PDF becomes focused, swipeable cards",
+      "Chapters, images, and code blocks survive the cut",
+      "Pick up exactly where you left off",
+    ],
+    screenshot: {
+      src: "/assets/screenshot-01-swipe-books-like-tiktok.webp",
+      alt: "A book turned into swipeable LeafTok cards",
+    },
   },
-  { name: "Charter", stack: 'Charter, "Bitstream Charter", Georgia, serif' },
   {
-    name: "System",
-    stack: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+    title: "Listen with on-device narration",
+    points: [
+      "16 British and American AI voices",
+      "Runs entirely on-device — works offline",
+      "Ambient soundscapes with a sleep timer",
+    ],
+    screenshot: {
+      src: "/assets/screenshot-02-listen-hands-free.webp",
+      alt: "LeafTok reading a book aloud with on-device narration",
+    },
   },
-];
-
-export const specimenLine =
-  "She read three chapters before her stop — and remembered every one.";
-
-export interface ReadingTheme {
-  name: string;
-  /** Background + ink preview swatch (illustrative of the in-app theme). */
-  bg: string;
-  ink: string;
-}
-
-export const themes: ReadingTheme[] = [
-  { name: "Light", bg: "#FAF6F0", ink: "#1A1612" },
-  { name: "Sepia", bg: "#EFE3CC", ink: "#4A3B28" },
-  { name: "Reader", bg: "#F3ECDD", ink: "#2C2620" },
-  { name: "High contrast", bg: "#FFFFFF", ink: "#000000" },
-  { name: "Dark", bg: "#1A1612", ink: "#F5EDE2" },
-];
-
-export const accessibilityNotes: MarginNote[] = [
-  { text: "OpenDyslexic font" },
-  { text: "High-contrast mode" },
-  { text: "Reduced motion" },
-  { text: "Simplified UI" },
-];
-
-/** Chapter 04 · TRACK & KEEP */
-export interface LedgerStat {
-  value: string;
-  label: string;
-  detail: string;
-}
-
-export const ledger: LedgerStat[] = [
-  { value: "3", label: "Free book slots", detail: "no signup" },
-  { value: "16", label: "AI voices", detail: "on-device" },
-  { value: "5", label: "Reading themes", detail: "sepia → dark" },
-  { value: "100%", label: "Offline", detail: "every feature" },
-];
-
-export const shelves = ["Want to read", "Reading", "Finished"];
-
-export const trackMarginalia: MarginNote[] = [
-  { text: "Favorite any card you want to keep" },
-  { text: "Search back through your saved cards" },
-  { text: "Share a card straight to anywhere" },
+  {
+    title: "Book clubs",
+    points: [
+      "Read with friends, invite with a share code",
+      "Discuss chapters right inside the reader",
+      "Spoiler-safe flags and reactions",
+    ],
+    screenshot: {
+      src: "/assets/screenshot-03-get-ai-summaries.webp",
+      alt: "A LeafTok book club discussion",
+    },
+  },
+  {
+    title: "Make it yours",
+    points: [
+      "5 reading themes, from paper-bright to midnight",
+      "5 fonts with adjustable size and spacing",
+      "OpenDyslexic, high contrast, and reduced motion",
+    ],
+  },
+  {
+    title: "Track your streak",
+    points: [
+      "A streak counts the days you showed up",
+      "Shelves keep want-to-read, reading, and finished apart",
+      "Favorite any card to find it again later",
+    ],
+  },
+  {
+    title: "Import anything",
+    points: [
+      "Any EPUB or PDF you already own",
+      "No account, no catalog lock-in",
+      "Converted and ready to read in seconds",
+    ],
+  },
 ];
 
 /** Getting-started steps. */

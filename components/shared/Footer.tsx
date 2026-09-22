@@ -9,6 +9,7 @@ interface FooterLink {
 }
 
 const footerLinks: FooterLink[] = [
+  { label: "Download", href: "/download/" },
   { label: "Guides", href: "/guides/" },
   { label: "Privacy Policy", href: "/privacy/" },
   { label: "Terms", href: "/terms/" },
@@ -17,7 +18,7 @@ const footerLinks: FooterLink[] = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-ink/5 py-10 mt-auto bg-paper-warm">
+    <footer className="border-t border-ink/10 py-10 mt-auto bg-paper-warm">
       <div className="max-w-container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex flex-col gap-2">

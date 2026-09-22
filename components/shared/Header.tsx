@@ -10,29 +10,12 @@ interface NavLink {
   isExternal?: boolean;
 }
 
-const navLinks: NavLink[] = [
-  { label: "Features", href: "/#read" },
-  { label: "How it works", href: "/#getting-started" },
-  { label: "Guides", href: "/guides/" },
-  { label: "Download", href: "/#download" },
-  { label: "Changelog", href: "/changelog/" },
-];
+const navLinks: NavLink[] = [{ label: "Guides", href: "/guides/" }];
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     const desktop = window.matchMedia("(min-width: 768px)");
@@ -102,11 +85,9 @@ export function Header() {
       </a>
       <nav
         aria-label="Primary navigation"
-        className={`fixed top-0 left-0 w-full z-[100] px-6 py-5 transition-all duration-300 ${
-          isScrolled ? "nav-scrolled" : ""
-        }`}
+        className="fixed top-0 left-0 z-[100] flex h-[60px] w-full items-center border-b border-ink/10 bg-paper-white px-6"
       >
-        <div className="max-w-container mx-auto flex justify-between items-center">
+        <div className="mx-auto flex w-full max-w-container items-center justify-between">
           <Link
             href="/"
             className="flex items-center gap-3 no-underline text-ink"
@@ -114,12 +95,12 @@ export function Header() {
             <Image
               src="/assets/logo-dark.webp"
               alt=""
-              width={36}
-              height={36}
-              className="rounded-lg"
+              width={32}
+              height={32}
+              className="rounded"
               priority
             />
-            <span className="font-serif text-2xl tracking-tight">LeafTok</span>
+            <span className="font-serif text-xl tracking-tight">LeafTok</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
@@ -127,13 +108,13 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-ink-muted hover:text-ink transition-colors duration-200"
+                className="text-sm text-ink-secondary hover:text-ink transition-colors duration-200"
               >
                 {link.label}
               </Link>
             ))}
-            <Link href="/#download" className="btn-primary text-sm px-5 py-2.5">
-              Get the App
+            <Link href="/download/" className="btn-primary text-sm px-5 py-2.5">
+              Download &rarr;
             </Link>
           </div>
 
@@ -188,11 +169,11 @@ export function Header() {
             </Link>
           ))}
           <Link
-            href="/#download"
+            href="/download/"
             className="btn-primary mt-2"
             onClick={toggleMobileMenu}
           >
-            Choose your app store
+            Download &rarr;
           </Link>
         </div>
       )}

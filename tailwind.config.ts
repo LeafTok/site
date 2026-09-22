@@ -31,6 +31,7 @@ const config: Config = {
           warm: "#F5EDE2",
           cream: "#EDE4D6",
           dark: "#E8DFD0",
+          white: "#FFFFFF",
         },
         text: {
           primary: "#1A1612",
