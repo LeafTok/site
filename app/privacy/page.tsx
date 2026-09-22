@@ -61,7 +61,7 @@ export default function PrivacyPage() {
                   <strong>Usage Analytics:</strong> App interactions and device/app information, associated with an analytics identifier, help us improve the app through PostHog. Reading events can include book titles and reading progress.
                 </li>
                 <li>
-                  <strong>Book Clubs:</strong> A generated device identifier links your club profile and memberships. We store your display name, emoji avatar, club descriptions, shared book titles/authors, comments, reactions and community-rule acceptance. These features are optional.
+                  <strong>Book Clubs:</strong> A generated device identifier links your club profile and memberships. We store your display name, emoji avatar, club descriptions, shared book titles/authors, comments, reactions and community-rule acceptance. Participation in clubs is optional; the app may register a device-linked profile when it starts.
                 </li>
                 <li>
                   <strong>Safety Reports:</strong> We store reports, their reasons/details, a snapshot of the reported content, block relationships and moderation decisions to investigate abuse.
@@ -120,12 +120,12 @@ export default function PrivacyPage() {
               </ul>
             </section>
 
-            <section>
-              <h2 className="text-2xl font-serif text-text-primary mb-4">Data Requests and Community Safety</h2>
+            <section id="data-deletion">
+              <h2 className="text-2xl font-serif text-text-primary mb-4">Data Deletion and Community Safety</h2>
               <p className="text-text-secondary">
-                Contact contact@leaftok.app to request access, correction or deletion of server-side data.
+                Email contact@leaftok.app with the subject “LeafTok data deletion” to request deletion of your club profile and associated server-side data, or to request access or correction.
                 Identify the relevant club and profile; we may need to verify ownership before acting.
-                Do not send your device credential. Report content or block a reader through the app.
+                We retain report evidence and moderation records when needed to investigate abuse and protect readers. Do not send your device credential. Report content or block a reader through the app.
                 Harassment, hate, threats, sexual content, spam and disclosure of private information
                 are prohibited. Share only content you have permission to share and mark spoilers.
                 Moderators may remove content or suspend club access for violations.
