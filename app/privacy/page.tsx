@@ -7,7 +7,7 @@ import type { Breadcrumb } from '@/lib/types';
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
-    'LeafTok Privacy Policy - Learn how we protect your data and respect your privacy. Your reading data stays on your device.',
+    'LeafTok Privacy Policy - Learn how we protect your data and respect your privacy. Learn about local reading data, optional book clubs, analytics and moderation.',
   alternates: {
     canonical: 'https://leaftok.app/privacy/',
   },
@@ -31,7 +31,7 @@ export default function PrivacyPage() {
 
           <div className="prose prose-invert prose-lg max-w-none space-y-8">
             <p className="text-text-secondary text-lg">
-              Last updated: January 2025
+              Last updated: September 22, 2026
             </p>
 
             <section>
@@ -51,15 +51,20 @@ export default function PrivacyPage() {
               <ul className="list-disc list-inside text-text-secondary space-y-2">
                 <li>
                   <strong>Books and Documents:</strong> Files you upload to the app for conversion
-                  into reading cards. These are stored locally on your device.
+                  into reading cards. Your library is stored locally. When a feature uses server-side PDF processing or AI summaries, the document or relevant text is transmitted to our API and processing services.
                 </li>
                 <li>
                   <strong>Reading Progress:</strong> Your reading history, bookmarks, and progress
                   are stored locally on your device.
                 </li>
                 <li>
-                  <strong>Usage Analytics:</strong> Anonymous usage statistics to help us improve
-                  the app experience.
+                  <strong>Usage Analytics:</strong> App interactions and device/app information, associated with an analytics identifier, help us improve the app through PostHog. Reading events can include book titles and reading progress.
+                </li>
+                <li>
+                  <strong>Book Clubs:</strong> A generated device identifier links your club profile and memberships. We store your display name, emoji avatar, club descriptions, shared book titles/authors, comments, reactions and community-rule acceptance. Participation in clubs is optional; the app may register a device-linked profile when it starts.
+                </li>
+                <li>
+                  <strong>Safety Reports:</strong> We store reports, their reasons/details, a snapshot of the reported content, block relationships and moderation decisions to investigate abuse.
                 </li>
               </ul>
             </section>
@@ -72,17 +77,19 @@ export default function PrivacyPage() {
                 <li>Convert your books into swipeable reading cards</li>
                 <li>Save your reading progress and preferences</li>
                 <li>Improve and optimize our app</li>
-                <li>Communicate with you about updates and features</li>
+                <li>Enable club discussions and protect readers through reporting, blocking and moderation</li>
               </ul>
             </section>
 
             <section>
               <h2 className="text-2xl font-serif text-text-primary mb-4">Data Storage and Security</h2>
               <p className="text-text-secondary">
-                Your books and reading data are stored locally on your device. We do not upload
-                your books to our servers. Your data remains private and under your control at
-                all times. We implement appropriate security measures to protect against
-                unauthorized access.
+                Local library data stays on your device unless you use a feature that transmits it.
+                Club data and reports are stored on our servers and sent over HTTPS. Club members
+                can see your display name, avatar, shared book metadata, comments and reactions.
+                Reports and their details are available to authorized moderators rather than other
+                readers. Reports preserve evidence and review history even if the original comment
+                is deleted. Removing the app does not delete server-side club data.
               </p>
             </section>
 
@@ -93,8 +100,7 @@ export default function PrivacyPage() {
               </p>
               <ul className="list-disc list-inside text-text-secondary space-y-2">
                 <li>
-                  <strong>Analytics:</strong> We use anonymous analytics to understand how users
-                  interact with our app.
+                  <strong>Analytics:</strong> PostHog processes usage events and app/device information for analytics. Generated identifiers are not a guarantee of anonymity.
                 </li>
                 <li>
                   <strong>App Stores:</strong> Apple App Store and Google Play Store have their
@@ -109,9 +115,21 @@ export default function PrivacyPage() {
               <ul className="list-disc list-inside text-text-secondary space-y-2">
                 <li>Access the data we have about you</li>
                 <li>Request deletion of your data</li>
-                <li>Opt-out of analytics collection</li>
-                <li>Export your reading progress and data</li>
+                <li>Request information about analytics data associated with you</li>
+                <li>Delete your own discussion comments and manage blocked readers in the app</li>
               </ul>
+            </section>
+
+            <section id="data-deletion">
+              <h2 className="text-2xl font-serif text-text-primary mb-4">Data Deletion and Community Safety</h2>
+              <p className="text-text-secondary">
+                Email contact@leaftok.app with the subject “LeafTok data deletion” to request deletion of your club profile and associated server-side data, or to request access or correction.
+                Identify the relevant club and profile; we may need to verify ownership before acting.
+                We retain report evidence and moderation records when needed to investigate abuse and protect readers. Do not send your device credential. Report content or block a reader through the app.
+                Harassment, hate, threats, sexual content, spam and disclosure of private information
+                are prohibited. Share only content you have permission to share and mark spoilers.
+                Moderators may remove content or suspend club access for violations.
+              </p>
             </section>
 
             <section>
