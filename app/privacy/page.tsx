@@ -50,6 +50,12 @@ export default function PrivacyPage() {
               </p>
               <ul className="list-disc list-inside text-text-secondary space-y-2">
                 <li>
+                  <strong>Accounts and Purchases:</strong> If you sign in, we store your account
+                  identifier and email address, including an Apple private relay address when used.
+                  Account and purchase identifiers, subscription status and transaction history
+                  support paid access, refunds, abuse prevention and purchase analytics.
+                </li>
+                <li>
                   <strong>Books and Documents:</strong> Files you upload to the app for conversion
                   into reading cards. Your library is stored locally. When a feature uses server-side PDF processing or AI summaries, the document or relevant text is transmitted to our API and processing services.
                 </li>
@@ -66,7 +72,16 @@ export default function PrivacyPage() {
                   are stored locally on your device.
                 </li>
                 <li>
-                  <strong>Usage Analytics:</strong> App interactions and device/app information, associated with an analytics identifier, help us improve the app through PostHog. Reading events can include book titles and reading progress.
+                  <strong>Usage Analytics:</strong> PostHog processes app interactions, library search
+                  terms, book titles, reading progress, reading preferences and optional survey responses.
+                  Events include device/app information and approximate location derived from your IP
+                  address, not GPS. Generated identifiers link these events to an installation and,
+                  when you sign in, may link them to your account and email address.
+                </li>
+                <li>
+                  <strong>Diagnostics:</strong> Crash reports, hangs, performance and termination
+                  metrics help us find and fix problems. These reports include app/device details
+                  and may be associated with the same analytics identifiers.
                 </li>
                 <li>
                   <strong>Book Clubs:</strong> A generated device identifier links your club profile and memberships. We store your display name, emoji avatar, club descriptions, shared book titles/authors, comments, reactions and community-rule acceptance. Participation in clubs is optional; the app may register a device-linked profile when it starts.
@@ -108,7 +123,9 @@ export default function PrivacyPage() {
               </p>
               <ul className="list-disc list-inside text-text-secondary space-y-2">
                 <li>
-                  <strong>Analytics:</strong> PostHog processes usage events and app/device information for analytics. Generated identifiers are not a guarantee of anonymity.
+                  <strong>Analytics:</strong> PostHog processes the usage, approximate-location and
+                  diagnostic information described above. Generated identifiers are not a guarantee
+                  of anonymity. We do not use this information for cross-company advertising tracking.
                 </li>
                 <li>
                   <strong>Cloud Narration:</strong> DeepInfra processes the text needed to synthesize
@@ -139,7 +156,9 @@ export default function PrivacyPage() {
             <section id="data-deletion">
               <h2 className="text-2xl font-serif text-text-primary mb-4">Data Deletion and Community Safety</h2>
               <p className="text-text-secondary">
-                Email contact@leaftok.app with the subject “LeafTok data deletion” to request deletion of your club profile and associated server-side data, or to request access or correction.
+                You can delete your signed-in account in the app settings. Email contact@leaftok.app
+                with the subject “LeafTok data deletion” to request deletion of your club profile,
+                analytics or other associated server-side data, or to request access or correction.
                 Identify the relevant club and profile; we may need to verify ownership before acting.
                 We retain report evidence and moderation records when needed to investigate abuse and protect readers. Do not send your device credential. Report content or block a reader through the app.
                 Harassment, hate, threats, sexual content, spam and disclosure of private information
