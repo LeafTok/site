@@ -31,7 +31,7 @@ export default function TermsPage() {
 
           <div className="prose prose-invert prose-lg max-w-none space-y-8">
             <p className="text-text-secondary text-lg">
-              Last updated: April 2026
+              Last updated: October 28, 2026
             </p>
 
             <section>
@@ -56,7 +56,7 @@ export default function TermsPage() {
               <p className="text-text-secondary">
                 You are responsible for the books and content you import into LeafTok. You must have the legal right
                 to access and use any content you import. LeafTok does not host, distribute, or claim ownership of
-                your imported content. All imported books are stored locally on your device.
+                your imported content. Your library is stored locally on your device. Optional cloud processing transmits the relevant document or text as described in our Privacy Policy.
               </p>
             </section>
 
@@ -82,6 +82,32 @@ export default function TermsPage() {
                 <li><strong>Monthly</strong> &mdash; auto-renews every month</li>
                 <li><strong>Yearly</strong> &mdash; auto-renews every year</li>
               </ul>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-serif text-text-primary mb-4">Cloud narration plans</h2>
+              <p className="text-text-secondary">
+                Where available in the app, LeafTok Pro Cloud 5 includes five eligible book narrations
+                per monthly subscription anniversary. Each narration covers up to 300,000 prepared
+                characters in one selected voice. Numbers may expand when prepared for speech.
+                The app checks eligibility and asks for confirmation before using a book credit.
+                Changing the selected voice uses another credit. Books are supplied by you; this is
+                not an audiobook catalog subscription.
+              </p>
+              <p className="text-text-secondary mt-4">
+                Both monthly and annual plans release five credits each month. Annual billing does
+                not release 60 credits upfront. Unused credits do not roll over. An accepted narration
+                can be completed and replayed for 90 days from acceptance, including after ordinary
+                subscription expiry. Refunded or revoked purchases may lose access. Internet access
+                is required for cloud narration; on-device narration remains available separately.
+              </p>
+              <p className="text-text-secondary mt-4">
+                Prices, availability and billing periods are shown by the App Store before purchase.
+                Existing plans keep their purchased benefits; Cloud 5 requires an explicit upgrade.
+                Cloud narration is for personal listening. Automated bulk extraction, resale and
+                attempts to bypass purchase or usage limits are not permitted. If narration cannot
+                complete, contact iago@leaftok.app for assistance; do not repeatedly buy the same book.
+              </p>
             </section>
 
             <section>

@@ -31,7 +31,7 @@ export default function PrivacyPage() {
 
           <div className="prose prose-invert prose-lg max-w-none space-y-8">
             <p className="text-text-secondary text-lg">
-              Last updated: September 22, 2026
+              Last updated: October 28, 2026
             </p>
 
             <section>
@@ -52,6 +52,14 @@ export default function PrivacyPage() {
                 <li>
                   <strong>Books and Documents:</strong> Files you upload to the app for conversion
                   into reading cards. Your library is stored locally. When a feature uses server-side PDF processing or AI summaries, the document or relevant text is transmitted to our API and processing services.
+                </li>
+                <li>
+                  <strong>Optional Cloud Narration:</strong> After you choose cloud narration,
+                  the book text is sent over HTTPS to our API to check eligibility. If you confirm,
+                  we store the prepared text and generated audio for completion and replay for 90 days.
+                  Text is sent to DeepInfra as needed to generate speech. Our scheduled cleanup removes
+                  stored narration text and audio after the replay period. Purchase and usage records
+                  are retained to enforce allowances, handle refunds and prevent abuse.
                 </li>
                 <li>
                   <strong>Reading Progress:</strong> Your reading history, bookmarks, and progress
@@ -101,6 +109,14 @@ export default function PrivacyPage() {
               <ul className="list-disc list-inside text-text-secondary space-y-2">
                 <li>
                   <strong>Analytics:</strong> PostHog processes usage events and app/device information for analytics. Generated identifiers are not a guarantee of anonymity.
+                </li>
+                <li>
+                  <strong>Cloud Narration:</strong> DeepInfra processes the text needed to synthesize
+                  the voice you select. On-device narration does not send text to this provider.
+                </li>
+                <li>
+                  <strong>Subscriptions:</strong> RevenueCat and Apple process purchase identifiers,
+                  subscription status and transaction information so we can verify paid access and refunds.
                 </li>
                 <li>
                   <strong>App Stores:</strong> Apple App Store and Google Play Store have their
