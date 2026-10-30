@@ -253,7 +253,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
         )}
 
         <DownloadPrompt
-          eyebrow="Free to start, no signup"
+          eyebrow="Free download, no signup"
           title="Try your first book in minutes."
         />
       </main>

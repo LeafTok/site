@@ -14,7 +14,7 @@ import { getAllGuides } from "@/lib/data/guides";
 export const metadata: Metadata = {
   title: "LeafTok — Swipe Through Books Like TikTok | EPUB & PDF Reader",
   description:
-    "The TikTok-style book reader for iPhone and Android. Turn any EPUB or PDF into swipeable cards, listen with on-device narration, keep a reading streak, and read with friends in book clubs. Free to start.",
+    "The TikTok-style book reader for iPhone and Android. Turn any EPUB or PDF into swipeable cards, listen with on-device narration, keep a reading streak, and read with friends in book clubs.",
   alternates: {
     canonical: "https://leaftok.app/",
   },
@@ -74,7 +74,7 @@ export default function HomePage() {
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-secondary">
               Turn any PDF or EPUB you own into focused cards that keep your
-              place and help you finish. Free to start, no account needed.
+              place and help you finish. No account needed.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -239,7 +239,7 @@ export default function HomePage() {
               Start with one page.
             </h2>
             <p className="mt-4 max-w-md text-lg text-ink-secondary">
-              Your books are already waiting. LeafTok is free to try and
+              Your books are already waiting. LeafTok is free to download and
               needs no account.
             </p>
             <div className="mt-8">

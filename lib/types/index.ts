@@ -192,6 +192,7 @@ export interface SiteConfig {
   appStoreLinks: {
     ios: string;
     android: string;
+    androidFromSite: string;
   };
 }
 
@@ -209,7 +210,10 @@ export const siteConfig: SiteConfig = {
     twitter: '@leaftok',
   },
   appStoreLinks: {
-    ios: 'https://apps.apple.com/br/app/leaftok/id6748622950',
+    ios: 'https://apps.apple.com/app/leaftok/id6748622950',
     android: 'https://play.google.com/store/apps/details?id=com.iagocavalcante.leaftok',
+    // Download buttons only: the referrer attributes installs to the site, and
+    // must stay out of `android`, which feeds canonical structured data.
+    androidFromSite: 'https://play.google.com/store/apps/details?id=com.iagocavalcante.leaftok&referrer=utm_source%3Dleaftok.app%26utm_medium%3Dwebsite',
   },
 };

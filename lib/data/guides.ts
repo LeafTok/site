@@ -56,11 +56,11 @@ export const guides: Guide[] = [
     keyword: "tiktok for books",
     title: "TikTok for Books: What It Is and Why Swipe-Reading Works",
     metaDescription:
-      "Looking for a TikTok for books? Learn how swipe-based reading apps turn real books into vertical, bite-sized cards — and how to try it free on iPhone.",
+      "Looking for a TikTok for books? Learn how swipe-based reading apps turn real books into vertical, bite-sized cards — and how to try it on iPhone.",
     heading: "TikTok for books, explained",
     lede: "The scroll trained your thumb. Swipe-reading points that reflex at actual books.",
     quickAnswer:
-      "A “TikTok for books” is a reading app that splits real books into short vertical cards you swipe through like a feed. LeafTok does this on iPhone for any EPUB or PDF you already own — the full text respaced into 100–350 character cards, free to start, no signup, fully offline.",
+      "A “TikTok for books” is a reading app that splits real books into short vertical cards you swipe through like a feed. LeafTok does this on iPhone for any EPUB or PDF you already own — the full text respaced into 100–350 character cards, with no account and fully offline.",
     intro: [
       "When people search for a “TikTok for books,” they usually mean one of two things: a place to talk about books (that already exists — it’s BookTok), or a way to read real books with the same effortless, vertical, one-thing-at-a-time rhythm the feed taught them. This guide is about the second one.",
       "A swipe-reading app takes a full book — an EPUB or PDF you already own — and splits it into short cards, each holding a focused passage. You swipe up for the next card, exactly like a feed. Same muscle memory, but every swipe moves you through a book instead of away from one.",
@@ -83,7 +83,7 @@ export const guides: Guide[] = [
           "Preserves chapters, images, and formatting when it slices the book",
           "Reads offline — commutes and flights are where this format shines",
           "Keeps your progress and streaks so the habit compounds",
-          "No account requirement just to try it",
+          "No account required",
         ],
       },
     ],
@@ -113,7 +113,7 @@ export const guides: Guide[] = [
       {
         question: "Is there really an app like TikTok but for books?",
         answer:
-          "Yes. LeafTok converts any EPUB or PDF you own into vertical, swipeable reading cards with a feed-style interface — free to try on iPhone with no signup.",
+          "Yes. LeafTok converts any EPUB or PDF you own into vertical, swipeable reading cards with a feed-style interface. It needs no account; on iPhone, reading requires Pro (from $1.99/week).",
       },
       {
         question: "Is swipe-reading the same as BookTok?",
@@ -138,7 +138,7 @@ export const guides: Guide[] = [
     heading: "The best EPUB reader for iPhone, honestly",
     lede: "There is no single best reader — there’s the best one for how you actually read.",
     quickAnswer:
-      "For classic page-based reading, Apple Books (pre-installed, free) is the best EPUB reader for iPhone, and PocketBook is best for wide format support. If you keep abandoning books, LeafTok converts the same EPUB into swipeable, feed-style cards with offline narration — free to start with 3 book slots and no account.",
+      "For classic page-based reading, Apple Books (pre-installed, free) is the best EPUB reader for iPhone, and PocketBook is best for wide format support. If you keep abandoning books, LeafTok converts the same EPUB into swipeable, feed-style cards with offline narration. It needs no account; reading on iPhone requires Pro (from $1.99/week).",
     intro: [
       "Every EPUB reader on iOS opens the file. The differences that matter are what happens after: how it handles your attention, whether it works offline, whether it can read aloud, and whether it nags you to sign up before you’ve read a page.",
       "Here’s the honest landscape in 2026, including where each option genuinely wins.",
@@ -156,7 +156,7 @@ export const guides: Guide[] = [
         heading: "When a classic reader isn’t the answer",
         paragraphs: [
           "All three of those present books the traditional way: as pages. If pages work for you, pick one and go read. But if you keep opening a reader, drifting to another app, and abandoning books at 12% — the format is the problem, not your discipline.",
-          "That’s the case where LeafTok is the better fit: it converts the same EPUB into short, swipeable cards, so reading feels like the feed you’d otherwise drift to. It’s free to start with 3 book slots, needs no account, and everything — including narration — works offline.",
+          "That’s the case where LeafTok is the better fit: it converts the same EPUB into short, swipeable cards, so reading feels like the feed you’d otherwise drift to. It needs no account, on-device narration works offline, and reading on iPhone requires Pro (from $1.99/week).",
         ],
       },
     ],
@@ -186,7 +186,7 @@ export const guides: Guide[] = [
       {
         question: "What is the best free EPUB reader for iPhone?",
         answer:
-          "Apple Books for classic page reading (pre-installed, free), PocketBook for wide format support, and LeafTok if you want a swipeable, feed-style reading experience — free to start, no signup, works offline.",
+          "Apple Books for classic page reading (pre-installed, free), PocketBook for wide format support, and LeafTok if you want a swipeable, feed-style reading experience, though it requires Pro on iPhone (from $1.99/week).",
       },
       {
         question: "Can I read EPUB files on iPhone without an account?",
@@ -242,7 +242,7 @@ export const guides: Guide[] = [
       {
         title: "Pick a voice",
         description:
-          "16 Kokoro neural voices, British and American, generated locally. Narration is a Pro feature (from $1.99/week) after the free trial of the app’s core reading.",
+          "16 Kokoro neural voices, British and American, generated locally. Narration is part of Pro (from $1.99/week).",
       },
       {
         title: "Listen hands-free",
@@ -258,7 +258,7 @@ export const guides: Guide[] = [
       {
         question: "Is there a free app that reads books aloud on iPhone?",
         answer:
-          "iOS Spoken Content is free and reads any screen. For an actual listening experience, LeafTok is free to download and read; its 16 on-device narration voices are part of Pro. No connection is required for any of it.",
+          "iOS Spoken Content is free and reads any screen. For an actual listening experience, LeafTok is free to download, and its reading and 16 on-device narration voices are part of Pro on iPhone. No connection is required for any of it.",
       },
       {
         question: "Can an app read my PDF aloud offline?",
@@ -491,7 +491,7 @@ export const guides: Guide[] = [
       {
         question: "Does everyone need to buy the app?",
         answer:
-          "LeafTok is free to download with 3 book slots and no account requirement, so friends can join a club and try it without paying anything.",
+          "Each friend installs the app, which is free to download and needs no account. On iPhone, reading requires Pro (from $1.99/week); core reading is free on Android.",
       },
     ],
     related: ["how-to-finish-more-books", "reading-tracker-app", "tiktok-for-books"],
@@ -650,7 +650,7 @@ export const guides: Guide[] = [
   {
     slug: "convert-epub-to-audiobook",
     keyword: "convert epub to audiobook",
-    title: "How to Convert an EPUB to an Audiobook on iPhone (Free, Offline)",
+    title: "How to Convert an EPUB to an Audiobook on iPhone (Offline)",
     metaDescription:
       "Turn any EPUB you own into a narrated audiobook on iPhone — no cloud upload, no per-book fee. On-device voices that work in airplane mode, step by step.",
     heading: "Turn any EPUB into an audiobook on your iPhone",
@@ -702,7 +702,7 @@ export const guides: Guide[] = [
       {
         question: "Can I convert an EPUB to an audiobook for free?",
         answer:
-          "Importing and reading the EPUB in LeafTok is free with 3 book slots and no signup. The 16 on-device narration voices that make it an audiobook experience are part of Pro (from $1.99/week). Nothing uploads and no connection is required.",
+          "LeafTok is free to download and needs no account, but on iPhone reading and the 16 on-device narration voices are part of Pro (from $1.99/week). iOS Spoken Content is the free alternative. Nothing uploads and no connection is required.",
       },
       {
         question: "Do I get an MP3 file at the end?",
@@ -804,7 +804,7 @@ export const guides: Guide[] = [
     heading: "The best PDF reader for iPhone depends on what you’re doing to the PDF",
     lede: "Opening a PDF is solved. Reading a long one on a phone, comfortably, is not.",
     quickAnswer:
-      "For viewing and signing, Apple’s built-in Files and Books handle PDFs for free. For heavy annotation and editing, PDF Expert is the standard. For actually reading a long PDF — a book, report, or paper — LeafTok reflows it into swipeable, one-passage cards with on-device read-aloud, so you’re not pinch-zooming a fixed page on a small screen. It’s free to start; narration is Pro.",
+      "For viewing and signing, Apple’s built-in Files and Books handle PDFs for free. For heavy annotation and editing, PDF Expert is the standard. For actually reading a long PDF — a book, report, or paper — LeafTok reflows it into swipeable, one-passage cards with on-device read-aloud, so you’re not pinch-zooming a fixed page on a small screen. Reading and narration on iPhone are part of Pro.",
     intro: [
       "“Best PDF reader” is really three different questions. Do you need to view and sign a PDF, mark it up heavily, or read a long one end to end? The right app is different for each, and most lists blur them together.",
       "Here’s the honest split for iPhone in 2026 — including the case almost no list covers: reading a long-form PDF comfortably on a phone-sized screen.",
@@ -916,7 +916,7 @@ export const guides: Guide[] = [
       {
         title: "Your progress stays put",
         description:
-          "Streaks, shelves, and your exact place save locally, so a dead zone never costs you anything. Narration is Pro; reading is free.",
+          "Streaks, shelves, and your exact place save locally, so a dead zone never costs you anything. Reading and narration on iPhone are part of Pro.",
       },
     ],
     screenshot: {
@@ -1050,7 +1050,7 @@ export const guides: Guide[] = [
           "Apple Books — pre-installed, free, syncs your own EPUBs and PDFs across devices. The default best all-rounder.",
           "Kobo — a genuine store-plus-reader if you want an ebook ecosystem that isn’t Amazon.",
           "Libby — free ebook and audiobook borrowing from your public library, with just a library card.",
-          "LeafTok — for reading your own EPUBs and PDFs in a swipeable, feed-style format with on-device narration, free to start.",
+          "LeafTok — for reading your own EPUBs and PDFs in a swipeable, feed-style format with on-device narration. Free to download, but reading on iPhone requires Pro (from $1.99/week).",
         ],
       },
     ],
@@ -1069,7 +1069,7 @@ export const guides: Guide[] = [
       {
         title: "Listen, offline, no account",
         description:
-          "16 on-device voices narrate any book (Pro), everything works offline, and there’s no account or ecosystem to sign into. Free tier: 3 book slots.",
+          "16 on-device voices narrate any book (Pro), everything works offline, and there’s no account or ecosystem to sign into.",
       },
     ],
     screenshot: {
@@ -1090,7 +1090,7 @@ export const guides: Guide[] = [
       {
         question: "Is LeafTok free?",
         answer:
-          "Yes to download and read, with 3 book slots and no account. Pro (from $1.99/week) unlocks unlimited books, on-device narration voices, and AI summaries.",
+          "It’s free to download and needs no account. On iPhone, reading requires Pro (from $1.99/week), which includes on-device narration voices and AI summaries. Core reading is free on Android.",
       },
     ],
     related: ["best-epub-reader-iphone", "offline-reading-app", "tiktok-for-books"],
@@ -1206,7 +1206,7 @@ export const guides: Guide[] = [
       {
         title: "Read the real book as cards",
         description:
-          "Import any EPUB or PDF and read the full text as swipeable cards — nothing summarized or skipped. This is LeafTok’s core, and it’s free.",
+          "Import any EPUB or PDF and read the full text as swipeable cards — nothing summarized or skipped. This is LeafTok’s core.",
       },
       {
         title: "Summarize when it’s the right call",

@@ -25,7 +25,7 @@ Free to download. In-app purchases:
 | LeafTok Pro Monthly | $4.99 |
 | LeafTok Pro Yearly | $39.99 |
 
-Free tier: 3 book slots, no signup, core reading experience.
+No signup. On iPhone and iPad, new users need LeafTok Pro to read; core reading is free on Android.
 
 ## Description (listing)
 
