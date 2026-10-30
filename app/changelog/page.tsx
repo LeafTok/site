@@ -5,7 +5,7 @@ import { Breadcrumbs } from '@/components/seo';
 import type { Breadcrumb } from '@/lib/types';
 
 export const metadata: Metadata = {
-  title: 'Changelog',
+  title: 'Changelog: iOS and Android Release History',
   description:
     'LeafTok Changelog - See what&apos;s new in each version. Track our latest features, improvements, and bug fixes.',
   alternates: {

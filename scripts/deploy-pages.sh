@@ -32,6 +32,16 @@ if [ -n "$(git status --porcelain --untracked-files=no)" ]; then
     exit 1
 fi
 
+# Refuse to publish anything but the current origin/main. Pages production has
+# no history of its own: on 2026-10-28 a deploy from a stale branch silently
+# removed /download/ and the landing revamp from the live site.
+git fetch --quiet origin main
+if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/main)" ]; then
+    echo "error: HEAD is not origin/main." >&2
+    echo "       Merge the change and deploy from an up-to-date main." >&2
+    exit 1
+fi
+
 SOURCE_SHA="$(git rev-parse --short HEAD)"
 SOURCE_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 
