@@ -54,3 +54,21 @@ npx wrangler pages deploy "$OUT" \
 
 echo "==> Published ${SOURCE_SHA}"
 echo "    https://leaftok.app/ updates within a minute or two."
+
+# Tell Bing and the other IndexNow engines what changed. The key is public by
+# design: engines verify it against the file of the same name on the site. A
+# failed ping must not read as a failed deploy, since the site is already live.
+INDEXNOW_KEY="9bf56d3425c091490f9eb0131b5109bd"
+echo "==> Submitting sitemap URLs to IndexNow"
+python3 -c '
+import json, re, sys
+urls = re.findall(r"<loc>([^<]+)</loc>", open(sys.argv[2]).read())
+print(json.dumps({
+    "host": "leaftok.app",
+    "key": sys.argv[1],
+    "keyLocation": f"https://leaftok.app/{sys.argv[1]}.txt",
+    "urlList": urls,
+}))
+' "$INDEXNOW_KEY" "$OUT/sitemap.xml" | curl -sS -o /dev/null -w "    IndexNow responded %{http_code}\n" \
+    -H "Content-Type: application/json; charset=utf-8" --data-binary @- \
+    https://api.indexnow.org/indexnow || echo "    warning: IndexNow submission failed" >&2
