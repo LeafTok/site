@@ -9,7 +9,7 @@ import { features } from "@/lib/data/landing";
 export const metadata: Metadata = {
   title: "Download LeafTok for iPhone and Android",
   description:
-    "Get LeafTok free on the App Store or Google Play. Turn any PDF or EPUB into swipeable reading cards, no account needed.",
+    "Download LeafTok on the App Store or Google Play. Turn any PDF or EPUB into swipeable reading cards, no account needed.",
   alternates: {
     canonical: "https://leaftok.app/download/",
   },
@@ -30,7 +30,7 @@ export default function DownloadPage() {
             Get LeafTok on your phone.
           </h1>
           <p className="mt-4 max-w-md text-lg text-ink-secondary">
-            Free to start on iOS and Android. No account needed.
+            Free to download on iOS and Android. No account needed.
           </p>
         </div>
 
@@ -47,7 +47,7 @@ export default function DownloadPage() {
             icon={<PlayStoreIcon />}
             platform="Android"
             requirement="Requires Android 7.0 or later"
-            href={siteConfig.appStoreLinks.android}
+            href={siteConfig.appStoreLinks.androidFromSite}
             store="google_play"
             buttonLabel="Get it on Google Play"
           />

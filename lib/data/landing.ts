@@ -9,7 +9,7 @@ import type { FAQItem } from "@/lib/types";
 
 /** Hero trust row — honest, verifiable proof. */
 export const heroTrust: string[] = [
-  "Free to start",
+  "Free download",
   "No signup",
   "Works offline",
 ];
@@ -129,7 +129,7 @@ export const homeFAQs: FAQItem[] = [
   {
     question: "Is LeafTok really free?",
     answer:
-      "Free to download, no signup, with 3 book slots and the core reading experience. Upgrade to Pro for unlimited books, AI narration voices, and AI-powered summaries.",
+      "It’s free to download with no signup. On iPhone and iPad, reading requires LeafTok Pro (from $1.99/week), which includes AI narration voices and AI-powered summaries. On Android, core reading is free.",
   },
   {
     question: "Why are swipeable cards easier to read?",

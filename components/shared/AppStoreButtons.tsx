@@ -37,7 +37,7 @@ export function AppStoreButtons({
           <span className="text-sm font-medium">App Store</span>
         </a>
         <a
-          href={siteConfig.appStoreLinks.android}
+          href={siteConfig.appStoreLinks.androidFromSite}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-ink/10 bg-ink/5 px-4 py-2 text-ink transition-colors duration-200 hover:bg-ink/10"
@@ -66,7 +66,7 @@ export function AppStoreButtons({
           <span>App Store</span>
         </a>
         <a
-          href={siteConfig.appStoreLinks.android}
+          href={siteConfig.appStoreLinks.androidFromSite}
           target="_blank"
           rel="noopener noreferrer"
           className="btn-secondary"
@@ -77,11 +77,11 @@ export function AppStoreButtons({
           <span>Google Play</span>
         </a>
       </div>
-      {/* Sits under both buttons, not on one of them: LeafTok is free to start on
+      {/* Sits under both buttons, not on one of them: LeafTok is free to download on
           iOS and Android alike, and a badge pinned to a single store button read
           as though the other one cost money. */}
       {showFreeNote && (
-        <p className="mt-3 text-sm text-ink-muted">Free on iOS and Android</p>
+        <p className="mt-3 text-sm text-ink-muted">Free download on iOS and Android</p>
       )}
     </div>
   );

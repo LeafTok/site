@@ -39,7 +39,7 @@ export function StoreDownloadCard({
         {buttonLabel}
       </a>
       <p className="mt-3 text-center text-[14px] text-ink-faint">
-        Free &middot; Subscriptions optional
+        Free download &middot; In-app subscriptions
       </p>
     </div>
   );
